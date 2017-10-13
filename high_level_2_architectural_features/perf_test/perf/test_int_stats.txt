@@ -1,0 +1,18 @@
+# started on Fri Oct 13 14:52:07 2017
+
+
+ Performance counter stats for 'bin/test_int':
+
+          0.423409      task-clock (msec)         #    0.541 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                99      page-faults               #    0.234 M/sec                  
+           500,318      cycles                    #    1.182 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+           358,165      instructions              #    0.72  insns per cycle        
+            69,630      branches                  #  164.451 M/sec                  
+             2,688      branch-misses             #    3.86% of all branches        
+
+       0.000782431 seconds time elapsed
+
