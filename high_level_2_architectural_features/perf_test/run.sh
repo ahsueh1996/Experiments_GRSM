@@ -1,7 +1,7 @@
-declare -a tests=("test_empty" "test_stdio" "test_int" "test_float")
+declare -a tests=("base" "elif" "if_range_naive" "if_range_and")
 for i in ${tests[@]}
 do
-	sh make.sh $i
-	sh perf.sh $i
+	sh make.sh $i $1
+	sh perf.sh $i $1
 done
 echo "done"
