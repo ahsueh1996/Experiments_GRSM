@@ -1,4 +1,4 @@
-declare -a tests=("base" "elif" "if_range_naive" "if_range_and")
+declare -a tests=("base" "stdio" "int" "float")
 for i in ${tests[@]}
 do
 	sh make.sh $i $1
