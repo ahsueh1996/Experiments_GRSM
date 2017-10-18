@@ -1,7 +1,13 @@
-declare -a tests=("base" "elif" "if_range_naive" "if_range_and")
+# we need to run the shm_mat file first to create the shared matrix file
+sh make.sh shm_mat $1
+./$1/bin/shm_mat $2
+# the key is 17 btw
+declare -a tests=("base" "loop" "loop_ikj")
 for i in ${tests[@]}
 do
 	sh make.sh $i $1
-	sh perf.sh $i $1
+	sh perf.sh $i $1 $2
 done
+# delete the shm
+#ipcrm -M 17
 echo "done"

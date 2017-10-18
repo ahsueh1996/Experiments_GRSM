@@ -14,4 +14,14 @@ main(int argc, char* argv[]) {
 	shm = shmat(shmid,0,0);
 	if (shm == (void*) -1) { exit(1);}
 	
+	int i,j,k,aik;
+	int res[N][N];
+	for(i=0;i<N;i++){
+		for(k=0;k<N;k++){
+			aik = shm[i][k];
+			for(j=0;j<N;j++){
+				res[i][j] += aik * shm[k][j];	
+			}	
+		}
+	}	
 }

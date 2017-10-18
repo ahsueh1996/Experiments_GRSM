@@ -1,0 +1,22 @@
+# started on Wed Oct 18 17:01:09 2017
+
+
+ Performance counter stats for 'omni/bin/loop 2048':
+
+         29.910509      task-clock (msec)         #    0.159 CPUs utilized          
+                 6      context-switches          #    0.201 K/sec                  
+                 1      cpu-migrations            #    0.033 K/sec                  
+             2,150      page-faults               #    0.072 M/sec                  
+        71,407,582      cycles                    #    2.387 GHz                      (43.50%)
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+        27,248,185      instructions              #    0.38  insns per cycle          (61.79%)
+         6,883,577      branches                  #  230.139 M/sec                    (65.00%)
+            14,534      branch-misses             #    0.21% of all branches          (66.60%)
+        10,751,347      L1-dcache-loads           #  359.450 M/sec                    (69.97%)
+           729,729      L1-dcache-load-misses     #    6.79% of all L1-dcache hits    (66.60%)
+           256,662      LLC-loads                 #    8.581 M/sec                    (48.13%)
+           120,690      LLC-load-misses           #   47.02% of all LL-cache hits     (43.54%)
+
+       0.187755146 seconds time elapsed
+

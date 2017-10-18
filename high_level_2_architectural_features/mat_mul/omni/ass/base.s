@@ -10,57 +10,48 @@ main:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	pushq	%rbx
-	subq	$24, %rsp
-	movl	$0, %eax
-	.cfi_offset 3, -24
-	call	rand
-	movl	%eax, %ecx
-	movl	$1717986919, %edx
-	movl	%ecx, %eax
-	imull	%edx
-	sarl	$2, %edx
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %ebx
-	subl	%eax, %ebx
-	movl	%ebx, %eax
-	movl	%eax, -32(%rbp)
-	movl	-32(%rbp), %edx
-	movl	%edx, %eax
-	sall	$2, %eax
-	addl	%edx, %eax
-	addl	%eax, %eax
-	movl	%ecx, %edx
-	subl	%eax, %edx
-	movl	%edx, %eax
-	movl	%eax, -32(%rbp)
-	movl	$0, %eax
-	call	rand
-	movl	%eax, %ecx
-	movl	$1717986919, %edx
-	movl	%ecx, %eax
-	imull	%edx
-	sarl	$2, %edx
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %ebx
-	subl	%eax, %ebx
-	movl	%ebx, %eax
-	movl	%eax, -28(%rbp)
-	movl	-28(%rbp), %edx
-	movl	%edx, %eax
-	sall	$2, %eax
-	addl	%edx, %eax
-	addl	%eax, %eax
-	movl	%ecx, %edx
-	subl	%eax, %edx
-	movl	%edx, %eax
-	movl	%eax, -28(%rbp)
-	movl	$7, -24(%rbp)
-	movl	$7, -20(%rbp)
-	addq	$24, %rsp
-	popq	%rbx
+	subq	$48, %rsp
+	movl	%edi, -36(%rbp)
+	movq	%rsi, -48(%rbp)
+	movq	-48(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	movq	%rax, %rdi
+	call	atoi
+	movl	%eax, -20(%rbp)
+	movl	$17, -16(%rbp)
+	movl	-20(%rbp), %eax
+	cltq
+	subq	$1, %rax
+	movq	%rax, -32(%rbp)
+	movl	-20(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-20(%rbp), %eax
+	cltq
+	imulq	%rdx, %rax
+	leaq	0(,%rax,4), %rcx
+	movl	-16(%rbp), %eax
+	movl	$438, %edx
+	movq	%rcx, %rsi
+	movl	%eax, %edi
+	call	shmget
+	movl	%eax, -12(%rbp)
+	cmpl	$-1, -12(%rbp)
+	jne	.L2
+	movl	$1, %edi
+	call	exit
+.L2:
+	movl	-12(%rbp), %eax
+	movl	$0, %edx
+	movl	$0, %esi
+	movl	%eax, %edi
+	call	shmat
+	movq	%rax, -8(%rbp)
+	cmpq	$-1, -8(%rbp)
+	jne	.L5
+	movl	$1, %edi
+	call	exit
+.L5:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
