@@ -11,55 +11,81 @@ main:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	pushq	%rbx
-	subq	$24, %rsp
-	movl	$0, %eax
+	subq	$56, %rsp
+	movl	%edi, -52(%rbp)
+	movq	%rsi, -64(%rbp)
+	movl	$0, %edi
 	.cfi_offset 3, -24
-	call	rand
-	movl	%eax, %ecx
-	movl	$1717986919, %edx
-	movl	%ecx, %eax
-	imull	%edx
-	sarl	$2, %edx
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %ebx
-	subl	%eax, %ebx
-	movl	%ebx, %eax
-	movl	%eax, -32(%rbp)
-	movl	-32(%rbp), %edx
-	movl	%edx, %eax
-	sall	$2, %eax
-	addl	%edx, %eax
-	addl	%eax, %eax
-	movl	%ecx, %edx
-	subl	%eax, %edx
-	movl	%edx, %eax
-	movl	%eax, -32(%rbp)
+	call	time
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	srand
+	movq	-64(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	atoi
+	movl	%eax, -48(%rbp)
+	movq	-64(%rbp), %rax
+	addq	$16, %rax
+	movq	(%rax), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	atoi
+	movl	%eax, -44(%rbp)
 	movl	$0, %eax
 	call	rand
 	movl	%eax, %ecx
-	movl	$1717986919, %edx
+	movl	$274877907, %edx
 	movl	%ecx, %eax
 	imull	%edx
-	sarl	$2, %edx
+	sarl	$6, %edx
 	movl	%ecx, %eax
 	sarl	$31, %eax
 	movl	%edx, %ebx
 	subl	%eax, %ebx
 	movl	%ebx, %eax
-	movl	%eax, -28(%rbp)
-	movl	-28(%rbp), %edx
-	movl	%edx, %eax
-	sall	$2, %eax
-	addl	%edx, %eax
-	addl	%eax, %eax
+	imull	$1000, %eax, %eax
 	movl	%ecx, %edx
 	subl	%eax, %edx
 	movl	%edx, %eax
+	imull	-48(%rbp), %eax
+	movl	%eax, -40(%rbp)
+	movl	$0, %eax
+	call	rand
+	movl	%eax, %ecx
+	movl	$274877907, %edx
+	movl	%ecx, %eax
+	imull	%edx
+	sarl	$6, %edx
+	movl	%ecx, %eax
+	sarl	$31, %eax
+	movl	%edx, %ebx
+	subl	%eax, %ebx
+	movl	%ebx, %eax
+	imull	$1000, %eax, %eax
+	movl	%ecx, %edx
+	subl	%eax, %edx
+	movl	%edx, %eax
+	imull	-48(%rbp), %eax
+	movl	%eax, -36(%rbp)
+	movl	-44(%rbp), %eax
+	imull	-48(%rbp), %eax
+	movl	%eax, -32(%rbp)
+	movl	-44(%rbp), %eax
+	imull	-48(%rbp), %eax
 	movl	%eax, -28(%rbp)
-	movl	$7, -24(%rbp)
-	movl	$7, -20(%rbp)
-	addq	$24, %rsp
+	movl	-48(%rbp), %eax
+	imull	$707, %eax, %eax
+	addl	-32(%rbp), %eax
+	movl	%eax, -24(%rbp)
+	movl	-48(%rbp), %eax
+	imull	$707, %eax, %eax
+	addl	-28(%rbp), %eax
+	movl	%eax, -20(%rbp)
+	movl	$0, %eax
+	addq	$56, %rsp
 	popq	%rbx
 	leave
 	.cfi_def_cfa 7, 8

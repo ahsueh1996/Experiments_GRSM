@@ -1,18 +1,22 @@
-# started on Fri Oct 13 15:22:35 2017
+# started on Thu Oct 19 16:10:20 2017
 
 
- Performance counter stats for 'bin/if_range_naive':
+ Performance counter stats for 'packet2a/bin/if_range_naive 1 0':
 
-          0.432193      task-clock (msec)         #    0.516 CPUs utilized          
+          0.452705      task-clock (msec)         #    0.533 CPUs utilized          
                  0      context-switches          #    0.000 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               100      page-faults               #    0.231 M/sec                  
-           511,144      cycles                    #    1.183 GHz                    
+               103      page-faults               #    0.228 M/sec                  
+           533,316      cycles                    #    1.178 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           362,459      instructions              #    0.71  insns per cycle        
-            70,688      branches                  #  163.557 M/sec                  
-             2,791      branch-misses             #    3.95% of all branches        
+           384,097      instructions              #    0.72  insns per cycle        
+            74,760      branches                  #  165.141 M/sec                  
+             2,779      branch-misses             #    3.72% of all branches        
+           102,110      L1-dcache-loads           #  225.555 M/sec                  
+     <not counted>      L1-dcache-load-misses    
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
 
-       0.000837467 seconds time elapsed
+       0.000849129 seconds time elapsed
 

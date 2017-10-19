@@ -1,18 +1,22 @@
-# started on Fri Oct 13 15:22:34 2017
+# started on Thu Oct 19 16:10:19 2017
 
 
- Performance counter stats for 'bin/elif':
+ Performance counter stats for 'packet2a/bin/elif 1 0':
 
-          0.438525      task-clock (msec)         #    0.516 CPUs utilized          
-                 0      context-switches          #    0.000 K/sec                  
+          0.476230      task-clock (msec)         #    0.521 CPUs utilized          
+                 1      context-switches          #    0.002 M/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               100      page-faults               #    0.228 M/sec                  
-           518,425      cycles                    #    1.182 GHz                    
+               103      page-faults               #    0.216 M/sec                  
+           557,495      cycles                    #    1.171 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           367,433      instructions              #    0.71  insns per cycle        
-            71,246      branches                  #  162.467 M/sec                  
-             2,725      branch-misses             #    3.82% of all branches        
+           386,562      instructions              #    0.69  insns per cycle        
+            75,433      branches                  #  158.396 M/sec                  
+             2,951      branch-misses             #    3.91% of all branches        
+           103,195      L1-dcache-loads           #  216.692 M/sec                  
+     <not counted>      L1-dcache-load-misses      (0.00%)
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
 
-       0.000849549 seconds time elapsed
+       0.000914362 seconds time elapsed
 

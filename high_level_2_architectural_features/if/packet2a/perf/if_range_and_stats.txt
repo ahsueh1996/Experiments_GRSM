@@ -1,18 +1,22 @@
-# started on Fri Oct 13 15:22:35 2017
+# started on Thu Oct 19 16:10:21 2017
 
 
- Performance counter stats for 'bin/if_range_and':
+ Performance counter stats for 'packet2a/bin/if_range_and 1 0':
 
-          0.426628      task-clock (msec)         #    0.522 CPUs utilized          
+          0.433919      task-clock (msec)         #    0.513 CPUs utilized          
                  0      context-switches          #    0.000 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               100      page-faults               #    0.234 M/sec                  
-           504,248      cycles                    #    1.182 GHz                    
+               102      page-faults               #    0.235 M/sec                  
+           511,264      cycles                    #    1.178 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           361,433      instructions              #    0.72  insns per cycle        
-            70,415      branches                  #  165.050 M/sec                  
-             2,812      branch-misses             #    3.99% of all branches        
+           375,842      instructions              #    0.74  insns per cycle        
+            73,520      branches                  #  169.433 M/sec                  
+             2,837      branch-misses             #    3.86% of all branches        
+            99,910      L1-dcache-loads           #  230.250 M/sec                  
+     <not counted>      L1-dcache-load-misses    
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
 
-       0.000816654 seconds time elapsed
+       0.000845360 seconds time elapsed
 
