@@ -1,0 +1,22 @@
+# started on Thu Oct 19 17:18:50 2017
+
+
+ Performance counter stats for 'omni/bin/loop 512':
+
+        703.412635      task-clock (msec)         #    0.999 CPUs utilized          
+                72      context-switches          #    0.102 K/sec                  
+                 1      cpu-migrations            #    0.001 K/sec                  
+               613      page-faults               #    0.871 K/sec                  
+     2,071,824,575      cycles                    #    2.945 GHz                      (49.99%)
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     3,230,489,781      instructions              #    1.56  insns per cycle          (62.50%)
+       135,879,494      branches                  #  193.172 M/sec                    (62.48%)
+           276,487      branch-misses             #    0.20% of all branches          (62.50%)
+     1,609,814,075      L1-dcache-loads           # 2288.577 M/sec                    (62.58%)
+       134,522,019      L1-dcache-load-misses     #    8.36% of all L1-dcache hits    (62.68%)
+       134,295,784      LLC-loads                 #  190.920 M/sec                    (50.08%)
+             4,472      LLC-load-misses           #    0.00% of all LL-cache hits     (49.99%)
+
+       0.704340779 seconds time elapsed
+
