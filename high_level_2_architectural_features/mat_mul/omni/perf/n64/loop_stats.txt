@@ -1,0 +1,22 @@
+# started on Thu Oct 19 14:43:09 2017
+
+
+ Performance counter stats for 'omni/bin/loop 64':
+
+          2.524335      task-clock (msec)         #    0.847 CPUs utilized          
+                 1      context-switches          #    0.396 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               108      page-faults               #    0.043 M/sec                  
+         1,193,002      cycles                    #    0.473 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+         5,287,325      instructions              #    4.43  insns per cycle        
+           351,571      branches                  #  139.273 M/sec                  
+             7,274      branch-misses             #    2.07% of all branches        
+         3,289,918      L1-dcache-loads           # 1303.281 M/sec                  
+             4,044      L1-dcache-load-misses     #    0.12% of all L1-dcache hits    (59.89%)
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
+
+       0.002980266 seconds time elapsed
+
