@@ -1,0 +1,22 @@
+# started on Thu Oct 19 16:36:19 2017
+
+
+ Performance counter stats for 'omni/bin/elif 500 0':
+
+          0.453063      task-clock (msec)         #    0.527 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               103      page-faults               #    0.227 M/sec                  
+           533,928      cycles                    #    1.178 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+           379,437      instructions              #    0.71  insns per cycle        
+            74,163      branches                  #  163.692 M/sec                  
+             2,849      branch-misses             #    3.84% of all branches        
+           100,835      L1-dcache-loads           #  222.563 M/sec                  
+     <not counted>      L1-dcache-load-misses    
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
+
+       0.000859746 seconds time elapsed
+

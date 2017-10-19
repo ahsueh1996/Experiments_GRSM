@@ -1,22 +1,22 @@
-# started on Thu Oct 19 16:05:58 2017
+# started on Thu Oct 19 16:34:07 2017
 
 
  Performance counter stats for 'omni/bin/if_range_and 1 0':
 
-          0.457441      task-clock (msec)         #    0.523 CPUs utilized          
-                 1      context-switches          #    0.002 M/sec                  
+          0.440015      task-clock (msec)         #    0.537 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               103      page-faults               #    0.225 M/sec                  
-           536,041      cycles                    #    1.172 GHz                    
+               102      page-faults               #    0.232 M/sec                  
+           518,347      cycles                    #    1.178 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           388,611      instructions              #    0.72  insns per cycle        
-            75,923      branches                  #  165.973 M/sec                  
-             2,925      branch-misses             #    3.85% of all branches        
-           103,835      L1-dcache-loads           #  226.991 M/sec                  
-     <not counted>      L1-dcache-load-misses      (0.00%)
+           375,656      instructions              #    0.72  insns per cycle        
+            73,504      branches                  #  167.049 M/sec                  
+             2,797      branch-misses             #    3.81% of all branches        
+            99,825      L1-dcache-loads           #  226.867 M/sec                  
+     <not counted>      L1-dcache-load-misses    
      <not counted>      LLC-loads                  (0.00%)
      <not counted>      LLC-load-misses            (0.00%)
 
-       0.000874693 seconds time elapsed
+       0.000819028 seconds time elapsed
 

@@ -1,22 +1,22 @@
-# started on Thu Oct 19 16:05:56 2017
+# started on Thu Oct 19 16:34:06 2017
 
 
  Performance counter stats for 'omni/bin/if_range_naive 1 0':
 
-          0.445172      task-clock (msec)         #    0.526 CPUs utilized          
+          0.455211      task-clock (msec)         #    0.517 CPUs utilized          
                  0      context-switches          #    0.000 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               103      page-faults               #    0.231 M/sec                  
-           524,995      cycles                    #    1.179 GHz                    
+               103      page-faults               #    0.226 M/sec                  
+           536,988      cycles                    #    1.180 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           381,410      instructions              #    0.73  insns per cycle        
-            74,526      branches                  #  167.409 M/sec                  
-             2,860      branch-misses             #    3.84% of all branches        
-           101,538      L1-dcache-loads           #  228.087 M/sec                  
+           381,756      instructions              #    0.71  insns per cycle        
+            74,483      branches                  #  163.623 M/sec                  
+             2,856      branch-misses             #    3.83% of all branches        
+           101,756      L1-dcache-loads           #  223.536 M/sec                  
      <not counted>      L1-dcache-load-misses    
      <not counted>      LLC-loads                  (0.00%)
      <not counted>      LLC-load-misses            (0.00%)
 
-       0.000846407 seconds time elapsed
+       0.000880140 seconds time elapsed
 

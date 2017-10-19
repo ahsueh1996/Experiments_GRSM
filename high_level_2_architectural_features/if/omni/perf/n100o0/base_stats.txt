@@ -1,22 +1,22 @@
-# started on Thu Oct 19 16:08:39 2017
+# started on Thu Oct 19 16:35:16 2017
 
 
  Performance counter stats for 'omni/bin/base 100 0':
 
-          0.455964      task-clock (msec)         #    0.552 CPUs utilized          
+          0.463108      task-clock (msec)         #    0.515 CPUs utilized          
                  0      context-switches          #    0.000 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               103      page-faults               #    0.226 M/sec                  
-           537,861      cycles                    #    1.180 GHz                    
+               103      page-faults               #    0.222 M/sec                  
+           546,248      cycles                    #    1.180 GHz                    
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-           379,470      instructions              #    0.71  insns per cycle        
-            74,164      branches                  #  162.653 M/sec                  
-             2,824      branch-misses             #    3.81% of all branches        
-           100,836      L1-dcache-loads           #  221.149 M/sec                  
+           380,018      instructions              #    0.70  insns per cycle        
+            74,203      branches                  #  160.228 M/sec                  
+             2,884      branch-misses             #    3.89% of all branches        
+           101,299      L1-dcache-loads           #  218.737 M/sec                  
      <not counted>      L1-dcache-load-misses    
      <not counted>      LLC-loads                  (0.00%)
      <not counted>      LLC-load-misses            (0.00%)
 
-       0.000825593 seconds time elapsed
+       0.000898368 seconds time elapsed
 
