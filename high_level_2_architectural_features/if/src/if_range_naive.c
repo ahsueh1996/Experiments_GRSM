@@ -14,15 +14,17 @@ int main(int argc, char *argv[]) {
 	int b = O * N;
 	int c = a + 707 * N;
 	int d = b + 707 * N;
+	int i = 0;
 	
-	if (x > 0) {
-		if (y > 0){
-			if (x < a) {
-				if (y < b) {
-					
+	if (x > a) {
+		if (y > b){
+			if (x < c) {
+				if (y < d) {
+					i ++;
 				}
 			}
 		}
 	}
+	i--;
 	return 0;
 }

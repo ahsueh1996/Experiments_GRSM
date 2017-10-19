@@ -16,5 +16,7 @@ int main(int argc, char *argv[]) {
 	int d = b + 707 * N;
 	// ideally any random point will have a 50%
 	// of being in the range
+	// this next int i is the workload
+	int i = 0;
 	return 0;
 }
