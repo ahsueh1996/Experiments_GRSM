@@ -1,22 +1,22 @@
-# started on Wed Oct 18 17:01:09 2017
+# started on Thu Oct 19 13:35:12 2017
 
 
- Performance counter stats for 'omni/bin/loop 2048':
+ Performance counter stats for 'omni/bin/loop 1024':
 
-         29.910509      task-clock (msec)         #    0.159 CPUs utilized          
-                 6      context-switches          #    0.201 K/sec                  
-                 1      cpu-migrations            #    0.033 K/sec                  
-             2,150      page-faults               #    0.072 M/sec                  
-        71,407,582      cycles                    #    2.387 GHz                      (43.50%)
+       5540.163971      task-clock (msec)         #    0.999 CPUs utilized          
+               559      context-switches          #    0.101 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+             1,670      page-faults               #    0.301 K/sec                  
+    16,485,884,853      cycles                    #    2.976 GHz                      (50.00%)
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-        27,248,185      instructions              #    0.38  insns per cycle          (61.79%)
-         6,883,577      branches                  #  230.139 M/sec                    (65.00%)
-            14,534      branch-misses             #    0.21% of all branches          (66.60%)
-        10,751,347      L1-dcache-loads           #  359.450 M/sec                    (69.97%)
-           729,729      L1-dcache-load-misses     #    6.79% of all L1-dcache hits    (66.60%)
-           256,662      LLC-loads                 #    8.581 M/sec                    (48.13%)
-           120,690      LLC-load-misses           #   47.02% of all LL-cache hits     (43.54%)
+    25,801,941,508      instructions              #    1.57  insns per cycle          (62.49%)
+     1,081,693,337      branches                  #  195.246 M/sec                    (62.50%)
+         1,114,554      branch-misses             #    0.10% of all branches          (62.49%)
+    12,906,319,394      L1-dcache-loads           # 2329.592 M/sec                    (62.52%)
+     1,076,483,817      L1-dcache-load-misses     #    8.34% of all L1-dcache hits    (62.52%)
+     1,074,670,810      LLC-loads                 #  193.978 M/sec                    (50.01%)
+            68,803      LLC-load-misses           #    0.01% of all LL-cache hits     (50.00%)
 
-       0.187755146 seconds time elapsed
+       5.544149125 seconds time elapsed
 
