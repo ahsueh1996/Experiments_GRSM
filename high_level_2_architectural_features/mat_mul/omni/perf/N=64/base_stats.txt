@@ -1,0 +1,22 @@
+# started on Thu Oct 19 14:43:09 2017
+
+
+ Performance counter stats for 'omni/bin/base 64':
+
+          0.470462      task-clock (msec)         #    0.528 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               103      page-faults               #    0.219 M/sec                  
+           554,996      cycles                    #    1.180 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+           377,271      instructions              #    0.68  insns per cycle        
+            73,348      branches                  #  155.906 M/sec                  
+             2,938      branch-misses             #    4.01% of all branches        
+           100,818      L1-dcache-loads           #  214.296 M/sec                  
+     <not counted>      L1-dcache-load-misses    
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
+
+       0.000891524 seconds time elapsed
+

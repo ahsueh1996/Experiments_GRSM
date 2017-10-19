@@ -1,0 +1,22 @@
+# started on Thu Oct 19 14:45:18 2017
+
+
+ Performance counter stats for 'omni/bin/loop_ikj 512':
+
+        475.425391      task-clock (msec)         #    0.998 CPUs utilized          
+                49      context-switches          #    0.103 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               866      page-faults               #    0.002 M/sec                  
+     1,382,339,044      cycles                    #    2.908 GHz                      (50.11%)
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     4,700,000,641      instructions              #    3.40  insns per cycle          (62.65%)
+       135,378,140      branches                  #  284.752 M/sec                    (62.74%)
+           276,746      branch-misses             #    0.20% of all branches          (62.79%)
+     2,008,700,676      L1-dcache-loads           # 4225.060 M/sec                    (62.81%)
+         8,595,419      L1-dcache-load-misses     #    0.43% of all L1-dcache hits    (62.58%)
+           155,564      LLC-loads                 #    0.327 M/sec                    (49.77%)
+             1,033      LLC-load-misses           #    0.66% of all LL-cache hits     (49.68%)
+
+       0.476224355 seconds time elapsed
+
