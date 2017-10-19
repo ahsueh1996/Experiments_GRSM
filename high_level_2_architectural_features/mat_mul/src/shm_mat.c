@@ -3,7 +3,7 @@
 #include <sys/ipc.h>
 #include <stdlib.h>
 
-main (int argc, char* argv[]) {
+int main (int argc, char* argv[]) {
 	int N = atoi(argv[1]);
 	key_t key;
 	int shmid;
@@ -21,4 +21,5 @@ main (int argc, char* argv[]) {
 			shm[i][j] = rand()%256;
 		}
 	}	
+	return 0;
 }

@@ -3,7 +3,7 @@
 #include <sys/ipc.h>
 #include <stdio.h>
 
-main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
 	int N = atoi(argv[1]);
 	key_t key = 17;
 	int shmid;
@@ -24,4 +24,5 @@ main(int argc, char* argv[]) {
 			}	
 		}
 	}	
+	return 0;
 }
