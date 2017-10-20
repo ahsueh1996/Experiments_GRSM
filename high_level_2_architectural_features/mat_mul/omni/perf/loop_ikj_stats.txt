@@ -1,22 +1,22 @@
-# started on Thu Oct 19 15:11:44 2017
+# started on Thu Oct 19 19:48:40 2017
 
 
- Performance counter stats for 'omni/bin/loop_ikj 64':
+ Performance counter stats for 'omni/bin/loop_ikj 1024':
 
-          2.883652      task-clock (msec)         #    0.867 CPUs utilized          
-                 0      context-switches          #    0.000 K/sec                  
+       3715.238925      task-clock (msec)         #    0.999 CPUs utilized          
+               376      context-switches          #    0.101 K/sec                  
                  0      cpu-migrations            #    0.000 K/sec                  
-               112      page-faults               #    0.039 M/sec                  
-         1,192,965      cycles                    #    0.414 GHz                    
+             2,148      page-faults               #    0.578 K/sec                  
+    11,040,233,751      cycles                    #    2.972 GHz                      (49.97%)
    <not supported>      stalled-cycles-frontend  
    <not supported>      stalled-cycles-backend   
-         6,373,989      instructions              #    5.34  insns per cycle        
-           351,602      branches                  #  121.929 M/sec                  
-             7,654      branch-misses             #    2.18% of all branches        
-         4,076,815      L1-dcache-loads           # 1413.768 M/sec                  
-             4,512      L1-dcache-load-misses     #    0.11% of all L1-dcache hits    (64.87%)
-     <not counted>      LLC-loads                  (0.00%)
-     <not counted>      LLC-load-misses            (0.00%)
+    37,605,531,358      instructions              #    3.41  insns per cycle          (62.48%)
+     1,080,242,648      branches                  #  290.760 M/sec                    (62.49%)
+         1,143,219      branch-misses             #    0.11% of all branches          (62.55%)
+    16,121,840,433      L1-dcache-loads           # 4339.382 M/sec                    (62.55%)
+        68,041,130      L1-dcache-load-misses     #    0.42% of all L1-dcache hits    (62.54%)
+         1,051,884      LLC-loads                 #    0.283 M/sec                    (50.00%)
+            15,056      LLC-load-misses           #    1.43% of all LL-cache hits     (49.97%)
 
-       0.003327237 seconds time elapsed
+       3.718101049 seconds time elapsed
 

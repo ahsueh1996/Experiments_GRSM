@@ -1,0 +1,22 @@
+# started on Thu Oct 19 20:07:53 2017
+
+
+ Performance counter stats for 'omni/bin/elif_r 2048 0':
+
+          0.441650      task-clock (msec)         #    0.553 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               103      page-faults               #    0.233 M/sec                  
+           520,706      cycles                    #    1.179 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+           395,018      instructions              #    0.76  insns per cycle        
+            79,698      branches                  #  180.455 M/sec                  
+             3,160      branch-misses             #    3.96% of all branches        
+           112,626      L1-dcache-loads           #  255.012 M/sec                  
+     <not counted>      L1-dcache-load-misses    
+     <not counted>      LLC-loads                  (0.00%)
+     <not counted>      LLC-load-misses            (0.00%)
+
+       0.000798844 seconds time elapsed
+
