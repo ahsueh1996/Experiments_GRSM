@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:59:09 2017
+
+
+ Performance counter stats for 'packet2a/bin/if_range_naive_r 5096 0':
+
+          0.595030      task-clock (msec)         #    0.450 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                28      page-faults               #    0.047 M/sec                  
+           1177931      cycles                    #    1.980 GHz                    
+            434320      instructions              #    0.37  insn per cycle         
+             59503      branches                  #  100.000 M/sec                  
+              9232      branch-misses             #   15.52% of all branches        
+            143018      L1-dcache-loads           #  240.354 M/sec                  
+              3004      L1-dcache-load-misses     #    2.10% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.001321460 seconds time elapsed
+

@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:51:27 2017
+
+
+ Performance counter stats for 'packet2a/bin/base 500 103':
+
+          0.552020      task-clock (msec)         #    0.465 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.049 M/sec                  
+           1090312      cycles                    #    1.975 GHz                    
+            361477      instructions              #    0.33  insn per cycle         
+             47939      branches                  #   86.843 M/sec                  
+              8874      branch-misses             #   18.51% of all branches        
+             86510      L1-dcache-loads           #  156.715 M/sec                  
+              2899      L1-dcache-load-misses     #    3.35% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.001187090 seconds time elapsed
+

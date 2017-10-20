@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:50:43 2017
+
+
+ Performance counter stats for 'packet2a/bin/if_range_and 100 0':
+
+          0.611020      task-clock (msec)         #    0.495 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.044 M/sec                  
+           1211813      cycles                    #    1.983 GHz                    
+            361115      instructions              #    0.30  insn per cycle         
+             47996      branches                  #   78.551 M/sec                  
+              8821      branch-misses             #   18.38% of all branches        
+             86408      L1-dcache-loads           #  141.416 M/sec                  
+              2865      L1-dcache-load-misses     #    3.32% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.001233360 seconds time elapsed
+

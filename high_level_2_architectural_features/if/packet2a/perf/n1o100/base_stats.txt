@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:57:14 2017
+
+
+ Performance counter stats for 'packet2a/bin/base 1 100':
+
+          0.758610      task-clock (msec)         #    0.491 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.036 M/sec                  
+           1497075      cycles                    #    1.973 GHz                    
+            366537      instructions              #    0.24  insn per cycle         
+             48723      branches                  #   64.227 M/sec                  
+              8023      branch-misses             #   16.47% of all branches        
+             88200      L1-dcache-loads           #  116.265 M/sec                  
+              2841      L1-dcache-load-misses     #    3.22% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.001546580 seconds time elapsed
+

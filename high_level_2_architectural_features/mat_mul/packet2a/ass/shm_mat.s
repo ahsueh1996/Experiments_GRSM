@@ -1,107 +1,127 @@
+	.cpu generic+fp+simd
 	.file	"shm_mat.c"
 	.text
-.globl main
-	.type	main, @function
+	.align	2
+	.global	main
+	.type	main, %function
 main:
-.LFB0:
+.LFB2:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	pushq	%r13
-	pushq	%r12
-	pushq	%rbx
-	subq	$72, %rsp
-	movl	%edi, -84(%rbp)
-	movq	%rsi, -96(%rbp)
-	movq	-96(%rbp), %rax
-	addq	$8, %rax
-	movq	(%rax), %rax
-	movq	%rax, %rdi
-	.cfi_offset 3, -40
-	.cfi_offset 12, -32
-	.cfi_offset 13, -24
-	call	atoi
-	movl	%eax, -60(%rbp)
-	movl	-60(%rbp), %ebx
-	movslq	%ebx, %rax
-	subq	$1, %rax
-	movq	%rax, -72(%rbp)
-	movl	$17, -56(%rbp)
-	movl	-60(%rbp), %eax
-	movslq	%eax, %rdx
-	movl	-60(%rbp), %eax
-	cltq
-	imulq	%rdx, %rax
-	leaq	0(,%rax,4), %rcx
-	movl	-56(%rbp), %eax
-	movl	$950, %edx
-	movq	%rcx, %rsi
-	movl	%eax, %edi
-	call	shmget
-	movl	%eax, -52(%rbp)
-	cmpl	$-1, -52(%rbp)
-	jne	.L2
-	movl	$1, %edi
-	call	exit
+	stp	x29, x30, [sp, -128]!
+	.cfi_def_cfa_offset 128
+	.cfi_offset 29, -128
+	.cfi_offset 30, -120
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	stp	x19, x20, [sp,16]
+	stp	x21, x22, [sp,32]
+	str	x23, [sp,48]
+	.cfi_offset 19, -112
+	.cfi_offset 20, -104
+	.cfi_offset 21, -96
+	.cfi_offset 22, -88
+	.cfi_offset 23, -80
+	str	w0, [x29,76]
+	str	x1, [x29,64]
+	ldr	x0, [x29,64]
+	add	x0, x0, 8
+	ldr	x0, [x0]
+	bl	atoi
+	str	w0, [x29,116]
+	ldr	w23, [x29,116]
+	sxtw	x0, w23
+	sub	x0, x0, #1
+	str	x0, [x29,104]
+	sxtw	x0, w23
+	mov	x19, x0
+	mov	x20, 0
+	lsr	x0, x19, 59
+	lsl	x22, x20, 5
+	orr	x22, x0, x22
+	lsl	x21, x19, 5
+	mov	w0, 17
+	str	w0, [x29,100]
+	ldr	w1, [x29,116]
+	ldr	w0, [x29,116]
+	sxtw	x1, w1
+	sxtw	x0, w0
+	mul	x0, x1, x0
+	lsl	x1, x0, 2
+	ldr	w0, [x29,100]
+	mov	w2, 950
+	bl	shmget
+	str	w0, [x29,96]
+	ldr	w0, [x29,96]
+	cmn	w0, #1
+	bne	.L2
+	mov	w0, 1
+	bl	exit
 .L2:
-	movl	-52(%rbp), %eax
-	movl	$0, %edx
-	movl	$0, %esi
-	movl	%eax, %edi
-	call	shmat
-	movq	%rax, -48(%rbp)
-	cmpq	$-1, -48(%rbp)
-	jne	.L3
-	movl	$1, %edi
-	call	exit
+	ldr	w0, [x29,96]
+	mov	x1, 0
+	mov	w2, 0
+	bl	shmat
+	str	x0, [x29,88]
+	ldr	x0, [x29,88]
+	cmn	x0, #1
+	bne	.L3
+	mov	w0, 1
+	bl	exit
 .L3:
-	movl	$0, -40(%rbp)
-	jmp	.L4
+	str	wzr, [x29,124]
+	b	.L4
 .L7:
-	movl	$0, -36(%rbp)
-	jmp	.L5
+	str	wzr, [x29,120]
+	b	.L5
 .L6:
-	movl	-40(%rbp), %eax
-	movslq	%eax, %rdx
-	movslq	%ebx, %rax
-	imulq	%rdx, %rax
-	salq	$2, %rax
-	movq	%rax, %r12
-	addq	-48(%rbp), %r12
-	movl	-36(%rbp), %r13d
-	call	rand
-	movl	%eax, %edx
-	sarl	$31, %edx
-	shrl	$24, %edx
-	addl	%edx, %eax
-	andl	$255, %eax
-	subl	%edx, %eax
-	movl	%eax, %edx
-	movslq	%r13d, %rax
-	movl	%edx, (%r12,%rax,4)
-	addl	$1, -36(%rbp)
+	ldrsw	x1, [x29,124]
+	sxtw	x0, w23
+	mul	x0, x1, x0
+	lsl	x0, x0, 2
+	ldr	x1, [x29,88]
+	add	x19, x1, x0
+	bl	rand
+	mov	w1, w0
+	asr	w0, w1, 31
+	lsr	w0, w0, 24
+	add	w1, w1, w0
+	and	w1, w1, 255
+	sub	w0, w1, w0
+	mov	w1, w0
+	ldrsw	x0, [x29,120]
+	str	w1, [x19,x0,lsl 2]
+	ldr	w0, [x29,120]
+	add	w0, w0, 1
+	str	w0, [x29,120]
 .L5:
-	movl	-36(%rbp), %eax
-	cmpl	-60(%rbp), %eax
-	jl	.L6
-	addl	$1, -40(%rbp)
+	ldr	w1, [x29,120]
+	ldr	w0, [x29,116]
+	cmp	w1, w0
+	blt	.L6
+	ldr	w0, [x29,124]
+	add	w0, w0, 1
+	str	w0, [x29,124]
 .L4:
-	movl	-40(%rbp), %eax
-	cmpl	-60(%rbp), %eax
-	jl	.L7
-	movl	$0, %eax
-	addq	$72, %rsp
-	popq	%rbx
-	popq	%r12
-	popq	%r13
-	leave
-	.cfi_def_cfa 7, 8
+	ldr	w1, [x29,124]
+	ldr	w0, [x29,116]
+	cmp	w1, w0
+	blt	.L7
+	mov	w0, 0
+	ldp	x19, x20, [sp,16]
+	ldp	x21, x22, [sp,32]
+	ldr	x23, [sp,48]
+	ldp	x29, x30, [sp], 128
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 23
+	.cfi_restore 22
+	.cfi_restore 21
+	.cfi_restore 20
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE0:
+.LFE2:
 	.size	main, .-main
-	.ident	"GCC: (GNU) 4.4.7 20120313 (Red Hat 4.4.7-18)"
-	.section	.note.GNU-stack,"",@progbits
+	.ident	"GCC: (GNU) 4.8.5 20150623 (Red Hat 4.8.5-16)"
+	.section	.note.GNU-stack,"",%progbits

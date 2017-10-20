@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:51:29 2017
+
+
+ Performance counter stats for 'packet2a/bin/elif 500 103':
+
+          0.553280      task-clock (msec)         #    0.471 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                28      page-faults               #    0.051 M/sec                  
+           1093168      cycles                    #    1.976 GHz                    
+            372906      instructions              #    0.34  insn per cycle         
+             50001      branches                  #   90.372 M/sec                  
+              8169      branch-misses             #   16.34% of all branches        
+             89254      L1-dcache-loads           #  161.318 M/sec                  
+              2875      L1-dcache-load-misses     #    3.22% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.001175570 seconds time elapsed
+
