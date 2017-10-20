@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:36:10 2017
+
+
+ Performance counter stats for 'packet2a/bin/loop 1024':
+
+      42223.324760      task-clock (msec)         #    1.000 CPUs utilized          
+                32      context-switches          #    0.001 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               172      page-faults               #    0.004 K/sec                  
+       84446347946      cycles                    #    2.000 GHz                    
+       28118236657      instructions              #    0.33  insn per cycle         
+        1095221536      branches                  #   25.939 M/sec                  
+           3763509      branch-misses             #    0.34% of all branches        
+       12938671904      L1-dcache-loads           #  306.434 M/sec                  
+        1079335151      L1-dcache-load-misses     #    8.34% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+      42.224523400 seconds time elapsed
+

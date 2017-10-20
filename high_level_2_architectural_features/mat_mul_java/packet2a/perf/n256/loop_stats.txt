@@ -1,0 +1,20 @@
+# started on Fri Oct 20 01:41:01 2017
+
+
+ Performance counter stats for 'packet2a/bin/loop 256':
+
+        652.726460      task-clock (msec)         #    0.999 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                33      page-faults               #    0.051 K/sec                  
+        1305443082      cycles                    #    2.000 GHz                    
+         440646099      instructions              #    0.34  insn per cycle         
+          17262333      branches                  #   26.447 M/sec                  
+            115775      branch-misses             #    0.67% of all branches        
+         202690187      L1-dcache-loads           #  310.529 M/sec                  
+          16880056      L1-dcache-load-misses     #    8.33% of all L1-dcache hits  
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.653373210 seconds time elapsed
+
