@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import java.util.Random;
 
+@BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
 @Measurement(iterations=5,time=1,timeUnit=TimeUnit.SECONDS)
 @Fork(2)

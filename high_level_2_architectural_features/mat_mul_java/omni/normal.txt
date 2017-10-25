@@ -1,0 +1,419 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 64)
+
+# Run progress: 0.00% complete, ETA 00:02:40
+# Fork: 1 of 2
+# Warmup Iteration   1: ≈ 10⁻³ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+
+# Run progress: 5.00% complete, ETA 00:02:40
+# Fork: 2 of 2
+# Warmup Iteration   1: ≈ 10⁻³ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+
+
+Result "mat_mul.MyBenchmark.loop":
+  ≈ 10⁻⁴ s/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 128)
+
+# Run progress: 10.00% complete, ETA 00:02:31
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.002 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+
+# Run progress: 15.00% complete, ETA 00:02:22
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.003 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.002 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.002, 0.002, 0.002), stdev = 0.001
+  CI (99.9%): [0.002, 0.002] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 256)
+
+# Run progress: 20.00% complete, ETA 00:02:13
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.022 s/op
+# Warmup Iteration   2: 0.021 s/op
+# Warmup Iteration   3: 0.023 s/op
+Iteration   1: 0.022 s/op
+Iteration   2: 0.021 s/op
+Iteration   3: 0.021 s/op
+Iteration   4: 0.021 s/op
+Iteration   5: 0.021 s/op
+
+# Run progress: 25.00% complete, ETA 00:02:05
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.022 s/op
+# Warmup Iteration   2: 0.021 s/op
+# Warmup Iteration   3: 0.023 s/op
+Iteration   1: 0.021 s/op
+Iteration   2: 0.021 s/op
+Iteration   3: 0.022 s/op
+Iteration   4: 0.023 s/op
+Iteration   5: 0.023 s/op
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.022 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.021, 0.022, 0.023), stdev = 0.001
+  CI (99.9%): [0.021, 0.023] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 512)
+
+# Run progress: 30.00% complete, ETA 00:01:57
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.248 s/op
+# Warmup Iteration   2: 0.243 s/op
+# Warmup Iteration   3: 0.243 s/op
+Iteration   1: 0.243 s/op
+Iteration   2: 0.243 s/op
+Iteration   3: 0.243 s/op
+Iteration   4: 0.243 s/op
+Iteration   5: 0.243 s/op
+
+# Run progress: 35.00% complete, ETA 00:01:52
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.248 s/op
+# Warmup Iteration   2: 0.244 s/op
+# Warmup Iteration   3: 0.243 s/op
+Iteration   1: 0.243 s/op
+Iteration   2: 0.243 s/op
+Iteration   3: 0.243 s/op
+Iteration   4: 0.243 s/op
+Iteration   5: 0.242 s/op
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.243 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.242, 0.243, 0.243), stdev = 0.001
+  CI (99.9%): [0.243, 0.243] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 1024)
+
+# Run progress: 40.00% complete, ETA 00:01:45
+# Fork: 1 of 2
+# Warmup Iteration   1: 2.069 s/op
+# Warmup Iteration   2: 2.053 s/op
+# Warmup Iteration   3: 2.041 s/op
+Iteration   1: 2.041 s/op
+Iteration   2: 2.041 s/op
+Iteration   3: 2.041 s/op
+Iteration   4: 2.040 s/op
+Iteration   5: 2.042 s/op
+
+# Run progress: 45.00% complete, ETA 00:01:46
+# Fork: 2 of 2
+# Warmup Iteration   1: 2.077 s/op
+# Warmup Iteration   2: 2.057 s/op
+# Warmup Iteration   3: 2.046 s/op
+Iteration   1: 2.045 s/op
+Iteration   2: 2.046 s/op
+Iteration   3: 2.047 s/op
+Iteration   4: 2.046 s/op
+Iteration   5: 2.055 s/op
+
+
+Result "mat_mul.MyBenchmark.loop":
+  2.044 ±(99.9%) 0.007 s/op [Average]
+  (min, avg, max) = (2.040, 2.044, 2.055), stdev = 0.004
+  CI (99.9%): [2.038, 2.051] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 64)
+
+# Run progress: 50.00% complete, ETA 00:01:44
+# Fork: 1 of 2
+# Warmup Iteration   1: ≈ 10⁻⁴ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+
+# Run progress: 55.00% complete, ETA 00:01:31
+# Fork: 2 of 2
+# Warmup Iteration   1: ≈ 10⁻⁴ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  ≈ 10⁻⁴ s/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 128)
+
+# Run progress: 60.00% complete, ETA 00:01:20
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.001 s/op
+# Warmup Iteration   2: 0.001 s/op
+# Warmup Iteration   3: 0.001 s/op
+Iteration   1: 0.001 s/op
+Iteration   2: 0.001 s/op
+Iteration   3: 0.001 s/op
+Iteration   4: 0.001 s/op
+Iteration   5: 0.001 s/op
+
+# Run progress: 65.00% complete, ETA 00:01:09
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.001 s/op
+# Warmup Iteration   2: 0.001 s/op
+# Warmup Iteration   3: 0.001 s/op
+Iteration   1: 0.001 s/op
+Iteration   2: 0.001 s/op
+Iteration   3: 0.001 s/op
+Iteration   4: 0.001 s/op
+Iteration   5: 0.001 s/op
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.001 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.001, 0.001, 0.001), stdev = 0.001
+  CI (99.9%): [0.001, 0.001] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 256)
+
+# Run progress: 70.00% complete, ETA 00:00:58
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.010 s/op
+# Warmup Iteration   2: 0.011 s/op
+# Warmup Iteration   3: 0.011 s/op
+Iteration   1: 0.011 s/op
+Iteration   2: 0.011 s/op
+Iteration   3: 0.011 s/op
+Iteration   4: 0.011 s/op
+Iteration   5: 0.011 s/op
+
+# Run progress: 75.00% complete, ETA 00:00:48
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.011 s/op
+# Warmup Iteration   2: 0.011 s/op
+# Warmup Iteration   3: 0.011 s/op
+Iteration   1: 0.011 s/op
+Iteration   2: 0.011 s/op
+Iteration   3: 0.011 s/op
+Iteration   4: 0.011 s/op
+Iteration   5: 0.011 s/op
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.011 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.011, 0.011, 0.011), stdev = 0.001
+  CI (99.9%): [0.011, 0.011] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 512)
+
+# Run progress: 80.00% complete, ETA 00:00:38
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.077 s/op
+# Warmup Iteration   2: 0.083 s/op
+# Warmup Iteration   3: 0.083 s/op
+Iteration   1: 0.083 s/op
+Iteration   2: 0.083 s/op
+Iteration   3: 0.083 s/op
+Iteration   4: 0.083 s/op
+Iteration   5: 0.084 s/op
+
+# Run progress: 85.00% complete, ETA 00:00:28
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.077 s/op
+# Warmup Iteration   2: 0.083 s/op
+# Warmup Iteration   3: 0.083 s/op
+Iteration   1: 0.083 s/op
+Iteration   2: 0.083 s/op
+Iteration   3: 0.083 s/op
+Iteration   4: 0.083 s/op
+Iteration   5: 0.083 s/op
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.083 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.083, 0.083, 0.084), stdev = 0.001
+  CI (99.9%): [0.083, 0.084] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 1024)
+
+# Run progress: 90.00% complete, ETA 00:00:19
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.345 s/op
+# Warmup Iteration   2: 0.656 s/op
+# Warmup Iteration   3: 0.655 s/op
+Iteration   1: 0.655 s/op
+Iteration   2: 0.657 s/op
+Iteration   3: 0.656 s/op
+Iteration   4: 0.656 s/op
+Iteration   5: 0.656 s/op
+
+# Run progress: 95.00% complete, ETA 00:00:09
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.349 s/op
+# Warmup Iteration   2: 0.657 s/op
+# Warmup Iteration   3: 0.656 s/op
+Iteration   1: 0.656 s/op
+Iteration   2: 0.656 s/op
+Iteration   3: 0.655 s/op
+Iteration   4: 0.656 s/op
+Iteration   5: 0.656 s/op
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.656 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.655, 0.656, 0.657), stdev = 0.001
+  CI (99.9%): [0.655, 0.657] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:13
+
+Benchmark             (N_str)  Mode  Cnt   Score    Error  Units
+MyBenchmark.loop           64  avgt   10  ≈ 10⁻⁴            s/op
+MyBenchmark.loop          128  avgt   10   0.002 ±  0.001   s/op
+MyBenchmark.loop          256  avgt   10   0.022 ±  0.001   s/op
+MyBenchmark.loop          512  avgt   10   0.243 ±  0.001   s/op
+MyBenchmark.loop         1024  avgt   10   2.044 ±  0.007   s/op
+MyBenchmark.loop_ikj       64  avgt   10  ≈ 10⁻⁴            s/op
+MyBenchmark.loop_ikj      128  avgt   10   0.001 ±  0.001   s/op
+MyBenchmark.loop_ikj      256  avgt   10   0.011 ±  0.001   s/op
+MyBenchmark.loop_ikj      512  avgt   10   0.083 ±  0.001   s/op
+MyBenchmark.loop_ikj     1024  avgt   10   0.656 ±  0.001   s/op

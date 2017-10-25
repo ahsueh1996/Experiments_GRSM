@@ -1,0 +1,1239 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 64)
+
+# Run progress: 0.00% complete, ETA 00:02:40
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: ≈ 10⁻³ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 5.00% complete, ETA 00:02:43
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: ≈ 10⁻³ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  ≈ 10⁻⁴ s/op
+
+Secondary result "mat_mul.MyBenchmark.loop:CPI":
+  0.270 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-load-misses":
+  450.734 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-loads":
+  1051181.662 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-stores":
+  543934.789 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-icache-load-misses":
+  58.740 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-load-misses":
+  2.177 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-loads":
+  19.851 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-store-misses":
+  2.067 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-stores":
+  7.901 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branch-misses":
+  90.352 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branches":
+  412853.516 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:cycles":
+  942397.446 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-load-misses":
+  7.067 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-loads":
+  1054353.266 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-store-misses":
+  0.640 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-stores":
+  546723.137 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-load-misses":
+  2.956 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-loads":
+  2.027 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:instructions":
+  3495777.772 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 128)
+
+# Run progress: 10.00% complete, ETA 00:02:34
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.003 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 15.00% complete, ETA 00:02:26
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.003 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.002 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.002, 0.002, 0.002), stdev = 0.001
+  CI (99.9%): [0.002, 0.002] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:CPI":
+  0.268 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-load-misses":
+  158591.136 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-loads":
+  8476744.171 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-stores":
+  4306935.505 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-icache-load-misses":
+  622.521 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-load-misses":
+  16.872 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-loads":
+  223.824 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-store-misses":
+  10.259 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-stores":
+  128.052 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branch-misses":
+  16912.737 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branches":
+  3258203.297 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:cycles":
+  7458724.089 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-load-misses":
+  29.415 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-loads":
+  8489614.541 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-store-misses":
+  5.898 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-stores":
+  4321437.673 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-load-misses":
+  22.186 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-loads":
+  20.735 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:instructions":
+  27860477.971 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 256)
+
+# Run progress: 20.00% complete, ETA 00:02:17
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.021 s/op
+# Warmup Iteration   2: 0.021 s/op
+# Warmup Iteration   3: 0.021 s/op
+Iteration   1: 0.021 s/op
+Iteration   2: 0.022 s/op
+Iteration   3: 0.021 s/op
+Iteration   4: 0.021 s/op
+Iteration   5: 0.021 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 25.00% complete, ETA 00:02:09
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.022 s/op
+# Warmup Iteration   2: 0.023 s/op
+# Warmup Iteration   3: 0.021 s/op
+Iteration   1: 0.021 s/op
+Iteration   2: 0.022 s/op
+Iteration   3: 0.021 s/op
+Iteration   4: 0.021 s/op
+Iteration   5: 0.021 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.021 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.021, 0.021, 0.022), stdev = 0.001
+  CI (99.9%): [0.021, 0.022] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:CPI":
+  0.288 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-load-misses":
+  14903747.097 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-loads":
+  67704302.371 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-stores":
+  34250494.952 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-icache-load-misses":
+  3804.777 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-load-misses":
+  107.074 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-loads":
+  116270.324 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-store-misses":
+  93.342 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-stores":
+  1812.637 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branch-misses":
+  68381.330 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branches":
+  25711894.076 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:cycles":
+  63682088.066 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-load-misses":
+  411.391 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-loads":
+  67578253.572 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-store-misses":
+  49.277 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-stores":
+  34088380.336 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-load-misses":
+  200.768 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-loads":
+  228.342 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:instructions":
+  221150025.945 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 512)
+
+# Run progress: 30.00% complete, ETA 00:02:00
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.253 s/op
+# Warmup Iteration   2: 0.245 s/op
+# Warmup Iteration   3: 0.245 s/op
+Iteration   1: 0.245 s/op
+Iteration   2: 0.245 s/op
+Iteration   3: 0.245 s/op
+Iteration   4: 0.244 s/op
+Iteration   5: 0.244 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 35.00% complete, ETA 00:01:54
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.254 s/op
+# Warmup Iteration   2: 0.247 s/op
+# Warmup Iteration   3: 0.245 s/op
+Iteration   1: 0.245 s/op
+Iteration   2: 0.246 s/op
+Iteration   3: 0.245 s/op
+Iteration   4: 0.245 s/op
+Iteration   5: 0.245 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.245 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.244, 0.245, 0.246), stdev = 0.001
+  CI (99.9%): [0.244, 0.246] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:CPI":
+  0.417 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-load-misses":
+  285725587.180 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-loads":
+  539839719.460 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-stores":
+  270926748.220 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-icache-load-misses":
+  57234.460 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-load-misses":
+  1690.580 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-loads":
+  6716701.000 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-store-misses":
+  1074.820 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-stores":
+  29775.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branch-misses":
+  280197.980 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branches":
+  203490258.080 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:cycles":
+  733258219.340 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-load-misses":
+  2902.020 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-loads":
+  538425955.020 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-store-misses":
+  384.200 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-stores":
+  269770475.620 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-load-misses":
+  1395.120 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-loads":
+  1772.720 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:instructions":
+  1757183270.400 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 1024)
+
+# Run progress: 40.00% complete, ETA 00:01:48
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 2.084 s/op
+# Warmup Iteration   2: 2.065 s/op
+# Warmup Iteration   3: 2.051 s/op
+Iteration   1: 2.051 s/op
+Iteration   2: 2.050 s/op
+Iteration   3: 2.052 s/op
+Iteration   4: 2.049 s/op
+Iteration   5: 2.052 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 45.00% complete, ETA 00:01:48
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 2.086 s/op
+# Warmup Iteration   2: 2.071 s/op
+# Warmup Iteration   3: 2.058 s/op
+Iteration   1: 2.058 s/op
+Iteration   2: 2.059 s/op
+Iteration   3: 2.056 s/op
+Iteration   4: 2.058 s/op
+Iteration   5: 2.057 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  2.054 ±(99.9%) 0.006 s/op [Average]
+  (min, avg, max) = (2.049, 2.054, 2.059), stdev = 0.004
+  CI (99.9%): [2.048, 2.060] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:CPI":
+  0.437 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-load-misses":
+  2293881452.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-loads":
+  4332499642.900 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-dcache-stores":
+  2171913414.100 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:L1-icache-load-misses":
+  213951.000 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-load-misses":
+  13345.000 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-loads":
+  78397296.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-store-misses":
+  15658.900 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:LLC-stores":
+  137158.800 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branch-misses":
+  1163135.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:branches":
+  1630865527.800 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:cycles":
+  6173445284.800 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-load-misses":
+  14753.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-loads":
+  4325152826.200 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-store-misses":
+  2400.500 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:dTLB-stores":
+  2164349149.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-load-misses":
+  13236.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:iTLB-loads":
+  8783.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop:instructions":
+  14113654334.200 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 64)
+
+# Run progress: 50.00% complete, ETA 00:01:46
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: ≈ 10⁻⁴ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 55.00% complete, ETA 00:01:33
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: ≈ 10⁻⁴ s/op
+# Warmup Iteration   2: ≈ 10⁻⁴ s/op
+# Warmup Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   1: ≈ 10⁻⁴ s/op
+Iteration   2: ≈ 10⁻⁴ s/op
+Iteration   3: ≈ 10⁻⁴ s/op
+Iteration   4: ≈ 10⁻⁴ s/op
+Iteration   5: ≈ 10⁻⁴ s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  ≈ 10⁻⁴ s/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:CPI":
+  0.323 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-load-misses":
+  402.420 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-loads":
+  585337.557 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-stores":
+  419748.069 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-icache-load-misses":
+  29.474 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-load-misses":
+  1.754 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-loads":
+  10.130 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-store-misses":
+  1.172 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-stores":
+  3.175 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branch-misses":
+  88.822 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branches":
+  124672.113 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:cycles":
+  543710.518 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-load-misses":
+  4.853 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-loads":
+  584574.981 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-store-misses":
+  0.561 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-stores":
+  418225.472 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-load-misses":
+  1.632 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-loads":
+  2.451 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:instructions":
+  1680967.390 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 128)
+
+# Run progress: 60.00% complete, ETA 00:01:22
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.001 s/op
+# Warmup Iteration   2: 0.001 s/op
+# Warmup Iteration   3: 0.001 s/op
+Iteration   1: 0.001 s/op
+Iteration   2: 0.001 s/op
+Iteration   3: 0.001 s/op
+Iteration   4: 0.001 s/op
+Iteration   5: 0.001 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 65.00% complete, ETA 00:01:11
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.001 s/op
+# Warmup Iteration   2: 0.001 s/op
+# Warmup Iteration   3: 0.001 s/op
+Iteration   1: 0.001 s/op
+Iteration   2: 0.001 s/op
+Iteration   3: 0.001 s/op
+Iteration   4: 0.001 s/op
+Iteration   5: 0.001 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.001 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.001, 0.001, 0.001), stdev = 0.001
+  CI (99.9%): [0.001, 0.001] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:CPI":
+  0.331 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-load-misses":
+  133312.719 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-loads":
+  4453562.228 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-stores":
+  3282876.540 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-icache-load-misses":
+  273.842 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-load-misses":
+  13.644 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-loads":
+  128.571 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-store-misses":
+  6.690 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-stores":
+  39.634 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branch-misses":
+  297.145 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branches":
+  766888.585 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:cycles":
+  4088558.932 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-load-misses":
+  22.012 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-loads":
+  4458868.956 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-store-misses":
+  2.543 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-stores":
+  3268402.871 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-load-misses":
+  9.081 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-loads":
+  14.321 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:instructions":
+  12337506.597 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 256)
+
+# Run progress: 70.00% complete, ETA 00:01:00
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.011 s/op
+# Warmup Iteration   2: 0.011 s/op
+# Warmup Iteration   3: 0.011 s/op
+Iteration   1: 0.011 s/op
+Iteration   2: 0.011 s/op
+Iteration   3: 0.011 s/op
+Iteration   4: 0.011 s/op
+Iteration   5: 0.011 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 75.00% complete, ETA 00:00:49
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.010 s/op
+# Warmup Iteration   2: 0.011 s/op
+# Warmup Iteration   3: 0.011 s/op
+Iteration   1: 0.011 s/op
+Iteration   2: 0.011 s/op
+Iteration   3: 0.011 s/op
+Iteration   4: 0.011 s/op
+Iteration   5: 0.011 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.011 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.011, 0.011, 0.011), stdev = 0.001
+  CI (99.9%): [0.011, 0.011] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:CPI":
+  0.351 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-load-misses":
+  1092830.588 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-loads":
+  35190688.212 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-stores":
+  26063895.204 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-icache-load-misses":
+  2410.527 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-load-misses":
+  56.534 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-loads":
+  5518.621 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-store-misses":
+  51.111 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-stores":
+  243.740 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branch-misses":
+  68088.980 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branches":
+  5222922.189 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:cycles":
+  33083362.175 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-load-misses":
+  109.154 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-loads":
+  35069695.751 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-store-misses":
+  17.603 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-stores":
+  25969330.540 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-load-misses":
+  106.657 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-loads":
+  113.596 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:instructions":
+  94295734.666 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 512)
+
+# Run progress: 80.00% complete, ETA 00:00:39
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.078 s/op
+# Warmup Iteration   2: 0.085 s/op
+# Warmup Iteration   3: 0.084 s/op
+Iteration   1: 0.084 s/op
+Iteration   2: 0.084 s/op
+Iteration   3: 0.084 s/op
+Iteration   4: 0.084 s/op
+Iteration   5: 0.084 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 85.00% complete, ETA 00:00:29
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.077 s/op
+# Warmup Iteration   2: 0.084 s/op
+# Warmup Iteration   3: 0.084 s/op
+Iteration   1: 0.084 s/op
+Iteration   2: 0.084 s/op
+Iteration   3: 0.084 s/op
+Iteration   4: 0.084 s/op
+Iteration   5: 0.084 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.084 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.084, 0.084, 0.084), stdev = 0.001
+  CI (99.9%): [0.084, 0.084] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:CPI":
+  0.345 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-load-misses":
+  8573570.067 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-loads":
+  272879129.725 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-stores":
+  204255589.408 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-icache-load-misses":
+  24922.317 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-load-misses":
+  802.292 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-loads":
+  38917.425 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-store-misses":
+  434.150 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-stores":
+  6602.467 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branch-misses":
+  272217.583 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branches":
+  37490586.233 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:cycles":
+  250434175.983 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-load-misses":
+  888.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-loads":
+  273778274.742 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-store-misses":
+  85.608 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-stores":
+  203620087.450 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-load-misses":
+  368.217 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-loads":
+  280.775 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:instructions":
+  725212402.492 #/op
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop_ikj
+# Parameters: (N_str = 1024)
+
+# Run progress: 90.00% complete, ETA 00:00:19
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.354 s/op
+# Warmup Iteration   2: 0.661 s/op
+# Warmup Iteration   3: 0.660 s/op
+Iteration   1: 0.662 s/op
+Iteration   2: 0.661 s/op
+Iteration   3: 0.662 s/op
+Iteration   4: 0.661 s/op
+Iteration   5: 0.661 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 95.00% complete, ETA 00:00:09
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.354 s/op
+# Warmup Iteration   2: 0.667 s/op
+# Warmup Iteration   3: 0.660 s/op
+Iteration   1: 0.659 s/op
+Iteration   2: 0.660 s/op
+Iteration   3: 0.660 s/op
+Iteration   4: 0.660 s/op
+Iteration   5: 0.660 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop_ikj":
+  0.661 ±(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.659, 0.661, 0.662), stdev = 0.001
+  CI (99.9%): [0.659, 0.662] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:CPI":
+  0.344 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-load-misses":
+  68361035.450 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-loads":
+  2180965848.700 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-dcache-stores":
+  1628956472.300 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:L1-icache-load-misses":
+  119929.900 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-load-misses":
+  5583.200 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-loads":
+  262184.000 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-store-misses":
+  3635.450 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:LLC-stores":
+  26849.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branch-misses":
+  1112457.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:branches":
+  286070170.750 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:cycles":
+  1980925309.950 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-load-misses":
+  5809.200 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-loads":
+  2187771653.850 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-store-misses":
+  756.950 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:dTLB-stores":
+  1633189760.750 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-load-misses":
+  3574.150 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:iTLB-loads":
+  2069.400 #/op
+
+Secondary result "mat_mul.MyBenchmark.loop_ikj:instructions":
+  5753953640.100 #/op
+
+
+# Run complete. Total time: 00:03:16
+
+Benchmark                                   (N_str)  Mode  Cnt            Score    Error  Units
+MyBenchmark.loop                                 64  avgt   10           ≈ 10⁻⁴            s/op
+MyBenchmark.loop:CPI                             64  avgt    2            0.270            #/op
+MyBenchmark.loop:L1-dcache-load-misses           64  avgt    2          450.734            #/op
+MyBenchmark.loop:L1-dcache-loads                 64  avgt    2      1051181.662            #/op
+MyBenchmark.loop:L1-dcache-stores                64  avgt    2       543934.789            #/op
+MyBenchmark.loop:L1-icache-load-misses           64  avgt    2           58.740            #/op
+MyBenchmark.loop:LLC-load-misses                 64  avgt    2            2.177            #/op
+MyBenchmark.loop:LLC-loads                       64  avgt    2           19.851            #/op
+MyBenchmark.loop:LLC-store-misses                64  avgt    2            2.067            #/op
+MyBenchmark.loop:LLC-stores                      64  avgt    2            7.901            #/op
+MyBenchmark.loop:branch-misses                   64  avgt    2           90.352            #/op
+MyBenchmark.loop:branches                        64  avgt    2       412853.516            #/op
+MyBenchmark.loop:cycles                          64  avgt    2       942397.446            #/op
+MyBenchmark.loop:dTLB-load-misses                64  avgt    2            7.067            #/op
+MyBenchmark.loop:dTLB-loads                      64  avgt    2      1054353.266            #/op
+MyBenchmark.loop:dTLB-store-misses               64  avgt    2            0.640            #/op
+MyBenchmark.loop:dTLB-stores                     64  avgt    2       546723.137            #/op
+MyBenchmark.loop:iTLB-load-misses                64  avgt    2            2.956            #/op
+MyBenchmark.loop:iTLB-loads                      64  avgt    2            2.027            #/op
+MyBenchmark.loop:instructions                    64  avgt    2      3495777.772            #/op
+MyBenchmark.loop                                128  avgt   10            0.002 ±  0.001   s/op
+MyBenchmark.loop:CPI                            128  avgt    2            0.268            #/op
+MyBenchmark.loop:L1-dcache-load-misses          128  avgt    2       158591.136            #/op
+MyBenchmark.loop:L1-dcache-loads                128  avgt    2      8476744.171            #/op
+MyBenchmark.loop:L1-dcache-stores               128  avgt    2      4306935.505            #/op
+MyBenchmark.loop:L1-icache-load-misses          128  avgt    2          622.521            #/op
+MyBenchmark.loop:LLC-load-misses                128  avgt    2           16.872            #/op
+MyBenchmark.loop:LLC-loads                      128  avgt    2          223.824            #/op
+MyBenchmark.loop:LLC-store-misses               128  avgt    2           10.259            #/op
+MyBenchmark.loop:LLC-stores                     128  avgt    2          128.052            #/op
+MyBenchmark.loop:branch-misses                  128  avgt    2        16912.737            #/op
+MyBenchmark.loop:branches                       128  avgt    2      3258203.297            #/op
+MyBenchmark.loop:cycles                         128  avgt    2      7458724.089            #/op
+MyBenchmark.loop:dTLB-load-misses               128  avgt    2           29.415            #/op
+MyBenchmark.loop:dTLB-loads                     128  avgt    2      8489614.541            #/op
+MyBenchmark.loop:dTLB-store-misses              128  avgt    2            5.898            #/op
+MyBenchmark.loop:dTLB-stores                    128  avgt    2      4321437.673            #/op
+MyBenchmark.loop:iTLB-load-misses               128  avgt    2           22.186            #/op
+MyBenchmark.loop:iTLB-loads                     128  avgt    2           20.735            #/op
+MyBenchmark.loop:instructions                   128  avgt    2     27860477.971            #/op
+MyBenchmark.loop                                256  avgt   10            0.021 ±  0.001   s/op
+MyBenchmark.loop:CPI                            256  avgt    2            0.288            #/op
+MyBenchmark.loop:L1-dcache-load-misses          256  avgt    2     14903747.097            #/op
+MyBenchmark.loop:L1-dcache-loads                256  avgt    2     67704302.371            #/op
+MyBenchmark.loop:L1-dcache-stores               256  avgt    2     34250494.952            #/op
+MyBenchmark.loop:L1-icache-load-misses          256  avgt    2         3804.777            #/op
+MyBenchmark.loop:LLC-load-misses                256  avgt    2          107.074            #/op
+MyBenchmark.loop:LLC-loads                      256  avgt    2       116270.324            #/op
+MyBenchmark.loop:LLC-store-misses               256  avgt    2           93.342            #/op
+MyBenchmark.loop:LLC-stores                     256  avgt    2         1812.637            #/op
+MyBenchmark.loop:branch-misses                  256  avgt    2        68381.330            #/op
+MyBenchmark.loop:branches                       256  avgt    2     25711894.076            #/op
+MyBenchmark.loop:cycles                         256  avgt    2     63682088.066            #/op
+MyBenchmark.loop:dTLB-load-misses               256  avgt    2          411.391            #/op
+MyBenchmark.loop:dTLB-loads                     256  avgt    2     67578253.572            #/op
+MyBenchmark.loop:dTLB-store-misses              256  avgt    2           49.277            #/op
+MyBenchmark.loop:dTLB-stores                    256  avgt    2     34088380.336            #/op
+MyBenchmark.loop:iTLB-load-misses               256  avgt    2          200.768            #/op
+MyBenchmark.loop:iTLB-loads                     256  avgt    2          228.342            #/op
+MyBenchmark.loop:instructions                   256  avgt    2    221150025.945            #/op
+MyBenchmark.loop                                512  avgt   10            0.245 ±  0.001   s/op
+MyBenchmark.loop:CPI                            512  avgt    2            0.417            #/op
+MyBenchmark.loop:L1-dcache-load-misses          512  avgt    2    285725587.180            #/op
+MyBenchmark.loop:L1-dcache-loads                512  avgt    2    539839719.460            #/op
+MyBenchmark.loop:L1-dcache-stores               512  avgt    2    270926748.220            #/op
+MyBenchmark.loop:L1-icache-load-misses          512  avgt    2        57234.460            #/op
+MyBenchmark.loop:LLC-load-misses                512  avgt    2         1690.580            #/op
+MyBenchmark.loop:LLC-loads                      512  avgt    2      6716701.000            #/op
+MyBenchmark.loop:LLC-store-misses               512  avgt    2         1074.820            #/op
+MyBenchmark.loop:LLC-stores                     512  avgt    2        29775.300            #/op
+MyBenchmark.loop:branch-misses                  512  avgt    2       280197.980            #/op
+MyBenchmark.loop:branches                       512  avgt    2    203490258.080            #/op
+MyBenchmark.loop:cycles                         512  avgt    2    733258219.340            #/op
+MyBenchmark.loop:dTLB-load-misses               512  avgt    2         2902.020            #/op
+MyBenchmark.loop:dTLB-loads                     512  avgt    2    538425955.020            #/op
+MyBenchmark.loop:dTLB-store-misses              512  avgt    2          384.200            #/op
+MyBenchmark.loop:dTLB-stores                    512  avgt    2    269770475.620            #/op
+MyBenchmark.loop:iTLB-load-misses               512  avgt    2         1395.120            #/op
+MyBenchmark.loop:iTLB-loads                     512  avgt    2         1772.720            #/op
+MyBenchmark.loop:instructions                   512  avgt    2   1757183270.400            #/op
+MyBenchmark.loop                               1024  avgt   10            2.054 ±  0.006   s/op
+MyBenchmark.loop:CPI                           1024  avgt    2            0.437            #/op
+MyBenchmark.loop:L1-dcache-load-misses         1024  avgt    2   2293881452.400            #/op
+MyBenchmark.loop:L1-dcache-loads               1024  avgt    2   4332499642.900            #/op
+MyBenchmark.loop:L1-dcache-stores              1024  avgt    2   2171913414.100            #/op
+MyBenchmark.loop:L1-icache-load-misses         1024  avgt    2       213951.000            #/op
+MyBenchmark.loop:LLC-load-misses               1024  avgt    2        13345.000            #/op
+MyBenchmark.loop:LLC-loads                     1024  avgt    2     78397296.400            #/op
+MyBenchmark.loop:LLC-store-misses              1024  avgt    2        15658.900            #/op
+MyBenchmark.loop:LLC-stores                    1024  avgt    2       137158.800            #/op
+MyBenchmark.loop:branch-misses                 1024  avgt    2      1163135.300            #/op
+MyBenchmark.loop:branches                      1024  avgt    2   1630865527.800            #/op
+MyBenchmark.loop:cycles                        1024  avgt    2   6173445284.800            #/op
+MyBenchmark.loop:dTLB-load-misses              1024  avgt    2        14753.300            #/op
+MyBenchmark.loop:dTLB-loads                    1024  avgt    2   4325152826.200            #/op
+MyBenchmark.loop:dTLB-store-misses             1024  avgt    2         2400.500            #/op
+MyBenchmark.loop:dTLB-stores                   1024  avgt    2   2164349149.400            #/op
+MyBenchmark.loop:iTLB-load-misses              1024  avgt    2        13236.400            #/op
+MyBenchmark.loop:iTLB-loads                    1024  avgt    2         8783.300            #/op
+MyBenchmark.loop:instructions                  1024  avgt    2  14113654334.200            #/op
+MyBenchmark.loop_ikj                             64  avgt   10           ≈ 10⁻⁴            s/op
+MyBenchmark.loop_ikj:CPI                         64  avgt    2            0.323            #/op
+MyBenchmark.loop_ikj:L1-dcache-load-misses       64  avgt    2          402.420            #/op
+MyBenchmark.loop_ikj:L1-dcache-loads             64  avgt    2       585337.557            #/op
+MyBenchmark.loop_ikj:L1-dcache-stores            64  avgt    2       419748.069            #/op
+MyBenchmark.loop_ikj:L1-icache-load-misses       64  avgt    2           29.474            #/op
+MyBenchmark.loop_ikj:LLC-load-misses             64  avgt    2            1.754            #/op
+MyBenchmark.loop_ikj:LLC-loads                   64  avgt    2           10.130            #/op
+MyBenchmark.loop_ikj:LLC-store-misses            64  avgt    2            1.172            #/op
+MyBenchmark.loop_ikj:LLC-stores                  64  avgt    2            3.175            #/op
+MyBenchmark.loop_ikj:branch-misses               64  avgt    2           88.822            #/op
+MyBenchmark.loop_ikj:branches                    64  avgt    2       124672.113            #/op
+MyBenchmark.loop_ikj:cycles                      64  avgt    2       543710.518            #/op
+MyBenchmark.loop_ikj:dTLB-load-misses            64  avgt    2            4.853            #/op
+MyBenchmark.loop_ikj:dTLB-loads                  64  avgt    2       584574.981            #/op
+MyBenchmark.loop_ikj:dTLB-store-misses           64  avgt    2            0.561            #/op
+MyBenchmark.loop_ikj:dTLB-stores                 64  avgt    2       418225.472            #/op
+MyBenchmark.loop_ikj:iTLB-load-misses            64  avgt    2            1.632            #/op
+MyBenchmark.loop_ikj:iTLB-loads                  64  avgt    2            2.451            #/op
+MyBenchmark.loop_ikj:instructions                64  avgt    2      1680967.390            #/op
+MyBenchmark.loop_ikj                            128  avgt   10            0.001 ±  0.001   s/op
+MyBenchmark.loop_ikj:CPI                        128  avgt    2            0.331            #/op
+MyBenchmark.loop_ikj:L1-dcache-load-misses      128  avgt    2       133312.719            #/op
+MyBenchmark.loop_ikj:L1-dcache-loads            128  avgt    2      4453562.228            #/op
+MyBenchmark.loop_ikj:L1-dcache-stores           128  avgt    2      3282876.540            #/op
+MyBenchmark.loop_ikj:L1-icache-load-misses      128  avgt    2          273.842            #/op
+MyBenchmark.loop_ikj:LLC-load-misses            128  avgt    2           13.644            #/op
+MyBenchmark.loop_ikj:LLC-loads                  128  avgt    2          128.571            #/op
+MyBenchmark.loop_ikj:LLC-store-misses           128  avgt    2            6.690            #/op
+MyBenchmark.loop_ikj:LLC-stores                 128  avgt    2           39.634            #/op
+MyBenchmark.loop_ikj:branch-misses              128  avgt    2          297.145            #/op
+MyBenchmark.loop_ikj:branches                   128  avgt    2       766888.585            #/op
+MyBenchmark.loop_ikj:cycles                     128  avgt    2      4088558.932            #/op
+MyBenchmark.loop_ikj:dTLB-load-misses           128  avgt    2           22.012            #/op
+MyBenchmark.loop_ikj:dTLB-loads                 128  avgt    2      4458868.956            #/op
+MyBenchmark.loop_ikj:dTLB-store-misses          128  avgt    2            2.543            #/op
+MyBenchmark.loop_ikj:dTLB-stores                128  avgt    2      3268402.871            #/op
+MyBenchmark.loop_ikj:iTLB-load-misses           128  avgt    2            9.081            #/op
+MyBenchmark.loop_ikj:iTLB-loads                 128  avgt    2           14.321            #/op
+MyBenchmark.loop_ikj:instructions               128  avgt    2     12337506.597            #/op
+MyBenchmark.loop_ikj                            256  avgt   10            0.011 ±  0.001   s/op
+MyBenchmark.loop_ikj:CPI                        256  avgt    2            0.351            #/op
+MyBenchmark.loop_ikj:L1-dcache-load-misses      256  avgt    2      1092830.588            #/op
+MyBenchmark.loop_ikj:L1-dcache-loads            256  avgt    2     35190688.212            #/op
+MyBenchmark.loop_ikj:L1-dcache-stores           256  avgt    2     26063895.204            #/op
+MyBenchmark.loop_ikj:L1-icache-load-misses      256  avgt    2         2410.527            #/op
+MyBenchmark.loop_ikj:LLC-load-misses            256  avgt    2           56.534            #/op
+MyBenchmark.loop_ikj:LLC-loads                  256  avgt    2         5518.621            #/op
+MyBenchmark.loop_ikj:LLC-store-misses           256  avgt    2           51.111            #/op
+MyBenchmark.loop_ikj:LLC-stores                 256  avgt    2          243.740            #/op
+MyBenchmark.loop_ikj:branch-misses              256  avgt    2        68088.980            #/op
+MyBenchmark.loop_ikj:branches                   256  avgt    2      5222922.189            #/op
+MyBenchmark.loop_ikj:cycles                     256  avgt    2     33083362.175            #/op
+MyBenchmark.loop_ikj:dTLB-load-misses           256  avgt    2          109.154            #/op
+MyBenchmark.loop_ikj:dTLB-loads                 256  avgt    2     35069695.751            #/op
+MyBenchmark.loop_ikj:dTLB-store-misses          256  avgt    2           17.603            #/op
+MyBenchmark.loop_ikj:dTLB-stores                256  avgt    2     25969330.540            #/op
+MyBenchmark.loop_ikj:iTLB-load-misses           256  avgt    2          106.657            #/op
+MyBenchmark.loop_ikj:iTLB-loads                 256  avgt    2          113.596            #/op
+MyBenchmark.loop_ikj:instructions               256  avgt    2     94295734.666            #/op
+MyBenchmark.loop_ikj                            512  avgt   10            0.084 ±  0.001   s/op
+MyBenchmark.loop_ikj:CPI                        512  avgt    2            0.345            #/op
+MyBenchmark.loop_ikj:L1-dcache-load-misses      512  avgt    2      8573570.067            #/op
+MyBenchmark.loop_ikj:L1-dcache-loads            512  avgt    2    272879129.725            #/op
+MyBenchmark.loop_ikj:L1-dcache-stores           512  avgt    2    204255589.408            #/op
+MyBenchmark.loop_ikj:L1-icache-load-misses      512  avgt    2        24922.317            #/op
+MyBenchmark.loop_ikj:LLC-load-misses            512  avgt    2          802.292            #/op
+MyBenchmark.loop_ikj:LLC-loads                  512  avgt    2        38917.425            #/op
+MyBenchmark.loop_ikj:LLC-store-misses           512  avgt    2          434.150            #/op
+MyBenchmark.loop_ikj:LLC-stores                 512  avgt    2         6602.467            #/op
+MyBenchmark.loop_ikj:branch-misses              512  avgt    2       272217.583            #/op
+MyBenchmark.loop_ikj:branches                   512  avgt    2     37490586.233            #/op
+MyBenchmark.loop_ikj:cycles                     512  avgt    2    250434175.983            #/op
+MyBenchmark.loop_ikj:dTLB-load-misses           512  avgt    2          888.300            #/op
+MyBenchmark.loop_ikj:dTLB-loads                 512  avgt    2    273778274.742            #/op
+MyBenchmark.loop_ikj:dTLB-store-misses          512  avgt    2           85.608            #/op
+MyBenchmark.loop_ikj:dTLB-stores                512  avgt    2    203620087.450            #/op
+MyBenchmark.loop_ikj:iTLB-load-misses           512  avgt    2          368.217            #/op
+MyBenchmark.loop_ikj:iTLB-loads                 512  avgt    2          280.775            #/op
+MyBenchmark.loop_ikj:instructions               512  avgt    2    725212402.492            #/op
+MyBenchmark.loop_ikj                           1024  avgt   10            0.661 ±  0.001   s/op
+MyBenchmark.loop_ikj:CPI                       1024  avgt    2            0.344            #/op
+MyBenchmark.loop_ikj:L1-dcache-load-misses     1024  avgt    2     68361035.450            #/op
+MyBenchmark.loop_ikj:L1-dcache-loads           1024  avgt    2   2180965848.700            #/op
+MyBenchmark.loop_ikj:L1-dcache-stores          1024  avgt    2   1628956472.300            #/op
+MyBenchmark.loop_ikj:L1-icache-load-misses     1024  avgt    2       119929.900            #/op
+MyBenchmark.loop_ikj:LLC-load-misses           1024  avgt    2         5583.200            #/op
+MyBenchmark.loop_ikj:LLC-loads                 1024  avgt    2       262184.000            #/op
+MyBenchmark.loop_ikj:LLC-store-misses          1024  avgt    2         3635.450            #/op
+MyBenchmark.loop_ikj:LLC-stores                1024  avgt    2        26849.400            #/op
+MyBenchmark.loop_ikj:branch-misses             1024  avgt    2      1112457.400            #/op
+MyBenchmark.loop_ikj:branches                  1024  avgt    2    286070170.750            #/op
+MyBenchmark.loop_ikj:cycles                    1024  avgt    2   1980925309.950            #/op
+MyBenchmark.loop_ikj:dTLB-load-misses          1024  avgt    2         5809.200            #/op
+MyBenchmark.loop_ikj:dTLB-loads                1024  avgt    2   2187771653.850            #/op
+MyBenchmark.loop_ikj:dTLB-store-misses         1024  avgt    2          756.950            #/op
+MyBenchmark.loop_ikj:dTLB-stores               1024  avgt    2   1633189760.750            #/op
+MyBenchmark.loop_ikj:iTLB-load-misses          1024  avgt    2         3574.150            #/op
+MyBenchmark.loop_ikj:iTLB-loads                1024  avgt    2         2069.400            #/op
+MyBenchmark.loop_ikj:instructions              1024  avgt    2   5753953640.100            #/op
