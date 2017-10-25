@@ -1,16 +1,13 @@
 # arg1 = omni | packet2a
-# arg2 = N
-# we need to run the shm_mat file first to create the shared matrix file
-sh make.sh shm_mat $1
-./$1/bin/shm_mat $2
-# the key is 17 btw
-rm $1/perf/*
-declare -a tests=("base" "loop" "loop_ikj")
-for i in ${tests[@]}
-do
-	sh make.sh $i $1
-	sh perf.sh $i $1 $2
-done
-# delete the shm
-ipcrm -M 17
+cd src
+mvn clean install
+echo "=================================================="
+echo "running normal"
+java -jar target/benchmarks.jar | tee ../$1/normal.txt
+echo "=================================================="
+echo "running perfnorm"
+java -jar target/benchmarks.jar -prof perfnorm | tee ../$1/perfnorm.txt
+echo "=================================================="
+echo "running assem"
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
 echo "done"

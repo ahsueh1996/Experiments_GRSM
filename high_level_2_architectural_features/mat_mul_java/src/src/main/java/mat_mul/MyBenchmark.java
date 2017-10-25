@@ -6,8 +6,14 @@ import java.util.concurrent.TimeUnit;
 
 import java.util.Random;
 
+@Warmup(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
+@Measurement(iterations=5,time=1,timeUnit=TimeUnit.SECONDS)
+@Fork(2)
+@State(Scope.Benchmark)
 public class MyBenchmark {
-	@Param({64,128,256,512,1024})
+	@Param({"64","128","256","512","1024"})
+	private String N_str;
+
 	private int N;
 
 	private int[][] shm;
@@ -15,9 +21,11 @@ public class MyBenchmark {
 	private int i,j,k,s,aik;
 	
 	@Setup
-	public void base() {
+	public void base() {		
+		N = Integer.parseInt(N_str);
 		Random rand = new Random();
 		shm = new int[N][N];
+		res = new int[N][N];
 		for(i=0;i<N;i++){
 			for(j=0;j<N;j++){
 				shm[i][j] = rand.nextInt(50);

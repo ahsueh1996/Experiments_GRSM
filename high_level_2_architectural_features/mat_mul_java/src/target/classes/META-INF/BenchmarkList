@@ -1,0 +1,2 @@
+JMH S 19 mat_mul.MyBenchmark S 46 mat_mul.generated.MyBenchmark_loop_ikj_jmhTest S 8 loop_ikj S 10 Throughput E A 1 1 1 E I 1 3 T 3 1 s E I 1 5 T 3 1 s E I 1 2 E E E E E M 1 5 N_str 5 2 64 3 128 3 256 3 512 4 1024 E E E 
+JMH S 19 mat_mul.MyBenchmark S 42 mat_mul.generated.MyBenchmark_loop_jmhTest S 4 loop S 10 Throughput E A 1 1 1 E I 1 3 T 3 1 s E I 1 5 T 3 1 s E I 1 2 E E E E E M 1 5 N_str 5 2 64 3 128 3 256 3 512 4 1024 E E E 
