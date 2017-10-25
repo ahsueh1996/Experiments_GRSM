@@ -3,11 +3,11 @@ cd src
 mvn clean install
 echo "=================================================="
 echo "running normal"
-java -jar target/benchmarks.jar | tee ../$1/normal.txt
+#java -jar target/benchmarks.jar | tee ../$1/normal.txt
 echo "=================================================="
 echo "running perfnorm"
-java -jar target/benchmarks.jar -prof perfnorm | tee ../$1/perfnorm.txt
+#java -jar target/benchmarks.jar -prof perfnorm | tee ../$1/perfnorm.txt
 echo "=================================================="
 echo "running assem"
-#java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
 echo "done"

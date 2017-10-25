@@ -1,0 +1,424 @@
+Could not load hsdis-aarch64.so; library not loadable; PrintAssembly is disabled
+# JMH version: 1.19
+# VM version: JDK 1.8.0_141, VM 25.141-b16
+# VM invoker: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.141-2.b16.el7_4.aarch64/jre/bin/java
+# VM options: -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 64)
+
+# Run progress: 0.00% complete, ETA 00:02:40
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.002 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+# Run progress: 5.00% complete, ETA 00:03:47
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.002 s/op
+# Warmup Iteration   2: 0.002 s/op
+# Warmup Iteration   3: 0.002 s/op
+Iteration   1: 0.002 s/op
+Iteration   2: 0.002 s/op
+Iteration   3: 0.002 s/op
+Iteration   4: 0.002 s/op
+Iteration   5: 0.002 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.002 ?(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.002, 0.002, 0.002), stdev = 0.001
+  CI (99.9%): [0.002, 0.002] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:?asm":
+
+ERROR: No address lines detected in assembly capture, make sure your JDK is PrintAssembly-enabled:
+    https://wiki.openjdk.java.net/display/HotSpot/PrintAssembly
+
+Perf output processed (skipped 4.415 seconds):
+ Column 1: cycles (5365 events)
+ Column 2: instructions (5308 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+perf-36144.map, [unknown] (388 bytes) 
+
+ <no assembly is recorded, native region>
+....................................................................................................
+ 91.69%   92.52%  <total for region 1>
+
+....[Hottest Regions]...............................................................................
+ 91.69%   92.52%      perf-36144.map  [unknown] (388 bytes) 
+  5.70%    5.76%   [kernel.kallsyms]  finish_task_switch (0 bytes) 
+  0.54%            [kernel.kallsyms]  get_signal (0 bytes) 
+  0.48%    0.57%   [kernel.kallsyms]  __do_softirq (0 bytes) 
+  0.09%    0.09%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore (0 bytes) 
+  0.07%            [kernel.kallsyms]  copy_page (0 bytes) 
+  0.04%    0.02%   [kernel.kallsyms]  mm_update_next_owner (16 bytes) 
+  0.02%            [kernel.kallsyms]  start_this_handle (0 bytes) 
+  0.02%            [kernel.kallsyms]  jbd2_write_access_granted.isra.4.part.5 (0 bytes) 
+  0.02%            [kernel.kallsyms]  __ext4_get_inode_loc (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_da_update_reserve_space (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_do_update_inode (0 bytes) 
+  0.02%            [kernel.kallsyms]  el1_da (0 bytes) 
+  0.02%            [kernel.kallsyms]  mm_update_next_owner (0 bytes) 
+  0.02%            [kernel.kallsyms]  schedule_tail (0 bytes) 
+  0.02%            [kernel.kallsyms]  percpu_down_read_trylock (0 bytes) 
+  0.02%            [kernel.kallsyms]  run_timer_softirq (0 bytes) 
+  0.02%            [kernel.kallsyms]  hrtimer_init (0 bytes) 
+  0.02%            [kernel.kallsyms]  futex_wait_queue_me (0 bytes) 
+  0.02%            [kernel.kallsyms]  get_futex_key_refs.isra.11 (0 bytes) 
+  1.14%    1.02%  <...other 104 warm regions...>
+....................................................................................................
+100.00%   99.98%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 91.82%   92.69%      perf-36144.map  [unknown] 
+  5.70%    5.76%   [kernel.kallsyms]  finish_task_switch 
+  0.54%            [kernel.kallsyms]  get_signal 
+  0.48%    0.57%   [kernel.kallsyms]  __do_softirq 
+  0.43%    0.45%           libjvm.so  [unknown] 
+  0.09%    0.09%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore 
+  0.07%            [kernel.kallsyms]  copy_page 
+  0.06%    0.02%   [kernel.kallsyms]  mm_update_next_owner 
+  0.04%                 libc-2.17.so  mempcpy 
+  0.04%    0.02%        libc-2.17.so  __printf_fp 
+  0.02%            [kernel.kallsyms]  schedule_tail 
+  0.02%            [kernel.kallsyms]  futex_wait 
+  0.02%            [kernel.kallsyms]  find_vma 
+  0.02%            [kernel.kallsyms]  __ll_sc___cmpxchg_double_mb 
+  0.02%            [kernel.kallsyms]  _raw_read_lock 
+  0.02%            [kernel.kallsyms]  isolate_lru_page 
+  0.02%            [kernel.kallsyms]  get_futex_key_refs.isra.11 
+  0.02%            [kernel.kallsyms]  fput 
+  0.02%            [kernel.kallsyms]  plist_add 
+  0.02%            [kernel.kallsyms]  do_page_fault 
+  0.54%    0.08%  <...other 29 warm methods...>
+....................................................................................................
+100.00%   99.68%  <totals>
+
+....[Distribution by Source]........................................................................
+ 91.82%   92.69%      perf-36144.map
+  7.62%    6.71%   [kernel.kallsyms]
+  0.43%    0.45%           libjvm.so
+  0.13%    0.13%        libc-2.17.so
+....................................................................................................
+100.00%   99.98%  <totals>
+
+
+ERROR: No address lines detected in assembly capture, make sure your JDK is PrintAssembly-enabled:
+    https://wiki.openjdk.java.net/display/HotSpot/PrintAssembly
+
+Perf output processed (skipped 4.330 seconds):
+ Column 1: cycles (5606 events)
+ Column 2: instructions (5537 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+perf-36248.map, [unknown] (384 bytes) 
+
+ <no assembly is recorded, native region>
+....................................................................................................
+ 87.62%   88.51%  <total for region 1>
+
+....[Hottest Regions]...............................................................................
+ 87.62%   88.51%      perf-36248.map  [unknown] (384 bytes) 
+  9.06%    9.16%   [kernel.kallsyms]  finish_task_switch (0 bytes) 
+  0.66%    0.70%   [kernel.kallsyms]  __do_softirq (0 bytes) 
+  0.41%    0.05%   [kernel.kallsyms]  get_signal (0 bytes) 
+  0.32%    0.20%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore (0 bytes) 
+  0.05%    0.13%   [kernel.kallsyms]  run_timer_softirq (0 bytes) 
+  0.04%            [kernel.kallsyms]  syscall_trace_exit (12 bytes) 
+  0.04%            [kernel.kallsyms]  mark_wake_futex (0 bytes) 
+  0.04%            [kernel.kallsyms]  get_futex_value_locked (12 bytes) 
+  0.04%    0.05%   [kernel.kallsyms]  __ll_sc_atomic_add (24 bytes) 
+  0.04%            [kernel.kallsyms]  mutex_lock (0 bytes) 
+  0.04%            [kernel.kallsyms]  _raw_spin_lock (8 bytes) 
+  0.04%    0.14%           libjvm.so  [unknown] (16 bytes) 
+  0.02%            [kernel.kallsyms]  __sys_trace (0 bytes) 
+  0.02%            [kernel.kallsyms]  wake_up_q (0 bytes) 
+  0.02%            [kernel.kallsyms]  should_numa_migrate_memory (0 bytes) 
+  0.02%            [kernel.kallsyms]  down_read_trylock (0 bytes) 
+  0.02%            [kernel.kallsyms]  percpu_down_read (0 bytes) 
+  0.02%            [kernel.kallsyms]  timespec_trunc (0 bytes) 
+  0.02%            [kernel.kallsyms]  hrtimer_init (0 bytes) 
+  1.48%    1.05%  <...other 128 warm regions...>
+....................................................................................................
+ 99.98%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 87.87%   88.68%      perf-36248.map  [unknown] 
+  9.06%    9.17%   [kernel.kallsyms]  finish_task_switch 
+  0.66%    0.72%   [kernel.kallsyms]  __do_softirq 
+  0.52%    0.52%           libjvm.so  [unknown] 
+  0.41%    0.05%   [kernel.kallsyms]  get_signal 
+  0.32%    0.20%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore 
+  0.05%    0.13%   [kernel.kallsyms]  run_timer_softirq 
+  0.05%            [kernel.kallsyms]  acct_collect 
+  0.05%            [kernel.kallsyms]  futex_wake_op 
+  0.04%            [kernel.kallsyms]  syscall_trace_exit 
+  0.04%            [kernel.kallsyms]  mutex_lock 
+  0.04%    0.05%   [kernel.kallsyms]  __ll_sc_atomic_add 
+  0.04%            [kernel.kallsyms]  _raw_spin_lock 
+  0.04%    0.02%   [kernel.kallsyms]  __ll_sc___cmpxchg_case_mb_8 
+  0.04%            [kernel.kallsyms]  ptep_clear_flush 
+  0.04%            [kernel.kallsyms]  get_futex_value_locked 
+  0.04%            [kernel.kallsyms]  mark_wake_futex 
+  0.02%            [kernel.kallsyms]  should_numa_migrate_memory 
+  0.02%            [kernel.kallsyms]  touch_atime 
+  0.02%            [kernel.kallsyms]  percpu_down_read 
+  0.64%    0.14%  <...other 36 warm methods...>
+....................................................................................................
+ 99.98%   99.69%  <totals>
+
+....[Distribution by Source]........................................................................
+ 87.87%   88.68%      perf-36248.map
+ 11.42%   10.67%   [kernel.kallsyms]
+  0.52%    0.52%           libjvm.so
+  0.09%    0.13%        libc-2.17.so
+  0.09%           libpthread-2.17.so
+....................................................................................................
+ 99.98%  100.00%  <totals>
+
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_141, VM 25.141-b16
+# VM invoker: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.141-2.b16.el7_4.aarch64/jre/bin/java
+# VM options: -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 128)
+
+# Run progress: 10.00% complete, ETA 00:03:29
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.038 s/op
+# Warmup Iteration   2: 0.036 s/op
+# Warmup Iteration   3: 0.036 s/op
+Iteration   1: 0.037 s/op
+Iteration   2: 0.037 s/op
+Iteration   3: 0.037 s/op
+Iteration   4: 0.037 s/op
+Iteration   5: 0.036 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+# Run progress: 15.00% complete, ETA 00:03:16
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.038 s/op
+# Warmup Iteration   2: 0.037 s/op
+# Warmup Iteration   3: 0.037 s/op
+Iteration   1: 0.037 s/op
+Iteration   2: 0.036 s/op
+Iteration   3: 0.037 s/op
+Iteration   4: 0.037 s/op
+Iteration   5: 0.036 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+
+Result "mat_mul.MyBenchmark.loop":
+  0.037 ?(99.9%) 0.001 s/op [Average]
+  (min, avg, max) = (0.036, 0.037, 0.037), stdev = 0.001
+  CI (99.9%): [0.036, 0.037] (assumes normal distribution)
+
+Secondary result "mat_mul.MyBenchmark.loop:?asm":
+
+ERROR: No address lines detected in assembly capture, make sure your JDK is PrintAssembly-enabled:
+    https://wiki.openjdk.java.net/display/HotSpot/PrintAssembly
+
+Perf output processed (skipped 4.385 seconds):
+ Column 1: cycles (5490 events)
+ Column 2: instructions (5410 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+perf-36357.map, [unknown] (284 bytes) 
+
+ <no assembly is recorded, native region>
+....................................................................................................
+ 90.27%   90.91%  <total for region 1>
+
+....[Hottest Regions]...............................................................................
+ 90.27%   90.91%      perf-36357.map  [unknown] (284 bytes) 
+  6.85%    6.95%   [kernel.kallsyms]  finish_task_switch (12 bytes) 
+  0.71%    0.85%   [kernel.kallsyms]  __do_softirq (0 bytes) 
+  0.38%    0.02%   [kernel.kallsyms]  get_signal (0 bytes) 
+  0.07%    0.09%   [kernel.kallsyms]  run_timer_softirq (0 bytes) 
+  0.07%            [kernel.kallsyms]  _raw_spin_lock (12 bytes) 
+  0.07%    0.13%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore (0 bytes) 
+  0.04%            [kernel.kallsyms]  update_numa_stats (28 bytes) 
+  0.04%            [kernel.kallsyms]  sys_futex (0 bytes) 
+  0.04%            [kernel.kallsyms]  __audit_syscall_exit (0 bytes) 
+  0.04%            [kernel.kallsyms]  __ll_sc___cmpxchg_case_mb_8 (0 bytes) 
+  0.04%            [kernel.kallsyms]  __copy_to_user (0 bytes) 
+  0.04%                    libjvm.so  syscall@plt (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_do_update_inode (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_da_write_begin (0 bytes) 
+  0.02%            [kernel.kallsyms]  el0_da (0 bytes) 
+  0.02%            [kernel.kallsyms]  el0_svc_naked (0 bytes) 
+  0.02%            [kernel.kallsyms]  syscall_trace_enter (0 bytes) 
+  0.02%            [kernel.kallsyms]  do_signal (0 bytes) 
+  0.02%            [kernel.kallsyms]  mm_update_next_owner (0 bytes) 
+  1.20%    1.05%  <...other 109 warm regions...>
+....................................................................................................
+ 99.98%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 90.40%   91.04%      perf-36357.map  [unknown] 
+  6.85%    6.95%   [kernel.kallsyms]  finish_task_switch 
+  0.71%    0.87%   [kernel.kallsyms]  __do_softirq 
+  0.46%    0.44%           libjvm.so  [unknown] 
+  0.40%    0.02%   [kernel.kallsyms]  get_signal 
+  0.07%            [kernel.kallsyms]  _raw_spin_lock 
+  0.07%    0.13%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore 
+  0.07%    0.11%   [kernel.kallsyms]  run_timer_softirq 
+  0.05%            [kernel.kallsyms]  __audit_syscall_exit 
+  0.04%            [kernel.kallsyms]  futex_wait 
+  0.04%            [kernel.kallsyms]  __copy_to_user 
+  0.04%            [kernel.kallsyms]  __ll_sc___cmpxchg_case_mb_8 
+  0.04%            [kernel.kallsyms]  sys_futex 
+  0.04%                    libjvm.so  syscall@plt 
+  0.04%            [kernel.kallsyms]  update_numa_stats 
+  0.02%            [kernel.kallsyms]  el0_da 
+  0.02%            [kernel.kallsyms]  isolate_lru_page 
+  0.02%            [kernel.kallsyms]  vmacache_find 
+  0.02%            [kernel.kallsyms]  unroll_tree_refs 
+  0.02%            [kernel.kallsyms]  plist_add 
+  0.58%    0.09%  <...other 32 warm methods...>
+....................................................................................................
+ 99.98%   99.65%  <totals>
+
+....[Distribution by Source]........................................................................
+ 90.40%   91.04%      perf-36357.map
+  8.96%    8.37%   [kernel.kallsyms]
+  0.51%    0.44%           libjvm.so
+  0.07%    0.13%        libc-2.17.so
+  0.04%    0.02%  libpthread-2.17.so
+....................................................................................................
+ 99.98%  100.00%  <totals>
+
+
+ERROR: No address lines detected in assembly capture, make sure your JDK is PrintAssembly-enabled:
+    https://wiki.openjdk.java.net/display/HotSpot/PrintAssembly
+
+Perf output processed (skipped 4.348 seconds):
+ Column 1: cycles (5659 events)
+ Column 2: instructions (5568 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+perf-36461.map, [unknown] (296 bytes) 
+
+ <no assembly is recorded, native region>
+....................................................................................................
+ 87.61%   88.40%  <total for region 1>
+
+....[Hottest Regions]...............................................................................
+ 87.61%   88.40%      perf-36461.map  [unknown] (296 bytes) 
+  9.83%    9.99%   [kernel.kallsyms]  finish_task_switch (12 bytes) 
+  0.30%    0.36%   [kernel.kallsyms]  __do_softirq (0 bytes) 
+  0.27%            [kernel.kallsyms]  mm_update_next_owner (16 bytes) 
+  0.19%    0.11%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore (0 bytes) 
+  0.18%            [kernel.kallsyms]  get_signal (0 bytes) 
+  0.05%            [kernel.kallsyms]  futex_wake_op (28 bytes) 
+  0.04%    0.11%   [kernel.kallsyms]  run_timer_softirq (0 bytes) 
+  0.04%            [kernel.kallsyms]  __ll_sc___cmpxchg_case_mb_8 (0 bytes) 
+  0.04%    0.02%   [kernel.kallsyms]  __copy_to_user (0 bytes) 
+  0.04%                    libjvm.so  [unknown] (0 bytes) 
+  0.04%                    libjvm.so  [unknown] (4 bytes) 
+  0.02%            [kernel.kallsyms]  jbd2_journal_dirty_metadata (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_read_inode_bitmap (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_inode_csum_set (0 bytes) 
+  0.02%            [kernel.kallsyms]  ext4_data_block_valid (0 bytes) 
+  0.02%            [kernel.kallsyms]  el0_svc_naked (0 bytes) 
+  0.02%            [kernel.kallsyms]  sigprocmask (0 bytes) 
+  0.02%            [kernel.kallsyms]  sys_sched_getaffinity (0 bytes) 
+  0.02%            [kernel.kallsyms]  hrtimer_init_sleeper (0 bytes) 
+  1.25%    1.01%  <...other 113 warm regions...>
+....................................................................................................
+100.00%   99.98%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 87.74%   88.54%      perf-36461.map  [unknown] 
+  9.83%    9.99%   [kernel.kallsyms]  finish_task_switch 
+  0.58%    0.48%           libjvm.so  [unknown] 
+  0.30%    0.36%   [kernel.kallsyms]  __do_softirq 
+  0.27%            [kernel.kallsyms]  mm_update_next_owner 
+  0.19%    0.11%   [kernel.kallsyms]  _raw_spin_unlock_irqrestore 
+  0.18%            [kernel.kallsyms]  get_signal 
+  0.07%            [kernel.kallsyms]  futex_wake_op 
+  0.04%    0.02%   [kernel.kallsyms]  __copy_to_user 
+  0.04%    0.02%        libc-2.17.so  __printf_fp 
+  0.04%            [kernel.kallsyms]  __ll_sc___cmpxchg_case_mb_8 
+  0.04%            [kernel.kallsyms]  sys_futex 
+  0.04%    0.11%   [kernel.kallsyms]  run_timer_softirq 
+  0.02%            [kernel.kallsyms]  futex_wait 
+  0.02%            [kernel.kallsyms]  __copy_from_user 
+  0.02%                 libc-2.17.so  vfprintf 
+  0.02%            [kernel.kallsyms]  ip_output 
+  0.02%            [kernel.kallsyms]  el0_svc_naked 
+  0.02%            [kernel.kallsyms]  hash_futex 
+  0.02%            [kernel.kallsyms]  _cond_resched 
+  0.55%    0.09%  <...other 31 warm methods...>
+....................................................................................................
+100.00%   99.71%  <totals>
+
+....[Distribution by Source]........................................................................
+ 87.74%   88.54%      perf-36461.map
+ 11.47%   10.85%   [kernel.kallsyms]
+  0.58%    0.48%           libjvm.so
+  0.14%    0.09%        libc-2.17.so
+  0.05%    0.02%  libpthread-2.17.so
+  0.02%                libz.so.1.2.7
+....................................................................................................
+100.00%   99.98%  <totals>
+
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_141, VM 25.141-b16
+# VM invoker: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.141-2.b16.el7_4.aarch64/jre/bin/java
+# VM options: -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: mat_mul.MyBenchmark.loop
+# Parameters: (N_str = 256)
+
+# Run progress: 20.00% complete, ETA 00:03:03
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 0.794 s/op
+# Warmup Iteration   2: 0.769 s/op
+# Warmup Iteration   3: 0.768 s/op
+Iteration   1: 0.768 s/op
+Iteration   2: 
