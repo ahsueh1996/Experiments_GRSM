@@ -9,5 +9,6 @@ echo "running perfnorm"
 #java -jar target/benchmarks.jar -prof perfnorm | tee ../$1/perfnorm.txt
 echo "=================================================="
 echo "running assem"
-java -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,MyBenchmark -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
+#java -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,MyBenchmark -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/benchmarks.jar -prof perfasm | tee ../$1/perfasm.txt
 echo "done"
