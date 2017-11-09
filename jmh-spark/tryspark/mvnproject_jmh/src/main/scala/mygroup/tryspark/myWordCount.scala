@@ -4,9 +4,7 @@ import org.openjdk.jmh.annotations._
 import scala.annotation.tailrec
 import java.util.concurrent.TimeUnit
 
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
 
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
@@ -16,8 +14,13 @@ import org.apache.spark.SparkConf
 class SparkWordCount {
 	@Benchmark
 	def main() {	
+		val sess = SparkSession.builder.master("local[4]")
+                                 .appName("MY spark count")
+                                 .config("spark.ui.enabled", "false")
+                                 .getOrCreate
+		
 		// create Spark context with Spark configuration
-		val sc = new SparkContext(new SparkConf().setAppName("Spark Count"))
+		val sc = sess.sparkContext
 	    	
 		// read in text file and split each document into words
     		val tokenized = sc.textFile("inputfile.txt").flatMap(_.split(" "))
