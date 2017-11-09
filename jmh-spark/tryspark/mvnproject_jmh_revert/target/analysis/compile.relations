@@ -11,8 +11,8 @@ products:
    src/main/scala/mygroup/tryspark/myWordCount.scala -> target/classes/mygroup/tryspark/SparkWordCount.class
 binary dependencies:
    src/main/scala/mygroup/tryspark/myWordCount.scala -> /opt/jdk1.8.0_131/jre/lib/rt.jar
-   src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/apache/spark/spark-core_2.11/2.2.0/spark-core_2.11-2.2.0.jar
-   src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.jar
+   src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
    src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/openjdk/jmh/jmh-core/1.19/jmh-core-1.19.jar
    src/main/scala/mygroup/tryspark/myWordCount.scala -> /root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
 source dependencies:
