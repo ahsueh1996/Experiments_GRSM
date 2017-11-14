@@ -33,8 +33,8 @@ class Benchmarks {
     		var inputPath = "hdfs://localhost:9000/HiBench/LR/Input"
 
     		val conf = new SparkConf()
-			.setMaster("local[4]")
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
+			.setMaster("local[2]")
     		val sc = new SparkContext(conf)
 
     		// $example on$
