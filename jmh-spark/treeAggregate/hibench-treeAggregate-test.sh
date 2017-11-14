@@ -1,6 +1,6 @@
 #!/bin/bash
 # choose avgt, perfnorm, or perfasm
-OUTPUT_DIR=/home/hibench-output/perfasm
+OUTPUT_DIR=/home/hibench-output/avgt
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 mkdir -p $OUTPUT_DIR
@@ -30,7 +30,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 ## small set###
 #	PROBLEM_FEATURES=(50 250 750 1500 3000)
 ## big set ###
-#	PROBLEM_FEATURES=(350000 400000 450000 500000)
+	PROBLEM_FEATURES=(350000 400000 450000 500000)
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -53,11 +53,11 @@ do
 	cd $PROJ_DIR
 	##############
 	#####avgt#####
-	#	/CMC/kmiecseb/HiBench/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+		/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
 	###perfnorm###
-	#	/CMC/kmiecseb/HiBench/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
 	###perfasm####
-	#	/CMC/kmiecseb/HiBench/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
+	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
 	#######
 	cd $WORK_DIR/HiBench
 	date
