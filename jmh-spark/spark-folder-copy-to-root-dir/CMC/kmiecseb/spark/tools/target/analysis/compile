@@ -1,0 +1,271 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes
+compile options:
+3 items
+0 -> -unchecked
+1 -> -deprecation
+2 -> -feature
+javac options:
+8 items
+0 -> -source
+1 -> 1.7
+2 -> -target
+3 -> 1.7
+4 -> -Xlint:all,-serial,-path
+5 -> -g
+6 -> -encoding
+7 -> UTF-8
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+18 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$2.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$3.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$4.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$5.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$1.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$2.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$3.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$1.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$2.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$3.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$2.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$.class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore.class
+binary dependencies:
+5 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /opt/jdk1.8.0_131/jre/lib/rt.jar
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /root/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /root/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+18 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$3
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$4
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$5
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$3
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$3
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$2
+used names:
+125 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> !=
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> +
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ++
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ++=
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> +=
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> <init>
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> AnyRef
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Array
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Class
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassFinder
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassSymbol
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassTag
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Codec
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> DummyImplicit
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> File
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> GenerateMIMAIgnore
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> HashSet
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Iterable
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Iterator
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ModuleSymbol
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Path
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Predef
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Seq
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Set
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Stream
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> String
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Symbol
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Thread
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Throwable
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Try
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Tuple2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Unit
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> _1
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> _2
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> apache
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> apply
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> augmentString
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> c
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> canBuildFrom
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> clapper
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classLoader
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> className
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classSymbol
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classes
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classutil
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> collection
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> contains
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> currentThread
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> directlyPrivateSpark
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> dummyImplicit
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> empty
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> endsWith
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fallbackCanBuildFrom
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fallbackSystemCodec
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> filter
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> filterNot
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> finder
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> flatMap
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> forName
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> foreach
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fullName
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getAnnotatedOrPackagePrivateMembers
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getClasses
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getContextClassLoader
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getInnerFunctions
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getMethods
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getName
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getOrElse
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ignoredClasses
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ignoredMembers
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> immutable
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> indirectlyPrivateSpark
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> indirectlyPrivateSpark$lzy
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> io
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPackagePrivate
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPackagePrivateModule
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPrivate
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> java
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> lang
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> lines
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> map
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> materializeClassTag
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> maybeOuter
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> members
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mirror
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mkString
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> moduleSymbol
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mutable
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> name
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ne
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> nsc
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> package
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> packageName
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> previousContents
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> previousMembersContents
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> println
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateClasses
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateMembers
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateWithin
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> refArrayOps
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> reflect
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> replace
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> runtime
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> runtimeMirror
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> scala
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> shouldExclude
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> spark
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> startsWith
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> staticModule
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> string2path
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> sym
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> takeWhile
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> toSet
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> toString
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> tools
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> typeSignature
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unary_!
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unchecked
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> universe
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unv
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> util
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> writeAll
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> x
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ||
+product stamps:
+18 items
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$2.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$3.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$4.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$5.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$1.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$2.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$3.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$1.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$2.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$3.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$2.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$.class -> lastModified(1499265901000)
+/CMC/kmiecseb/spark/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore.class -> lastModified(1499265901000)
+source stamps:
+1 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> hash(e250dd98d15743b12d69f0be276995415e7212ab)
+binary stamps:
+5 items
+/opt/jdk1.8.0_131/jre/lib/rt.jar -> lastModified(1489566767000)
+/root/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar -> lastModified(1499265891000)
+/root/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar -> lastModified(1499265892000)
+/root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> lastModified(1499265887000)
+/root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> lastModified(1499265887000)
+class names:
+5 items
+/opt/jdk1.8.0_131/jre/lib/rt.jar -> java.lang.Object
+/root/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar -> org.clapper.classutil.ClassInfo
+/root/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar -> scala.tools.nsc.io.package$
+/root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> scala.collection.TraversableLike
+/root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> scala.reflect.runtime.package$
+internal apis:
+1 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHAnuAiYAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAHnNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cER2Lnl0AAZub3RpZnlzcQB+AAz4cynMdAAEd2FpdHNxAH4ADP7wjnV0AA0kYXNJbnN0YW5jZU9mc3EAfgAM6DxWHXQABmVxdWFsc3NxAH4ADISSLG50AA1wcml2YXRlV2l0aGluc3EAfgAMwq9iqXQAFmlzUGFja2FnZVByaXZhdGVNb2R1bGVzcQB+AAyqy223dAAMYXNJbnN0YW5jZU9mc3EAfgAMI/C4wnQADHN5bmNocm9uaXplZHNxAH4ADNiLBMR0AA0kaXNJbnN0YW5jZU9mc3EAfgAMMX+5SHQAI2dldEFubm90YXRlZE9yUGFja2FnZVByaXZhdGVNZW1iZXJzc3EAfgAMn+OLJnQADXNob3VsZEV4Y2x1ZGVzcQB+AAxJiPSGdAASR2VuZXJhdGVNSU1BSWdub3Jlc3EAfgAMSO8DAnQABG1haW5zcQB+AAz9MZWgdAAKZ2V0Q2xhc3Nlc3NxAH4ADJGjsu90AAlub3RpZnlBbGxzcQB+AAwwUMSndAAMaXNJbnN0YW5jZU9mc3EAfgAMVAiI7HQAAj09c3EAfgAMbxQw23QAC2NsYXNzTG9hZGVyc3EAfgAMbLXRtXQABWNsb25lc3EAfgAMgoPgJXQAEGlzUGFja2FnZVByaXZhdGVzcQB+AAxWgyKidAARZ2V0SW5uZXJGdW5jdGlvbnNzcQB+AAwLNChidAAIdG9TdHJpbmdzcQB+AAy0L1FOdAACIT1zcQB+AAy0HGrXdAAIZ2V0Q2xhc3NzcQB+AAwxwHVwdAAGbWlycm9yc3EAfgAMioCqVnQAAm5lc3EAfgAMjk7mIXQAAmVxc3EAfgAMp1AipHQAAiMjc3EAfgAM+hJncnQACGZpbmFsaXplc3EAfgAMpRLeoHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AU3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAKW9yZy5hcGFjaGUuc3BhcmsudG9vbHMuR2VuZXJhdGVNSU1BSWdub3JldXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AbHhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AawBwc3EAfgBwc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFNMAAlpbmhlcml0ZWRxAH4AU0wAB3BhcmVudHNxAH4AU3hxAH4AdHNxAH4AawBwc3EAfgBwdXEAfgBOAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBUcQB+AF11cQB+AF4AAAAAc3EAfgBgAHEAfgAndXEAfgBjAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHN0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBzc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCRdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4AfnhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AZnQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AhVsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4Ac3NxAH4AhHQABUFycmF5cQB+AIp1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AhHQABlN0cmluZ3NxAH4AiHNxAH4Ai3VxAH4AjgAAAANzcQB+AJB0AARqYXZhc3EAfgCQdAAEbGFuZ3EAfgCVc3EAfgBrAHBzcQB+AHB1cQB+AE4AAAAAc3EAfgBrAHBzcQB+AHB1cQB+AKkAAAACc3EAfgCEdAAGT2JqZWN0cQB+AK1zcQB+AIR0AANBbnlxAH4AinVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAEc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQAFm9yZy5hcGFjaGUuc3BhcmsudG9vbHNzcQB+AMB0ABBvcmcuYXBhY2hlLnNwYXJrc3EAfgDAdAAKb3JnLmFwYWNoZXNxAH4AwHQAA29yZ3NyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXRM2H991cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAAzL0NNQy9rbWllY3NlYi9zcGFyay90b29scy90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAU4lDdmNFXQ7EtafC+J2mVQV5yEqs=
+external apis:
+0 items
+source infos:
+1 items
+/CMC/kmiecseb/spark/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXRM2H991cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAMy9DTUMva21pZWNzZWIvc3BhcmsvdG9vbHMvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=

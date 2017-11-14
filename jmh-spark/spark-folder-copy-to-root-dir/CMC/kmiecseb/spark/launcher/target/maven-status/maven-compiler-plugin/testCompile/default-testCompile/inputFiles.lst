@@ -1,0 +1,5 @@
+/CMC/kmiecseb/spark/launcher/src/test/java/org/apache/spark/launcher/CommandBuilderUtilsSuite.java
+/CMC/kmiecseb/spark/launcher/src/test/java/org/apache/spark/launcher/SparkSubmitCommandBuilderSuite.java
+/CMC/kmiecseb/spark/launcher/src/test/java/org/apache/spark/launcher/LauncherServerSuite.java
+/CMC/kmiecseb/spark/launcher/src/test/java/org/apache/spark/launcher/BaseSuite.java
+/CMC/kmiecseb/spark/launcher/src/test/java/org/apache/spark/launcher/SparkSubmitOptionParserSuite.java

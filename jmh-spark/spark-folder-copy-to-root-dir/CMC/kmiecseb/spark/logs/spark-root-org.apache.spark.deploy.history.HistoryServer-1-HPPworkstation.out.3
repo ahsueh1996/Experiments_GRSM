@@ -1,0 +1,33 @@
+Spark Command: /opt/jdk1.8.0_131/bin/java -cp /CMC/kmiecseb/spark/conf/:/CMC/kmiecseb/spark/assembly/target/scala-2.11/jars/* -Xmx2g org.apache.spark.deploy.history.HistoryServer
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/09/01 19:03:16 INFO HistoryServer: Started daemon with process name: 25509@HPPworkstation
+17/09/01 19:03:16 INFO SignalUtils: Registered signal handler for TERM
+17/09/01 19:03:16 INFO SignalUtils: Registered signal handler for HUP
+17/09/01 19:03:16 INFO SignalUtils: Registered signal handler for INT
+17/09/01 19:03:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/09/01 19:03:16 INFO SecurityManager: Changing view acls to: root
+17/09/01 19:03:16 INFO SecurityManager: Changing modify acls to: root
+17/09/01 19:03:16 INFO SecurityManager: Changing view acls groups to: 
+17/09/01 19:03:16 INFO SecurityManager: Changing modify acls groups to: 
+17/09/01 19:03:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.spark.deploy.history.HistoryServer$.main(HistoryServer.scala:278)
+	at org.apache.spark.deploy.history.HistoryServer.main(HistoryServer.scala)
+Caused by: java.io.FileNotFoundException: Log directory specified does not exist: file:/CMC/kmiecseb/hadoop_file/spark-logs
+	at org.apache.spark.deploy.history.FsHistoryProvider.org$apache$spark$deploy$history$FsHistoryProvider$$startPolling(FsHistoryProvider.scala:207)
+	at org.apache.spark.deploy.history.FsHistoryProvider.initialize(FsHistoryProvider.scala:153)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:149)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:77)
+	... 6 more
+Caused by: java.io.FileNotFoundException: File file:/CMC/kmiecseb/hadoop_file/spark-logs does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.deprecatedGetFileStatus(RawLocalFileSystem.java:606)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileLinkStatusInternal(RawLocalFileSystem.java:819)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:596)
+	at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:421)
+	at org.apache.spark.deploy.history.FsHistoryProvider.org$apache$spark$deploy$history$FsHistoryProvider$$startPolling(FsHistoryProvider.scala:197)
+	... 9 more

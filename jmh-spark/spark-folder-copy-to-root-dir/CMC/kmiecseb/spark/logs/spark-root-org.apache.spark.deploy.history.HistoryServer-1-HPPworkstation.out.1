@@ -1,0 +1,39 @@
+Spark Command: /opt/jdk1.8.0_131/bin/java -cp /CMC/kmiecseb/spark/conf/:/CMC/kmiecseb/spark/assembly/target/scala-2.11/jars/* -Xmx2g org.apache.spark.deploy.history.HistoryServer
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/09/11 20:04:04 INFO HistoryServer: Started daemon with process name: 15478@localhost
+17/09/11 20:04:04 INFO SignalUtils: Registered signal handler for TERM
+17/09/11 20:04:04 INFO SignalUtils: Registered signal handler for HUP
+17/09/11 20:04:04 INFO SignalUtils: Registered signal handler for INT
+17/09/11 20:04:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/09/11 20:04:05 INFO SecurityManager: Changing view acls to: root
+17/09/11 20:04:05 INFO SecurityManager: Changing modify acls to: root
+17/09/11 20:04:05 INFO SecurityManager: Changing view acls groups to: 
+17/09/11 20:04:05 INFO SecurityManager: Changing modify acls groups to: 
+17/09/11 20:04:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at org.apache.spark.ui.WebUI$$anonfun$1.apply(WebUI.scala:55)
+	at org.apache.spark.ui.WebUI$$anonfun$1.apply(WebUI.scala:55)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.ui.WebUI.<init>(WebUI.scala:54)
+	at org.apache.spark.deploy.history.HistoryServer.<init>(HistoryServer.scala:54)
+	at org.apache.spark.deploy.history.HistoryServer$.main(HistoryServer.scala:283)
+	at org.apache.spark.deploy.history.HistoryServer.main(HistoryServer.scala)
+Caused by: java.net.UnknownHostException: HPPworkstation: HPPworkstation: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1505)
+	at org.apache.spark.util.Utils$.findLocalInetAddress(Utils.scala:870)
+	at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress$lzycompute(Utils.scala:863)
+	at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress(Utils.scala:863)
+	at org.apache.spark.util.Utils$$anonfun$localHostName$1.apply(Utils.scala:920)
+	at org.apache.spark.util.Utils$$anonfun$localHostName$1.apply(Utils.scala:920)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.localHostName(Utils.scala:920)
+	at org.apache.spark.internal.config.package$.<init>(package.scala:189)
+	at org.apache.spark.internal.config.package$.<clinit>(package.scala)
+	... 7 more
+Caused by: java.net.UnknownHostException: HPPworkstation: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1500)
+	... 16 more
