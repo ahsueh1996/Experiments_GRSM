@@ -1,0 +1,142 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx8G
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:16
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: Accuracy = 0.7459016393442623
+24.167 s/op
+# Warmup Iteration   2: Accuracy = 0.7459016393442623
+16.843 s/op
+# Warmup Iteration   3: Accuracy = 0.7459016393442623
+16.110 s/op
+Iteration   1: Accuracy = 0.7459016393442623
+15.583 s/op
+Iteration   2: Accuracy = 0.7459016393442623
+15.217 s/op
+Iteration   3: Accuracy = 0.7459016393442623
+15.623 s/op
+Iteration   4: Accuracy = 0.7459016393442623
+15.135 s/op
+Iteration   5: Accuracy = 0.7459016393442623
+15.787 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 50.00% complete, ETA 00:02:15
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: Accuracy = 0.7459016393442623
+24.189 s/op
+# Warmup Iteration   2: Accuracy = 0.7459016393442623
+16.419 s/op
+# Warmup Iteration   3: Accuracy = 0.7459016393442623
+15.878 s/op
+Iteration   1: Accuracy = 0.7459016393442623
+15.314 s/op
+Iteration   2: Accuracy = 0.7459016393442623
+15.238 s/op
+Iteration   3: Accuracy = 0.7459016393442623
+15.211 s/op
+Iteration   4: Accuracy = 0.7459016393442623
+15.576 s/op
+Iteration   5: Accuracy = 0.7459016393442623
+15.468 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  15.415 ±(99.9%) 0.334 s/op [Average]
+  (min, avg, max) = (15.135, 15.415, 15.787), stdev = 0.221
+  CI (99.9%): [15.081, 15.749] (assumes normal distribution)
+
+Secondary result "grsm.Benchmarks.HiBench_LR:CPI":
+  0.924 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-load-misses":
+  1384827641.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-loads":
+  25685734953.800 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-stores":
+  9284114177.700 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-icache-load-misses":
+  220299551.100 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:LLC-load-misses":
+  30168096.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:LLC-loads":
+  143493893.400 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:LLC-store-misses":
+  29639788.400 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:LLC-stores":
+  79894974.800 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:branch-misses":
+  107008554.400 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:branches":
+  18062095777.100 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:cycles":
+  76236446213.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-load-misses":
+  11205663.700 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-loads":
+  25383303510.900 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-store-misses":
+  1055612.900 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-stores":
+  9245909437.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:iTLB-load-misses":
+  7715159.400 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:iTLB-loads":
+  27541671.900 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:instructions":
+  82485156200.000 #/op
+
+
+# Run complete. Total time: 00:04:30
+
+Benchmark                                    Mode  Cnt            Score   Error  Units
+Benchmarks.HiBench_LR                        avgt   10           15.415 ± 0.334   s/op
+Benchmarks.HiBench_LR:CPI                    avgt    2            0.924           #/op
+Benchmarks.HiBench_LR:L1-dcache-load-misses  avgt    2   1384827641.000           #/op
+Benchmarks.HiBench_LR:L1-dcache-loads        avgt    2  25685734953.800           #/op
+Benchmarks.HiBench_LR:L1-dcache-stores       avgt    2   9284114177.700           #/op
+Benchmarks.HiBench_LR:L1-icache-load-misses  avgt    2    220299551.100           #/op
+Benchmarks.HiBench_LR:LLC-load-misses        avgt    2     30168096.000           #/op
+Benchmarks.HiBench_LR:LLC-loads              avgt    2    143493893.400           #/op
+Benchmarks.HiBench_LR:LLC-store-misses       avgt    2     29639788.400           #/op
+Benchmarks.HiBench_LR:LLC-stores             avgt    2     79894974.800           #/op
+Benchmarks.HiBench_LR:branch-misses          avgt    2    107008554.400           #/op
+Benchmarks.HiBench_LR:branches               avgt    2  18062095777.100           #/op
+Benchmarks.HiBench_LR:cycles                 avgt    2  76236446213.500           #/op
+Benchmarks.HiBench_LR:dTLB-load-misses       avgt    2     11205663.700           #/op
+Benchmarks.HiBench_LR:dTLB-loads             avgt    2  25383303510.900           #/op
+Benchmarks.HiBench_LR:dTLB-store-misses      avgt    2      1055612.900           #/op
+Benchmarks.HiBench_LR:dTLB-stores            avgt    2   9245909437.500           #/op
+Benchmarks.HiBench_LR:iTLB-load-misses       avgt    2      7715159.400           #/op
+Benchmarks.HiBench_LR:iTLB-loads             avgt    2     27541671.900           #/op
+Benchmarks.HiBench_LR:instructions           avgt    2  82485156200.000           #/op

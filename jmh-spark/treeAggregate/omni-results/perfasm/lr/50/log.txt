@@ -1,0 +1,49 @@
+CompilerOracle: print *Benchmarks.HiBench_LR
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx8G -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:16
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: <forked VM failed with exit code 134>
+<stdout last='20 lines'>
+Code:
+  0x00007fdd21754778: 
+[Entry Point]
+[Constants]
+  # {method} {0x00007fdd0b44c710} 'scanComment' '(Lorg/apache/xerces/util/XMLStringBuffer;)V' in 'org/apache/xerces/impl/XMLScanner'
+  # this:     rsi:rsi   = 'org/apache/xerces/impl/XMLScanner'
+  # parm0:    rdx:rdx   = 'org/apache/xerces/util/XMLStringBuffer'
+  #           [sp+0x120]  (sp of caller)
+  0x00007fdd218879e0: mov    0x8(%rsi),%r10d
+  0x00007fdd218879e4: shl    $0x3,%r10
+  0x00007fdd218879e8: cmp    %rax,%r10
+  0x00007fdd218879eb: jne    0x00007fdd21045e20  ;   {runtime_call}
+  0x00007fdd218879f1: nopw   0x0(%rax,%rax,1)
+  0x00007fdd218879fc: xchg   %ax,%ax
+[Verified Entry Point]
+  0x00007fdd21887a00: mov    %eax,-0x14000(%rsp)
+  0x00007fdd21887a07: push   %rbp
+  0x00007fdd21887a08: sub    $0x110,%rsp
+  0x00007fdd21887a0f: mov    %rsi,0xe0(%rsp)
+  0x00007fdd21887a17: mov    %rdx,0xe8(%rsp)
+</stdout>
+<stderr last='20 lines'>
+Java HotSpot(TM) 64-Bit Server VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+Java HotSpot(TM) 64-Bit Server VM warning: CompileCommand and/or .hotspot_compiler file contains 'print' commands, but PrintAssembly is also enabled
+[ perf record: Woken up 6 times to write data ]
+[ perf record: Captured and wrote 3.920 MB /tmp/jmh65606848818688219perfbin (84702 samples) ]
+</stderr>
+
+# Run complete. Total time: 00:00:00
+
+Benchmark  Mode  Cnt  Score   Error  Units
