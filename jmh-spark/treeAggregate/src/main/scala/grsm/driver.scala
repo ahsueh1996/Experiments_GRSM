@@ -34,7 +34,7 @@ class Benchmarks {
 
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-			.setMaster("local[2]")
+			.setMaster("local[*]")
     		val sc = new SparkContext(conf)
 
     		// $example on$
