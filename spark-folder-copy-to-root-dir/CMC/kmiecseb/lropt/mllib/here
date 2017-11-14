@@ -1,0 +1,1000 @@
+   50  mv /home/output/ /home/old-hive-output
+   51  ls
+   52  jps
+   53  rm nohup.out 
+   54  ls
+   55  vim hive-bench.sh 
+   56  echo "" > hive-bench.sh 
+   57  vim hive-bench.sh 
+   58  ls
+   59  ls
+   60  tmux attach
+   61  l
+   62  ls
+   63  ps aux | grep hive-be
+   64  kill 22661
+   65  tmux attach
+   66  hive -version
+   67  ls
+   68  vim hive-bench.sh 
+   69  hive
+   70  ls
+   71  tmux attach
+   72  ls
+   73  tmux kill-server
+   74  tmux attach
+   75  tmux
+   76  ls
+   77  exit
+   78  cd /home/o
+   79  cd /home
+   80  ls
+   81  cd output/
+   82  ls
+   83  cd select/
+   84  ls
+   85  vim 20-results.txt 
+   86  vim 50-results.txt 
+   87  cd ..
+   88  ls
+   89  vim union/
+   90  vim union/20-results.txt 
+   91  cd /CMC/kmiecseb/
+   92  ls
+   93  vim hive-bench.sh 
+   94  ls
+   95  vim hive-bench.sh 
+   96  ps aux | grep hive
+   97  ps aux | grep hive-b
+   98  kill 26216
+   99  jps
+  100  hadoop job -list
+  101  hadoop job -kill job_201707271532_0012
+  102  ls
+  103  cd /CMC/kmiecseb/
+  104  jps
+  105  ./hadoop/bin/stop-all.sh 
+  106  ls
+  107  jps
+  108  rm -rf hadoop_file/
+  109  echo "" > hive-bench.sh 
+  110  vim hive-bench.sh 
+  111  ls
+  112  hadoop namenode -format
+  113  ls
+  114  rm -rf hadoop_file temp_files/ /var/log/sa/*
+  115  ls
+  116  jps
+  117  ls
+  118  jps
+  119  hadoop namenode -format
+  120  ls
+  121  ./hadoop/bin/start-all.sh 
+  122  ls
+  123  jps
+  124  cd BigDataBench_V3.2.1_Hadoop_Hive/
+  125  ls
+  126  cd Interactive_Query/
+  127  ls
+  128  cd ..
+  129  cd ..
+  130  tmux attach
+  131  ls
+  132  jps
+  133  tmux attach
+  134  ls
+  135  tmux attach
+  136  ls
+  137  vim /home/output/union/20-results.txt 
+  138  ls
+  139  ls
+  140  cd /home/output/
+  141  ls
+  142  vim union/80-results.txt 
+  143  vim union/50-results.txt 
+  144  vim select/20-results.txt 
+  145  vim select/50-results.txt 
+  146  vim select/80-results.txt 
+  147  ls
+  148  cd /home
+  149  ls
+  150  vim output/union/80-results.txt 
+  151  cd -
+  152  ls
+  153  cd /home/output/
+  154  ls
+  155  vim filter/80-results.txt 
+  156  vim select/
+  157  vim select/80-results.txt 
+  158  vim join/80-results.txt 
+  159  ls
+  160  cd /home
+  161  ls
+  162  vim ~/.bashrc
+  163  cd /CMC/kmiecseb/
+  164  ls
+  165  cd testo
+  166  ls
+  167  tree
+  168  cd ..
+  169  lls
+  170  ls
+  171  cd testo2
+  172  ls
+  173  cd testo
+  174  ls
+  175  ls
+  176  history > here
+  177  vim here
+  178  ls
+  179  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  180  cd ..
+  181  cd ..
+  182  ls
+  183  vim ~/.bashrc
+  184  exit
+  185  ls
+  186  ls
+  187  ls
+  188  cd -
+  189  ls
+  190  sudo -s
+  191  exit
+  192  ls
+  193  cd /CMC/K
+  194  cd /CMC/kmiecseb/
+  195  ls
+  196  ls
+  197  cd temp_files/
+  198  ls
+  199  cd dfs
+  200  ls
+  201  cd ..
+  202  cd ..
+  203  ls
+  204  cd /home
+  205  ls
+  206  cd kmiecseb/
+  207  ls
+  208  cd /CMC/kmiecseb/
+  209  ls
+  210  history | vim
+  211  history > txt
+  212  ls
+  213  vim txt
+  214  ls
+  215  cd testo
+  216  ls
+  217  cd spark
+  218  ls
+  219  cd ..
+  220  ls
+  221  cd HIBENCH-STUFF/
+  222  LS
+  223  ls
+  224  cd ..
+  225  ls
+  226  mkdir BDB-STUFF
+  227  ls
+  228  mv * BDB-STUFF/
+  229  ls
+  230  cd BDB-STUFF/
+  231  ls
+  232  mv HIBENCH-STUFF/ ..
+  233  ls
+  234  cd ..
+  235  ls
+  236  jps
+  237  cd BDB-STUFF/
+  238  ls
+  239  ./hadoop/bin/stop-all.sh 
+  240  ls
+  241  jps
+  242  cd ..
+  243  ls
+  244  mv BDB-STUFF/* .
+  245  mv BDB-STUFF/* .
+  246  mv BDB-STUFF/* .
+  247  ls
+  248  rm -rf temp_files/
+  249  ls
+  250  ./hadoop/bin/stop-all.sh 
+  251  jps
+  252  ls
+  253  kill 30980
+  254  kill 30378
+  255  kill 30170
+  256  kill 30587 
+  257  kill 30747
+  258  kill 30741
+  259  ls
+  260  jps
+  261  ls
+  262  mv * BDB-STUFF/
+  263  ls
+  264  mv BDB-STUFF/HIBENCH-STUFF/* .
+  265  ls
+  266  vim App.scala 
+  267  vim App.scala 
+  268  ls
+  269  ./hadoop/sbin/stop-all.
+  270  ./hadoop/sbin/stop-all.sh 
+  271  jps
+  272  ls
+  273  cd files
+  274  ls
+  275  cd ..
+  276  ls
+  277  rm -rf files
+  278  ls
+  279  ls
+  280  ls
+  281  ls
+  282  cd all
+  283  ls
+  284  cd ..
+  285  ls
+  286  rm -rf all
+  287  ls
+  288  ls
+  289  cd testo2
+  290  ls
+  291  cd testo
+  292  ls
+  293  cd target
+  294  ls
+  295  cd ..
+  296  ls
+  297  cd src
+  298  ls
+  299  cd main/
+  300  ls
+  301  tree scala
+  302  cd ..
+  303  ls
+  304  cd ..
+  305  ls
+  306  vim | history
+  307  ls
+  308  cd /CMC/kmiecseb/
+  309  ls
+  310  cd testo2
+  311  ls
+  312  cd tesot
+  313  cd testo
+  314  ls
+  315  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  316  jps
+  317  cd ..
+  318  ls
+  319  cd ..
+  320  ls
+  321  ;s
+  322  ls
+  323  rm -rf hadoop_file/
+  324  ls
+  325  cd BDB-STUFF/
+  326  ls
+  327  rm -rf temp_files/
+  328  rm -rf txt; cd ..; 
+  329  ls
+  330  hadoop namenode -format
+  331  ./hadoop/sbin/start-all.sh 
+  332  ./spark/sbin/start-all.sh
+  333  l
+  334  ls
+  335  ls
+  336  ./spark/sbin/start-all.sh 
+  337  jps
+  338  ls
+  339  cd testo2/testo/
+  340  ls
+  341  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  342  hadoop fs -ls /
+  343  hadoop fs -ls /HiBench
+  344  hadoop fs -ls /HiBench/KR
+  345  hadoop fs -ls /HiBench/LR
+  346  hadoop fs -ls /HiBench/LR/Input
+  347  ls
+  348  cd ..
+  349  cd testo/
+  350  ls
+  351  tree
+  352  vim src/main/scala/org/test/App.scala 
+  353  vim src/main/scala/org/test/App.scala 
+  354  ls
+  355  cd /CMC/kmiecseb/
+  356  ls
+  357  ls
+  358  cd /CMC/kmiecseb/
+  359  ls
+  360  cd testo2/testo/
+  361  ls
+  362  tree
+  363  ls
+  364  vim pom.xml 
+  365  ls
+  366  cd /CMC/kmiecseb/
+  367  ls
+  368  ls
+  369  ls
+  370  jar tvf testo
+  371  jar tvf testo-0.0.1.jar 
+  372  ls
+  373  ls
+  374  rm -f testo-0.0.1.jar 
+  375  ls
+  376  cd testo2/testo/
+  377  ls
+  378  ls
+  379  vim src/main/scala/org/test/App2.scala
+  380  ls
+  381  vim here 
+  382  mvn clean package -Dmaven.test.skip=true
+  383  vim here
+  384  ls
+  385  ls -l target/
+  386  vim src/main/scala/org/test/App.scala
+  387  vim src/main/scala/org/test/App2.scala
+  388  spark-submit --class LogisticRegression --properties-file ../spark/conf/spark-defaults.conf target/testo-0.0.1.jar
+  389  ls
+  390  spark-submit --class LogisticRegression --properties-file ../../spark/conf/spark-defaults.conf target/testo-0.0.1.jar
+  391  ls
+  392  spark-submit --class App2 --properties-file ../../spark/conf/spark-defaults.conf target/testo-0.0.1.jar
+  393  vim src/main/scala/org/test/App.scala
+  394  vim src/main/scala/org/test/App2.scala
+  395  ls
+  396  mvn clean package -Dmaven.test.skip=true
+  397  spark-submit --class App2 --properties-file ../../spark/conf/spark-defaults.conf target/testo-0.0.1.jar
+  398  ls
+  399  cd /CMC/kmiecseb/
+  400  ls
+  401  cd testo2
+  402  ls
+  403  cd testo
+  404  ls
+  405  tree
+  406  rm here
+  407  ls
+  408  vim pom.xml 
+  409  vim pom.xml 
+  410  vim pom.xml 
+  411  ls
+  412  vim pom.xml 
+  413  ls -l
+  414  ls
+  415  vim pom.xml 
+  416  vim pom.xml 
+  417  vim pom.xml 
+  418  ls -a
+  419  rm -rf .pom.xml.swp 
+  420  ls
+  421  ls -a
+  422  ls
+  423  ls -l
+  424  ls -la
+  425  ls
+  426  vim pom.xml 
+  427  ls
+  428  tree
+  429  ls
+  430  vim src/main/scala/org/test/App.scala 
+  431  rm -f src/main/scala/org/test/.App.scala.swp 
+  432  ls
+  433  vim src/main/scala/org/test/App.scala 
+  434  ls
+  435  history > here
+  436  vim here
+  437  mvn clean package -Dmaven.test.skip=true
+  438  ls
+  439  cp target/testo-0.0.1.jar ../../
+  440  cd ../..
+  441  ls
+  442  ls
+  443  ls
+  444  cd /CMC/K
+  445  cd /CMC/kmiecseb/
+  446  ls
+  447  cd testo
+  448  cd ..
+  449  cd testo2
+  450  ls
+  451  cd testo/
+  452  ls
+  453  ls
+  454  cd /CMC/kmiecseb/
+  455  ls
+  456  vim ~/.ssh/ssh_config
+  457  ls -l ~  | grep config
+  458  ls -l ~  | grep "config"
+  459  ls ~  | grep "config"
+  460  ls
+  461  cd /CMC/kmiecseb/
+  462  ls
+  463  ls
+  464  ls
+  465  vim ServerAliveInterval 120
+  466  vim /etc/ssh/sshd_config 
+  467  ls
+  468  cd testo2
+  469  ls
+  470  cd testo/
+  471  ls
+  472  vim here
+  473  cd ..
+  474  cd ..
+  475  ls
+  476  vim HiBench/bin/functions/workload_functions.sh 
+  477  hadoop fs -ls /
+  478  jps
+  479  ls
+  480  ./HiBench/bin/workloads/ml/lr/spark/run.sh 
+  481  vim HiBench/bin/functions/workload_functions.sh 
+  482  vim HiBench/bin/functions/workload_functions.sh 
+  483          SUBMIT_CMD="${SPARK_HOME}/bin/spark-submit ${LIB_JARS} --properties-file ${SPARK_PROP_CONF} --class ${CLS} --master ${SPARK_MASTER} ${YARN_OPTS} ${SPARKBENCH_JAR} $@"
+  484  cd testo2/
+  485  cd testo/
+  486  ls
+  487  vim here
+  488  vim here
+  489  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  490  ls
+  491  ls -l target/
+  492  java tvf target/testo-0.0.1.jar 
+  493  jar tvf target/testo-0.0.1.jar 
+  494  tree
+  495  vim src/main/scala/org/test/App.scala 
+  496  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  497  vim src/main/scala/org/test/App.scala 
+  498  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class com.intel.hibench.sparkbench.ml.App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  499  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class com.intel.hibench.sparkbench.ml.App2 target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input
+  500  ls
+  501  jar tvf target/testo-0.0.1.jar 
+  502  ls
+  503  ls -l target/
+  504  vim pom.xml 
+  505  man mvn
+  506  man maven
+  507  ls
+  508  vim here
+  509  vn clean package -Dmaven.test.skip=true
+  510  mvn clean package -Dmaven.test.skip=true
+  511  mvn clean package -Dmaven.test.skip=true -DdownloadSources=true
+  512  ls
+  513  tree
+  514  ls
+  515  vim pom.xml 
+  516  ls
+  517  mvn clean package
+  518  ls -l /root/.m2/repository/
+  519  vim pom.xml 
+  520  mvn clean package -Yresolve-term-conflict:
+  521  mvn clean package -Yresolve-term-conflict:macros
+  522  mvn clean package -Yresolve-term-conflict:macros | grep "resolve"
+  523  mvn clean package -Dmaven.test.skip=true
+  524  vim pom.xml 
+  525  tree
+  526  vim pom.xml 
+  527  mvn clean package
+  528  ls
+  529  ls -l target
+  530  vim pom.xml 
+  531  cd ..
+  532  cd ..
+  533  ls
+  534  cd testo
+  535  ls
+  536  rm -rf *
+  537  ls
+  538  mvn archetype:generate
+  539  ls
+  540  mv testerino/ ../
+  541  cd ..
+  542  ls
+  543  rm -rf testo
+  544  ls
+  545  cd testerino/
+  546  ls
+  547  vim pom.xml 
+  548  cd ..
+  549  ls
+  550  cd testo2
+  551  ls
+  552  cd testo
+  553  ls
+  554  vim pom.xml 
+  555  cd ..
+  556  ls
+  557  ls
+  558  cd ..
+  559  ls
+  560  cd testerino/
+  561  cd ..
+  562  ls
+  563  ls
+  564  spark -version
+  565  ls
+  566  jps
+  567  spark-shell
+  568  ls
+  569  cd spark
+  570  ls
+  571  cd src
+  572  cd ..
+  573  ls
+  574  git clone https://github.com/apache/spark.git
+  575  mkdir lropt
+  576  cd lropt/
+  577  git clone https://github.com/apache/spark.git
+  578  ls
+  579  cd spark
+  580  ls
+  581  cd ..
+  582  cd ..
+  583  ls
+  584  cd spark
+  585  cd mllib
+  586  cd ..
+  587  ls
+  588  cd ..
+  589  ls
+  590  rm -rf lropt/*
+  591  tree spark/mllib/src/main/
+  592  cp spark/mllib/src/main/resources/org/apache/spark/ml/feature/stopwords/english.txt 
+  593  ls -l spark/mllib/src/main/resources/org/apache/spark/ml/feature/stopwords/english.txt 
+  594  vim spark/mllib/src/main/resources/org/apache/spark/ml/feature/stopwords/english.txt 
+  595  cp -R spark/mllib/src/main/scala/* lropt/
+  596  ls
+  597  cd lropt/
+  598  ls
+  599  mvn archteype:generate
+  600  ls
+  601  mvn archetype:generate
+  602  ls
+  603  mv lropt/ ../
+  604  cd ..
+  605  ls
+  606  mv lropt/ t
+  607  cd t
+  608  ls
+  609  mv lropt/ ../
+  610  cd ..
+  611  ls
+  612  mv t/* lropt/
+  613  rm -rf t
+  614  cd lropt/
+  615  ls
+  616  tree src/
+  617  vim src/main/scala/lropt/App.scala 
+  618  vim src/main/scala/lropt/App.scala 
+  619  rm -rf src/main/scala/*
+  620  ls
+  621  mv org src/main/scala/
+  622  ls
+  623  mvn clean package
+  624  ls
+  625  cd ..
+  626  ls
+  627  cp -R spark/common/tags/src/main/scala/ lropt/
+  628  cd lropt/
+  629  ls
+  630  tree scala
+  631  tree src
+  632  lass
+  633  ls
+  634  mv scala/* src/main/scala/
+  635  mv scala/org/apache/spark/* src/main/scala/org/apache/spark/
+  636  ls
+  637  rm -rf scala
+  638  mvn clean package
+  639  vim pom.xml 
+  640  ls
+  641  ls -l src/main/scala/org/apache/spark/mllib/
+  642  ls
+  643  ls -l src/main/scala/org/apache/spark/
+  644  rm -rf src/main/scala/org/apache/spark/annotation/
+  645  ls
+  646  cd ..
+  647  ls
+  648  rm -rf testerino
+  649  cp -R testo2 testo3
+  650  ls
+  651  vim spark-defaults.conf 
+  652  rm -rf spark-defaults.conf 
+  653  ls
+  654  cp -R lropt/src/main/scala/org/* testo3/testo/src/main/scala/org/
+  655  cd testo3
+  656  ls
+  657  cd testo/
+  658  ls
+  659  rm src/main/scala/org/test/App*
+  660  ls
+  661  vim pom.xml 
+  662  ls
+  663  mvn clean package
+  664  ls
+  665  tree src
+  666  rm -rf src/main/scala/org/test/
+  667  cd ..
+  668  cd ..
+  669  ls
+  670  mkdir testo4
+  671  cp -R testo3/testo/* testo4/
+  672  rm -rf testo4/*
+  673  cp -R testo2/testo/* testo4/
+  674  cd testo4
+  675  ls
+  676  mvn clean package
+  677  ls
+  678  cd src/main/scala/org/test/App
+  679  cd src/main/scala/org/test/
+  680  ls
+  681  ls
+  682  cd ..
+  683  cd ..
+  684  cd ..
+  685  cd ..
+  686  ls
+  687  cd ..
+  688  ls
+  689  vim pom.xml 
+  690  vim pom.xml 
+  691  vim src/main/scala/org/test/App.scala 
+  692  vim pom.xml 
+  693  mvn clean package
+  694  vim pom.xml 
+  695  mvn clean package
+  696  ls -l target/
+  697  jar tvf target/testo-0.0.1-jar-with-dependencies.jar 
+  698  vim pom.xml 
+  699  ls
+  700  cd /CMC/kmiecseb/
+  701  ls
+  702  ls
+  703  cp -R testo2 final
+  704  ls
+  705  cd final
+  706  ls
+  707  cd testo
+  708  ls
+  709  tree src
+  710  rm -rf src/main/scala/org/*
+  711  cp -R ../../spark/mllib/src/main/scala/org/* src/main/scala/org/
+  712  tree src/main/scala/org/apache/spark/ml
+  713  ls
+  714  vim pom.xml 
+  715  cd ..
+  716  cd ..
+  717  ls
+  718  cd final/testo/
+  719  ls
+  720  vim pom.xml 
+  721  mvn clean package
+  722  vim pom.xml 
+  723  ls -l src/main/scala/org/apache/spark
+  724  hadoop fs -ls /
+  725  hadoop fs -ls /HiBench/Output
+  726  hadoop fs -ls /HiBench/
+  727  hadoop fs -ls /HiBench/LR/Output
+  728  hadoop fs -ls /HiBench/LR/
+  729  vim ../../HiBench/conf/workloads/ml/lr.conf 
+  730  jps
+  731  cd ..
+  732  cd ..
+  733  ls
+  734  cd testo2
+  735  ls
+  736  cd testo
+  737  tree src
+  738  ls
+  739  history > here
+  740  vim here
+  741  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class com.intel.hibench.sparkbench.ml.App target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input 100 1000
+  742  vim here
+  743  spark-submit --properties-file ../../spark/conf/spark-defaults.conf --class com.intel.hibench.sparkbench.ml.App2 target/testo-0.0.1.jar hdfs://localhost:9000/HiBench/LR/Input
+  744  hadoop fs -ls /HiBench/LR
+  745  vim ../../HiBench/bin/functions/workload_functions.sh 
+  746  vim ../../HiBench/bin/workloads/ml/lr/spark/run.sh 
+  747  vim ../../HiBench/bin/functions/workload_functions.sh 
+  748  ls
+  749  cd ..
+  750  ls
+  751  cd ..
+  752  ls
+  753  jps
+  754  ./spark/sbin/stop-all.sh 
+  755  ./hadoop/sbin/stop-all.sh 
+  756  ls
+  757  ls
+  758  jps
+  759  localhost
+  760  exit
+  761  ks
+  762  sudo -s
+  763  exit
+  764  cd /CMC/kmiecseb/
+  765  ls
+  766  ssh kmiecseb@apollo.msrg.utoronto.ca
+  767  ssh kmiecseb@apollo.msrg.utoronto.ca
+  768  ssh-keygen
+  769  ssh apollo.msrg.utoronto.ca
+  770  ssh-copy-id kmiecseb@apollo.msrg.utoronto.ca
+  771  vim ~/.ssh/id_dsa.pub 
+  772  ssh-copy-id -i kmiecseb@apollo.msrg.utoronto.ca
+  773  ls ~/.ssh/
+  774  man ssh-keygen
+  775   ssh-keygen -t rsa
+  776  ls
+  777  ssh-copy-id kmiecseb@apollo.msrg.utoronto.ca
+  778  ssh kmiecseb@apollo.msrg.utoronto.ca
+  779  ls
+  780  ssh apollo
+  781  vim slaves
+  782  l
+  783  ls
+  784  ls
+  785  ls
+  786  rm -rf hadoop_file
+  787  ssh kmiecseb@apollo.msrg.utoronto.ca
+  788  jps
+  789  ls
+  790  rm -f y y.pub
+  791  ls
+  792  ./hadoop/sbin/start-all.sh 
+  793  ssh kmiecseb@apollo.msrg.utoronto.ca
+  794  ls
+  795  ./hadoop/sbin/stop-all.sh 
+  796  rm -rf hadoop_file; vim hadoop/etc/hadoop/slaves 
+  797  ssh kmiecseb@apollo.msrg.utoronto.ca
+  798  ls
+  799  jps
+  800  vim hadoop/etc/hadoop/slaves 
+  801  vim hadoop/etc/hadoop/slaves 
+  802  vim hadoop/etc/hadoop/slaves 
+  803  ls
+  804  hadoop namenode -format
+  805  ssh kmiecseb@apollo.msrg.utoronto.ca
+  806  ls
+  807  ./hadoop/sbin/start-all.sh 
+  808  jps
+  809  ls
+  810  ./hadoop/sbin/stop-all.
+  811  ./hadoop/sbin/stop-all.sh 
+  812  ls
+  813  jps
+  814  rm -rf haoop_file
+  815  ls
+  816  ls
+  817  rm -rf hadoop_file
+  818  ls
+  819  ls
+  820  ls
+  821  ls
+  822  ls
+  823  jps
+  824  ls
+  825  ssh kmiecseb@apollo.msrg.utoronto.ca
+  826  ls
+  827  vim hadoop/etc/hadoop/slaves 
+  828  ls
+  829  hadoop namenode -format
+  830  ./hadoop/sbin/start-all.sh ; ./spark/sbin/start-all.sh 
+  831  jps
+  832  ls
+  833  ls
+  834  cd final
+  835  ls
+  836  ls
+  837  cd testo
+  838  ls
+  839  mvn clean package
+  840  vim pom.xml 
+  841  mvn clean package
+  842  vim pom.xml 
+  843  mvn clean package
+  844  vim pom.xml 
+  845  mvn clean package
+  846  mvn clean package > pckg
+  847  vim pckg
+  848  ls
+  849  ls src/main/scala/org/apache/spark/ml
+  850  ls src/main/scala/org/apache/spark/ml/linalg/
+  851  ls
+  852  tree src/main/scala/org/apache/spark/mllib/linalg/
+  853  cat src/main/scala/org/apache/spark/mllib/linalg/Vectors.scala 
+  854  :q
+  855  ls
+  856  cd ..
+  857  cd testo
+  858  ls
+  859  cd ..
+  860  ls
+  861  rm -rf testo
+  862  ls
+  863  git clone https://github.com/apache/spark.git
+  864  ls
+  865  cd spark
+  866  ls
+  867  cd mllib
+  868  ls
+  869  cd ...
+  870  cd ..
+  871  cd ..
+  872  ls
+  873  cp -R spark/mllib .
+  874  ls
+  875  rm -rf spark
+  876  ls
+  877  cd mllib/
+  878  ls
+  879  mvn clean package
+  880  vim pom.xml 
+  881  ls
+  882  mvn clean package
+  883  vim pom.xml 
+  884  cd ..
+  885  ls
+  886  rm -rf mllib/
+  887  git clone https://github.com/apache/spark.git
+  888  cp -R spark/mllib .
+  889  ls
+  890  rm -rf spark
+  891  cd mllib/
+  892  vim pom.xml 
+  893  cd ..
+  894  ls
+  895   rm -rf mllib/
+  896  ls
+  897  l
+  898  ls
+  899  git clone https://github.com/apache/spark.git
+  900  ls
+  901  cd spark
+  902  git tag -l
+  903  git checkout v2.1.0
+  904  ls
+  905  cd ..
+  906  ls
+  907  mv spark/mllib .
+  908  rm -rf spark/
+  909  ls
+  910  cd mllib/
+  911  ls
+  912  cd ..
+  913  ls
+  914  cd mllib/
+  915  ls
+  916  vim pom.xml 
+  917  cd ..
+  918  ls
+  919  rm -rf mllib/
+  920  wget https://github.com/apache/spark/archive/v2.1.0.tar.gz
+  921  ls
+  922  tar -xf v2.1.0.tar.gz 
+  923  ls
+  924  rm -f v2.1.0.tar.gz 
+  925  ls
+  926  cd spark-2.1.0/
+  927  ls
+  928  cd ..
+  929  ls
+  930  mv spark-2.1.0/mllib .
+  931  ls
+  932  rm -rf spark-2.1.0/
+  933  ls
+  934  cd mllib/
+  935  ls
+  936  vim pom.xml 
+  937  ls
+  938  mvn clean package
+  939  vim pom.xml 
+  940  mvn clean package
+  941  vim pom.xml 
+  942  mvn clean package
+  943  vim pom.xml 
+  944  mvn clean package
+  945  vim pom.xml 
+  946  ls
+  947  mvn clean package
+  948  vim pom.xml 
+  949  mvn clean package
+  950  vim pom.xml 
+  951  cd ..
+  952  ls
+  953  wget https://github.com/apache/spark/archive/v2.1.0.tar.gz
+  954  ls
+  955  tar -xf v2.1.0.tar.gz 
+  956  ls
+  957  rm -f v2.1.0.tar.gz 
+  958  ls
+  959  vim spark-2.1.0/pom.xml 
+  960  vim spark-2.1.0/pom.xml 
+  961  ls
+  962  cd mllib/
+  963  ls
+  964  vim pom.xml 
+  965  vim pom.xml 
+  966  ls
+  967  mvn clean package
+  968  cd ..
+  969  ls
+  970  cd spark-2.1.0/
+  971  ls
+  972  cd ..
+  973  ls
+  974  cd ..
+  975  ls
+  976  cd spark
+  977  ls
+  978  cd target
+  979  ls
+  980  cd ..
+  981  ls
+  982  cd ..
+  983  ls
+  984  cd final
+  985  ls
+  986  rm -rf mllib/
+  987  ls
+  988  cd spark-2.1.0/
+  989  ls
+  990  cd mllib
+  991  ls
+  992  mvn clean package
+  993  ls
+  994  mvn package
+  995  ls
+  996  ls -l target
+  997  vim pom.xml 
+  998  mvn clean packge -Dmaven.test.skip=true
+  999  mvn clean package -Dmaven.test.skip=true
+ 1000  cd /CMC/K
+ 1001  cd /CMC/kmiecseb/
+ 1002  ls
+ 1003  cd final
+ 1004  l
+ 1005  ls
+ 1006  cd spark-2.1.0/
+ 1007  ls
+ 1008  cd mllib
+ 1009  ls
+ 1010  ls -l target
+ 1011  vim pom.xml 
+ 1012  cd ..
+ 1013  cd ..
+ 1014  cd spark-2.1.0/
+ 1015  vim pom.xml 
+ 1016  ls
+ 1017  cd mllib
+ 1018  vim pom.xml 
+ 1019  vim pom.xml 
+ 1020  cd ..
+ 1021  cd ..
+ 1022  mv spark-2.1.0/ ../
+ 1023  ls
+ 1024  cd ..
+ 1025  ls
+ 1026  rm -rf final/ lropt/
+ 1027  ls
+ 1028  mv spark-2.1.0/ lropt
+ 1029  ls
+ 1030  ls
+ 1031  cp testo2/testo/src/main/scala/org/test/App* lropt/mllib/src/main/scala/
+ 1032  cd lropt/mllib/src/main/scala/lropt/mllib/src/main/scala/
+ 1033  cd lropt/mllib/src/main/scala/
+ 1034  ls
+ 1035  vim App.scala 
+ 1036  ls
+ 1037  ls
+ 1038  lss
+ 1039  ls
+ 1040  ls
+ 1041  cd ..
+ 1042  ls
+ 1043  cd ..
+ 1044  ls
+ 1045  cd ..
+ 1046  ls
+ 1047  mvn package -Dmaven.test.skip=true
+ 1048  ls
+ 1049  history > here
