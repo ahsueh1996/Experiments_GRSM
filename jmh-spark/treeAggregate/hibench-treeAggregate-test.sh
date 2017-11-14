@@ -1,5 +1,5 @@
 #!/bin/bash
-OUTPUT_DIR=/home/hibench-output/avgt
+OUTPUT_DIR=/home/hibench-output/perfnorm
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 mkdir -p $OUTPUT_DIR
@@ -49,7 +49,7 @@ do
 	mkdir -p $OUTPUT_DIR/lr/$i
 	cd $PROJ_DIR
 	#######
-	spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --master spark://142.150.237.146:7077 --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
 	#######
 	cd $WORK_DIR/HiBench
 	date
