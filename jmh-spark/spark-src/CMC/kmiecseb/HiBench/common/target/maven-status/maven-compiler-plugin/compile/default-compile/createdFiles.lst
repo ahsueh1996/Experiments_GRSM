@@ -1,0 +1,9 @@
+com/intel/hibench/common/streaming/Platform.class
+com/intel/hibench/common/streaming/KMeansData.class
+com/intel/hibench/common/streaming/KMeansDataParser.class
+com/intel/hibench/common/streaming/UserVisit.class
+com/intel/hibench/common/HiBenchConfig.class
+com/intel/hibench/common/streaming/ConfigLoader.class
+com/intel/hibench/common/streaming/StreamBenchConfig.class
+com/intel/hibench/common/streaming/UserVisitParser.class
+com/intel/hibench/common/streaming/TestCase.class
