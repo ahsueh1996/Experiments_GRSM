@@ -30,27 +30,21 @@ cd $WORK_DIR
 
 # Grab Hadoop...
 #
-if [  ! -d "hadoop"  ];then
+#if [  ! -d "hadoop"  ];then
+if [ -d "hadoop" ];then
 
  	printf "\nGrabbing and preparing Hadoop 2.7.1...\n"
 
  	# Grab and build Hadoop 2.7.1:
 	cd $WORK_DIR
-	wget https://github.com/apache/hadoop/archive/release-2.7.1.tar.gz
-	tar -xf release-2.7.1.tar.gz
-	cd hadoop-release-2.7.1
-	mvn clean package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X >> /dev/null
-	mvn package -Pdist,native -DskipTests -Dtar -X
-	mkdir ../hadoop
-	cp -R hadoop-dist/target/hadoop-2.7.1 ../hadoop/
-	cd ..
-	rm -rf hadoop-release-2.7.1 release-2.7.1.tar.gz
+	#wget https://github.com/apache/hadoop/archive/release-2.7.1.tar.gz
+	#tar -xf release-2.7.1.tar.gz
+	#cd hadoop-release-2.7.1
+	#mvn clean package -Pdist,native -DskipTests -Dtar -X
+	#mkdir ../hadoop
+	#cp -R hadoop-dist/target/hadoop-2.7.1 ../hadoop/
+	#cd ..
+	#rm -rf hadoop-release-2.7.1 release-2.7.1.tar.gz
 
 	# Remove lines containing YARN/HADOOP
 	sed -i '/YARN/d' ~/.bashrc 
