@@ -247,18 +247,18 @@ if [  ! -d "hadoop"  ];then
 	fi
 
 
-
-	# Setup SSH keys for sshing to self:
-	#
-	echo "y" |  ssh-keygen -t dsa -f ~/.ssh/id_dsa -P ""
-	cat ~/.ssh/id_dsa.pub >>  ~/.ssh/authorized_keys
-	chmod 0600 ~/.ssh/authorized_keys
-	ssh -o "StrictHostKeyChecking no" localhost "exit"	&
-	ssh -o "StrictHostKeyChecking no" 0.0.0.0 "exit" &
-	ssh -o "StrictHostKeyChecking no" $('hostname') "exit"	&
-	LOCAL_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
-	ssh -o "StrictHostKeyChecking no" $LOCAL_IP "exit"	&
-	cd $WORK_DIR
+######### do this at the start ############
+# 	# Setup SSH keys for sshing to self:
+# 	#
+# 	echo "y" |  ssh-keygen -t dsa -f ~/.ssh/id_dsa -P ""
+# 	cat ~/.ssh/id_dsa.pub >>  ~/.ssh/authorized_keys
+# 	chmod 0600 ~/.ssh/authorized_keys
+# 	ssh -o "StrictHostKeyChecking no" localhost "exit"	&
+# 	ssh -o "StrictHostKeyChecking no" 0.0.0.0 "exit" &
+# 	ssh -o "StrictHostKeyChecking no" $('hostname') "exit"	&
+# 	LOCAL_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
+# 	ssh -o "StrictHostKeyChecking no" $LOCAL_IP "exit"	&
+# 	cd $WORK_DIR
   
 else
   echo seems like hadoop has been grabbed already
