@@ -25,8 +25,8 @@ SPARK_EXECUTOR_INSTANCES=9
 SPARK_DAEMON_MEMORY=2g
 
 ###### Use "Development Tools" #####
-# # Basic dependecies needed:
-# yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
+# Basic dependecies needed:
+yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
 
 ########################################################################################################
 #
@@ -41,21 +41,22 @@ echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
 source ~/.bashrc
 
 ########################################################################################################
-####### Use intall maven from yum ####
-# # Grab Maven
-# cd $WORK_DIR
-# cd /opt
-# wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-# sudo tar xzf apache-maven-3.3.9-bin.tar.gz
-# sudo ln -s apache-maven-3.3.9 maven
+###### Use intall maven from yum ####
+# Grab Maven
+cd $WORK_DIR
+cd /opt
+wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+sudo tar xzf apache-maven-3.3.9-bin.tar.gz
+sudo ln -s apache-maven-3.3.9 maven
 
-###### IF i use yum install maven, the paths aren't set but I can still exec maven.. ######
-# #
-# # Apache Maven
-# #
-# echo "export M2_HOME=/opt/maven" >> ~/.bashrc
-# echo "export PATH=\${M2_HOME}/bin:\${PATH}" >> ~/.bashrc
-# source /etc/profile.d/maven.sh
+##### IF i use yum install maven, the paths aren't set but I can still exec maven.. ######
+#
+# Apache Maven
+#
+echo "export M2_HOME=/opt/maven" >> ~/.bashrc
+echo "export PATH=\${M2_HOME}/bin:\${PATH}" >> ~/.bashrc
+touch /etc/profile.d/maven.sh
+source /etc/profile.d/maven.sh
 
 ########################################################################################################
 ### Grab Protobuf #####
@@ -423,11 +424,11 @@ if [  ! -d "HiBench"  ];then
 	cd $WORK_DIR
 fi
 
-############LET the reset script take care of this#########
-# # Start Hadoop:
-# cd $WORK_DIR
-# hadoop namenode -format
-# ./hadoop/sbin/start-all.sh
+###########LET the reset script take care of this#########
+# Start Hadoop:
+cd $WORK_DIR
+hadoop namenode -format
+./hadoop/sbin/start-all.sh
 
-# # Start Spark:
-# ./spark/sbin/start-all.sh
+# Start Spark:
+./spark/sbin/start-all.sh
