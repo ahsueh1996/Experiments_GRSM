@@ -39,7 +39,7 @@ if [  ! -d "hadoop"  ];then
 	wget https://github.com/apache/hadoop/archive/release-2.7.1.tar.gz
 	tar -xf release-2.7.1.tar.gz
 	cd hadoop-release-2.7.1
-	mvn clean package -Pdist -DskipTests
+	mvn clean package -Pdist -DskipTests -X
 	mkdir ../hadoop
 	cp -R hadoop-dist/target/hadoop-2.7.1 ../hadoop/
 	cd ..
