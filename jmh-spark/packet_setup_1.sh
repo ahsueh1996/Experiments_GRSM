@@ -38,8 +38,6 @@ tar -xf jdk8u-server-release-1708.tar.xz
 rm -f jdk8u-server-release-1708.tar.xz
 echo "export JAVA_HOME=$WORK_DIR/jdk8u-server-release-1708"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
-source ~/.bashrc
-
 
 # Grab Maven
 cd $WORK_DIR
@@ -53,4 +51,5 @@ sudo ln -s apache-maven-3.3.9 maven
 #
 echo "export M2_HOME=/opt/maven" >> ~/.bashrc
 echo "export PATH=\${M2_HOME}/bin:\${PATH}" >> ~/.bashrc
-source /etc/profile.d/maven.sh
+
+source ~/.bashrc
