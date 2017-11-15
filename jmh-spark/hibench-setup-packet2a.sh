@@ -26,7 +26,7 @@ SPARK_DAEMON_MEMORY=2g
 
 
 
-
+###### I installed the "Development Tools" on previous to this; seems necessary to get rid of some gcc errors #######
 # Basic dependecies needed:
 yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
 
@@ -42,7 +42,6 @@ echo "export JAVA_HOME=$WORK_DIR/jdk8u-server-release-1708"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
 source ~/.bashrc
 
-
 # Grab Maven
 cd $WORK_DIR
 cd /opt
@@ -55,7 +54,11 @@ sudo ln -s apache-maven-3.3.9 maven
 #
 echo "export M2_HOME=/opt/maven" >> ~/.bashrc
 echo "export PATH=\${M2_HOME}/bin:\${PATH}" >> ~/.bashrc
+###### no file maven.sh found at the specified location... what? #####
+touch /etc/profile.d/maven.sh
 source /etc/profile.d/maven.sh
+###### added another soucre cmd, not sure if we will need it ####
+source ~/.bashrc
 
 
 ### Grab Protobuf #####
