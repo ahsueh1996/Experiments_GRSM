@@ -11,15 +11,6 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-//import org.apache.spark.rdd.RDD
-//import org.apache.spark.SparkContext
-
-// This static main method might be needed for spark
-//object Main {
-//	def main(args: Array[String]) {	
-//	}
-//}
-
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
 @Measurement(iterations=5,time=1,timeUnit=TimeUnit.SECONDS)
@@ -28,8 +19,11 @@ import org.apache.spark.rdd.RDD
 
 class Benchmarks {
 	@State(Scope.Benchmark)
-  static class HiBench_LR_State {
-    // Path taken from HiBench functions/workload-function.sh
+  	static class HiBench_LR_State {
+	
+		println("State Initialized")
+		
+    		// Path taken from HiBench functions/workload-function.sh
     		var inputPath = "hdfs://localhost:9000/HiBench/LR/Input"
 
     		val conf = new SparkConf()
@@ -45,7 +39,13 @@ class Benchmarks {
     		val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
     		val training = splits(0).cache()
     		val test = splits(1)
-  }
+		
+		@Teardown
+		def Tear_down() {
+			println("State Teardown")
+			sc.stop()
+		}
+  	}
   
 	@Benchmark
 	def HiBench_LR(val state : HiBench_LR_State) {
