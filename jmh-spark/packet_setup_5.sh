@@ -76,8 +76,8 @@ if [  -d "HiBench"  ];then
 		echo "spark.driver.extraJavaOptions      -XX:-UseLSE" >> conf/spark.conf
 	fi
 	cd $WORK_DIR/HiBench
-	rm conf/spark.conf.jmh
-	cp conf/spark.conf conf/spark.conf.jmh
+	rm conf/spark.conf.jmhspark
+	cp conf/spark.conf conf/spark.conf.jmhspark
 	### do more ###
 	cd $WORK_DIR
 else
