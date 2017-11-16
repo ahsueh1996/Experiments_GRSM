@@ -75,8 +75,8 @@ if [  -d "HiBench"  ];then
 		echo "spark.io.compression.codec      lzf" >> conf/spark.conf
 		echo "spark.driver.extraJavaOptions      -XX:-UseLSE" >> conf/spark.conf
 	fi
-	
-	rm conf/spark.conf
+	cd $WORK_DIR/HiBench
+	rm conf/spark.conf.jmh
 	cp conf/spark.conf conf/spark.conf.jmh
 	### do more ###
 	cd $WORK_DIR
