@@ -1,6 +1,6 @@
 package grsm
 
-import org.openjdk.jmh.annotations._
+import org.openjdk.jmh.annotations.*
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.infra.Blackhole
 
