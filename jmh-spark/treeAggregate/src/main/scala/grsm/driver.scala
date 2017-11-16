@@ -11,45 +11,55 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
+//import org.apache.spark.rdd.RDD
+//import org.apache.spark.SparkContext
+
+// This static main method might be needed for spark
+//object Main {
+//	def main(args: Array[String]) {	
+//	}
+//}
+
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
 @Measurement(iterations=5,time=1,timeUnit=TimeUnit.SECONDS)
 @Fork(2)
+@State(Scope.Benchmark)
 class Benchmarks {
-        @State(Scope.Benchmark)
-        class HiBench_LR_State {
+	
+	@Benchmark
+	def HiBench_LR() {
+		// Path taken from HiBench functions/workload-function.sh
+    		var inputPath = "hdfs://localhost:9000/HiBench/LR/Input"
 
-                println("State Initialized")
+    		val conf = new SparkConf()
+			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
+			.setMaster("local[*]")
+    		val sc = new SparkContext(conf)
 
-                // Path taken from HiBench functions/workload-function.sh
-                var inputPath = "hdfs://localhost:9000/HiBench/LR/Input"
+    		// $example on$
+    		// Load training data in LIBSVM format.
+    		val data: RDD[LabeledPoint] = sc.objectFile(inputPath)
 
-                val conf = new SparkConf()
-                        .setAppName("JMH prof: LogisticRegressionWithLBFGS")
-                        .setMaster("local[*]")
-                val sc = new SparkContext(conf)
+    		// Split data into training (60%) and test (40%).
+    		val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
+    		val training = splits(0).cache()
+    		val test = splits(1)
 
-                // $example on$
-                // Load training data in LIBSVM format.
-                val data: RDD[LabeledPoint] = sc.objectFile(inputPath)
+    		// Run training algorithm to build the model
+    		val model = new LogisticRegressionWithLBFGS()
+      				.setNumClasses(10)
+      				.run(training)
 
-                // Split data into training (60%) and test (40%).
-                val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
-                val training = splits(0).cache()
-                val test = splits(1)
+    		// Compute raw scores on the test set.
+    		val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
+      			val prediction = model.predict(features)
+	      		(prediction, label)
+    		}
 
-                @TearDown(Level.Trial)
-                def Tear_down() {
-                        println("State Teardown")
-                        sc.stop()
-                }
-        }
+    		val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
+    		println(s"Accuracy = $accuracy")
 
-        @Benchmark
-        def HiBench_LR(state:HiBench_LR_State) {
-                // Run training algorithm to build the model
-                val model = new LogisticRegressionWithLBFGS()
-                                .setNumClasses(10)
-                                .run(state.training)
-        }
+    		sc.stop()
+	}
 }

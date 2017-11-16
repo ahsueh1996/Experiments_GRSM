@@ -1,5 +1,6 @@
 products:
-   src/main/scala/grsm/driver.scala -> target/classes/grsm/Benchmarks$HiBench_LR_State.class
+   src/main/scala/grsm/driver.scala -> target/classes/grsm/Benchmarks$$anonfun$1.class
+   src/main/scala/grsm/driver.scala -> target/classes/grsm/Benchmarks$$anonfun$2.class
    src/main/scala/grsm/driver.scala -> target/classes/grsm/Benchmarks.class
 binary dependencies:
    src/main/scala/grsm/driver.scala -> /opt/jdk1.8.0_131/jre/lib/rt.jar
@@ -11,4 +12,5 @@ source dependencies:
 external dependencies:
 class names:
    src/main/scala/grsm/driver.scala -> grsm.Benchmarks
-   src/main/scala/grsm/driver.scala -> grsm.Benchmarks$HiBench_LR_State
+   src/main/scala/grsm/driver.scala -> grsm.Benchmarks$$anonfun$1
+   src/main/scala/grsm/driver.scala -> grsm.Benchmarks$$anonfun$2
