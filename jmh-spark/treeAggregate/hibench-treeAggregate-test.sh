@@ -4,6 +4,8 @@ OUTPUT_DIR=/home/hibench-output/avgt
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 mkdir -p $OUTPUT_DIR
+yes 'yes' | rm -R $OUTPUT_DIR
+mkdir -p $OUTPUT_DIR
 
 # Check for WORK_DIR
 if [ ! -d "$WORK_DIR" ]; then
