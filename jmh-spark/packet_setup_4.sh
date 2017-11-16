@@ -81,6 +81,3 @@ if [  -d "spark"  ];then
 else
   echo seems that spark has already been grabbed
 fi
-
-# Start Spark:
-./spark/sbin/start-all.sh
