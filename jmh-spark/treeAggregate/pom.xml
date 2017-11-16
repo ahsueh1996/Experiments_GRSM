@@ -71,6 +71,20 @@
     			<name>Scala-tools Maven2 Repository</name>
     			<url>http://scala-tools.org/repo-releases</url>
   		</pluginRepository>
+		<!-- necessary for packet2a, reponse to 
+			Error resolving version for plugin 'some scala plugin' from the repositories [local (.../.m2/repository), ...]. Plugin not found in any plugin repository -->
+  		<pluginRepository>
+		      <id>central</id>
+		      <name>Maven Plugin Repository</name>
+		      <url>http://repo1.maven.org/maven2</url>
+		      <layout>default</layout>
+		      <snapshots>
+			<enabled>false</enabled>
+		      </snapshots>
+		      <releases>
+			<updatePolicy>never</updatePolicy>
+		      </releases>
+    		</pluginRepository>
 	</pluginRepositories>
 	
 	<build>
