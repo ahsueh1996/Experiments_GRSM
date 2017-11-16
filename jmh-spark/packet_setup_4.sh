@@ -30,16 +30,17 @@ cd $WORK_DIR
 
 # Grab Spark...
 #
-if [  ! -d "spark"  ];then
+#if [ ! -d "spark"  ];then
+if [  -d "spark"  ];then
 	
 	# Grab and build Spark 2.1.0
 	cd $WORK_DIR
-	wget https://github.com/apache/spark/archive/v2.1.0.tar.gz
-	tar -xf v2.1.0.tar.gz
-	mv spark-2.1.0 spark
-	cd spark
-	./build/mvn -T 1C -e -Dhadoop.version=2.7.1 -DskipTests clean package	
-	rm -f ../v2.1.0.tar.gz
+# 	wget https://github.com/apache/spark/archive/v2.1.0.tar.gz
+# 	tar -xf v2.1.0.tar.gz
+# 	mv spark-2.1.0 spark
+# 	cd spark
+# 	./build/mvn -T 1C -e -Dhadoop.version=2.7.1 -DskipTests clean package	
+# 	rm -f ../v2.1.0.tar.gz
 
 
 	# Update SPARK path variables:
