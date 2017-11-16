@@ -30,13 +30,14 @@ cd $WORK_DIR
 
 # Grab HiBench...
 #
-if [  ! -d "HiBench"  ];then
+#if [  ! -d "HiBench"  ];then
+if [  -d "HiBench"  ];then
 		
 	# Grab and build HiBench 6.0:	
 	cd $WORK_DIR
-	git clone https://github.com/intel-hadoop/HiBench.git
-	cd HiBench
-	mvn -Dspark=2.1 -Dscala=2.11 clean package
+# 	git clone https://github.com/intel-hadoop/HiBench.git
+# 	cd HiBench
+# 	mvn -Dspark=2.1 -Dscala=2.11 clean package
 
 	# Configure HiBench:
 	cp conf/hadoop.conf.template conf/hadoop.conf
