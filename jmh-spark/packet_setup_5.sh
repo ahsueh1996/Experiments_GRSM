@@ -83,16 +83,3 @@ if [  -d "HiBench"  ];then
 else
   echo seems that there is already HiBench
 fi
-
-echo
-echo 
-echo ==================================================
-echo ATTEMPTING to execute hadoop start and spark start
-
-# Start Hadoop:
-cd $WORK_DIR
-hadoop namenode -format
-./hadoop/sbin/start-all.sh
-
-# Start Spark:
-./spark/sbin/start-all.sh
