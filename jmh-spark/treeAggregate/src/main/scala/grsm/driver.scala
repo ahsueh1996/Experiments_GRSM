@@ -1,6 +1,6 @@
 package grsm
 
-import org.openjdk.jmh.annotations.*
+import org.openjdk.jmh.annotations._
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.infra.Blackhole
 
@@ -17,7 +17,7 @@ import org.apache.spark.rdd.RDD
 @Fork(2)
 class Benchmarks {
         @State(Scope.Benchmark)
-        object HiBench_LR_State {
+        class HiBench_LR_State {
 
                 println("State Initialized")
 
@@ -38,7 +38,7 @@ class Benchmarks {
                 val training = splits(0).cache()
                 val test = splits(1)
 
-                @Teardown
+                @TearDown(Level.Trial)
                 def Tear_down() {
                         println("State Teardown")
                         sc.stop()
