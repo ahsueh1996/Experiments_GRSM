@@ -36,12 +36,12 @@ if [  -d "HiBench"  ];then
 	# Grab and build HiBench 6.0:	
 	cd $WORK_DIR
 # 	git clone https://github.com/intel-hadoop/HiBench.git
-# 	cd HiBench
+	cd HiBench
 # 	mvn -Dspark=2.1 -Dscala=2.11 clean package
 
 	# Configure HiBench:
-	cp conf/hadoop.conf.template conf/hadoop.conf
-	cp conf/spark.conf.template conf/spark.conf
+# 	cp conf/hadoop.conf.template conf/hadoop.conf
+# 	cp conf/spark.conf.template conf/spark.conf
 	
 	# Configure HadoopBench:
 	sed -i "s#.*/PATH/TO/YOUR/HADOOP/ROOT.*#hibench.hadoop.home    $WORK_DIR/hadoop#g" conf/hadoop.conf
@@ -75,11 +75,18 @@ if [  -d "HiBench"  ];then
 		echo "spark.io.compression.codec      lzf" >> conf/spark.conf
 		echo "spark.driver.extraJavaOptions      -XX:-UseLSE" >> conf/spark.conf
 	fi
+	
+	rm conf/spark.conf
+	cp conf/spark.conf conf/spark.conf.jmh
+	### do more ###
 	cd $WORK_DIR
 else
   echo seems that there is already HiBench
 fi
 
+echo
+echo 
+echo ==================================================
 echo ATTEMPTING to execute hadoop start and spark start
 
 # Start Hadoop:
