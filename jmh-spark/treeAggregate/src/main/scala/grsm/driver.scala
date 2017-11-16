@@ -22,7 +22,7 @@ import org.apache.spark.rdd.RDD
 
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
-@Measurement(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
+@Measurement(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
 @Fork(2)
 @State(Scope.Benchmark)
 class Benchmarks {
