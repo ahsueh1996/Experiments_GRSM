@@ -42,6 +42,7 @@ echo $MY_SM | tee $OUTPUT_DIR/lr/my_spark_master.txt
 
 for i in "${PROBLEM_FEATURES[@]}"
 do
+	mkdir -p $OUTPUT_DIR/lr/$i
 
 	# Generate data
 	echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
@@ -57,7 +58,7 @@ do
 	echo "Starting Spark LR example, input size $i features..." | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
-	mkdir -p $OUTPUT_DIR/lr/$i
+	
 	cd $PROJ_DIR
 	##############
 	#####avgt#####
