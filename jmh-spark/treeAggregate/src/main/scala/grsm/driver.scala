@@ -11,15 +11,6 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-//import org.apache.spark.rdd.RDD
-//import org.apache.spark.SparkContext
-
-// This static main method might be needed for spark
-//object Main {
-//	def main(args: Array[String]) {	
-//	}
-//}
-
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
 @Measurement(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
@@ -35,7 +26,10 @@ class Benchmarks {
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
 			.setMaster("local[*]")
-    		val sc = new SparkContext(conf)
+		//	.setMaster("spark://142.150.237.146:7077")
+    		val sc = new SparkContext(new SparkConf())
+
+		println(conf.getAll.deep.mkString("\n"))
 
     		// $example on$
     		// Load training data in LIBSVM format.
