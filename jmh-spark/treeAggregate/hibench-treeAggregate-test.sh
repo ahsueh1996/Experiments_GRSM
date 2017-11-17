@@ -19,6 +19,14 @@ if [ ! -d "$WORK_DIR/HiBench" ]; then
 	exit
 fi
 
+#My_SM=
+MY_SM="--master spark://"$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')":7077"
+
+echo my master:
+echo $MY_SM | tee $OUTPUT_DIR/lr/my_spark_master.txt
+echo end
+sleep 5
+
 
 ########################################################################################################
 ########################################################################################################
@@ -36,9 +44,6 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
-
-MY_SM=spark://$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'):7077
-echo $MY_SM | tee $OUTPUT_DIR/lr/my_spark_master.txt
 
 for i in "${PROBLEM_FEATURES[@]}"
 do
@@ -64,7 +69,7 @@ do
 	#####avgt#####
 	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark" --name "HiBench LR with JMH" --master $MY_SM --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
 	###perfnorm###
-		/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --name "HiBench LR with JMH" --master $MY_SM --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+		/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --name "HiBench LR with JMH" $MY_SM --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
 	###perfasm####
 	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --name "HiBench LR with JMH" --master $MY_SM --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
 	#######
