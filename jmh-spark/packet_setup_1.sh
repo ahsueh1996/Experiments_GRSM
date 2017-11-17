@@ -42,7 +42,7 @@ else
   wget https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
   tar -xzf OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
   rm -f OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
-  echo "export JAVA_HOME=$WORK_DIR/OpenJDK8_x64_Linux_jdk8u144-b01"  >> ~/.bashrc
+  echo "export JAVA_HOME=$WORK_DIR/jdk8u144-b01"  >> ~/.bashrc
   echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
 fi
 
