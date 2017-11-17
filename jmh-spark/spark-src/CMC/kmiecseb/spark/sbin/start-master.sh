@@ -62,6 +62,11 @@ if [ "$SPARK_MASTER_WEBUI_PORT" = "" ]; then
   SPARK_MASTER_WEBUI_PORT=8080
 fi
 
+echo -e "\e[34m!!!!-----READ ME-----!!!!\e[32m"
+echo "${SPARK_HOME}/sbin/spark-daemon.sh start $CLASS 1 --host $SPARK_MASTER_HOST --port $SPARK_MASTER_PORT --webui-port $SPARK_MASTER_WEBUI_PORT $ORIGINAL_ARGS"
+echo -e "\e[97m"
+
+
 "${SPARK_HOME}/sbin"/spark-daemon.sh start $CLASS 1 \
   --host $SPARK_MASTER_HOST --port $SPARK_MASTER_PORT --webui-port $SPARK_MASTER_WEBUI_PORT \
   $ORIGINAL_ARGS
