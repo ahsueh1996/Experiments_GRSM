@@ -5,7 +5,7 @@ WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 mkdir -p $OUTPUT_DIR
 yes 'yes' | rm -R $OUTPUT_DIR
-mkdir -p $OUTPUT_DIR
+mkdir -p $OUTPUT_DIR/lr
 
 # Check for WORK_DIR
 if [ ! -d "$WORK_DIR" ]; then
@@ -32,7 +32,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 ## small set###
 #	PROBLEM_FEATURES=(50 250 750 1500 3000)
 ## big set ###
-	PROBLEM_FEATURES=(350000 400000 450000 500000)
+	PROBLEM_FEATURES=(350000 400000)
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -49,7 +49,7 @@ do
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	sed -i "s#.*hibench.lr.huge.features.*#hibench.lr.huge.features    $i#g" conf/workloads/ml/lr.conf
-	./bin/workloads/ml/lr/prepare/prepare.sh & | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+	./bin/workloads/ml/lr/prepare/prepare.sh | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 
 	# Run Spark-Based Benchmark, using the JMH infused jar:
