@@ -70,7 +70,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 # big set
 #	PROBLEM_FEATURES=(350000 400000 450000 500000)
 # custom
-	PROMBLEM_FEATURES=(100000)
+	PROBLEM_FEATURES=(100000)
 ########################################################################################################
 
 # Set data size scale to "huge"
