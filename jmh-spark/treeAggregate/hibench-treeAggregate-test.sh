@@ -4,12 +4,6 @@ OUTPUT_DIR=/home/hibench-output/perfasm
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 
-date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
-echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
-echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
-echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
-
-
 # Reset the OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
 yes 'yes' | rm -R $OUTPUT_DIR
@@ -26,6 +20,16 @@ if [ ! -d "$WORK_DIR/HiBench" ]; then
 	echo "HiBench does not appear in the current working directory \"$WORK_DIR\", exiting..." | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	exit
 fi
+
+
+
+########################################################################################################
+######################            Starting epxeriment       ############################################
+########################################################################################################
+date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 
 MY_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 
