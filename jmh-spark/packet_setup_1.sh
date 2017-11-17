@@ -28,16 +28,23 @@ SPARK_DAEMON_MEMORY=2g
 # Basic dependecies needed:
 yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
 
-
 #
-# Get a JDK for ARM
+# Get a JDK
 #
 cd $WORK_DIR
-wget http://openjdk.linaro.org/releases/jdk8u-server-release-1708.tar.xz
-tar -xf jdk8u-server-release-1708.tar.xz
-rm -f jdk8u-server-release-1708.tar.xz
-echo "export JAVA_HOME=$WORK_DIR/jdk8u-server-release-1708"  >> ~/.bashrc
-echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
+if [ "$ARM_MACHINE" = true ] ; then
+  wget http://openjdk.linaro.org/releases/jdk8u-server-release-1708.tar.xz
+  tar -xf jdk8u-server-release-1708.tar.xz
+  rm -f jdk8u-server-release-1708.tar.xz
+  echo "export JAVA_HOME=$WORK_DIR/jdk8u-server-release-1708"  >> ~/.bashrc
+  echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
+else
+  wget https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
+  tar -xzf OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
+  rm -f OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz
+  echo "export JAVA_HOME=$WORK_DIR/OpenJDK8_x64_Linux_jdk8u144-b01"  >> ~/.bashrc
+  echo "export PATH=\$PATH:\$JAVA_HOME/bin"  >> ~/.bashrc
+fi
 
 # Grab Maven
 cd $WORK_DIR
