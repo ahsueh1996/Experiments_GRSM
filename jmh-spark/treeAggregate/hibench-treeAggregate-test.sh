@@ -1,8 +1,16 @@
 #!/bin/bash
 # choose avgt, perfnorm, or perfasm
-OUTPUT_DIR=/home/hibench-output/perfnorm
+OUTPUT_DIR=/home/hibench-output/perfasm
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
+
+date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+
+
+# Reset the OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
 yes 'yes' | rm -R $OUTPUT_DIR
 mkdir -p $OUTPUT_DIR/lr
@@ -19,28 +27,47 @@ if [ ! -d "$WORK_DIR/HiBench" ]; then
 	exit
 fi
 
-#My_SM=
-MY_SM="--master spark://"$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')":7077"
+MY_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 
-echo my master:
-echo $MY_SM | tee $OUTPUT_DIR/lr/my_spark_master.txt
+echo my ip:
+echo $MY_IP | tee $OUTPUT_DIR/lr/my_ip.txt
 echo end
-sleep 5
+sleep 2
 
+########################################################################################################
+######################            Starting spark master     ############################################
+########################################################################################################
+echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "Restarting Spark Master @ $MY_IP:7077" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 
-########################################################################################################
-########################################################################################################
-########################################################################################################
+date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 cd $WORK_DIR
 sh reset.sh
+date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+
+echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "To check the webUI to see the spark master," | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "  run the following: ssh -L 8080:localhost:8080 root@"$MY_IP | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "  then do following: xdg-open "$MY_IP":8080" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+sleep 10
+
+########################################################################################################
+#######################          Run Logistic Regression    ############################################
+########################################################################################################
+
 cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
-########################################################################################################
-########################################################################################################
-##### Run Logistic Regression problems #################################################################
-## small set###
+
+
+######################		Choose one 	########################################################
+# small set
 #	PROBLEM_FEATURES=(50 250 750 1500 3000)
-## big set ###
-	PROBLEM_FEATURES=(350000 400000)
+# big set
+#	PROBLEM_FEATURES=(350000 400000 450000 500000)
+# custom
+	PROMBLEM_FEATURES=(100000)
+########################################################################################################
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -62,30 +89,36 @@ do
 	echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	echo "Starting Spark LR example, input size $i features..." | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+	cd $PROJ_DIR
 	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	
-	cd $PROJ_DIR
-	##############
-	#####avgt#####
-	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark" --name "HiBench LR with JMH" --master $MY_SM --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
-	###perfnorm###
-		/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --name "HiBench LR with JMH" $MY_SM --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
-	###perfasm####
-	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file /CMC/kmiecseb/HiBench/conf/spark.conf.jmhspark --name "HiBench LR with JMH" --master $MY_SM --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
-	#######
+
+	##############		Choose one   #############################################################
+	# avgt
+	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	# perfnorm
+	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	# perfasm
+		/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
+	##################################################################################################
+
+	
+	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	cd $WORK_DIR/HiBench
 	echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	echo "Finished Spark LR example, input size $i features." | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
-	date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 
 	# Move results to output directory
 	mv report/* $OUTPUT_DIR/lr/$i/
 
 	# Cleanup:
-	hadoop fs -rm /HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 	hadoop fs -rmr /HiBench/LR | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 
 done
 
+date | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo "Done experiment." | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
+echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/$i/experiment_log.txt
 ########################################################################################################

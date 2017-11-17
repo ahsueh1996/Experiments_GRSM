@@ -30,7 +30,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 ########################################################################################################
 ##### Run Logistic Regression problems #################################################################
 ## small set###
-	PROBLEM_FEATURES=(3000)
+	PROBLEM_FEATURES=(50000)
 ## big set ###
 #	PROBLEM_FEATURES=(350000 400000 450000 500000)
 
