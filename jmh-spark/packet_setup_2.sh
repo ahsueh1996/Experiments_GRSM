@@ -4,7 +4,7 @@
 # Where Hadoop, Spark, etc is built and stored
 WORK_DIR=/CMC/kmiecseb
 # Is this in fact an ARM machine (not an x86)					
-ARM_MACHINE=true
+ARM_MACHINE=${IS_ARM}
 # true: use YARN, false: use Spark's standalone resource manager						 
 USE_YARN_FOR_SPARK_ON_HADOOP=false		
 
