@@ -1,0 +1,34 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0-release, VM 25.71-b00
+# VM invoker: /CMC/kmiecseb/jdk8u-server-release-1708/jre/bin/java
+# VM options: -Xmx32G -XX:-UseLSE
+# Warmup: 1 iterations, 1 s each
+# Measurement: 1 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:04
+# Fork: 1 of 2
+# Warmup Iteration   1: Accuracy = 0.7245076040887559
+12550.468 s/op
+Iteration   1: Accuracy = 0.7245076040887559
+12191.890 s/op
+
+# Run progress: 50.00% complete, ETA 06:52:24
+# Fork: 2 of 2
+# Warmup Iteration   1: Accuracy = 0.7245076040887559
+9684.073 s/op
+Iteration   1: Accuracy = 0.7245076040887559
+11485.127 s/op
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  11838.509 s/op
+
+
+# Run complete. Total time: 12:45:15
+
+Benchmark              Mode  Cnt      Score   Error  Units
+Benchmarks.HiBench_LR  avgt    2  11838.509           s/op
