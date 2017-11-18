@@ -1,0 +1,112 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0-release, VM 25.71-b00
+# VM invoker: /CMC/kmiecseb/jdk8u-server-release-1708/jre/bin/java
+# VM options: -Xmx32G -XX:-UseLSE
+# Warmup: 1 iterations, 1 s each
+# Measurement: 1 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:04
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: Accuracy = 0.7245076040887559
+11793.453 s/op
+Iteration   1: Accuracy = 0.7245076040887559
+12487.280 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+# Run progress: 50.00% complete, ETA 06:45:14
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfNormProfiler 
+# Profilers consume stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: Accuracy = 0.7245076040887559
+12620.336 s/op
+Iteration   1: Accuracy = 0.7245076040887559
+12943.244 s/op
+# Processing profiler results: LinuxPerfNormProfiler 
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  12715.262 s/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:CPI":
+  2.436 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-load-misses":
+  981619487016.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-loads":
+  64320922565080.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-store-misses":
+  8927137458368.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-dcache-stores":
+  23177554685311.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-icache-load-misses":
+  109611962929.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:L1-icache-loads":
+  825126859196912.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:branch-misses":
+  1384114981254.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:branches":
+  239519768505665.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:cycles":
+  1347308657159682.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-load-misses":
+  104757982722.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-loads":
+  62432952617032.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-store-misses":
+  5037038963.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:dTLB-stores":
+  23191976881137.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:iTLB-load-misses":
+  10860087865.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:instructions":
+  553393422331179.500 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:stalled-cycles-backend":
+  549606561391992.000 #/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:stalled-cycles-frontend":
+  392637889728962.500 #/op
+
+
+# Run complete. Total time: 13:51:52
+
+Benchmark                                      Mode  Cnt                 Score   Error  Units
+Benchmarks.HiBench_LR                          avgt    2             12715.262           s/op
+Benchmarks.HiBench_LR:CPI                      avgt    2                 2.436           #/op
+Benchmarks.HiBench_LR:L1-dcache-load-misses    avgt    2      981619487016.000           #/op
+Benchmarks.HiBench_LR:L1-dcache-loads          avgt    2    64320922565080.000           #/op
+Benchmarks.HiBench_LR:L1-dcache-store-misses   avgt    2     8927137458368.000           #/op
+Benchmarks.HiBench_LR:L1-dcache-stores         avgt    2    23177554685311.000           #/op
+Benchmarks.HiBench_LR:L1-icache-load-misses    avgt    2      109611962929.500           #/op
+Benchmarks.HiBench_LR:L1-icache-loads          avgt    2   825126859196912.500           #/op
+Benchmarks.HiBench_LR:branch-misses            avgt    2     1384114981254.000           #/op
+Benchmarks.HiBench_LR:branches                 avgt    2   239519768505665.500           #/op
+Benchmarks.HiBench_LR:cycles                   avgt    2  1347308657159682.500           #/op
+Benchmarks.HiBench_LR:dTLB-load-misses         avgt    2      104757982722.500           #/op
+Benchmarks.HiBench_LR:dTLB-loads               avgt    2    62432952617032.500           #/op
+Benchmarks.HiBench_LR:dTLB-store-misses        avgt    2        5037038963.000           #/op
+Benchmarks.HiBench_LR:dTLB-stores              avgt    2    23191976881137.500           #/op
+Benchmarks.HiBench_LR:iTLB-load-misses         avgt    2       10860087865.000           #/op
+Benchmarks.HiBench_LR:instructions             avgt    2   553393422331179.500           #/op
+Benchmarks.HiBench_LR:stalled-cycles-backend   avgt    2   549606561391992.000           #/op
+Benchmarks.HiBench_LR:stalled-cycles-frontend  avgt    2   392637889728962.500           #/op
