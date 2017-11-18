@@ -9,22 +9,22 @@ ARM_MACHINE=${IS_ARM}
 USE_YARN_FOR_SPARK_ON_HADOOP=false		
 
 # Hadoop-YARN settings:
-# Number of cores to use for Hadoop and Spark on Hadoop jobs (if using YARN).
-YARN_CORES=92			
-# Amount of memory to use for Hadoop and Spark on Hadoop jobs (if using YARN).				
-YARN_MEM=112640						
+# Number of cores to use for Hadoop and Spark on Hadoop jobs (if using YARN). 92
+YARN_CORES=${MY_YARN_CORES}
+# Amount of memory to use for Hadoop and Spark on Hadoop jobs (if using YARN).			 112640	
+YARN_MEM=${MY_YARN_MEM}				
 
-# Spark settings:
-SPARK_EXECUTOR_CORES=10
-SPARK_EXECUTOR_MEMORY=10G
-SPARK_DRIVER_MEMORY=10G
-SPARK_WORKER_CORES=92
-SPARK_WORKER_MEMORY=100g
-SPARK_WORKER_INSTANCES=1
-SPARK_EXECUTOR_INSTANCES=9
-SPARK_DAEMON_MEMORY=2g
+# Spark settings:  10 10G 10G 92 100G 1 9 2G
+SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}
+SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}
+SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}
+SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}
+SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
+SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
+SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
+SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
 
-########################################################PART 1######################################################
+########################################################BODY######################################################
 # Basic dependecies needed:
 yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
 
