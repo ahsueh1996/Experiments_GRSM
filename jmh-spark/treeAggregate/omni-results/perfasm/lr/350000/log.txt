@@ -1,0 +1,218 @@
+CompilerOracle: print *Benchmarks.HiBench_LR
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx32G -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR
+# Warmup: 1 iterations, 1 s each
+# Measurement: 1 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:04
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.master,spark://142.150.237.146:7077)
+(spark.jars,target/benchmarks.jar)
+Accuracy = 0.7080129000248078
+3067.482 s/op
+Iteration   1: (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.master,spark://142.150.237.146:7077)
+(spark.jars,target/benchmarks.jar)
+Accuracy = 0.7080129000248078
+2884.199 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+# Run progress: 50.00% complete, ETA 01:40:05
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.master,spark://142.150.237.146:7077)
+(spark.jars,target/benchmarks.jar)
+Accuracy = 0.7080129000248078
+3008.920 s/op
+Iteration   1: (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.master,spark://142.150.237.146:7077)
+(spark.jars,target/benchmarks.jar)
+Accuracy = 0.7080129000248078
+2952.888 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  2918.543 s/op
+
+Secondary result "grsm.Benchmarks.HiBench_LR:·asm":
+PrintAssembly processed: 3414948 total address lines.
+Perf output processed (skipped 3076.119 seconds):
+ Column 1: cycles (244668 events)
+ Column 2: instructions (215489 events)
+
+WARNING: No hottest code region above the threshold (10.00%) for disassembly.
+Use "hotThreshold" profiler option to lower the filter threshold.
+
+....[Hottest Regions]...............................................................................
+  4.91%    5.50%   [kernel.kallsyms]  native_write_msr_safe (13 bytes) 
+  4.73%    3.42%           libjvm.so  SpinPause (9 bytes) 
+  4.23%    2.10%        runtime stub  StubRoutines::jbyte_disjoint_arraycopy (209 bytes) 
+  3.94%    4.99%           libjvm.so  TypeArrayKlass::allocate_common (99 bytes) 
+  2.98%    2.85%                      <unknown> (173 bytes) 
+  2.48%    4.21%          libjava.so  Java_java_lang_Object_getClass (392 bytes) 
+  2.19%    1.52%                      <unknown> (194 bytes) 
+  2.07%    2.56%           libjvm.so  ParallelTaskTerminator::offer_termination (111 bytes) 
+  1.85%    0.39%   [kernel.kallsyms]  copy_user_generic_string (74 bytes) 
+  1.69%    1.98%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 8017 (111 bytes) 
+  1.57%    0.81%         C2, level 4  breeze.linalg.DenseVector$canDaxpy$::apply, version 8143 (29 bytes) 
+  1.56%    2.14%         C2, level 4  breeze.linalg.operators.DenseVectorSupportMethods::dotProduct_Double, version 8415 (214 bytes) 
+  1.19%    1.87%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes (294 bytes) 
+  1.17%    0.10%   [kernel.kallsyms]  vread_hpet (14 bytes) 
+  1.15%    0.52%        runtime stub  StubRoutines::jlong_disjoint_arraycopy (132 bytes) 
+  0.97%    0.02%   [kernel.kallsyms]  clear_page_c_e (16 bytes) 
+  0.76%    0.23%           libjvm.so  SymbolTable::lookup (189 bytes) 
+  0.75%    0.15%        runtime stub  StubRoutines::jint_disjoint_arraycopy (128 bytes) 
+  0.73%    0.04%           libjvm.so  Dictionary::find (78 bytes) 
+  0.67%    0.81%        runtime stub  StubRoutines::jshort_disjoint_arraycopy (209 bytes) 
+ 58.42%   63.79%  <...other 15197 warm regions...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+  9.49%    9.08%                      <unknown> 
+  4.91%    5.50%   [kernel.kallsyms]  native_write_msr_safe 
+  4.73%    3.42%           libjvm.so  SpinPause 
+  4.23%    2.10%        runtime stub  StubRoutines::jbyte_disjoint_arraycopy 
+  3.95%    4.99%           libjvm.so  TypeArrayKlass::allocate_common 
+  2.50%    0.98%      perf-30393.map  [unknown] 
+  2.48%    4.21%          libjava.so  Java_java_lang_Object_getClass 
+  2.07%    2.58%           libjvm.so  ParallelTaskTerminator::offer_termination 
+  1.85%    0.39%   [kernel.kallsyms]  copy_user_generic_string 
+  1.69%    1.98%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 8017 
+  1.57%    0.81%         C2, level 4  breeze.linalg.DenseVector$canDaxpy$::apply, version 8143 
+  1.56%    2.14%         C2, level 4  breeze.linalg.operators.DenseVectorSupportMethods::dotProduct_Double, version 8415 
+  1.48%    2.11%         C1, level 3  scala.collection.generic.GenericSetTemplate$class::$init$, version 1538 
+  1.21%    1.89%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes 
+  1.17%    0.10%   [kernel.kallsyms]  vread_hpet 
+  1.15%    0.52%        runtime stub  StubRoutines::jlong_disjoint_arraycopy 
+  0.97%    0.02%   [kernel.kallsyms]  clear_page_c_e 
+  0.78%    0.24%           libjvm.so  SymbolTable::lookup 
+  0.78%    0.82%         C2, level 4  java.io.ObjectInputStream::readObject0, version 3583 
+  0.75%    0.15%        runtime stub  StubRoutines::jint_disjoint_arraycopy 
+ 50.69%   55.63%  <...other 4247 warm methods...>
+....................................................................................................
+100.00%   99.65%  <totals>
+
+....[Distribution by Source]........................................................................
+ 26.33%   29.78%           libjvm.so
+ 23.13%   21.16%   [kernel.kallsyms]
+ 20.94%   22.42%         C2, level 4
+  9.49%    9.08%                    
+  6.91%    3.74%        runtime stub
+  3.89%    3.90%         C1, level 3
+  3.78%    6.20%          libjava.so
+  2.50%    0.98%      perf-30393.map
+  0.73%    0.30%         interpreter
+  0.57%    0.34%   libhsdis-amd64.so
+  0.53%    0.58%           libzip.so
+  0.45%    0.19%         C1, level 1
+  0.33%    1.10%        libverify.so
+  0.26%    0.19%    Unknown, level 0
+  0.15%    0.04%              [vdso]
+....................................................................................................
+100.00%  100.00%  <totals>
+
+PrintAssembly processed: 3314010 total address lines.
+Perf output processed (skipped 3014.232 seconds):
+ Column 1: cycles (248576 events)
+ Column 2: instructions (219312 events)
+
+WARNING: No hottest code region above the threshold (10.00%) for disassembly.
+Use "hotThreshold" profiler option to lower the filter threshold.
+
+....[Hottest Regions]...............................................................................
+  5.91%    4.63%                         libjvm.so  SpinPause (9 bytes) 
+  5.84%    6.57%                 [kernel.kallsyms]  native_write_msr_safe (13 bytes) 
+  4.12%    2.08%                      runtime stub  StubRoutines::jbyte_disjoint_arraycopy (209 bytes) 
+  3.88%    3.31%                      libc-2.12.so  memcpy (173 bytes) 
+  3.86%    4.91%                         libjvm.so  TypeArrayKlass::allocate_common (41 bytes) 
+  3.15%    2.10%                      libc-2.12.so  _wordcopy_fwd_aligned (181 bytes) 
+  2.56%    3.63%                         libjvm.so  ParallelTaskTerminator::offer_termination (111 bytes) 
+  2.45%    4.13%                        libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles (360 bytes) 
+  1.77%    0.32%                 [kernel.kallsyms]  copy_user_generic_string (72 bytes) 
+  1.66%    1.93%                       C2, level 4  org.netlib.blas.Daxpy::daxpy, version 7586 (111 bytes) 
+  1.51%    0.79%                       C2, level 4  breeze.linalg.DenseVector$canDaxpy$::apply, version 7697 (29 bytes) 
+  1.48%    2.04%                       C1, level 3  io.netty.channel.ChannelOutboundBuffer::decrementPendingOutboundBytes, version 3806 (214 bytes) 
+  1.20%    0.11%                 [kernel.kallsyms]  vread_hpet (14 bytes) 
+  1.19%    1.87%                        libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes (301 bytes) 
+  1.14%    0.53%                      runtime stub  StubRoutines::jlong_disjoint_arraycopy (145 bytes) 
+  0.97%    0.02%                 [kernel.kallsyms]  clear_page_c_e (16 bytes) 
+  0.77%    0.23%                         libjvm.so  SymbolTable::lookup (197 bytes) 
+  0.75%    0.03%                         libjvm.so  Dictionary::find (77 bytes) 
+  0.70%    0.14%                      runtime stub  StubRoutines::jint_disjoint_arraycopy (106 bytes) 
+  0.63%    0.80%                      runtime stub  StubRoutines::jshort_disjoint_arraycopy (209 bytes) 
+ 54.48%   59.83%  <...other 14326 warm regions...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+  5.91%    4.63%                         libjvm.so  SpinPause 
+  5.84%    6.57%                 [kernel.kallsyms]  native_write_msr_safe 
+  4.20%    3.51%                      libc-2.12.so  memcpy 
+  4.12%    2.08%                      runtime stub  StubRoutines::jbyte_disjoint_arraycopy 
+  3.88%    4.91%                         libjvm.so  TypeArrayKlass::allocate_common 
+  3.16%    2.11%                      libc-2.12.so  _wordcopy_fwd_aligned 
+  2.63%    1.59%                    perf-10533.map  [unknown] 
+  2.56%    3.65%                         libjvm.so  ParallelTaskTerminator::offer_termination 
+  2.45%    4.13%                        libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles 
+  1.77%    0.32%                 [kernel.kallsyms]  copy_user_generic_string 
+  1.66%    1.93%                       C2, level 4  org.netlib.blas.Daxpy::daxpy, version 7586 
+  1.55%    2.56%                       C1, level 3  scala.collection.Set$class::$init$, version 1544 
+  1.51%    0.79%                       C2, level 4  breeze.linalg.DenseVector$canDaxpy$::apply, version 7697 
+  1.48%    2.04%                       C1, level 3  io.netty.channel.ChannelOutboundBuffer::decrementPendingOutboundBytes, version 3806 
+  1.20%    1.88%                        libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes 
+  1.20%    0.11%                 [kernel.kallsyms]  vread_hpet 
+  1.14%    0.53%                      runtime stub  StubRoutines::jlong_disjoint_arraycopy 
+  0.97%    0.02%                 [kernel.kallsyms]  clear_page_c_e 
+  0.79%    0.24%                         libjvm.so  SymbolTable::lookup 
+  0.78%    0.80%                       C1, level 3  java.util.HashMap::hash, version 28 
+ 51.21%   55.25%  <...other 4125 warm methods...>
+....................................................................................................
+100.00%   99.64%  <totals>
+
+....[Distribution by Source]........................................................................
+ 26.30%   29.82%                         libjvm.so
+ 22.63%   20.87%                 [kernel.kallsyms]
+ 18.81%   19.50%                       C2, level 4
+  9.26%    8.29%                      libc-2.12.so
+  6.70%    3.69%                      runtime stub
+  4.86%    5.69%                       C1, level 3
+  3.75%    6.12%                        libjava.so
+  2.63%    1.59%                    perf-10533.map
+  1.16%    0.65%                libpthread-2.12.so
+  0.88%    0.76%                  Unknown, level 0
+  0.67%    0.26%                       interpreter
+  0.51%    0.54%                         libzip.so
+  0.41%    0.26%                 libhsdis-amd64.so
+  0.40%    0.22%                       C1, level 1
+  0.34%    1.06%                      libverify.so
+  0.27%    0.53%  liblz4-java246917593946318581.so
+  0.17%    0.05%                     librt-2.12.so
+  0.17%    0.06%                            [vdso]
+  0.06%    0.03%                         libnio.so
+  0.01%    0.00%                                  
+  0.01%    0.00%                         libnet.so
+  0.00%                                C1, level 2
+  0.00%                                 ld-2.12.so
+....................................................................................................
+100.00%  100.00%  <totals>
+
+
+
+# Run complete. Total time: 03:20:12
+
+Benchmark                   Mode  Cnt     Score   Error  Units
+Benchmarks.HiBench_LR       avgt    2  2918.543           s/op
+Benchmarks.HiBench_LR:·asm  avgt            NaN            ---
