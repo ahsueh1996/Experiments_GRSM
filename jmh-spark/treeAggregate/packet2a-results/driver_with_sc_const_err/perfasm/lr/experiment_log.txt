@@ -1,0 +1,30 @@
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Nov 18 06:02:46 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.69.214:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Nov 18 06:04:36 UTC 2017
+[95m===============================================
+Starting Spark LR example, input size 350000 features...
+================================================[97m
+Sat Nov 18 06:04:36 UTC 2017
+Sat Nov 18 06:45:07 UTC 2017
+[95m===============================================
+Finished Spark LR example, input size 350000 features.
+================================================[97m
+Deleted /HiBench/LR
+Sat Nov 18 06:45:10 UTC 2017
+[95m===============================================
+Done experiment.
+================================================[97m
