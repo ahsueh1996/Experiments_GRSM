@@ -1,0 +1,1 @@
+./assembly/target/spark-assembly_2.11-2.1.0-shaded.pom

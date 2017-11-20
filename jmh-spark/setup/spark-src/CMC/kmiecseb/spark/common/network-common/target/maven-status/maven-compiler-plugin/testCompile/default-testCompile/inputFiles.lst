@@ -1,0 +1,13 @@
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/RequestTimeoutIntegrationSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/RpcIntegrationSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/TransportResponseHandlerSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/sasl/SparkSaslSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/util/TransportFrameDecoderSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/StreamSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/protocol/MessageWithHeaderSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/ChunkFetchIntegrationSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/TransportClientFactorySuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/TestManagedBuffer.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/TestUtils.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/ProtocolSuite.java
+/CMC/kmiecseb/spark/common/network-common/src/test/java/org/apache/spark/network/server/OneForOneStreamManagerSuite.java

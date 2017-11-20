@@ -1,9 +1,0 @@
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/tags/DockerTest.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/annotation/Private.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/tags/ExtendedHiveTest.java
-/CMC/kmiecseb/spark/common/tags/src/main/scala/org/apache/spark/annotation/package-info.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/annotation/Experimental.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/annotation/AlphaComponent.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/tags/ExtendedYarnTest.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/annotation/InterfaceStability.java
-/CMC/kmiecseb/spark/common/tags/src/main/java/org/apache/spark/annotation/DeveloperApi.java

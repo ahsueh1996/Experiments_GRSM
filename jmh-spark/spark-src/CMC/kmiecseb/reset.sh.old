@@ -1,2 +1,0 @@
-#!/bin/bash
-./spark/sbin/stop-all.sh ; ./hadoop/sbin/stop-all.sh ; rm -rf hadoop_file ; rm -rf spark/work/* ; rm -rf hadoop/logs/* ; rm -rf /var/log/sa/* ; rm -rf HiBench/report/* ; hadoop namenode -format ; ./hadoop/sbin/start-all.sh ; ./spark/sbin/start-all.sh

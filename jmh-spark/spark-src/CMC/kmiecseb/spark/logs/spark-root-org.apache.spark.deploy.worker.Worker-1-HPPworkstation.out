@@ -1,2 +1,0 @@
-Spark Command: /opt/jdk1.8.0_131/bin/java -cp /CMC/kmiecseb/spark/conf/:/CMC/kmiecseb/spark/assembly/target/scala-2.11/jars/* -Xmx2g org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://142.150.237.146:7077
-========================================

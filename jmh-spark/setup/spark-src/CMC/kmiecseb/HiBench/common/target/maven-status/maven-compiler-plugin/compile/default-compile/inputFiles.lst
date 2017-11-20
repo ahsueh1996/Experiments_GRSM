@@ -1,0 +1,9 @@
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/ConfigLoader.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/KMeansData.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/UserVisitParser.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/UserVisit.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/KMeansDataParser.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/Platform.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/HiBenchConfig.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/StreamBenchConfig.java
+/CMC/kmiecseb/HiBench/common/src/main/java/com/intel/hibench/common/streaming/TestCase.java

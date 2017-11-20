@@ -1,5 +1,0 @@
-/CMC/kmiecseb/spark/common/unsafe/src/test/java/org/apache/spark/unsafe/types/UTF8StringSuite.java
-/CMC/kmiecseb/spark/common/unsafe/src/test/java/org/apache/spark/unsafe/PlatformUtilSuite.java
-/CMC/kmiecseb/spark/common/unsafe/src/test/java/org/apache/spark/unsafe/hash/Murmur3_x86_32Suite.java
-/CMC/kmiecseb/spark/common/unsafe/src/test/java/org/apache/spark/unsafe/types/CalendarIntervalSuite.java
-/CMC/kmiecseb/spark/common/unsafe/src/test/java/org/apache/spark/unsafe/array/LongArraySuite.java
