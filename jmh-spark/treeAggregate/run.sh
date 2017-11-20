@@ -27,7 +27,7 @@ fi
 ######################            Starting epxeriment       ############################################
 ########################################################################################################
 date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/experiment_log.txt
+echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
@@ -41,7 +41,7 @@ sleep 2
 ########################################################################################################
 ######################            Starting spark master     ############################################
 ########################################################################################################
-echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/experiment_log.txt
+echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "Restarting Spark Master @ $MY_IP:7077" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
@@ -50,7 +50,7 @@ cd $WORK_DIR
 sh reset.sh
 date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
-echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/experiment_log.txt
+echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "To check the webUI to see the spark master," | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "  run the following: ssh -L 8080:localhost:8080 root@"$MY_IP | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "  then do following: xdg-open "$MY_IP":8080" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
@@ -83,7 +83,7 @@ do
 	mkdir -p $OUTPUT_DIR/lr/$i
 
 	# Generate data
-	echo -e "\e[95m===============================================" |  tee $OUTPUT_DIR/lr/experiment_log.txt
+	echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	echo "Preparing for LR example, input size $i features...." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
