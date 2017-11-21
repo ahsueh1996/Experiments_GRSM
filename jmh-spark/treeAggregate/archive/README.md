@@ -16,3 +16,14 @@ versions:
 	0:<IP>:211 = no JMH setup/teardown, using IP as the spark master,2 forks 1 warmup 1 iteration
 	1:omni[*]:235 = yes JMH setup/teardown, using local master @ omni with as many threads as cores, 2 forks, 3 warmups,5 iterations
 
+hacks:
+	The #hack_lib contains the built scala classes using modified spark src codes. the #hack_src contains those src changes.
+ 	The changes should not change the footprint of the class or special note should be taken to override the UID of the altered 
+	class to have it be accepted by the rest of spark.
+	
+	Install these hacks by copying all the lib files pertaining to a class into the benchmarks.jar chosen from the target versions using "jar uf"
+	
+	debug:
+		this folder contains mainly information printing println()
+	<optimization try>:
+		folders of this type contain test optimizations

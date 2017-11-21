@@ -3,8 +3,14 @@
 OUTPUT_DIR=/home/hibench-output/perfasm_temps
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
+TARGET_DIR=$PROJ_DIR/target
 
-Reset the OUTPUT_DIR
+cd $WORK_DIR
+cd $TARGET_DIR
+
+########################################################################################################
+
+# Reset the OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
 yes 'yes' | rm -R $OUTPUT_DIR
 mkdir -p $OUTPUT_DIR/lr
@@ -70,7 +76,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 # big set
 #	PROBLEM_FEATURES=(350000 400000 450000 500000)
 # custom
-	PROBLEM_FEATURES=(400000)
+	PROBLEM_FEATURES=(20000)
 ########################################################################################################
 
 # Set data size scale to "huge"
@@ -101,11 +107,13 @@ do
 
 	##############		Choose one   #############################################################
 	# avgt
-	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	#	$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	
 	# perfnorm
-	#	/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	#	$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	
 	# perfasm
-		/CMC/kmiecseb/spark/bin/spark-submit --properties-file "/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/myspark.conf" --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.HiBench_LR" --driver-class-path "target/benchmarks.jar" target/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.*" --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
 	##################################################################################################
 
 	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
