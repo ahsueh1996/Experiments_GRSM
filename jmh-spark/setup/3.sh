@@ -27,7 +27,6 @@ SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
 echo -e "\e[95m======================="
 echo "Current settings, abort if wrong."
 echo -e "==========================\e[39m"
-sleep 10
 
 echo ARM_MACHINE=${IS_ARM}
 echo YARN_CORES=${MY_YARN_CORES}
@@ -42,6 +41,8 @@ echo SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
 echo SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
 echo SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
 echo SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
+
+sleep 10
 
 ########################################################BODY######################################################
 ### go to work_dir to check whether it's has been done or not ###
