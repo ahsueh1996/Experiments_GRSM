@@ -116,7 +116,7 @@ do
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo "Finished Spark LR example, input size $i features." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-
+    date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     # Move results to output directory
     cd $WORK_DIR/HiBench
     mv report/* $OUTPUT_DIR/lr/$i/
