@@ -1,10 +1,27 @@
 #!/bin/bash
 ########################################################HEADER######################################################
-assert_equal () {
-  if [ "$3" != "$2" ] ; then 
-    echo -e "\e[31mOld setting for $1 is:\e[39m $3"
-    exit
+calibrate () {
+  if [ "$1" = "first" ] ; then
+    flip=false
+  else
+    flip=true
   fi
+}
+
+calibrate first last
+
+assert_equal () {
+  if [ "$flip" = true ] ; then 
+    if [ "$3" != "$2" ] ; then 
+      echo -e "\e[31mOld setting for $1 is:\e[39m $3"
+      exit
+    fi
+  else
+    if [ "$1" != "$2" ] ; then 
+      echo -e "\e[31mOld setting for $3 is:\e[39m $1"
+      exit
+    fi
+  fi  
 }
 
 assert_equal ${OLD_IS_ARM} ${IS_ARM} "IS_ARM"
