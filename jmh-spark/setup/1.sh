@@ -56,25 +56,25 @@ assert_equal ${OLD_MY_SPARK_DAEMON_MEMORY} ${MY_SPARK_DAEMON_MEMORY} "MY_SPARK_D
 # Where Hadoop, Spark, etc is built and stored
 WORK_DIR=/CMC/kmiecseb
 # Is this in fact an ARM machine (not an x86)					
-ARM_MACHINE=${IS_ARM}
+ARM_MACHINE=${OLD_IS_ARM}
 # true: use YARN, false: use Spark's standalone resource manager						 
-USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
+USE_YARN_FOR_SPARK_ON_HADOOP=${OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP}
 
 # Hadoop-YARN settings:
 # Number of cores to use for Hadoop and Spark on Hadoop jobs (if using YARN). 92
-YARN_CORES=${MY_YARN_CORES}
+YARN_CORES=${OLD_MY_YARN_CORES}
 # Amount of memory to use for Hadoop and Spark on Hadoop jobs (if using YARN).			 112640	
-YARN_MEM=${MY_YARN_MEM}				
+YARN_MEM=${OLD_MY_YARN_MEM}				
 
 # Spark settings:  10 10G 10G 92 100G 1 9 2G
-SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}
-SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}
-SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}
-SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}
-SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
-SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
-SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
-SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
+SPARK_EXECUTOR_CORES=${OLD_MY_SPARK_EXECUTOR_CORES}
+SPARK_EXECUTOR_MEMORY=${OLD_MY_SPARK_EXECUTOR_MEMORY}
+SPARK_DRIVER_MEMORY=${OLD_MY_SPARK_DRIVER_MEMORY}
+SPARK_WORKER_CORES=${OLD_MY_SPARK_WORKER_CORES}
+SPARK_WORKER_MEMORY=${OLD_MY_SPARK_WORKER_MEMORY}
+SPARK_WORKER_INSTANCES=${OLD_MY_SPARK_WORKER_INSTANCES}
+SPARK_EXECUTOR_INSTANCES=${OLD_MY_SPARK_EXECUTOR_INSTANCES}
+SPARK_DAEMON_MEMORY=${OLD_MY_SPARK_DAEMON_MEMORY}
 ########################################################BODY######################################################
 # Basic dependecies needed:
 yum -y install gcc glibc-headers git autoconf automake libtool gcc-c++ cmake vim zlib-devel openssl-devel svn cpan libssh2-devel iptables-services tree bzip2 perl-devel perf sysstat 
