@@ -1,0 +1,181 @@
+Wed Nov 22 16:11:10 EST 2017
+[95m===============================================
+Starting experiment: /home/hibench-output/tuning_url/executor_instnaces
+================================================[97m
+my ip:
+142.150.237.146
+end
+[95m===============================================
+Restarting Spark Master @ 142.150.237.146:7077
+================================================[97m
+Wed Nov 22 16:11:12 EST 2017
+Wed Nov 22 16:12:18 EST 2017
+[95m===============================================
+To check the webUI to see the spark master,
+  run the following: ssh -L 8080:localhost:8080 root@142.150.237.146
+  then do following: xdg-open 142.150.237.146:8080
+================================================[97m
+[95m===============================================
+Preparing for LR example, input size 150000 features....
+================================================[97m
+Wed Nov 22 16:12:29 EST 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://142.150.237.146:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 150000
+finish LogisticRegressionDataPrepare bench
+Wed Nov 22 16:13:09 EST 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=30
+SPARK_EXECUTOR_MEMORY=110g
+SPARK_DRIVER_MEMORY=1g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=111g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=1
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, 1 executor instances...
+================================================[97m
+Wed Nov 22 16:13:19 EST 2017
+Accuracy = 0.7130674692751442
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=2
+SPARK_EXECUTOR_MEMORY=7g
+SPARK_DRIVER_MEMORY=1g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=111g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=15
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, 15 executor instances...
+================================================[97m
+Wed Nov 22 16:17:51 EST 2017
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=10
+SPARK_EXECUTOR_MEMORY=36g
+SPARK_DRIVER_MEMORY=1g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=111g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=3
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, 3 executor instances...
+================================================[97m
+Wed Nov 22 16:47:38 EST 2017
+Accuracy = 0.7130674692751442
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=3
+SPARK_EXECUTOR_MEMORY=12g
+SPARK_DRIVER_MEMORY=1g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=111g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=9
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, 9 executor instances...
+================================================[97m
+Wed Nov 22 16:51:26 EST 2017
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=6
+SPARK_EXECUTOR_MEMORY=22g
+SPARK_DRIVER_MEMORY=1g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=111g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=5
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, 5 executor instances...
+================================================[97m
+Wed Nov 22 16:55:29 EST 2017
+Accuracy = 0.7130674692751442
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+Wed Nov 22 16:59:49 EST 2017
+[95m===============================================
+Done experiment.
+================================================[97m
