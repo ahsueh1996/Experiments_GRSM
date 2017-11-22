@@ -16,10 +16,7 @@ echo SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
 echo SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
 echo SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
 
-if [ read -p "(correct/not)? " != correct ] ; then
-  echo Aborting
-  exit
-fi
+read -p "Enter to continue: "
 
 export OLD_IS_ARM=${IS_ARM}
 export OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
@@ -36,8 +33,8 @@ export OLD_MY_SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
 
 ########################################################HEADER######################################################
 assert_equal () {
-  if [ "$1" != "$2" ] ; then 
-    echo -e "\e[31mOld setting for $3 is:\e[39m $1"
+  if [ "$3" != "$2" ] ; then 
+    echo -e "\e[31mOld setting for $1 is:\e[39m $3"
     exit
   fi
 }
