@@ -1,12 +1,32 @@
 #!/bin/bash
 ########################################################HEADER######################################################
+assert_equal () {
+  if [ "$1" != "$2" ] ; then 
+    echo -e "\e[31mOld setting for $3 is:\e[39m $1"
+    exit
+  fi
+}
+
+assert_equal ${OLD_IS_ARM} ${IS_ARM} "IS_ARM"
+assert_equal ${OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP} ${MY_USE_YARN_FOR_SPARK_ON_HADOOP} "MY_USE_YARN_FOR_SPARK_ON_HADOOP"
+assert_equal ${OLD_MY_YARN_CORES} ${MY_YARN_CORES} "MY_YARN_CORES"
+assert_equal ${OLD_MY_ARN_MEM} ${MY_YARN_MEM}	"MY_YARN_MEM"
+assert_equal ${OLD_MY_SPARK_EXECUTOR_CORES} ${MY_SPARK_EXECUTOR_CORES} "MY_SPARK_EXECUTOR_CORES"
+assert_equal ${OLD_MY_SPARK_EXECUTOR_MEMORY} ${MY_SPARK_EXECUTOR_MEMORY} "MY_SPARK_EXECUTOR_MEMORY"
+assert_equal ${OLD_MY_SPARK_DRIVER_MEMORY} ${MY_SPARK_DRIVER_MEMORY} "MY_SPARK_DRIVER_MEMORY"
+assert_equal ${OLD_MY_SPARK_WORKER_CORES} ${MY_SPARK_WORKER_CORES} "MY_SPARK_WORKER_CORES"
+assert_equal ${OLD_MY_SPARK_WORKER_MEMORY} ${MY_SPARK_WORKER_MEMORY} "MY_SPARK_WORKER_MEMORY"
+assert_equal ${OLD_MY_SPARK_WORKER_INSTANCES} ${MY_SPARK_WORKER_INSTANCES} "MY_SPARK_WORKER_INSTANCES"
+assert_equal ${OLD_MY_SPARK_EXECUTOR_INSTANCES} ${MY_SPARK_EXECUTOR_INSTANCES} "MY_SPARK_EXECUTOR_INSTANCES"
+assert_equal ${OLD_MY_SPARK_DAEMON_MEMORY} ${MY_SPARK_DAEMON_MEMORY} "MY_SPARK_DAEMON_MEMORY"
+
 # General Settings:
 # Where Hadoop, Spark, etc is built and stored
 WORK_DIR=/CMC/kmiecseb
 # Is this in fact an ARM machine (not an x86)					
 ARM_MACHINE=${IS_ARM}
 # true: use YARN, false: use Spark's standalone resource manager						 
-USE_YARN_FOR_SPARK_ON_HADOOP=false		
+USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
 
 # Hadoop-YARN settings:
 # Number of cores to use for Hadoop and Spark on Hadoop jobs (if using YARN). 92
@@ -23,27 +43,6 @@ SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
 SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
 SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
 SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
-
-echo -e "\e[95m======================="
-echo "Current settings, abort if wrong."
-echo -e "==========================\e[39m"
-
-echo ARM_MACHINE=${IS_ARM}
-echo YARN_CORES=${MY_YARN_CORES}
-echo YARN_MEM=${MY_YARN_MEM}	
-echo USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
-
-echo SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}
-echo SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}
-echo SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}
-echo SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}
-echo SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
-echo SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
-echo SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
-echo SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
-
-sleep 10
-
 ########################################################BODY######################################################
 ### Grab Protobuf #####
 ###
