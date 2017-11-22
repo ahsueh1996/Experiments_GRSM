@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WORK_DIR=/CMC/kmiecseb
+PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 
 echo -e "\e[95m======================="
 
@@ -9,31 +10,18 @@ echo "Current settings, abort if wrong."
 echo -e "==========================\e[39m"
 
 echo ARM_MACHINE=${IS_ARM}
-
 echo YARN_CORES=${MY_YARN_CORES}
-
 echo YARN_MEM=${MY_YARN_MEM}	
-
 echo USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
-
 echo SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}
-
 echo SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}
-
 echo SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}
-
 echo SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}
-
 echo SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
-
 echo SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
-
 echo SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
-
 echo SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
-
 echo SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM}
-
 echo SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}
 
 echo  
@@ -46,6 +34,20 @@ echo "Resetting relavent configs"
 
 echo -e "======================================\e[97m"
 
+ARM_MACHINE=${IS_ARM}
+YARN_CORES=${MY_YARN_CORES}
+YARN_MEM=${MY_YARN_MEM}	
+USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
+SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}
+SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}
+SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}
+SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}
+SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}
+SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}
+SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}
+SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}
+SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM}
+SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}
 
 
 ################################################################### Hadoop...
@@ -190,7 +192,14 @@ if [ "$ARM_MACHINE" = true ] ; then
 
 fi
 
-
+# Runtime spark properties file
+yes 'yes' | cp $PROJ_DIR/myspark.conf $PROJ_DIR/myspark.conf.old
+yes 'yes' | rm $PROJ_DIR/myspark.conf
+touch $PROJ_DIR/myspark.conf
+echo "spark.default.parallelism ${MY_SPARK_DEFAULT_PARALLELISM}" >> $PROJ_DIR/myspark.conf
+echo "spark.driver.memory ${MY_SPARK_DRIVER_MEMORY}" >> $PROJ_DIR/myspark.conf
+echo "spark.executor.memory ${MY_SPARK_EXECUTOR_MEMORY}" >> $PROJ_DIR/myspark.conf
+echo "spark.sql.shuffle.partitions  ${MY_SPARK_SQL_SHUFFLE_PARTITIONS}" >> $PROJ_DIR/myspark.conf
 
 
 

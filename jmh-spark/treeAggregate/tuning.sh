@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 # choose tuning local or URL
 OUTPUT_DIR=/home/hibench-output/tuning_url/executor_instnaces
 WORK_DIR=/CMC/kmiecseb
@@ -90,7 +90,7 @@ do
   ########################################################################################################
   #######################          vary conf and run    ############################################
   ########################################################################################################
-  executor_instnace(1 15 3 9 5)
+	executor_instnace=(1 15 3 9 5)
   for j in "${executor_instnace[@]}"
   do
     mkdir -p $OUTPUT_DIR/lr/$i/$j
@@ -99,7 +99,7 @@ do
     else
       export MY_SPARK_WORKER_CORES=30
     fi
-    export MY_SPARK_EXECUTOR_MEMORY=$(expr 110 / $j)
+    export MY_SPARK_EXECUTOR_MEMORY="$(expr 110 / $j)g"
     export MY_SPARK_EXECUTOR_CORES=$(expr $MY_SPARK_WORKER_CORES / $j)
     export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
     export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
@@ -112,7 +112,7 @@ do
     echo "Starting Spark LR example, $i features, $j executor instances..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	  $WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master spark://$MY_IP:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://$MY_IP:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	  $WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master spark://$MY_IP:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo "Finished Spark LR example, input size $i features." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
