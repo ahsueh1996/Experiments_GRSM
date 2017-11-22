@@ -112,7 +112,7 @@ do
     echo "Starting Spark LR example, $i features, $j executor instances..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	  $WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master spark://142.150.237.146:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	  $WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master spark://$MY_IP:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://$MY_IP:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo "Finished Spark LR example, input size $i features." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
