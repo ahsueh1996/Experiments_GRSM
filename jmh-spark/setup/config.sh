@@ -22,20 +22,14 @@ echo "Resetting relavent configs"
 echo -e "======================================\e[97m"
 
 # Hadoop...
-#
-cd $WORK_DIR
-	# Hadoop configuration files (namenode, datanode, yarn):
-	#
-cd $HADOOP_HOME/etc/hadoop
-	sed -i "s#.*export JAVA_HOME.*#export JAVA_HOME=$JAVA_HOME#g" hadoop-env.sh
 
-	# Disable LSE instructions for spawned JVMs:
-	if [ "$ARM_MACHINE" = true ] ; then
- 		sed -i "s#.*export HADOOP_OPTS.*#export HADOOP_OPTS=\"\$HADOOP_OPTS -XX:-UseLSE -Djava.net.preferIPv4Stack=true\"#g" hadoop-env.sh
-		sed -i "/unset IFS/aYARN_OPTS=\"\$YARN_OPTS -XX:-UseLSE\"" yarn-env.sh
-	fi
+cd $WORK_DIR
+
+# Hadoop configuration files (namenode, datanode, yarn):
+cd $HADOOP_HOME/etc/hadoop
+
 	# Client needs larger heap size for complex jobs (Bayes, ALS, ...)
-	sed -i "s#.*HADOOP_CLIENT_OPTS.*#export HADOOP_CLIENT_OPTS=\"-Xmx4096m \$HADOOP_CLIENT_OPTS\"#g" hadoop-env.sh
+	#sed -i "s#.*HADOOP_CLIENT_OPTS.*#export HADOOP_CLIENT_OPTS=\"-Xmx4096m \$HADOOP_CLIENT_OPTS\"#g" hadoop-env.sh
 
 
 	# Add these properties in the configuration file 'core-site.xml":
