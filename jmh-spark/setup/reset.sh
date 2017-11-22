@@ -1,26 +1,40 @@
 if [ "config" = $1 ] ; then
-  unset ${OLD_IS_ARM}
-  unset ${IS_ARM}
-  unset ${OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP}
-  unset ${MY_USE_YARN_FOR_SPARK_ON_HADOOP}
-  unset ${OLD_MY_YARN_CORES}
-  unset ${MY_YARN_CORES} 
-  unset ${OLD_MY_ARN_MEM}
-  unset ${MY_YARN_MEM}
-  unset ${OLD_MY_SPARK_EXECUTOR_CORES}
-  unset ${MY_SPARK_EXECUTOR_CORES}
-  unset ${OLD_MY_SPARK_EXECUTOR_MEMORY}
-  unset ${MY_SPARK_EXECUTOR_MEMORY}
-  unset ${OLD_MY_SPARK_DRIVER_MEMORY}
-  unset ${MY_SPARK_DRIVER_MEMORY}
-  unset ${OLD_MY_SPARK_WORKER_CORES}
-  unset ${MY_SPARK_WORKER_CORES}
-  unset ${OLD_MY_SPARK_WORKER_MEMORY}
-  unset ${MY_SPARK_WORKER_MEMORY}
-  unset ${OLD_MY_SPARK_WORKER_INSTANCES}
-  unset ${MY_SPARK_WORKER_INSTANCES}
-  unset ${OLD_MY_SPARK_EXECUTOR_INSTANCES}
-  unset ${MY_SPARK_EXECUTOR_INSTANCES}
-  unset ${OLD_MY_SPARK_DAEMON_MEMORY}
-  unset ${MY_SPARK_DAEMON_MEMORY}
+  unset OLD_IS_ARM
+  unset IS_ARM
+  unset OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP
+  unset MY_USE_YARN_FOR_SPARK_ON_HADOOP
+  unset OLD_MY_YARN_CORES
+  unset MY_YARN_CORES
+  unset OLD_MY_ARN_MEM
+  unset MY_YARN_MEM
+  unset OLD_MY_SPARK_EXECUTOR_CORES
+  unset MY_SPARK_EXECUTOR_CORES
+  unset OLD_MY_SPARK_EXECUTOR_MEMORY
+  unset MY_SPARK_EXECUTOR_MEMORY
+  unset OLD_MY_SPARK_DRIVER_MEMORY
+  unset MY_SPARK_DRIVER_MEMORY
+  unset OLD_MY_SPARK_WORKER_CORES
+  unset MY_SPARK_WORKER_CORES
+  unset OLD_MY_SPARK_WORKER_MEMORY
+  unset MY_SPARK_WORKER_MEMORY
+  unset OLD_MY_SPARK_WORKER_INSTANCES
+  unset MY_SPARK_WORKER_INSTANCES
+  unset OLD_MY_SPARK_EXECUTOR_INSTANCES
+  unset MY_SPARK_EXECUTOR_INSTANCES
+  unset OLD_MY_SPARK_DAEMON_MEMORY
+  unset MY_SPARK_DAEMON_MEMORY
+  exit
 fi 
+
+cd /CMC/kmiecseb/
+if [ "hadoop" = $1 ] ; then
+  yes 'yes' | rm -R hadoop
+fi
+
+if [ "spark" = $1 ] ; then
+  yes 'yes' | rm -R spark
+fi
+
+if [ "hibench" = $1 ] ; then
+  yes 'yes' | rm -R HiBench
+fi
