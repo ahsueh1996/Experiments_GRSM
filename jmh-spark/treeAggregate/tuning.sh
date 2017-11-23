@@ -1,7 +1,7 @@
 !/bin/bash
 if [ "$1" != "executor_instances" ] && [ "$1" != "executor_cores" ] && [ "$1" != "parallelism" ] && [ "$1" != "driver_memory" ] && [ "$1" = "master_sel" ] ; then
 	echo undef tuning op, choose from:
-	echo executor_instances, executor_cores, parallelism, driver_memory, spark_master
+	echo executor_instances, executor_cores, parallelism, driver_memory, master_sel
 	exit
 fi
 
