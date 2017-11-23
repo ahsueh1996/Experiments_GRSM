@@ -1,6 +1,6 @@
 !/bin/bash
 # choose tuning local or URL
-OUTPUT_DIR=/home/hibench-output/tuning_url/executor_instnaces
+OUTPUT_DIR=/home/hibench-output/tuning_url/executor_cores
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TARGET_DIR=$PROJ_DIR/target
@@ -90,20 +90,23 @@ do
   ########################################################################################################
   #######################          vary conf and run    ############################################
   ########################################################################################################
-	executor_instnace=(1 2 3 4 5 6 7 8)
-  for j in "${executor_instnace[@]}"
+  	if [ "$MY_IS_ARM" = true ] ; then
+	      export MY_SPARK_WORKER_CORES=90
+	      export MY_SPARK_EXECUTOR_INSTANCES=6
+	      variable=(1 15 3 12 6 9)
+    	else
+	      export MY_SPARK_WORKER_CORES=30
+	      export MY_SPARK_EXECUTOR_INSTANCES=2
+	      variable=(1 15 3 12 6 9)
+    	fi
+    	export MY_SPARK_EXECUTOR_MEMORY="$(expr 110 / $MY_SPARK_EXECUTOR_INSTANCES)g"
+	
+  for j in "${variable[@]}"
   do
     mkdir -p $OUTPUT_DIR/lr/$i/$j
-    if [ "$MY_IS_ARM" = true ] ; then
-      export MY_SPARK_WORKER_CORES=90 
-    else
-      export MY_SPARK_WORKER_CORES=30
-    fi
-    export MY_SPARK_EXECUTOR_MEMORY="$(expr 110 / $j)g"
-    export MY_SPARK_EXECUTOR_CORES=$(expr $MY_SPARK_WORKER_CORES / $j)
+    export MY_SPARK_EXECUTOR_CORES=$j
     export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
     export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
-    export MY_SPARK_EXECUTOR_INSTANCES=$j
     
     yes 'yes' | sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	
