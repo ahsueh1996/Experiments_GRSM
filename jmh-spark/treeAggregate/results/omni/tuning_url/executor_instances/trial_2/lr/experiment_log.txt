@@ -202,3 +202,11 @@ Resetting relavent configs
 Starting Spark LR example, 150000 features, 8 executor instances...
 ================================================[97m
 Wed Nov 22 17:33:17 EST 2017
+[95m===============================================
+Finished Spark LR example, input size 150000 features.
+================================================[97m
+Wed Nov 22 19:05:52 EST 2017
+Wed Nov 22 19:05:52 EST 2017
+[95m===============================================
+Done experiment.
+================================================[97m
