@@ -20,4 +20,14 @@ Execute the following in succession on a bare metal ARM or x86 machine. The firs
 # Explanation
 The reason that these instructions were not packaged into bash scripts was because many of these steps require some inputs or checks for success. Thus, even if it were packaged in a bash script, you will have to copy and paste sections of the commands into shell; this makes more sense for me. The stages have been broken up in a way that is most time saving. Each stage is annotated with the expected time to completion for your convenience.
 
+  + Stage 0: exports some variables to the environment
+  + Stage 1: sets up ssh to localhost, installs the minimum dependicies, and grabs this repository using git
+  + Stage 2: sets up java and maven
+  + Stage 3: sets up protobuf (documentation on why this was required was lost... just make sure the build passes I guess)
+  + Stage 4: sets up hadoop
+  + Stage 5: sets up spark
+  + Stage 6: sets up HiBench
+  + Stage 7: final env variables and binaries copied and hdfs test
+  
+
 # Common Bugs
