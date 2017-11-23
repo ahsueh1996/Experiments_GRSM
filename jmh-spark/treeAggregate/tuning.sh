@@ -99,7 +99,7 @@ do
 	      export MY_SPARK_WORKER_CORES=30
 	      export MY_SPARK_EXECUTOR_INSTANCES=2
     		export MY_SPARK_EXECUTOR_CORES=14
-	      variable=(28 30 1 25 8 16 22)
+	      variable=(30 22 8 28 16 30 25 1)
     	fi
     	export MY_SPARK_EXECUTOR_MEMORY="$(expr 110 / $MY_SPARK_EXECUTOR_INSTANCES)g"
 	
