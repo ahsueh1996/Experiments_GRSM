@@ -28,12 +28,12 @@ echo "export OLD_MY_SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}" >> ~/.bashr
 echo "export OLD_MY_SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}" >> ~/.bashrc
 echo "export OLD_MY_SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}" >> ~/.bashrc
 echo "export OLD_MY_SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}" >> ~/.bashrc
-echo "export OLD_MY_SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}" >> ~/.bachrc
-echo "export OLD_MY_SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}" >> ~/.bachrc
-echo "export OLD_MY_SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}" >> ~/.bachrc
-echo "export OLD_MY_SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}" >> ~/.bachrc
-echo "export OLD_MY_SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM}" >> ~/.bachrc
-echo "export OLD_MY_SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}" >> ~/.bashrc
 source ~/.bashrc
 
 ########################################################HEADER######################################################
