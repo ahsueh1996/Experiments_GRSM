@@ -20,20 +20,20 @@ echo SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}
 echo
 read -p "Enter to continue: "
 
-export OLD_IS_ARM=${IS_ARM} >> ~/.bashrc
-export OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}>> ~/.bashrc
-export OLD_MY_YARN_CORES=${MY_YARN_CORES} >> ~/.bashrc
-export OLD_MY_ARN_MEM=${MY_YARN_MEM} >> ~/.bashrc
-export OLD_MY_SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES} >> ~/.bashrc
-export OLD_MY_SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY} >> ~/.bashrc
-export OLD_MY_SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY} >> ~/.bashrc
-export OLD_MY_SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES} >> ~/.bashrc
-export OLD_MY_SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY} >> ~/.bachrc
-export OLD_MY_SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES} >> ~/.bachrc
-export OLD_MY_SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES} >> ~/.bachrc
-export OLD_MY_SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY} >> ~/.bachrc
-export OLD_MY_SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM} >> ~/.bachrc
-export OLD_MY_SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS} >> ~/.bachrc
+echo "export OLD_IS_ARM=${IS_ARM}" >> ~/.bashrc
+echo "export OLD_MY_USE_YARN_FOR_SPARK_ON_HADOOP=${MY_USE_YARN_FOR_SPARK_ON_HADOOP}" >> ~/.bashrc
+echo "export OLD_MY_YARN_CORES=${MY_YARN_CORES}" >> ~/.bashrc
+echo "export OLD_MY_ARN_MEM=${MY_YARN_MEM}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_EXECUTOR_CORES=${MY_SPARK_EXECUTOR_CORES}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_EXECUTOR_MEMORY=${MY_SPARK_EXECUTOR_MEMORY}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_DRIVER_MEMORY=${MY_SPARK_DRIVER_MEMORY}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_WORKER_CORES=${MY_SPARK_WORKER_CORES}" >> ~/.bashrc
+echo "export OLD_MY_SPARK_WORKER_MEMORY=${MY_SPARK_WORKER_MEMORY}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_WORKER_INSTANCES=${MY_SPARK_WORKER_INSTANCES}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_EXECUTOR_INSTANCES=${MY_SPARK_EXECUTOR_INSTANCES}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_DAEMON_MEMORY=${MY_SPARK_DAEMON_MEMORY}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_DEFAULT_PARALLELISM=${MY_SPARK_DEFAULT_PARALLELISM}" >> ~/.bachrc
+echo "export OLD_MY_SPARK_SQL_SHUFFLE_PARTITIONS=${MY_SPARK_SQL_SHUFFLE_PARTITIONS}" >> ~/.bachrc
 source ~/.bashrc
 
 ########################################################HEADER######################################################
