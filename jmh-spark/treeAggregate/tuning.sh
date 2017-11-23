@@ -1,6 +1,6 @@
 !/bin/bash
 # choose tuning local or URL
-OUTPUT_DIR=/home/hibench-output/tuning_url/executor_cores
+OUTPUT_DIR=/home/hibench-output/tuning_url/parallelism
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TARGET_DIR=$PROJ_DIR/target
@@ -93,20 +93,21 @@ do
   	if [ "$IS_ARM" = true ] ; then
 	      export MY_SPARK_WORKER_CORES=90
 	      export MY_SPARK_EXECUTOR_INSTANCES=6
+    		export MY_SPARK_EXECUTOR_CORES=14
 	      variable=(1 15 3 12 6 9)
     	else
 	      export MY_SPARK_WORKER_CORES=30
 	      export MY_SPARK_EXECUTOR_INSTANCES=2
-	      variable=(1 15 3 12 6 9)
+    		export MY_SPARK_EXECUTOR_CORES=14
+	      variable=(28 30 1 25 8 16 22)
     	fi
     	export MY_SPARK_EXECUTOR_MEMORY="$(expr 110 / $MY_SPARK_EXECUTOR_INSTANCES)g"
 	
   for j in "${variable[@]}"
   do
     mkdir -p $OUTPUT_DIR/lr/$i/$j
-    export MY_SPARK_EXECUTOR_CORES=$j
-    export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
-    export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
+    export MY_SPARK_DEFAULT_PARALLELISM=$j        
+    export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$j
     
     yes 'yes' | sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	
