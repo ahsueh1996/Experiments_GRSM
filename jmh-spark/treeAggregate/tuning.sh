@@ -240,6 +240,8 @@ do
 				export MY_SPARK_DRIVER_MEMORY_num=6
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi
+			export MY_SPARK_DEFAULT_PARALLELISM=30    
+			export MY_SPARK_SQL_SHUFFLE_PARTITIONS=30
 		fi
 		if [ "$j" = "avg" ] ; then 
 			if [ "$IS_ARM" = true ] ; then
@@ -261,6 +263,8 @@ do
 				export MY_SPARK_DRIVER_MEMORY_num=12
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi
+			export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES       
+			export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 		fi		
 		if [ "$j" = "bad" ] ; then 
 			if [ "$IS_ARM" = true ] ; then
@@ -282,10 +286,10 @@ do
 				export MY_SPARK_DRIVER_MEMORY_num=2
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi
+			export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES       
+			export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 		fi		
 		export MY_SPARK_EXECUTOR_MEMORY="$(expr \( $MY_SPARK_WORKER_MEMORY_num - $MY_SPARK_DRIVER_MEMORY_num \) / $MY_SPARK_EXECUTOR_INSTANCES)g"
-		export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
-		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 	fi		
 	##################################################
 	
