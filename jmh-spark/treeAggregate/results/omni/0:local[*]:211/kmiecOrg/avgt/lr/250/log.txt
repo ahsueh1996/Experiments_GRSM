@@ -1,0 +1,60 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx8G
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:16
+# Fork: 1 of 2
+# Warmup Iteration   1: Accuracy = 0.7498758072528564
+15.759 s/op
+# Warmup Iteration   2: Accuracy = 0.7498758072528564
+8.301 s/op
+# Warmup Iteration   3: Accuracy = 0.7498758072528564
+7.891 s/op
+Iteration   1: Accuracy = 0.7498758072528564
+7.539 s/op
+Iteration   2: Accuracy = 0.7498758072528564
+7.586 s/op
+Iteration   3: Accuracy = 0.7498758072528564
+7.500 s/op
+Iteration   4: Accuracy = 0.7498758072528564
+7.026 s/op
+Iteration   5: Accuracy = 0.7498758072528564
+6.953 s/op
+
+# Run progress: 50.00% complete, ETA 00:01:09
+# Fork: 2 of 2
+# Warmup Iteration   1: Accuracy = 0.7498758072528564
+14.647 s/op
+# Warmup Iteration   2: Accuracy = 0.7498758072528564
+7.860 s/op
+# Warmup Iteration   3: Accuracy = 0.7498758072528564
+7.611 s/op
+Iteration   1: Accuracy = 0.7498758072528564
+7.691 s/op
+Iteration   2: Accuracy = 0.7498758072528564
+7.243 s/op
+Iteration   3: Accuracy = 0.7498758072528564
+7.124 s/op
+Iteration   4: Accuracy = 0.7498758072528564
+7.179 s/op
+Iteration   5: Accuracy = 0.7498758072528564
+6.899 s/op
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  7.274 ±(99.9%) 0.431 s/op [Average]
+  (min, avg, max) = (6.899, 7.274, 7.691), stdev = 0.285
+  CI (99.9%): [6.843, 7.705] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:16
+
+Benchmark              Mode  Cnt  Score   Error  Units
+Benchmarks.HiBench_LR  avgt   10  7.274 ± 0.431   s/op
