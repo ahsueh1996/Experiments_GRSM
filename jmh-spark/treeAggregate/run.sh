@@ -1,14 +1,15 @@
 #!/bin/bash
-# choose avgt, perfnorm, or perfasm
-OUTPUT_DIR=/home/hibench-output/perfasm_temps
+
+if [ "$1" != "avgt" ] && [ "$1" != "perfnorm" ] && [ "$1" != "perfasm" ] ; then
+	echo undef op, choose one from:
+	echo avgt, perfnorm, perfasm
+	exit
+fi
+
+OUTPUT_DIR=/home/hibench-output/$1
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TARGET_DIR=$PROJ_DIR/target
-
-cd $WORK_DIR
-cd $TARGET_DIR
-
-########################################################################################################
 
 # Reset the OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
@@ -27,7 +28,11 @@ if [ ! -d "$WORK_DIR/HiBench" ]; then
 	exit
 fi
 
-
+# Check for Target
+if [ ! -d "$TARGET_DIR" ]; then
+	echo "target does not appear in the project directory \"$PROJ_DIR\", exiting..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	exit
+fi
 
 ########################################################################################################
 ######################            Starting epxeriment       ############################################
@@ -36,6 +41,8 @@ date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+
+sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
 MY_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 
@@ -76,7 +83,7 @@ cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 # big set
 #	PROBLEM_FEATURES=(350000 400000 450000 500000)
 # custom
-	PROBLEM_FEATURES=(20000)
+	PROBLEM_FEATURES=(150000)
 ########################################################################################################
 
 # Set data size scale to "huge"
@@ -103,17 +110,17 @@ do
 	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	cd $PROJ_DIR
 	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	
 
-	##############		Choose one   #############################################################
-	# avgt
-	#	$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
-	
-	# perfnorm
-	#	$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
-	
-	# perfasm
+	##############		Chooses one   #############################################################
+	if [ "$1" = "avgt" ] ; then
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
+	if [ "$1" = "perfnorm" ] ; then
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
+	if [ "$1" = "perfasm" ]; then
 		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.*" --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
 	##################################################################################################
 
 	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
