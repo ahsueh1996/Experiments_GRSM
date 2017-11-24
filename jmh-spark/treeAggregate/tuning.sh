@@ -268,7 +268,7 @@ do
 					spark_master="local[2]"
 				fi
 				export MY_SPARK_WORKER_CORES=90
-				export MY_SPARK_EXECUTOR_INSTANCES=6
+				export MY_SPARK_EXECUTOR_INSTANCES=45
 				export MY_SPARK_EXECUTOR_CORES=1
 				export MY_SPARK_DRIVER_MEMORY_num=2
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
