@@ -164,7 +164,7 @@ do
 		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 	fi
 	if [ "$1" = "optimal_compare" ] ; then
-		variable=("opt" "avg" "bad")
+		variable=("opt" "avg" "opt" "bad")
 	fi	
 	##################################################
   for j in "${variable[@]}"
