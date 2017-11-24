@@ -164,7 +164,7 @@ do
 		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 	fi
 	if [ "$1" = "optimal_compare" ] ; then
-		variable=("avg" "avg" "avg")
+		variable=("opt" "avg" "opt" "avg" "opt" "avg" "bad")
 	fi	
 	##################################################
   for j in "${variable[@]}"
@@ -182,7 +182,7 @@ do
 			if [ "$IS_ARM" = true ] ; then
 				export MY_SPARK_DRIVER_MEMORY_num=24		# put optimal val
 			else
-				export MY_SPARK_DRIVER_MEMORY_num=12		# put optimal val
+				export MY_SPARK_DRIVER_MEMORY_num=8		# put optimal val
 			fi
 			export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 		fi
@@ -228,10 +228,8 @@ do
 			if [ "$IS_ARM" = true ] ; then
 				if [ "$2" = "local" ] ; then
 					spark_master="local[*]"			# put optimal vals
-					export MY_SPARK_DRIVER_MEMORY_num=24	# whenever we use * we need more mem
-				else
-					export MY_SPARK_DRIVER_MEMORY_num=12
 				fi
+				export MY_SPARK_DRIVER_MEMORY_num=24
 				export MY_SPARK_WORKER_CORES=90
 				export MY_SPARK_EXECUTOR_INSTANCES=6
 				export MY_SPARK_EXECUTOR_CORES=15
@@ -243,7 +241,7 @@ do
 				export MY_SPARK_WORKER_CORES=30
 				export MY_SPARK_EXECUTOR_INSTANCES=2
 				export MY_SPARK_EXECUTOR_CORES=14
-				export MY_SPARK_DRIVER_MEMORY_num=6
+				export MY_SPARK_DRIVER_MEMORY_num=8
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi
 			export MY_SPARK_DEFAULT_PARALLELISM=30    
@@ -262,10 +260,8 @@ do
 			else
 				if [ "$2" = "local" ] ; then
 					spark_master="local[*]"
-					export MY_SPARK_DRIVER_MEMORY_num=12	# whenever we use * we need more mem
-				else
-					export MY_SPARK_DRIVER_MEMORY_num=4
 				fi
+				export MY_SPARK_DRIVER_MEMORY_num=24
 				export MY_SPARK_WORKER_CORES=30
 				export MY_SPARK_EXECUTOR_INSTANCES=5
 				export MY_SPARK_EXECUTOR_CORES=5
@@ -281,7 +277,7 @@ do
 				fi
 				export MY_SPARK_WORKER_CORES=90
 				export MY_SPARK_EXECUTOR_INSTANCES=45
-				export MY_SPARK_EXECUTOR_CORES=1
+				export MY_SPARK_EXECUTOR_CORES=2
 				export MY_SPARK_DRIVER_MEMORY_num=2
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			else
@@ -290,8 +286,8 @@ do
 				fi
 				export MY_SPARK_WORKER_CORES=30
 				export MY_SPARK_EXECUTOR_INSTANCES=7
-				export MY_SPARK_EXECUTOR_CORES=1
-				export MY_SPARK_DRIVER_MEMORY_num=2
+				export MY_SPARK_EXECUTOR_CORES=2
+				export MY_SPARK_DRIVER_MEMORY_num=32
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi
 			export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES       
