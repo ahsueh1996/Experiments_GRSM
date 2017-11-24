@@ -1,8 +1,13 @@
 !/bin/bash
-if [ "$1" != "executor_instances" ] && [ "$1" != "executor_cores" ] && [ "$1" != "parallelism" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
+if [ "$1" != "executor_instances" ] && [ "$1" != "executor_cores" ] && [ "$1" != "optimal_compare" ] && [ "$1" != "parallelism" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
 	echo undef tuning op, choose from:
-	echo executor_instances, executor_cores, parallelism, driver_memory, master_sel
+	echo executor_instances, executor_cores, parallelism, driver_memory, master_sel, optimal_compare
 	exit
+fi
+if [ "$1" = "optimal_compare" ] ; then
+	if [ "$2" != "standalone" ] && [ "$2" != "local" ] ; then
+		echo "undef variant for $1, choose from:"
+		echo standalone, local
 fi
 
 OUTPUT_DIR=/home/hibench-output/$1
@@ -156,6 +161,9 @@ do
 		export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
 		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 	fi
+	if [ "$1" = "optimal_compare" ] ; then
+		variable=("opt" "avg" "bad")
+	fi	
 	##################################################
   for j in "${variable[@]}"
   do
@@ -167,9 +175,11 @@ do
 		export MY_SPARK_EXECUTOR_MEMORY="$(expr \( $MY_SPARK_WORKER_MEMORY_num - $MY_SPARK_DRIVER_MEMORY_num \) / $MY_SPARK_EXECUTOR_INSTANCES)g"		
 	else
 		export MY_SPARK_WORKER_MEMORY_num=122
-		export MY_SPARK_DRIVER_MEMORY_num=12
 		export MY_SPARK_WORKER_MEMORY="${MY_SPARK_WORKER_MEMORY_num}g"
-		export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+		if [ "$1" != "optimal_compare" ] ; then
+			export MY_SPARK_DRIVER_MEMORY_num=12
+			export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+		fi
 	fi
 	if [ "$1" = "executor_instances" ] ; then
 		export MY_SPARK_EXECUTOR_CORES=$(expr $MY_SPARK_WORKER_CORES / $j)
@@ -199,9 +209,82 @@ do
 		spark_master=$j
 		export MY_SPARK_EXECUTOR_MEMORY="$(expr \( $MY_SPARK_WORKER_MEMORY_num - $MY_SPARK_DRIVER_MEMORY_num \) / $MY_SPARK_EXECUTOR_INSTANCES)g"
 	else
-		spark_master=spark://$MY_IP:7077
+		if [ "$1" != "optimal_compare" ] ; then
+			spark_master=spark://$MY_IP:7077
+		fi 
 		name=$j
 	fi
+	if [ "$1" = "optimal_compare" ] ; then
+		if [ "$2" = "standalone" ] ; then
+			spark_master=spark://$MY_IP:7077
+		fi
+		if [ "$j" = "opt" ] ; then 
+			if [ "$IS_ARM" = true ] ; then
+				if [ "$2" = "local" ] ; then
+					spark_master="local[12]"
+				fi
+				export MY_SPARK_WORKER_CORES=90
+				export MY_SPARK_EXECUTOR_INSTANCES=6
+				export MY_SPARK_EXECUTOR_CORES=14
+				export MY_SPARK_DRIVER_MEMORY_num=12
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			else
+				if [ "$2" = "local" ] ; then
+					spark_master="local[12]"
+				fi
+				export MY_SPARK_WORKER_CORES=30
+				export MY_SPARK_EXECUTOR_INSTANCES=2
+				export MY_SPARK_EXECUTOR_CORES=14
+				export MY_SPARK_DRIVER_MEMORY_num=6
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			fi
+		fi
+		if [ "$j" = "avg" ] ; then 
+			if [ "$IS_ARM" = true ] ; then
+				if [ "$2" = "local" ] ; then
+					spark_master="local[*]"
+				fi
+				export MY_SPARK_WORKER_CORES=90
+				export MY_SPARK_EXECUTOR_INSTANCES=8
+				export MY_SPARK_EXECUTOR_CORES=5
+				export MY_SPARK_DRIVER_MEMORY_num=4
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			else
+				if [ "$2" = "local" ] ; then
+					spark_master="local[*]"
+				fi
+				export MY_SPARK_WORKER_CORES=30
+				export MY_SPARK_EXECUTOR_INSTANCES=5
+				export MY_SPARK_EXECUTOR_CORES=5
+				export MY_SPARK_DRIVER_MEMORY_num=4
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			fi
+		fi		
+		if [ "$j" = "bad" ] ; then 
+			if [ "$IS_ARM" = true ] ; then
+				if [ "$2" = "local" ] ; then
+					spark_master="local[2]"
+				fi
+				export MY_SPARK_WORKER_CORES=90
+				export MY_SPARK_EXECUTOR_INSTANCES=6
+				export MY_SPARK_EXECUTOR_CORES=1
+				export MY_SPARK_DRIVER_MEMORY_num=2
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			else
+				if [ "$2" = "local" ] ; then
+					spark_master="local[2]"
+				fi
+				export MY_SPARK_WORKER_CORES=30
+				export MY_SPARK_EXECUTOR_INSTANCES=7
+				export MY_SPARK_EXECUTOR_CORES=1
+				export MY_SPARK_DRIVER_MEMORY_num=2
+				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
+			fi
+		fi		
+		export MY_SPARK_EXECUTOR_MEMORY="$(expr \( $MY_SPARK_WORKER_MEMORY_num - $MY_SPARK_DRIVER_MEMORY_num \) / $MY_SPARK_EXECUTOR_INSTANCES)g"
+		export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
+		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
+	fi		
 	##################################################
 	
 	# set up logging.txt	
