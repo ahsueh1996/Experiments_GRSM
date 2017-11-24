@@ -101,7 +101,7 @@ do
 		else
 			export MY_SPARK_WORKER_CORES=30
 		fi
-		variable=(1 2 3 4 5 6 7 8)
+		variable=(6 2 4 5 6 7 8 15 20 30 45)
 	fi
 	if [ "$1" = "executor_cores" ] ; then
 		if [ "$IS_ARM" = true ] ; then
