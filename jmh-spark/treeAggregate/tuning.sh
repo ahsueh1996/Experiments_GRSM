@@ -164,7 +164,7 @@ do
 		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES
 	fi
 	if [ "$1" = "optimal_compare" ] ; then
-		variable=("opt" "avg" "opt" "bad")
+		variable=("avg" "avg" "avg")
 	fi	
 	##################################################
   for j in "${variable[@]}"
@@ -250,8 +250,8 @@ do
 				fi
 				export MY_SPARK_WORKER_CORES=90
 				export MY_SPARK_EXECUTOR_INSTANCES=8
-				export MY_SPARK_EXECUTOR_CORES=5
-				export MY_SPARK_DRIVER_MEMORY_num=4
+				export MY_SPARK_EXECUTOR_CORES=6
+				export MY_SPARK_DRIVER_MEMORY_num=24
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			else
 				if [ "$2" = "local" ] ; then
