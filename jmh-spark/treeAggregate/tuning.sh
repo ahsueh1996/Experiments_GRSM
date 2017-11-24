@@ -8,6 +8,8 @@ if [ "$1" = "optimal_compare" ] ; then
 	if [ "$2" != "standalone" ] && [ "$2" != "local" ] ; then
 		echo "undef variant for $1, choose from:"
 		echo standalone, local
+		exit
+	fi
 fi
 
 OUTPUT_DIR=/home/hibench-output/$1
