@@ -118,15 +118,15 @@ do
 		else
 			export MY_SPARK_WORKER_CORES=30
 			export MY_SPARK_EXECUTOR_INSTANCES=2
-			variable=(1 15 3 12 6 9)
+			variable=(15 14 14 11 14 11)
 		fi
 	fi
   	if [ "$1" = "parallelism" ] ; then
 		if [ "$IS_ARM" = true ] ; then
 			export MY_SPARK_WORKER_CORES=90
 			export MY_SPARK_EXECUTOR_INSTANCES=6
-			export MY_SPARK_EXECUTOR_CORES=14
-			variable=(1 15 3 12 6 9)
+			export MY_SPARK_EXECUTOR_CORES=15
+			variable=(28 30 1 25 8 16 22)
 		else
 			export MY_SPARK_WORKER_CORES=30
 			export MY_SPARK_EXECUTOR_INSTANCES=2
@@ -138,12 +138,12 @@ do
 		if [ "$IS_ARM" = true ] ; then
 			export MY_SPARK_WORKER_CORES=90
 			export MY_SPARK_EXECUTOR_INSTANCES=6
-			export MY_SPARK_EXECUTOR_CORES=14
+			export MY_SPARK_EXECUTOR_CORES=15
 			variable=("spark://$MY_IP:7077" "spark://$MY_IP:7077" "local[*]" "local[28]" "local[2]" "local[5]" "local[30]" "local[12]" "local[18]" "local[22]" "local[25]")
 		else
 			export MY_SPARK_WORKER_CORES=30
 			export MY_SPARK_EXECUTOR_INSTANCES=2
-			export MY_SPARK_EXECUTOR_CORES=14
+			export MY_SPARK_EXECUTOR_CORES=15
 			variable=("spark://$MY_IP:7077" "spark://$MY_IP:7077" "local[*]" "local[28]" "local[2]" "local[5]" "local[30]" "local[12]" "local[18]" "local[22]" "local[25]")
 		fi
 			export MY_SPARK_DEFAULT_PARALLELISM=$MY_SPARK_WORKER_CORES        
@@ -153,7 +153,7 @@ do
 		if [ "$IS_ARM" = true ] ; then
 			export MY_SPARK_WORKER_CORES=90
 			export MY_SPARK_EXECUTOR_INSTANCES=6
-			export MY_SPARK_EXECUTOR_CORES=14
+			export MY_SPARK_EXECUTOR_CORES=15
 		else
 			export MY_SPARK_WORKER_CORES=30
 			export MY_SPARK_EXECUTOR_INSTANCES=2
@@ -227,7 +227,7 @@ do
 				fi
 				export MY_SPARK_WORKER_CORES=90
 				export MY_SPARK_EXECUTOR_INSTANCES=6
-				export MY_SPARK_EXECUTOR_CORES=14
+				export MY_SPARK_EXECUTOR_CORES=15
 				export MY_SPARK_DRIVER_MEMORY_num=12
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			else
@@ -257,7 +257,7 @@ do
 				fi
 				export MY_SPARK_WORKER_CORES=30
 				export MY_SPARK_EXECUTOR_INSTANCES=5
-				export MY_SPARK_EXECUTOR_CORES=5
+				export MY_SPARK_EXECUTOR_CORES=4
 				export MY_SPARK_DRIVER_MEMORY_num=4
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			fi

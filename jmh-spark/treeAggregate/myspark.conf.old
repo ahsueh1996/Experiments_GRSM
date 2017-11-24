@@ -1,4 +1,4 @@
-spark.default.parallelism 30
-spark.driver.memory 4g
-spark.executor.memory 23g
-spark.sql.shuffle.partitions  30
+spark.default.parallelism 90
+spark.driver.memory 12g
+spark.executor.memory 18g
+spark.sql.shuffle.partitions  90
