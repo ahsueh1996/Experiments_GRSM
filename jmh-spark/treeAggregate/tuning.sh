@@ -255,7 +255,7 @@ do
 				export MY_SPARK_WORKER_CORES=90
 				export MY_SPARK_EXECUTOR_INSTANCES=8
 				export MY_SPARK_EXECUTOR_CORES=6
-				export MY_SPARK_DRIVER_MEMORY_num=6
+				export MY_SPARK_DRIVER_MEMORY_num=10
 				export MY_SPARK_DRIVER_MEMORY="${MY_SPARK_DRIVER_MEMORY_num}g"
 			else
 				if [ "$2" = "local" ] ; then
