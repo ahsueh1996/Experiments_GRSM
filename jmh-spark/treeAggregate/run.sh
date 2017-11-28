@@ -5,7 +5,12 @@ if [ "$1" != "large_pages" ] && [ "$1" != "executor_cores" ] && [ "$1" != "optim
 	exit
 fi
 
-OUTPUT_DIR=/home/hibench-output/$1
+if [ "$2" != "standalone" ] && [ "$2" != "local" ] ; then
+	echo please specify spark master mode:
+	echo standalone, local
+fi
+
+OUTPUT_DIR=/home/hibench-output/$1_$2
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TARGET_DIR=$PROJ_DIR/target
@@ -96,7 +101,6 @@ do
   #######################          vary conf and run    ############################################
   ########################################################################################################
   	
-	spark_master="local[*]"
 	export MY_SPARK_WORKER_MEMORY=122g
 	if [ "$IS_ARM" = true ] ; then
 		export MY_SPARK_WORKER_CORES=90
@@ -106,10 +110,22 @@ do
 		export MY_SPARK_EXECUTOR_MEMORY=16g
 	else
 		export MY_SPARK_WORKER_CORES=30
-		export MY_SPARK_EXECUTOR_INSTANCES=5
-		export MY_SPARK_EXECUTOR_CORES=5
-		export MY_SPARK_DRIVER_MEMORY=24g
-		export MY_SPARK_EXECUTOR_MEMORY=24g
+		if [ "$2" = "local" ] ; then
+			export MY_SPARK_EXECUTOR_INSTANCES=5
+			export MY_SPARK_EXECUTOR_CORES=5
+			export MY_SPARK_DRIVER_MEMORY=24g
+			export MY_SPARK_EXECUTOR_MEMORY=24g
+		else
+			export MY_SPARK_EXECUTOR_INSTANCES=2
+			export MY_SPARK_EXECUTOR_CORES=14
+			export MY_SPARK_DRIVER_MEMORY=8g
+			export MY_SPARK_EXECUTOR_MEMORY=57g
+		fi
+	fi
+	if [ "$2" = "local" ] ; then
+		spark_master="local[*]"
+	else
+		spark_master="spark://$MY_IP:7077"
 	fi
 	export MY_SPARK_DEFAULT_PARALLELISM=30    
 	export MY_SPARK_SQL_SHUFFLE_PARTITIONS=30
@@ -117,9 +133,10 @@ do
 	#################################################
 	if [ "$1" = "large_pages" ] ; then
 		variable=("t1" "t2" "t3")
-		jvm_options="--driver_java_options \"-XX:+UseLargePages\""
+		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
 	fi
 	if [ "$1" = "executor_cores" ] ; then
+		variable=(1 1)
 	fi
   	if [ "$1" = "parallelism" ] ; then
 		variable=(28 30 1 25 8 16 22)
