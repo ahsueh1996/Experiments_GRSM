@@ -1,7 +1,8 @@
 #!/bin/bash
-if [ "$1" != "large_pages" ] && [ "$1" != "executor_cores" ] && [ "$1" != "optimal_compare" ] && [ "$1" != "parallelism" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
-	echo undef optimization, choose from:
-	echo large_pages, executor_cores, parallelism, driver_memory, master_sel, optimal_compare
+
+if [ "$1" != "avgt" ] && [ "$1" != "perfnorm" ] && [ "$1" != "perfasm" ] ; then
+	echo undef op, choose one from:
+	echo avgt, perfnorm, perfasm
 	exit
 fi
 
@@ -9,10 +10,6 @@ OUTPUT_DIR=/home/hibench-output/$1
 WORK_DIR=/CMC/kmiecseb
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TARGET_DIR=$PROJ_DIR/target
-
-cd $TARGET_DIR
-
-########################################################################################################
 
 # Reset the OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
@@ -31,14 +28,21 @@ if [ ! -d "$WORK_DIR/HiBench" ]; then
 	exit
 fi
 
+# Check for Target
+if [ ! -d "$TARGET_DIR" ]; then
+	echo "target does not appear in the project directory \"$PROJ_DIR\", exiting..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	exit
+fi
 
 ########################################################################################################
-######################            Starting tuning epxeriment       ############################################
+######################            Starting epxeriment       ############################################
 ########################################################################################################
 date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo "Starting experiment: "$OUTPUT_DIR | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+
+sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
 MY_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 
@@ -67,12 +71,20 @@ echo -e "================================================\e[97m" | tee -a $OUTPU
 sleep 10
 
 ########################################################################################################
-#######################          Prep data    ############################################
+#######################          Run Logistic Regression    ############################################
 ########################################################################################################
 
 cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 
-PROBLEM_FEATURES=(150000)
+
+######################		Choose one 	########################################################
+# small set
+#	PROBLEM_FEATURES=(50 250 750 1500 3000)
+# big set
+#	PROBLEM_FEATURES=(350000 400000 450000 500000)
+# custom
+	PROBLEM_FEATURES=(150000)
+########################################################################################################
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -91,71 +103,34 @@ do
 	sed -i "s#.*hibench.lr.huge.features.*#hibench.lr.huge.features    $i#g" conf/workloads/ml/lr.conf
 	./bin/workloads/ml/lr/prepare/prepare.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-  
-  ########################################################################################################
-  #######################          vary conf and run    ############################################
-  ########################################################################################################
-  	
-	spark_master="local[*]"
-	export MY_SPARK_WORKER_MEMORY=122g
-	if [ "$IS_ARM" = true ] ; then
-		export MY_SPARK_WORKER_CORES=90
-		export MY_SPARK_EXECUTOR_INSTANCES=6
-		export MY_SPARK_EXECUTOR_CORES=15
-		export MY_SPARK_DRIVER_MEMORY=24g
-		export MY_SPARK_EXECUTOR_MEMORY=16g
-	else
-		export MY_SPARK_WORKER_CORES=30
-		export MY_SPARK_EXECUTOR_INSTANCES=5
-		export MY_SPARK_EXECUTOR_CORES=5
-		export MY_SPARK_DRIVER_MEMORY=24g
-		export MY_SPARK_EXECUTOR_MEMORY=24g
-	fi
-	export MY_SPARK_DEFAULT_PARALLELISM=30    
-	export MY_SPARK_SQL_SHUFFLE_PARTITIONS=30
-		
-	#################################################
-	if [ "$1" = "large_pages" ] ; then
-		variable=("t1" "t2" "t3")
-		jvm_options="--driver_java_options \"-XX:+UseLargePages\""
-	fi
-	if [ "$1" = "executor_cores" ] ; then
-	fi
-  	if [ "$1" = "parallelism" ] ; then
-		variable=(28 30 1 25 8 16 22)
-	fi
-	if [ "$1" = "master_sel" ] ; then
-		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES	
-	fi	
-	if [ "$1" = "driver_memory" ] ; then
-		variable=(12 18 24 32 64 80)
-	fi
-	if [ "$1" = "optimal_compare" ] ; then
-		variable=("opt" "avg" "opt" "avg" "opt" "avg" "bad")
-	fi	
-	##################################################
 
+	# Run Spark-Based Benchmark, using the JMH infused jar:
+	echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo "Starting Spark LR example, input size $i features..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	cd $PROJ_DIR
+	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 
-  for j in "${variable[@]}"
-  do
-    # run configs
-    yes 'yes' | sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	
-    # Run Spark-Based Benchmark, using the JMH infused jar:
-    echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    echo "Starting Spark LR example, $i features, $j $1, @ $spark_master..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	  $WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    echo "Finished Spark LR example." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-    # Move results to output directory
-    cd $WORK_DIR/HiBench
-    mv report/* $OUTPUT_DIR/lr/$i/
-  done
+	##############		Chooses one   #############################################################
+	if [ "$1" = "avgt" ] ; then
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
+	if [ "$1" = "perfnorm" ] ; then
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfnorm | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
+	if [ "$1" = "perfasm" ]; then
+		$WORK_DIR/spark/bin/spark-submit --properties-file $PROJ_DIR/myspark.conf --driver-java-options "-XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.*" --driver-class-path $TARGET_DIR/benchmarks.jar $TARGET_DIR/benchmarks.jar -prof perfasm | tee $OUTPUT_DIR/lr/$i/log.txt
+	fi
+	##################################################################################################
+
+	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	cd $WORK_DIR/HiBench
+	echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo "Finished Spark LR example, input size $i features." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+
+	# Move results to output directory
+	mv report/* $OUTPUT_DIR/lr/$i/
 
 done
 
