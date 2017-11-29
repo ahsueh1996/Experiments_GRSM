@@ -25,10 +25,10 @@ class Benchmarks {
 
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-			.setMaster("local[*]")
+			.setMaster("spark://147.75.202.94:7077")
     		val sc = new SparkContext(conf)
 
-		println("")
+		println("\n")
 		println(conf.getAll.deep.mkString("\n"))
 
     		// $example on$
