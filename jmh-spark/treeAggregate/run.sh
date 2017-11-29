@@ -134,8 +134,8 @@ do
 	#################################################
 	if [ "$1" = "large_pages" ] ; then
 		jmh_infused=true
-		variable=("t0" "t1" "t2" "t3")
-		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
+		variable=("4 trials")
+		#jvm_options="--driver-java-options \"-XX:+UseLargePages\""
 	fi
 	if [ "$1" = "maxMargin_less_if" ] ; then
 		jmh_infused=true

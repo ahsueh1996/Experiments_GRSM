@@ -28,6 +28,7 @@ class Benchmarks {
 			.setMaster("local[*]")
     		val sc = new SparkContext(conf)
 
+		println("")
 		println(conf.getAll.deep.mkString("\n"))
 
     		// $example on$
