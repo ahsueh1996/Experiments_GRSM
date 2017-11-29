@@ -133,12 +133,14 @@ do
 		
 	#################################################
 	if [ "$1" = "large_pages" ] ; then
+		jmh_infused=true
 		variable=("t0" "t1" "t2" "t3")
 		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
 	fi
 	if [ "$1" = "maxMargin_less_if" ] ; then
-		jar_varient="-mMLessIf"
-		variable=("t0" "t1" "t2" "t3")
+		jmh_infused=true
+		jar_variant="-mMLessIf"
+		variable=("4 trials")
 	fi
   	if [ "$1" = "parallelism" ] ; then
 		variable=(28 30 1 25 8 16 22)
@@ -164,9 +166,16 @@ do
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo "Starting Spark LR example, $i features, $j $1, @ $spark_master..." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+    if [ "$jmh_infused" = true ] ; then
+	echo -e "\e[91mCHECK to make sure sparkmasters match!!!!!!\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	sleep 3
+    fi
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	  $WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master $PROJ_DIR/.target/sparkbench-assembly-6.1-SNAPSHOT-dist${jar_variant}.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-	 # $WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	if [ "$jmh_infused" = true ] ; then
+	  	$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --master $spark_master --driver-class-path $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/benchmarks${jar_variant}.jar | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	else
+		$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	fi 
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo "Finished Spark LR example." | tee -a $OUTPUT_DIR/lr/experiment_log.txt

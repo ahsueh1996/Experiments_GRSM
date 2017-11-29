@@ -13,7 +13,7 @@ import org.apache.spark.rdd.RDD
 
 @BenchmarkMode(Array(Mode.AverageTime))
 @Warmup(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
-@Measurement(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
+@Measurement(iterations=2,time=1,timeUnit=TimeUnit.SECONDS)
 @Fork(2)
 @State(Scope.Benchmark)
 class Benchmarks {
@@ -27,6 +27,8 @@ class Benchmarks {
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
 			.setMaster("local[*]")
     		val sc = new SparkContext(conf)
+
+		println(conf.getAll.deep.mkString("\n"))
 
     		// $example on$
     		// Load training data in LIBSVM format.
