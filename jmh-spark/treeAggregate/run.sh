@@ -133,14 +133,12 @@ do
 		
 	#################################################
 	if [ "$1" = "large_pages" ] ; then
-		jmh_infused=true
-		variable=("4 trials")
+		variable=(t0 t1 t2 t3 t4 t5)
 		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
 	fi
 	if [ "$1" = "maxMargin_less_if" ] ; then
-		jmh_infused=true
 		jar_variant="-mMLessIf"
-		variable=("4 trials")
+		variable=(t0 t1 t2 t3 t4 t5)
 	fi
   	if [ "$1" = "parallelism" ] ; then
 		variable=(28 30 1 25 8 16 22)

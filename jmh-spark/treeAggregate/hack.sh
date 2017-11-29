@@ -1,32 +1,38 @@
-# $1 = the alias
-# $2 relative path after org/apache/spark/ (don't include starting or ending /)
-# assumes that you have don't mvn package to populate target/lib
-# assumes that you have copied the correct benchmarks.jar into .target as the base jar to alter
-
-if [ "$1" = "" ] ; then
-	echo alias is empty
+# $1 relative path after org/apache/spark/ (don't include starting or ending /)
+# $2 path to the jar to update with the hack. a copy of the old one will be made to the same location as the target
+if [ "$2" = "" ] ; then
+	echo path to target jar is missing
 	exit
 fi
-if [ "$2" = "" ] ; then
+if [ "$1" = "" ] ; then
 	echo rel path after org/apache/spark/ is empty
 	exit
 fi
 
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
-TAR_DIR=$PROJ_DIR/results/packet2a/optimizations/jars
+TAR_DIR=$PWD/$2
+
+echo targeting:
+echo $TAR_DIR
+read -p "confirm or abort: "
 
 cd $PROJ_DIR
 
 yes 'yes' | rm -R "#hack_lib"
 mkdir "#hack_lib"
 
-yes 'yes' | cp $TAR_DIR/benchmarks.jar $TAR_DIR/benchmarks-${1}.jar
+if [ -f ${TAR_DIR}.old ] ; then
+	read -p ".old found, rehacking instead, pls confirm or abort: "
+	yes 'yes' | cp ${TAR_DIR}.old $TAR_DIR
+else
+	yes 'yes' | cp $TAR_DIR ${TAR_DIR}.old
+fi
 
 echo scalac-ing
-scalac -classpath "target/lib/*" -d "#hack_lib/" \#hack_src/org/apache/spark/$2/*
+scalac -classpath "target/lib/*" -d "#hack_lib/" \#hack_src/org/apache/spark/$1/*
 
 echo updating jar
 cd \#hack_lib/
-jar uf $TAR_DIR/benchmarks-${1}.jar org/apache/spark/$2/*
+jar uf $TAR_DIR org/apache/spark/$1/*
 
-
+echo done, remember to unhack using the target directory you supplied
