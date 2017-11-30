@@ -11,6 +11,7 @@ fi
 
 PROJ_DIR=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 TAR_DIR=$PWD/$2
+NAME_DIR=$PWD/$3
 
 echo targeting:
 echo $TAR_DIR
@@ -34,5 +35,9 @@ scalac -classpath "target/lib/*" -d "#hack_lib/" \#hack_src/org/apache/spark/$1/
 echo updating jar
 cd \#hack_lib/
 jar uf $TAR_DIR org/apache/spark/$1/*
+
+if [ "$3" != "" ] ; then
+	yes 'yes' | cp $TAR_DIR $NAME_DIR
+fi
 
 echo done, remember to unhack using the target directory you supplied

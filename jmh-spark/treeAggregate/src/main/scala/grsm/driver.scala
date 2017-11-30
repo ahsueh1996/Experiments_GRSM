@@ -12,8 +12,8 @@ import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
 @BenchmarkMode(Array(Mode.AverageTime))
-@Warmup(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
-@Measurement(iterations=2,time=1,timeUnit=TimeUnit.SECONDS)
+@Warmup(iterations=2,time=1,timeUnit=TimeUnit.SECONDS)
+@Measurement(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
 @Fork(2)
 @State(Scope.Benchmark)
 class Benchmarks {
@@ -25,7 +25,7 @@ class Benchmarks {
 
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-			.setMaster("local[*]")
+			.setMaster("spark://147.75.202.94:7077")
     		val sc = new SparkContext(conf)
 
 		println("\n")

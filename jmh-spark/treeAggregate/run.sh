@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "optimal_compare" ] && [ "$1" != "parallelism" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
+if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
 	echo undef optimization, choose from:
-	echo large_pages, maxMargin_less_if, parallelism, driver_memory, master_sel, optimal_compare
+	echo large_pages, maxMargin_less_if, baseline, conglomerate
 	exit
 fi
 
@@ -9,6 +9,12 @@ if [ "$2" != "standalone" ] && [ "$2" != "local" ] ; then
 	echo please specify spark master mode:
 	echo standalone, local
 	exit
+fi
+
+if [ "$3" = "jmh_infused" ] ; then
+	jmh_infused=true
+else
+	jmh_infused=false
 fi
 
 OUTPUT_DIR=/home/hibench-output/$1_$2
@@ -132,19 +138,19 @@ do
 	export MY_SPARK_SQL_SHUFFLE_PARTITIONS=30
 		
 	#################################################
+	if [ "$1" = "baseline" ] ; then
+		jar_variant="-$2"
+	fi
 	if [ "$1" = "large_pages" ] ; then
-		variable=(t0 t1 t2 t3 t4 t5)
 		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
+		jar_variant="-$2"
 	fi
 	if [ "$1" = "maxMargin_less_if" ] ; then
-		jar_variant="-mMLessIf"
-		variable=(t0 t1 t2 t3 t4 t5)
+		jar_variant="-mMLessIf-$2"
 	fi
-  	if [ "$1" = "parallelism" ] ; then
-		variable=(28 30 1 25 8 16 22)
-	fi
-	if [ "$1" = "master_sel" ] ; then
-		export MY_SPARK_SQL_SHUFFLE_PARTITIONS=$MY_SPARK_WORKER_CORES	
+	if [ "$1" = "conglomerate" ] ; then
+		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
+		jar_variant="-mMLessIf-$2"
 	fi	
 	if [ "$1" = "driver_memory" ] ; then
 		variable=(12 18 24 32 64 80)
@@ -152,6 +158,11 @@ do
 	if [ "$1" = "optimal_compare" ] ; then
 		variable=("opt" "avg" "opt" "avg" "opt" "avg" "bad")
 	fi	
+	if [ "$jmh_infused" = true ] ; then
+		variable=(trial)
+	else
+		variable=(t0 t1 t2 t3 t4 t5)
+	fi
 	##################################################
 
 
