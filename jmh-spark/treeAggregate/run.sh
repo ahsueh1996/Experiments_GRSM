@@ -181,9 +181,9 @@ do
     fi
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	if [ "$jmh_infused" = true ] ; then
-		yes 'yes' | cp .target/benchmarks${jar_variant}.jar .target/tmp-benchmarks.jar
+		yes 'yes' | cp $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/tmp-benchmarks.jar
 	  	$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --master $spark_master --driver-class-path $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/benchmarks${jar_variant}.jar | tee -a $OUTPUT_DIR/lr/experiment_log.txt
-		yes 'yes' | rm .target/tmp-benchmarks.jar
+		yes 'yes' | rm $PROJ_DIR/.target/tmp-benchmarks.jar
 	else
 		$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	fi 
