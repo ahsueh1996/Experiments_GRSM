@@ -1,0 +1,165 @@
+Thu Nov 30 02:28:50 EST 2017
+[95m===============================================
+Starting experiment: /home/hibench-output/large_pages_local
+================================================[97m
+my ip:
+142.150.237.146
+end
+[95m===============================================
+Restarting Spark Master @ 142.150.237.146:7077
+================================================[97m
+Thu Nov 30 02:28:52 EST 2017
+Thu Nov 30 02:29:56 EST 2017
+[95m===============================================
+To check the webUI to see the spark master,
+  run the following: ssh -L 8080:localhost:8080 root@142.150.237.146
+  then do following: xdg-open 142.150.237.146:8080
+================================================[97m
+[95m===============================================
+Preparing for LR example, input size 150000 features....
+================================================[97m
+Thu Nov 30 02:30:08 EST 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://142.150.237.146:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 150000
+finish LogisticRegressionDataPrepare bench
+Thu Nov 30 02:30:32 EST 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=5
+SPARK_EXECUTOR_MEMORY=24g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=5
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, trial large_pages, @ local[*]...
+================================================[97m
+[91mCHECK to make sure sparkmasters match!!!!!![97m
+Thu Nov 30 02:30:35 EST 2017
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx24g -XX:+UseLargePages
+# Warmup: 2 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: 1 of 2
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+235.107 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+216.648 s/op
+Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+214.774 s/op
+Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+214.445 s/op
+Iteration   3: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+217.067 s/op
+
+# Run progress: 50.00% complete, ETA 00:18:19
+# Fork: 2 of 2
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+Java HotSpot(TM) 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+227.453 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+219.127 s/op
+Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+221.726 s/op
+Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+217.736 s/op
+Iteration   3: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+219.137 s/op
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  217.481 ±(99.9%) 7.685 s/op [Average]
+  (min, avg, max) = (214.445, 217.481, 221.726), stdev = 2.740
+  CI (99.9%): [209.796, 225.166] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:36:45
+
+Benchmark              Mode  Cnt    Score   Error  Units
+Benchmarks.HiBench_LR  avgt    6  217.481 ± 7.685   s/op
+Thu Nov 30 03:07:21 EST 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Thu Nov 30 03:07:21 EST 2017
+Thu Nov 30 03:07:21 EST 2017
+[95m===============================================
+Done experiment.
+================================================[97m
