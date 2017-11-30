@@ -25,7 +25,8 @@ class Benchmarks {
 
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-			.setMaster("spark://147.75.202.94:7077")
+			.setMaster("spark://142.150.237.146:7077")
+			.setJars(Array(".target/tmp-benchmarks.jar"))
     		val sc = new SparkContext(conf)
 
 		println("\n")
