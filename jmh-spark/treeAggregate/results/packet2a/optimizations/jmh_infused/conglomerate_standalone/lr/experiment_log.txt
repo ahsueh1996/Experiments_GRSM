@@ -1,4 +1,4 @@
-Thu Nov 30 13:07:07 UTC 2017
+Thu Nov 30 23:57:26 UTC 2017
 [95m===============================================
 Starting experiment: /home/hibench-output/conglomerate_standalone
 ================================================[97m
@@ -8,8 +8,8 @@ end
 [95m===============================================
 Restarting Spark Master @ 147.75.202.94:7077
 ================================================[97m
-Thu Nov 30 13:07:09 UTC 2017
-Thu Nov 30 13:08:25 UTC 2017
+Thu Nov 30 23:57:28 UTC 2017
+Thu Nov 30 23:58:45 UTC 2017
 [95m===============================================
 To check the webUI to see the spark master,
   run the following: ssh -L 8080:localhost:8080 root@147.75.202.94
@@ -18,7 +18,7 @@ To check the webUI to see the spark master,
 [95m===============================================
 Preparing for LR example, input size 150000 features....
 ================================================[97m
-Thu Nov 30 13:08:39 UTC 2017
+Thu Nov 30 23:58:58 UTC 2017
 patching args=
 start LogisticRegressionDataPrepare bench
 Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
@@ -31,7 +31,7 @@ Output Path: hdfs://localhost:9000/HiBench/LR/Input
 Num of Examples: 10000
 Num of Features: 150000
 finish LogisticRegressionDataPrepare bench
-Thu Nov 30 13:09:19 UTC 2017
+Fri Dec  1 00:00:04 UTC 2017
 [95m=======================
 Current settings, abort if wrong.
 ==========================[39m
@@ -57,7 +57,7 @@ Resetting relavent configs
 Starting Spark LR example, 150000 features, trial conglomerate, @ spark://147.75.202.94:7077...
 ================================================[97m
 [91mCHECK to make sure sparkmasters match!!!!!![97m
-Thu Nov 30 13:09:22 UTC 2017
+Fri Dec  1 00:00:07 UTC 2017
 # JMH version: 1.19
 # VM version: JDK 1.8.0-release, VM 25.71-b00
 # VM invoker: /CMC/kmiecseb/jdk8u-server-release-1708/jre/bin/java
@@ -76,183 +76,94 @@ OpenJDK 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
 
 (spark.master,spark://147.75.202.94:7077)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
-<failure>
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+679.048 s/op
+# Warmup Iteration   2: 
 
-org.apache.spark.SparkException: Job aborted due to stage failure: Task 79 in stage 91.0 failed 4 times, most recent failure: Lost task 79.3 in stage 91.0 (TID 4886, 10.88.237.1, executor 0): java.lang.ClassCastException: cannot assign instance of scala.collection.immutable.List$SerializationProxy to field org.apache.spark.rdd.RDD.org$apache$spark$rdd$RDD$$dependencies_ of type scala.collection.Seq in instance of org.apache.spark.rdd.MapPartitionsRDD
-	at java.io.ObjectStreamClass$FieldReflector.setObjFieldValues(ObjectStreamClass.java:2133)
-	at java.io.ObjectStreamClass.setObjFieldValues(ObjectStreamClass.java:1305)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2251)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
-	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
-	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
-	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:80)
-	at org.apache.spark.scheduler.Task.run(Task.scala:99)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+677.949 s/op
+Iteration   1: 
 
-Driver stacktrace:
-	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1435)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1423)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1422)
-	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
-	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
-	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1422)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:802)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1650)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1605)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1594)
-	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)
-	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:628)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1918)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1931)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1944)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1958)
-	at org.apache.spark.rdd.RDD.count(RDD.scala:1157)
-	at grsm.Benchmarks.HiBench_LR(driver.scala:54)
-	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_avgt_jmhStub(Benchmarks_HiBench_LR_jmhTest.java:190)
-	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_AverageTime(Benchmarks_HiBench_LR_jmhTest.java:152)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
-	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.ClassCastException: cannot assign instance of scala.collection.immutable.List$SerializationProxy to field org.apache.spark.rdd.RDD.org$apache$spark$rdd$RDD$$dependencies_ of type scala.collection.Seq in instance of org.apache.spark.rdd.MapPartitionsRDD
-	at java.io.ObjectStreamClass$FieldReflector.setObjFieldValues(ObjectStreamClass.java:2133)
-	at java.io.ObjectStreamClass.setObjFieldValues(ObjectStreamClass.java:1305)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2251)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
-	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
-	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
-	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:80)
-	at org.apache.spark.scheduler.Task.run(Task.scala:99)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
-	... 3 more
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+689.309 s/op
+Iteration   2: 
 
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+686.909 s/op
+Iteration   3: 
 
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+682.719 s/op
 
-# Run progress: 50.00% complete, ETA 00:10:57
+# Run progress: 50.00% complete, ETA 00:56:57
 # Fork: 2 of 2
 OpenJDK 64-Bit Server VM warning: Failed to reserve shared memory. (error = 12)
 # Warmup Iteration   1: 
 
 (spark.master,spark://147.75.202.94:7077)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
-<failure>
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+688.740 s/op
+# Warmup Iteration   2: 
 
-org.apache.spark.SparkException: Job aborted due to stage failure: Task 19 in stage 91.0 failed 4 times, most recent failure: Lost task 19.3 in stage 91.0 (TID 4891, 10.88.237.1, executor 0): java.lang.ClassCastException: cannot assign instance of scala.collection.immutable.List$SerializationProxy to field org.apache.spark.rdd.RDD.org$apache$spark$rdd$RDD$$dependencies_ of type scala.collection.Seq in instance of org.apache.spark.rdd.MapPartitionsRDD
-	at java.io.ObjectStreamClass$FieldReflector.setObjFieldValues(ObjectStreamClass.java:2133)
-	at java.io.ObjectStreamClass.setObjFieldValues(ObjectStreamClass.java:1305)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2251)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
-	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
-	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
-	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:80)
-	at org.apache.spark.scheduler.Task.run(Task.scala:99)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+675.888 s/op
+Iteration   1: 
 
-Driver stacktrace:
-	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1435)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1423)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1422)
-	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
-	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
-	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1422)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
-	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:802)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1650)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1605)
-	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1594)
-	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)
-	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:628)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1918)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1931)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1944)
-	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1958)
-	at org.apache.spark.rdd.RDD.count(RDD.scala:1157)
-	at grsm.Benchmarks.HiBench_LR(driver.scala:54)
-	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_avgt_jmhStub(Benchmarks_HiBench_LR_jmhTest.java:190)
-	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_AverageTime(Benchmarks_HiBench_LR_jmhTest.java:152)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
-	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.ClassCastException: cannot assign instance of scala.collection.immutable.List$SerializationProxy to field org.apache.spark.rdd.RDD.org$apache$spark$rdd$RDD$$dependencies_ of type scala.collection.Seq in instance of org.apache.spark.rdd.MapPartitionsRDD
-	at java.io.ObjectStreamClass$FieldReflector.setObjFieldValues(ObjectStreamClass.java:2133)
-	at java.io.ObjectStreamClass.setObjFieldValues(ObjectStreamClass.java:1305)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2251)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
-	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
-	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
-	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
-	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:80)
-	at org.apache.spark.scheduler.Task.run(Task.scala:99)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
-	... 3 more
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+661.469 s/op
+Iteration   2: 
+
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+668.973 s/op
+Iteration   3: 
+
+(spark.master,spark://147.75.202.94:7077)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+Accuracy = 0.7130674692751442
+660.587 s/op
 
 
+Result "grsm.Benchmarks.HiBench_LR":
+  674.994 ?(99.9%) 36.201 s/op [Average]
+  (min, avg, max) = (660.587, 674.994, 689.309), stdev = 12.910
+  CI (99.9%): [638.793, 711.195] (assumes normal distribution)
 
 
-# Run complete. Total time: 00:22:04
+# Run complete. Total time: 01:52:54
 
-Benchmark  Mode  Cnt  Score   Error  Units
-Thu Nov 30 13:31:30 UTC 2017
+Benchmark              Mode  Cnt    Score    Error  Units
+Benchmarks.HiBench_LR  avgt    6  674.994 ? 36.201   s/op
+Fri Dec  1 01:53:04 UTC 2017
 [95m===============================================
 Finished Spark LR example.
 ================================================[97m
-Thu Nov 30 13:31:30 UTC 2017
-Thu Nov 30 13:31:30 UTC 2017
+Fri Dec  1 01:53:04 UTC 2017
+Fri Dec  1 01:53:04 UTC 2017
 [95m===============================================
 Done experiment.
 ================================================[97m
