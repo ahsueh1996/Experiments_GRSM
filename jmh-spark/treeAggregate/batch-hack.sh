@@ -1,5 +1,5 @@
 pd=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
-td=$pd/.target/$1
+td=.target/$1
 
 if [ "$1" != "local" ] && [ "$1" != "omni" ] && [ "$1" != "packet2a" ] ; then
 	echo unknown target, choose:
@@ -8,16 +8,15 @@ if [ "$1" != "local" ] && [ "$1" != "omni" ] && [ "$1" != "packet2a" ] ; then
 fi
 
 if [ "$1" = "local" ] ; then
-	td=$pd/.target
+	td=.target
 	f=benchmarks-${$1}.jar
 else
 	f=benchmarks-standalone.jar
 fi
 
-mv $td/$f /home/
-rm $td/*
+mv $pd/$td/$f /home/
+rm $pd/$td/*
 mv /home/$f $td
-cd $pd
 
 ad=$pd/archive/hacks
 
@@ -26,8 +25,10 @@ nf=("mMLessIf" "mMLessCmp" "intLabel" "lessFcmp")
 
 for i in "${!ap[@]}"; do 
  	printf "%s\t%s\n" "${nf[$i]}" "${ap[$i]}"
+	cd $pd
 	cp $ad/${ap[$i]}/\#hack_src/org/apache/spark/mllib/optimization/* \#hack_src/org/apache/spark/mllib/optimization/
-	sh hack.sh mllib/optimization $td/$f $td/${n[f$i]}
+	
+	yes 'yes' | sh hack.sh mllib/optimization $td/$f $td/${nf[$i]}
 done
-
-sh unhack.sh $td/$f
+cd $pd
+yes 'yes' | sh unhack.sh $td/$f
