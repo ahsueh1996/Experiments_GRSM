@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "driver_memory" ] && [ "$1" != "master_sel" ] ; then
+if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "info" ] && [ "$1" != "int_label" ] ; then
 	echo undef optimization, choose from:
-	echo large_pages, maxMargin_less_if, baseline, conglomerate
+	echo large_pages, maxMargin_less_if, baseline, conglomerate, info, int_label
 	exit
 fi
 
@@ -11,10 +11,10 @@ if [ "$2" != "standalone" ] && [ "$2" != "local" ] ; then
 	exit
 fi
 
-if [ "$3" = "jmh_infused" ] ; then
-	jmh_infused=true
-else
+if [ "$3" = "no_jmh" ] ; then
 	jmh_infused=false
+else
+	jmh_infused=true
 fi
 
 OUTPUT_DIR=/home/hibench-output/$1_$2
@@ -152,11 +152,11 @@ do
 		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
 		jar_variant="-mMLessIf-$2"
 	fi	
-	if [ "$1" = "driver_memory" ] ; then
-		variable=(12 18 24 32 64 80)
+	if [ "$1" = "info" ] ; then
+		jar_variant="-info-$2"
 	fi
-	if [ "$1" = "optimal_compare" ] ; then
-		variable=("opt" "avg" "opt" "avg" "opt" "avg" "bad")
+	if [ "$1" = "int_label" ] ; then
+		jar_variant="-intLabel-$2"
 	fi	
 	if [ "$jmh_infused" = true ] ; then
 		variable=(trial)

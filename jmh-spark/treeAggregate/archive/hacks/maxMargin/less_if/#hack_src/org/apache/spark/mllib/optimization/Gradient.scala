@@ -234,7 +234,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * We address this by subtracting maxMargin from all the margins, so it's guaranteed
          * that all of the new margins will be smaller than zero to prevent arithmetic overflow.
          */
-	println("ahsueh1996")
+	println("ahsueh1996: it works!")
         val sum = {
           var temp = 0.0
           if (maxMargin > 0) {

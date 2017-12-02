@@ -173,6 +173,8 @@ class LogisticGradient(numClasses: Int) extends Gradient {
       cumGradient: Vector): Double = {
     val dataSize = data.size
 
+	val my_label = label.toInt
+
     // (weights.size / dataSize + 1) is number of classes
     require(weights.size % dataSize == 0 && numClasses == weights.size / dataSize + 1)
     numClasses match {
@@ -185,9 +187,9 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * binary version for performance reason.
          */
         val margin = -1.0 * dot(data, weights)
-        val multiplier = (1.0 / (1.0 + math.exp(margin))) - label
+        val multiplier = (1.0 / (1.0 + math.exp(margin))) - my_label
         axpy(multiplier, data, cumGradient)
-        if (label > 0) {
+        if (my_label > 0) {
           // The following is equivalent to log(1 + exp(margin)) but more numerically stable.
           MLUtils.log1pExp(margin)
         } else {
@@ -210,7 +212,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
               s"cumGradient only supports dense vector but got type ${cumGradient.getClass}.")
         }
 
-        // marginY is margins(label - 1) in the formula.
+        // marginY is margins(my_label - 1) in the formula.
         var marginY = 0.0
         var maxMargin = Double.NegativeInfinity
         var maxMarginIndex = 0
@@ -234,40 +236,45 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * We address this by subtracting maxMargin from all the margins, so it's guaranteed
          * that all of the new margins will be smaller than zero to prevent arithmetic overflow.
          */
-	val sum = {
+        val (sum,loss) = {
           var temp = 0.0
+	  var temp2 = 0.0
           if (maxMargin > 0) {
             for (i <- 0 until numClasses - 1) {
               margins(i) -= maxMargin
-              temp += math.exp(margins(i))
+              if (i == maxMarginIndex) {
+                temp += math.exp(-maxMargin)
+              } else {
+                temp += math.exp(margins(i))
+              }
             }
-	    // for i == maxMarginIndex, we needed compute exp(-maxMargin)
-	    // add it in and subtrace exp(0), or equivilantly 1.0
-            temp += math.exp(-maxMargin)
-	    temp -= 1.0
+            temp2 = if (my_label > 0) math.log1p(temp) - marginY + maxMargin else math.log1p(temp) + maxMargin
           } else {
             for (i <- 0 until numClasses - 1) {
               temp += math.exp(margins(i))
             }
+            temp2 = if (my_label > 0) math.log1p(temp) - marginY else math.log1p(temp)
           }
-          temp
+          (temp, temp2)
         }
 
         for (i <- 0 until numClasses - 1) {
-          val multiplier = math.exp(margins(i)) / (sum + 1.0) - {
-            if (label != 0.0 && label == i + 1) 1.0 else 0.0
+          val multiplier = math.exp(margins(i)) / (sum + 1) - {
+            if (my_label == i + 1) 1 else 0
           }
           data.foreachActive { (index, value) =>
             if (value != 0.0) cumGradientArray(i * dataSize + index) += multiplier * value
           }
         }
 
-        val loss = if (label > 0.0) math.log1p(sum) - marginY else math.log1p(sum)
-
-        if (maxMargin > 0) {
-          loss + maxMargin
+        val loss2 = if (my_label > 0) math.log1p(sum) - marginY else math.log1p(sum)
+	
+	println("===")
+	println(loss)
+	if (maxMargin > 0) {
+          println(loss2 + maxMargin)
         } else {
-          loss
+          println(loss2)
         }
     }
   }
