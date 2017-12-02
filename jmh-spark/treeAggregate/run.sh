@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "info" ] && [ "$1" != "int_label" ] ; then
+if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "info" ] && [ "$1" != "int_label" ] && [ "$1" != "maxMargin_less_cmp"] && [ "$1" != "aggressive" ] && [ "$1" != "less_fcmp" ] ; then
 	echo undef optimization, choose from:
-	echo large_pages, maxMargin_less_if, baseline, conglomerate, info, int_label
+	echo large_pages, maxMargin_less_if, baseline, conglomerate, info, int_label, maxMargin_less_cmp, aggressive, less_fcmp
 	exit
 fi
 
@@ -149,14 +149,24 @@ do
 		jar_variant="-mMLessIf-$2"
 	fi
 	if [ "$1" = "conglomerate" ] ; then
-		jvm_options="--driver-java-options \"-XX:+UseLargePages\""
-		jar_variant="-mMLessIf-$2"
+		jvm_options="--driver-java-options \"-XX:+UseLargePages -XX:+AggressiveOpts\""
+		jar_variant="-conglomerate-$2"
 	fi	
 	if [ "$1" = "info" ] ; then
 		jar_variant="-info-$2"
 	fi
 	if [ "$1" = "int_label" ] ; then
 		jar_variant="-intLabel-$2"
+	fi	
+	if [ "$1" = "maxMargin_less_cmp" ] ; then
+		jar_variant="-mMLessCmp-$2"
+	fi	
+	if [ "$1" = "less_fcmp" ] ; then
+		jar_variant="-lessFcmp-$2"
+	fi	
+	if [ "$1" = "aggressive" ] ; then
+		jvm_options="--driver-java-options \"-XX:+AggressiveOpts\""
+		jar_variant="-$2"
 	fi	
 	if [ "$jmh_infused" = true ] ; then
 		variable=(trial)
