@@ -234,9 +234,8 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * We address this by subtracting maxMargin from all the margins, so it's guaranteed
          * that all of the new margins will be smaller than zero to prevent arithmetic overflow.
          */
-        val (sum,loss) = {
+        val sum = {
           var temp = 0.0
-	  var temp2 = 0.0
           if (maxMargin > 0) {
             for (i <- 0 until numClasses - 1) {
               margins(i) -= maxMargin
@@ -246,14 +245,12 @@ class LogisticGradient(numClasses: Int) extends Gradient {
                 temp += math.exp(margins(i))
               }
             }
-           temp2 = if (label > 0.0) math.log1p(temp) - marginY + maxMargin else math.log1p(temp) + maxMargin
           } else {
             for (i <- 0 until numClasses - 1) {
               temp += math.exp(margins(i))
             }
-           temp2 = if (label > 0.0) math.log1p(temp) - marginY else math.log1p(temp)
           }
-          (temp,temp2)
+          temp
         }
 
         for (i <- 0 until numClasses - 1) {
@@ -261,10 +258,17 @@ class LogisticGradient(numClasses: Int) extends Gradient {
             if (label != 0.0 && label == i + 1) 1.0 else 0.0
           }
           data.foreachActive { (index, value) =>
-            if (value != 0.0) cumGradientArray(i * dataSize + index) += multiplier * value
+            cumGradientArray(i * dataSize + index) += multiplier * value
           }
         }
-        loss
+
+        val loss = if (label > 0.0) math.log1p(sum) - marginY else math.log1p(sum)
+
+        if (maxMargin > 0) {
+          loss + maxMargin
+        } else {
+          loss
+        }
     }
   }
 }
