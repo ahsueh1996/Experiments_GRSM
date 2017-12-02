@@ -176,7 +176,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
     // (weights.size / dataSize + 1) is number of classes
     require(weights.size % dataSize == 0 && numClasses == weights.size / dataSize + 1)
     numClasses match {
-      case 10 =>
+      case 2 =>
         /**
          * For Binary Logistic Regression.
          *
@@ -234,8 +234,9 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * We address this by subtracting maxMargin from all the margins, so it's guaranteed
          * that all of the new margins will be smaller than zero to prevent arithmetic overflow.
          */
-        val sum = {
+        val (sum,loss) = {
           var temp = 0.0
+	  var temp2 = 0.0
           if (maxMargin > 0) {
             for (i <- 0 until numClasses - 1) {
               margins(i) -= maxMargin
@@ -245,12 +246,14 @@ class LogisticGradient(numClasses: Int) extends Gradient {
                 temp += math.exp(margins(i))
               }
             }
+           temp2 = if (label > 0.0) math.log1p(temp) - marginY + maxMargin else math.log1p(temp) + maxMargin
           } else {
             for (i <- 0 until numClasses - 1) {
               temp += math.exp(margins(i))
             }
+           temp2 = if (label > 0.0) math.log1p(temp) - marginY else math.log1p(temp)
           }
-          temp
+          (temp,temp2)
         }
 
         for (i <- 0 until numClasses - 1) {
@@ -261,14 +264,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
             if (value != 0.0) cumGradientArray(i * dataSize + index) += multiplier * value
           }
         }
-
-        val loss = if (label > 0.0) math.log1p(sum) - marginY else math.log1p(sum)
-
-        if (maxMargin > 0) {
-          loss + maxMargin
-        } else {
-          loss
-        }
+        loss
     }
   }
 }

@@ -246,7 +246,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
                 temp += math.exp(margins(i))
               }
             }
-           temp2 = if (label > 0.0) math.log1p(temp) - marginY else math.log1p(temp)
+           temp2 = if (label > 0.0) math.log1p(temp) - marginY + maxMargin else math.log1p(temp) + maxMargin
           } else {
             for (i <- 0 until numClasses - 1) {
               temp += math.exp(margins(i))
