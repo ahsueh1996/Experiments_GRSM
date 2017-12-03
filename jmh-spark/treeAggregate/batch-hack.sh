@@ -27,8 +27,11 @@ for i in "${!ap[@]}"; do
  	printf "%s\t%s\n" "${nf[$i]}" "${ap[$i]}"
 	cd $pd
 	cp $ad/${ap[$i]}/\#hack_src/org/apache/spark/mllib/optimization/* \#hack_src/org/apache/spark/mllib/optimization/
-	
-	yes 'yes' | sh hack.sh mllib/optimization $td/$f $td/${nf[$i]}
+	if [ "$1" = "local" ] ; then	
+		yes 'yes' | sh hack.sh mllib/optimization $td/$f $td/benchmarks-${nf[$i]}-local.jar
+	else
+		yes 'yes' | sh hack.sh mllib/optimization $td/$f $td/benchmarks-${nf[$i]}-standalone.jar
+	fi	
 done
 cd $pd
 yes 'yes' | sh unhack.sh $td/$f
