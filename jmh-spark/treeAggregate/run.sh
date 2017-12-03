@@ -110,11 +110,13 @@ do
   	
 	export MY_SPARK_WORKER_MEMORY=122g
 	if [ "$IS_ARM" = true ] ; then
+		#used dm = 24 em = 16 einstance = 6
+		#but need 32 22 4
 		export MY_SPARK_WORKER_CORES=90
-		export MY_SPARK_EXECUTOR_INSTANCES=6
+		export MY_SPARK_EXECUTOR_INSTANCES=4
 		export MY_SPARK_EXECUTOR_CORES=15
-		export MY_SPARK_DRIVER_MEMORY=24g
-		export MY_SPARK_EXECUTOR_MEMORY=16g
+		export MY_SPARK_DRIVER_MEMORY=32g
+		export MY_SPARK_EXECUTOR_MEMORY=22g
 	else
 		export MY_SPARK_WORKER_CORES=30
 		if [ "$2" = "local" ] ; then

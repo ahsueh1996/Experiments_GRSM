@@ -200,6 +200,7 @@ echo "spark.default.parallelism ${MY_SPARK_DEFAULT_PARALLELISM}" >> $PROJ_DIR/my
 echo "spark.driver.memory ${MY_SPARK_DRIVER_MEMORY}" >> $PROJ_DIR/myspark.conf
 echo "spark.executor.memory ${MY_SPARK_EXECUTOR_MEMORY}" >> $PROJ_DIR/myspark.conf
 echo "spark.sql.shuffle.partitions  ${MY_SPARK_SQL_SHUFFLE_PARTITIONS}" >> $PROJ_DIR/myspark.conf
+echo "spark.network.timeout  300" >> $PROJ_DIR/myspark.conf
 
 
 

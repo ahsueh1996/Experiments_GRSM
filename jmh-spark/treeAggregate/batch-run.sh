@@ -2,10 +2,10 @@ PD=/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate
 
 cd $PD
 
+#sh run.sh baseline standalone
 sh run.sh baseline local
-sh run.sh baseline standalone
 sh run.sh large_pages local
-sh run.sh large_pages standalone
+#sh run.sh large_pages standalone
 sh run.sh aggressive local
 sh run.sh aggressive standalone jmh_infused
 sh run.sh maxMargin_less_cmp standalone jmh_infused
