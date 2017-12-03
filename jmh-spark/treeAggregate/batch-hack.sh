@@ -9,14 +9,16 @@ fi
 
 if [ "$1" = "local" ] ; then
 	td=.target
-	f=benchmarks-${$1}.jar
+	f=benchmarks-local.jar
 else
 	f=benchmarks-standalone.jar
 fi
 
-mv $pd/$td/$f /home/
+echo check check check!!!!!! enter if correct, abort else
+read -p "$pd/$td/$f /home/hsuehku1"
+mv $pd/$td/$f /home/hsuehku1
 rm $pd/$td/*
-mv /home/$f $td
+mv /home/hsuehku1/$f $td
 
 ad=$pd/archive/hacks
 

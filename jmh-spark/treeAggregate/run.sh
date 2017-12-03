@@ -84,7 +84,7 @@ sleep 10
 
 cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 
-PROBLEM_FEATURES=(150000)
+PROBLEM_FEATURES=(400000)
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
