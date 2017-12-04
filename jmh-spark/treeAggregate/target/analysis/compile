@@ -1,0 +1,93 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes
+compile options:
+0 items
+javac options:
+3 items
+0 -> -g
+1 -> -encoding
+2 -> UTF-8
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> false
+products:
+3 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks$$anonfun$1.class
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks$$anonfun$2.class
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks.class
+binary dependencies:
+5 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /opt/jdk1.8.0_131/jre/lib/rt.jar
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /root/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /root/.m2/repository/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.jar
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /root/.m2/repository/org/openjdk/jmh/jmh-core/1.19/jmh-core-1.19.jar
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> /root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+3 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> grsm.Benchmarks
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> grsm.Benchmarks$$anonfun$1
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> grsm.Benchmarks$$anonfun$2
+used names:
+0 items
+product stamps:
+3 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks$$anonfun$1.class -> lastModified(1512419857000)
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks$$anonfun$2.class -> lastModified(1512419857000)
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/target/classes/grsm/Benchmarks.class -> lastModified(1512419857000)
+source stamps:
+1 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> hash(59a285e30eca88805e721fadd756612ca8a669e6)
+binary stamps:
+5 items
+/opt/jdk1.8.0_131/jre/lib/rt.jar -> lastModified(1489566767000)
+/root/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar -> lastModified(1499267312000)
+/root/.m2/repository/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.jar -> lastModified(1499274481000)
+/root/.m2/repository/org/openjdk/jmh/jmh-core/1.19/jmh-core-1.19.jar -> lastModified(1509993809000)
+/root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> lastModified(1499265887000)
+class names:
+5 items
+/opt/jdk1.8.0_131/jre/lib/rt.jar -> java.lang.Object
+/root/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar -> org.apache.spark.SparkConf
+/root/.m2/repository/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.jar -> org.apache.spark.mllib.classification.LogisticRegressionModel
+/root/.m2/repository/org/openjdk/jmh/jmh-core/1.19/jmh-core-1.19.jar -> org.openjdk.jmh.annotations.Scope
+/root/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> scala.Tuple2
+internal apis:
+1 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDHhaYtAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAFc3IAFHhzYnRpLmFwaS5Bbm5vdGF0aW9u3g6BovZcCrICAAJbAAlhcmd1bWVudHN0AB9bTHhzYnRpL2FwaS9Bbm5vdGF0aW9uQXJndW1lbnQ7TAAEYmFzZXQAEEx4c2J0aS9hcGkvVHlwZTt4cHVyAB9bTHhzYnRpLmFwaS5Bbm5vdGF0aW9uQXJndW1lbnQ7UZ2mjzglD3gCAAB4cAAAAAFzcgAceHNidGkuYXBpLkFubm90YXRpb25Bcmd1bWVudNZFsdgDGxd8AgACTAAEbmFtZXEAfgAcTAAFdmFsdWVxAH4AHHhwdAAFdmFsdWV0AA1bQXZlcmFnZVRpbWVdc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgAcTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHQADUJlbmNobWFya01vZGVzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AC9zcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAVzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgAceHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQAA29yZ3NxAH4AO3QAB29wZW5qZGtzcQB+ADt0AANqbWhzcQB+ADt0AAthbm5vdGF0aW9uc3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgA8c3EAfgAjdXEAfgAnAAAAA3NxAH4AKXQACml0ZXJhdGlvbnN0AAExc3EAfgApdAAEdGltZXQAATFzcQB+ACl0AAh0aW1lVW5pdHQAB1NFQ09ORFNzcQB+AC10AAZXYXJtdXBxAH4ANXNxAH4AI3VxAH4AJwAAAANzcQB+ACl0AAppdGVyYXRpb25zdAABM3NxAH4AKXQABHRpbWV0AAExc3EAfgApdAAIdGltZVVuaXR0AAdTRUNPTkRTc3EAfgAtdAALTWVhc3VyZW1lbnRxAH4ANXNxAH4AI3VxAH4AJwAAAAFzcQB+AClxAH4AK3QAATBzcQB+AC10AARGb3JrcQB+ADVzcQB+ACN1cQB+ACcAAAABc3EAfgApcQB+ACt0AAlCZW5jaG1hcmtzcQB+AC10AAVTdGF0ZXEAfgA1c3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAPZ3JzbS5CZW5jaG1hcmtzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAABdAAlb3JnLm9wZW5qZGsuam1oLmFubm90YXRpb25zLkJlbmNobWFya3NyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Aenhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhxAH4AL3NxAH4AeQBwc3EAfgB+c3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+ABVMAAlpbmhlcml0ZWRxAH4AFUwAB3BhcmVudHNxAH4AFXhxAH4AMHNxAH4AeQBwc3EAfgB+dXEAfgAQAAAAAHNxAH4AeQBwc3EAfgB+dXEAfgAQAAAAAHNxAH4AeQBwc3EAfgB+dXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcQB+AC10AAZPYmplY3RzcQB+ADNzcQB+ADZ1cQB+ADkAAAADc3EAfgA7dAAEamF2YXNxAH4AO3QABGxhbmdxAH4ARnNxAH4ALXQAA0FueXNxAH4AM3NxAH4ANnVxAH4AOQAAAAJzcQB+ADt0AAVzY2FsYXEAfgBGdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4AHHhwdAAEZ3JzbXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYCM/hlx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+ABxMAA9zb3VyY2VEaXJlY3RvcnlxAH4AHHhwdABGL2hvbWUvaHN1ZWhrdTEvRXhwZXJpbWVudHNfR1JTTS9qbWgtc3BhcmsvdHJlZUFnZ3JlZ2F0ZS90YXJnZXQvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFFmiheMOyoiAXnIfrddWYSyopmnm
+external apis:
+0 items
+source infos:
+1 items
+/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/src/main/scala/grsm/driver.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYCM/hlx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARi9ob21lL2hzdWVoa3UxL0V4cGVyaW1lbnRzX0dSU00vam1oLXNwYXJrL3RyZWVBZ2dyZWdhdGUvdGFyZ2V0L2NsYXNzZXN0AAEv

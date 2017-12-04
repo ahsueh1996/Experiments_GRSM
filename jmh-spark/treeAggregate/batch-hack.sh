@@ -22,8 +22,8 @@ mv /home/hsuehku1/$f $td
 
 ad=$pd/archive/hacks
 
-ap=("maxMargin/less_if" "maxMargin/less_cmp" "label/int_remove_redundant" "value/less_fcmp")
-nf=("mMLessIf" "mMLessCmp" "intLabel" "lessFcmp")
+ap=("maxMargin/less_if" "maxMargin/less_cmp" "label/int" "label/less" "value/less_fcmp")
+nf=("mMLessIf" "mMLessCmp" "intLabel" "lessLabel" "lessFcmp")
 
 for i in "${!ap[@]}"; do 
  	printf "%s\t%s\n" "${nf[$i]}" "${ap[$i]}"

@@ -1,0 +1,155 @@
+Mon Dec  4 10:53:23 EST 2017
+[95m===============================================
+Starting experiment: /home/hibench-output/maxMargin_less_if_local
+================================================[97m
+my ip:
+142.150.237.146
+end
+[95m===============================================
+Restarting Spark Master @ 142.150.237.146:7077
+================================================[97m
+Mon Dec  4 10:53:25 EST 2017
+Mon Dec  4 10:54:36 EST 2017
+[95m===============================================
+To check the webUI to see the spark master,
+  run the following: ssh -L 8080:localhost:8080 root@142.150.237.146
+  then do following: xdg-open 142.150.237.146:8080
+================================================[97m
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Mon Dec  4 10:54:47 EST 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://142.150.237.146:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+ERROR: Spark job com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator failed to run successfully.
+Hint: You can goto /CMC/kmiecseb/HiBench/report/lr/prepare/conf/../bench.log to check for detailed log.
+Opening log tail for you:
+
+Mon Dec  4 11:01:23 EST 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=5
+SPARK_EXECUTOR_MEMORY=24g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=5
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 400000 features, trial maxMargin_less_if, @ local[*]...
+================================================[97m
+[91mCHECK to make sure sparkmasters match!!!!!![97m
+Mon Dec  4 11:01:40 EST 2017
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx24g
+# Warmup: 1 iterations, 1 s each
+# Measurement: 1 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:04
+# Fork: 1 of 2
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+<failure>
+
+java.lang.UnsupportedOperationException: empty collection
+	at org.apache.spark.rdd.RDD$$anonfun$first$1.apply(RDD.scala:1369)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)
+	at org.apache.spark.rdd.RDD.first(RDD.scala:1366)
+	at org.apache.spark.mllib.regression.GeneralizedLinearAlgorithm.generateInitialWeights(GeneralizedLinearAlgorithm.scala:204)
+	at org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS.run(LogisticRegression.scala:407)
+	at grsm.Benchmarks.HiBench_LR(driver.scala:48)
+	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_avgt_jmhStub(Benchmarks_HiBench_LR_jmhTest.java:190)
+	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_AverageTime(Benchmarks_HiBench_LR_jmhTest.java:152)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+# Run progress: 50.00% complete, ETA 00:00:03
+# Fork: 2 of 2
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+<failure>
+
+java.lang.UnsupportedOperationException: empty collection
+	at org.apache.spark.rdd.RDD$$anonfun$first$1.apply(RDD.scala:1369)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)
+	at org.apache.spark.rdd.RDD.first(RDD.scala:1366)
+	at org.apache.spark.mllib.regression.GeneralizedLinearAlgorithm.generateInitialWeights(GeneralizedLinearAlgorithm.scala:204)
+	at org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS.run(LogisticRegression.scala:407)
+	at grsm.Benchmarks.HiBench_LR(driver.scala:48)
+	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_avgt_jmhStub(Benchmarks_HiBench_LR_jmhTest.java:190)
+	at grsm.generated.Benchmarks_HiBench_LR_jmhTest.HiBench_LR_AverageTime(Benchmarks_HiBench_LR_jmhTest.java:152)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+
+# Run complete. Total time: 00:00:07
+
+Benchmark  Mode  Cnt  Score   Error  Units
+Mon Dec  4 11:01:50 EST 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Mon Dec  4 11:01:50 EST 2017
+Mon Dec  4 11:01:50 EST 2017
+[95m===============================================
+Done experiment.
+================================================[97m

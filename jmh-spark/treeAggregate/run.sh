@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "info" ] && [ "$1" != "int_label" ] && [ "$1" != "maxMargin_less_cmp"] && [ "$1" != "aggressive" ] && [ "$1" != "less_fcmp" ] ; then
+if [ "$1" != "large_pages" ] && [ "$1" != "maxMargin_less_if" ] && [ "$1" != "baseline" ] && [ "$1" != "conglomerate" ] && [ "$1" != "info" ] && [ "$1" != "int_label" ] && [ "$1" != "maxMargin_less_cmp" ] && [ "$1" != "aggressive" ] && [ "$1" != "less_fcmp" ] && [ "$1" != "less_label" ] ; then
 	echo undef optimization, choose from:
-	echo large_pages, maxMargin_less_if, baseline, conglomerate, info, int_label, maxMargin_less_cmp, aggressive, less_fcmp
+	echo large_pages, maxMargin_less_if, baseline, conglomerate, info, int_label, less_label, maxMargin_less_cmp, aggressive, less_fcmp
 	exit
 fi
 
@@ -84,7 +84,7 @@ sleep 10
 
 cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 
-PROBLEM_FEATURES=(400000)
+PROBLEM_FEATURES=(150000)
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -113,10 +113,10 @@ do
 		#used dm = 24 em = 16 einstance = 6
 		#but need 32 22 4
 		export MY_SPARK_WORKER_CORES=90
-		export MY_SPARK_EXECUTOR_INSTANCES=4
+		export MY_SPARK_EXECUTOR_INSTANCES=6
 		export MY_SPARK_EXECUTOR_CORES=15
-		export MY_SPARK_DRIVER_MEMORY=32g
-		export MY_SPARK_EXECUTOR_MEMORY=22g
+		export MY_SPARK_DRIVER_MEMORY=24g
+		export MY_SPARK_EXECUTOR_MEMORY=16g
 	else
 		export MY_SPARK_WORKER_CORES=30
 		if [ "$2" = "local" ] ; then
@@ -159,6 +159,9 @@ do
 	fi
 	if [ "$1" = "int_label" ] ; then
 		jar_variant="-intLabel-$2"
+	fi	
+	if [ "$1" = "less_label" ] ; then
+		jar_variant="-lessLabel-$2"
 	fi	
 	if [ "$1" = "maxMargin_less_cmp" ] ; then
 		jar_variant="-mMLessCmp-$2"
