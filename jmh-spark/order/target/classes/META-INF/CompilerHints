@@ -1,0 +1,16 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,grsm/Benchmarks$My_State.doSetup
+inline,grsm/Benchmarks.cmp
+inline,grsm/Benchmarks.cmp_big
+inline,grsm/Benchmarks.cmp_w_flt
+inline,grsm/Benchmarks.fadd
+inline,grsm/Benchmarks.fadd_w_int
+inline,grsm/Benchmarks.fcmp
+inline,grsm/Benchmarks.fcmp_big
+inline,grsm/Benchmarks.fcmp_w_int
+inline,grsm/Benchmarks.fdiv
+inline,grsm/Benchmarks.fmul
