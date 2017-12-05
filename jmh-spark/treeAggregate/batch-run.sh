@@ -14,6 +14,8 @@ cd $PD
 #sh run.sh maxMargin_less_if standalone
 #sh run.sh maxMargin_less_cmp local jmh_infused
 #sh run.sh less_fcmp local jmh_infused
+sh run.sh conglomerate local jmh_infused
+sh run.sh conglomerate standalone jmh_infused
 sh run.sh int_label local jmh_infused
 sh run.sh int_label standalone jmh_infused
 sh run.sh less_label local jmh_infused

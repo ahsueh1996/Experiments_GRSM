@@ -185,7 +185,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
          * binary version for performance reason.
          */
         val margin = -1.0 * dot(data, weights)
-        val multiplier = (1.0 / (1.0 + math.exp(margin))) - label
+        val multiplier = (1.0 / (1.0 + math.exp(margin))) - ilabel
         axpy(multiplier, data, cumGradient)
         if (ilabel > 0) {
           // The following is equivalent to log(1 + exp(margin)) but more numerically stable.
@@ -218,6 +218,7 @@ class LogisticGradient(numClasses: Int) extends Gradient {
         val margins = Array.tabulate(numClasses - 1) { i =>
           var margin = 0.0
           data.foreachActive { (index, value) =>
+		// removed the value != 0.0 check
             margin += value * weightsArray((i * dataSize) + index)
           }
           if (i == ilabel - 1) marginY = margin
