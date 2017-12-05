@@ -95,6 +95,36 @@ class Benchmarks {
 	}
 	@Benchmark
 	@BenchmarkMode(Array(Mode.AverageTime))
+	def fdiv_big(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.bf/3.14447)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
+	def div(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.i/2)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
+	def mul(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.i*2)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
+	def add(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.i+2)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
+	def add_w_flt(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.i+2.00)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
+	def div_big(s: Benchmarks.My_State, bh: Blackhole) {
+		bh.consume(s.bi/13)
+	}
+	@Benchmark
+	@BenchmarkMode(Array(Mode.AverageTime))
 	def to_int(s: Benchmarks.My_State, bh: Blackhole) {
 		bh.consume(s.f.toInt)
 	}
