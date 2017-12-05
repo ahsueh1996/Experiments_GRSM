@@ -21,15 +21,14 @@ object Benchmarks {
 
 		@Setup(Level.Trial)
 		def doSetup() {
-			println("\n")
-			println("!!!!----setting up----!!!!")
 		}
 	}
 }
 
-@Warmup(iterations=10,time=1,timeUnit=TimeUnit.SECONDS)
-@Measurement(iterations=20,time=1,timeUnit=TimeUnit.SECONDS)
-@Fork(2)
+@Warmup(iterations=3,time=500,timeUnit=TimeUnit.MICROSECONDS)
+@Measurement(iterations=10,time=500,timeUnit=TimeUnit.MICROSECONDS)
+@Fork(10)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 class Benchmarks {	
 	@Benchmark
 	@BenchmarkMode(Array(Mode.AverageTime))
