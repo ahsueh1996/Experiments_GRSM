@@ -76,11 +76,11 @@ class Benchmarks {
         @Warmup(iterations = 1, batchSize = 1)
         @Measurement(iterations = 5, batchSize = 1)
         @BenchmarkMode(Array(Mode.SingleShotTime))
-        def Multinomial_LR(s: Benchmarks.My_State) {
+        def Binary_LR(s: Benchmarks.My_State) {
                 // Run training algorithm to build the model
                 // btw, what if numclasses = 2?
                 s.model = new LogisticRegressionWithLBFGS()
-                                .setNumClasses(10)
+                                .setNumClasses(2)
                                 .run(s.training)
         }
         @Benchmark
