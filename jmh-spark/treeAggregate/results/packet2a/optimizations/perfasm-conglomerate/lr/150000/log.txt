@@ -1,0 +1,902 @@
+CompilerOracle: print *Benchmarks.*
+# JMH version: 1.19
+# VM version: JDK 1.8.0-release, VM 25.71-b00
+# VM invoker: /CMC/kmiecseb/jdk8u-server-release-1708/jre/bin/java
+# VM options: -Xmx24g -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Benchmarks.*
+# Warmup: 2 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: 1 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+(*interrupt*) 1021.532 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+592.293 s/op
+Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+559.964 s/op
+Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+550.962 s/op
+Iteration   3: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+559.870 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+# Run progress: 50.00% complete, ETA 03:45:11
+# Fork: 2 of 2
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+1006.721 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+597.937 s/op
+Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+552.381 s/op
+Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+568.236 s/op
+Iteration   3: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+550.167 s/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  556.930 ?(99.9%) 19.738 s/op [Average]
+  (min, avg, max) = (550.167, 556.930, 568.236), stdev = 7.039
+  CI (99.9%): [537.192, 576.668] (assumes normal distribution)
+
+Secondary result "grsm.Benchmarks.HiBench_LR:?asm":
+PrintAssembly processed: 4899740 total address lines.
+Perf output processed (skipped 1634.564 seconds):
+ Column 1: cycles (77772359 events)
+ Column 2: instructions (75629535 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+C2, level 4, org.apache.spark.mllib.optimization.LogisticGradient::compute, version 10994 (2060 bytes) 
+
+ <region is too big to display, has 1469 lines, but threshold is 1000>
+....................................................................................................
+ 48.28%   47.34%  <total for region 1>
+
+....[Hottest Region 2]..............................................................................
+C2, level 4, org.apache.spark.mllib.optimization.LogisticGradient::compute, version 10994 (1584 bytes) 
+
+ <region is too big to display, has 1134 lines, but threshold is 1000>
+....................................................................................................
+ 39.38%   40.07%  <total for region 2>
+
+....[Hottest Regions]...............................................................................
+ 48.28%   47.34%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 10994 (2060 bytes) 
+ 39.38%   40.07%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 10994 (1584 bytes) 
+  1.60%    1.87%          libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles (1564 bytes) 
+  1.25%    1.24%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17135 (244 bytes) 
+  0.86%    0.68%           libjvm.so  _Copy_disjoint_words (472 bytes) 
+  0.81%    0.62%        runtime stub  StubRoutines::foward_copy_longs (248 bytes) 
+  0.73%    0.74%         C2, level 4  org.apache.spark.mllib.stat.MultivariateOnlineSummarizer::add, version 18050 (232 bytes) 
+  0.61%    0.50%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 10253 (124 bytes) 
+  0.59%    0.09%   [kernel.kallsyms]  __copy_to_user (344 bytes) 
+  0.56%    0.65%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes (360 bytes) 
+  0.45%    0.95%         C2, level 4  net.jpountz.xxhash.StreamingXXHash32JavaSafe::update, version 7612 (520 bytes) 
+  0.26%    0.39%         C2, level 4  net.jpountz.lz4.LZ4JavaSafeCompressor::compress64k, version 7600 (948 bytes) 
+  0.26%    0.64%         C2, level 4  org.apache.hadoop.util.PureJavaCrc32C::update, version 3218 (1236 bytes) 
+  0.24%    0.25%   [kernel.kallsyms]  finish_task_switch (88 bytes) 
+  0.24%    0.33%           libjvm.so  ParallelTaskTerminator::offer_termination (172 bytes) 
+  0.23%    0.21%           libjvm.so  ThreadStateTransition::transition_from_native (4 bytes) 
+  0.18%    0.17%         C2, level 4  org.apache.spark.mllib.feature.StandardScalerModel::transform, version 9135 (232 bytes) 
+  0.17%    0.17%           libjvm.so  ThreadStateTransition::transition_and_fence (64 bytes) 
+  0.16%    0.13%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17135 (500 bytes) 
+  0.16%    0.02%   [kernel.kallsyms]  __sched_text_end (188 bytes) 
+  2.97%    2.94%  <...other 32234 warm regions...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 87.66%   87.41%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 10994 
+  1.61%    1.87%          libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles 
+  1.42%    1.37%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17135 
+  0.86%    0.68%           libjvm.so  _Copy_disjoint_words 
+  0.81%    0.62%        runtime stub  StubRoutines::foward_copy_longs 
+  0.74%    0.76%         C2, level 4  org.apache.spark.mllib.stat.MultivariateOnlineSummarizer::add, version 18050 
+  0.61%    0.50%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 10253 
+  0.59%    0.09%   [kernel.kallsyms]  __copy_to_user 
+  0.56%    0.65%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes 
+  0.45%    0.95%         C2, level 4  net.jpountz.xxhash.StreamingXXHash32JavaSafe::update, version 7612 
+  0.27%    0.40%         C2, level 4  net.jpountz.lz4.LZ4JavaSafeCompressor::compress64k, version 7600 
+  0.26%    0.64%         C2, level 4  org.apache.hadoop.util.PureJavaCrc32C::update, version 3218 
+  0.25%    0.22%           libjvm.so  ThreadStateTransition::transition_from_native 
+  0.24%    0.25%   [kernel.kallsyms]  finish_task_switch 
+  0.24%    0.33%           libjvm.so  ParallelTaskTerminator::offer_termination 
+  0.21%    0.20%           libjvm.so  ThreadStateTransition::transition_and_fence 
+  0.18%    0.17%         C2, level 4  org.apache.spark.mllib.feature.StandardScalerModel::transform, version 9135 
+  0.16%    0.02%   [kernel.kallsyms]  __sched_text_end 
+  0.12%    0.11%           libjvm.so  SpinPause 
+  0.11%    0.12%        libc-2.17.so  memcpy 
+  2.64%    2.63%  <...other 7800 warm methods...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Distribution by Source]........................................................................
+ 92.16%   92.76%         C2, level 4
+  2.21%    2.04%           libjvm.so
+  2.18%    2.52%          libjava.so
+  2.12%    1.47%   [kernel.kallsyms]
+  0.86%    0.68%        runtime stub
+  0.25%    0.38%        libc-2.17.so
+  0.09%    0.06%    Unknown, level 0
+  0.08%    0.06%         C1, level 3
+  0.02%    0.01%    hsdis-aarch64.so
+  0.01%    0.00%  libpthread-2.17.so
+  0.01%    0.00%         interpreter
+  0.00%    0.01%           libzip.so
+  0.00%    0.00%         C1, level 1
+  0.00%    0.00%              [vdso]
+  0.00%    0.00%        libverify.so
+  0.00%    0.00%           libnio.so
+  0.00%    0.00%       perf-4803.map
+  0.00%    0.00%          ld-2.17.so
+  0.00%    0.00%    libmanagement.so
+  0.00%    0.00%           libnet.so
+....................................................................................................
+100.00%  100.00%  <totals>
+
+PrintAssembly processed: 4913006 total address lines.
+Perf output processed (skipped 1625.515 seconds):
+ Column 1: cycles (78492431 events)
+ Column 2: instructions (76282691 events)
+
+Hottest code regions (>10.00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+C2, level 4, org.apache.spark.mllib.optimization.LogisticGradient::compute, version 11960 (2080 bytes) 
+
+ <region is too big to display, has 1491 lines, but threshold is 1000>
+....................................................................................................
+ 47.95%   47.03%  <total for region 1>
+
+....[Hottest Region 2]..............................................................................
+C2, level 4, org.apache.spark.mllib.optimization.LogisticGradient::compute, version 11960 (812 bytes) 
+
+                                                                  ;*getstatic MODULE$
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@706 (line 192)
+                                                                  ;   {runtime_call}
+                    0x000003ffa150b5f8: brk	#0x3e7          ;*synchronization entry
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@-1 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b5fc: ldr	w12, [sp,#152]
+  0.00%    0.00%    0x000003ffa150b600: mov	x18, x13
+  0.00%    0.00%    0x000003ffa150b604: mov	x4, x14
+  0.00%    0.00%    0x000003ffa150b608: ldr	x3, [sp,#160]
+                    0x000003ffa150b60c: mov	w1, w15
+  0.00%    0.00%    0x000003ffa150b610: mov	x6, x16         ;*invokestatic newArray
+                                                                  ; - java.lang.reflect.Array::newInstance@2 (line 75)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@276 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b614: ldr	w11, [x18,#16]
+  0.00%    0.00%    0x000003ffa150b618: sub	w13, w11, #0x1
+  0.00%    0.00%    0x000003ffa150b61c: cmp	w10, w13
+                    0x000003ffa150b620: b.eq	0x000003ffa150c24c  ;*synchronization entry
+                                                                  ; - scala.reflect.ClassTag$class::newArray@-1 (line 51)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b624: ldr	w11, [x18,#32]  ;*synchronization entry
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@-1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply$mcDI$sp@1 (line 219)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@2 (line 218)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@5 (line 218)
+                                                                  ; - scala.Array$::tabulate@30 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b628: lsl	x11, x11, #3    ;*aaload
+                                                                  ; - java.lang.Integer::valueOf@21 (line 831)
+                                                                  ; - scala.runtime.BoxesRunTime::boxToInteger@1 (line 65)
+                                                                  ; - scala.Array$::tabulate@27 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b62c: ldr	d16, [x11,#16]  ; implicit exception: dispatches to 0x000003ffa150dd50
+  0.00%    0.00%    0x000003ffa150b630: fcmp	d22, d16
+  0.00%    0.00%    0x000003ffa150b634: b.gt	0x000003ffa150b8ec  ;*ifeq
+                                                                  ; - scala.reflect.ClassTag$class::newArray@84 (line 54)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b638: ldr	x13, [x28,#96]
+  0.00%    0.00%    0x000003ffa150b63c: ldr	x10, [x28,#112]
+                    0x000003ffa150b640: add	x11, x13, #0x18  ;*invokespecial &lt;init&gt;
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%             0x000003ffa150b644: cmp	x11, x10
+                    0x000003ffa150b648: b.cs	0x000003ffa150c614  ;*invokevirtual step
+                                                                  ; - scala.collection.immutable.Range::foreach$mVc$sp@31 (line 163)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@261 (line 242)
+  0.00%             0x000003ffa150b64c: str	x11, [x28,#96]
+  0.00%             0x000003ffa150b650: ldr	x10, [x6,#168]
+  0.00%    0.00%    0x000003ffa150b654: str	x10, [x13]
+                    0x000003ffa150b658: mov	x10, #0x10000               	// #65536
+                                                                  ;   {metadata(&apos;java/lang/Double&apos;)}
+  0.00%             0x000003ffa150b65c: movk	x10, #0x5d0
+  0.00%             0x000003ffa150b660: str	w10, [x13,#8]
+  0.00%             0x000003ffa150b664: str	wzr, [x13,#12]  ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%             0x000003ffa150b668: prfm	pstl1keep, [x11,#384]  ;*invokespecial &lt;init&gt;
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b66c: str	xzr, [x13,#16]  ;*return
+                                                                  ; - java.lang.Object::&lt;init&gt;@0 (line 37)
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@1 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b670: dmb	ishst           ;*ifeq
+                                                                  ; - scala.reflect.ClassTag$class::newArray@258 (line 60)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b674: str	d22, [x13,#16]  ;*invokestatic newArray
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b678: dmb	ish             ;*putfield elems
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::elems_$eq@2 (line 58)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@6 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b67c: mov	x11, #0x140000              	// #1310720
+                                                                  ;   {metadata(&apos;scala/collection/mutable/ArrayBuilder$ofDouble&apos;)}
+  0.00%    0.00%    0x000003ffa150b680: movk	x11, #0x5738
+  0.00%    0.00%    0x000003ffa150b684: cmp	w1, w11
+                    0x000003ffa150b688: b.ne	0x000003ffa150c548  ;*aload_0
+                                                                  ; - scala.reflect.ClassTag$class::newArray@269 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b68c: mov	x15, x3         ;*synchronization entry
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@-1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b690: ldr	w13, [x15,#12]  ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b694: ldr	w14, [x15,#16]  ;*return
+                                                                  ; - java.lang.Object::&lt;init&gt;@0 (line 37)
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b698: add	w0, w14, #0x1   ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b69c: cmp	w13, w0
+                    0x000003ffa150b6a0: b.lt	0x000003ffa150cc6c  ;*putfield elems
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::elems_$eq@2 (line 58)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@6 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6a4: ldr	w10, [x15,#20]
+                    0x000003ffa150b6a8: lsl	x16, x10, #3    ;*invokeinterface runtimeClass
+                                                                  ; - scala.reflect.ClassTag$class::newArray@270 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6ac: cbz	w13, 0x000003ffa150d4e8
+                                                                  ;*if_icmpge
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@5 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6b0: cbz	x16, 0x000003ffa150d3b4
+                                                                  ;*invokestatic newArray
+                                                                  ; - java.lang.reflect.Array::newInstance@2 (line 75)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@276 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6b4: ldr	w10, [x16,#12]
+  0.00%    0.00%    0x000003ffa150b6b8: cmp	w14, w10
+                    0x000003ffa150b6bc: b.cs	0x000003ffa150d384  ;*invokespecial mkArray
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6c0: add	x8, x16, #0x10
+  0.00%             0x000003ffa150b6c4: str	d22, [x8,w14,sxtw #3]  ;*synchronization entry
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@-1 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b6c8: str	w0, [x15,#16]   ;*invokestatic newArray
+                                                                  ; - java.lang.reflect.Array::newInstance@2 (line 75)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@276 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b6cc: add	w17, w17, #0x1  ;*getfield marginY$1
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply$mcDI$sp@35 (line 224)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@2 (line 218)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@5 (line 218)
+                                                                  ; - scala.Array$::tabulate@30 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b6d0: cmp	w17, w12
+                    0x000003ffa150b6d4: b.ge	0x000003ffa150b914  ;*invokespecial mkArray
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b6d8: str	x19, [sp,#48]
+  0.00%    0.00%    0x000003ffa150b6dc: str	x18, [sp,#8]    ;*invokevirtual equals
+                                                                  ; - scala.reflect.ClassTag$class::newArray@110 (line 55)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b6e0: add	w10, w17, #0x80
+  0.00%    0.00%    0x000003ffa150b6e4: cmp	w10, #0x100
+                    0x000003ffa150b6e8: b.cs	0x000003ffa150c478  ;*invokespecial resize
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofDouble::sizeHint@10 (line 529)
+                                                                  ; - scala.Array$::tabulate@-1 (line 327)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b6ec: mov	x10, #0x3f58                	// #16216
+                                                                  ;   {oop(a &apos;java/lang/Integer&apos;[256] )}
+  0.00%    0.00%    0x000003ffa150b6f0: movk	x10, #0xc001, lsl #16
+  0.00%             0x000003ffa150b6f4: movk	x10, #0x1, lsl #32
+  0.00%    0.00%    0x000003ffa150b6f8: add	x8, x10, #0x210
+  0.00%    0.00%    0x000003ffa150b6fc: ldr	w10, [x8,w17,sxtw #2]
+  0.00%    0.00%    0x000003ffa150b700: add	x14, xzr, x10, lsl #3  ;*ifeq
+                                                                  ; - scala.reflect.ClassTag$class::newArray@229 (line 59)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b704: ldr	x0, [x28,#96]
+  0.00%    0.00%    0x000003ffa150b708: ldr	x11, [x28,#112]
+                    0x000003ffa150b70c: add	x13, x0, #0x18  ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@1 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b710: ldr	w10, [x14,#12]  ;*invokestatic create
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b714: cmp	x13, x11
+                    0x000003ffa150b718: b.cs	0x000003ffa150c5b4  ;*goto
+                                                                  ; - scala.collection.immutable.Range::foreach$mVc$sp@36 (line 163)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@261 (line 242)
+  0.00%             0x000003ffa150b71c: str	x13, [x28,#96]
+  0.00%    0.00%    0x000003ffa150b720: ldr	x19, [sp,#48]
+  0.00%    0.00%    0x000003ffa150b724: ldr	x11, [x19,#168]  ;*invokestatic $init$
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@5 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b728: str	x11, [x0]       ;*return
+                                                                  ; - scala.Function1$class::$init$@0 (line 32)
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@5 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%             0x000003ffa150b72c: mov	x11, #0x750000              	// #7667712
+                                                                  ;   {metadata(&apos;scala/runtime/DoubleRef&apos;)}
+  0.00%    0.00%    0x000003ffa150b730: movk	x11, #0xd60
+  0.00%    0.00%    0x000003ffa150b734: str	w11, [x0,#8]    ;*invokestatic $init$
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@5 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b738: str	wzr, [x0,#12]   ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b73c: prfm	pstl1keep, [x13,#384]  ;*invokestatic $init$
+                                                                  ; - scala.runtime.AbstractFunction1::&lt;init&gt;@5 (line 12)
+                                                                  ; - scala.runtime.AbstractFunction1$mcVI$sp::&lt;init&gt;@1 (line 12)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$2::&lt;init&gt;@17 (line 242)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@258 (line 242)
+  0.00%    0.00%    0x000003ffa150b740: str	xzr, [x0,#16]   ;*ifeq
+                                                                  ; - scala.reflect.ClassTag$class::newArray@229 (line 59)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b744: dmb	ish             ;*invokevirtual equals
+                                                                  ; - scala.reflect.ClassTag$class::newArray@226 (line 59)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b748: ldr	x18, [sp,#8]
+  0.00%    0.00%    0x000003ffa150b74c: ldr	w11, [x18,#20]  ;*ifeq
+                                                                  ; - scala.reflect.ClassTag$class::newArray@229 (line 59)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b750: lsl	x11, x11, #3
+  0.00%    0.00%    0x000003ffa150b754: ldr	w14, [x11,#8]   ; implicit exception: dispatches to 0x000003ffa150dd30
+  0.00%    0.00%    0x000003ffa150b758: mov	x15, #0x5f0000              	// #6225920
+                                                                  ;   {metadata(&apos;org/apache/spark/mllib/linalg/DenseVector&apos;)}
+  0.00%             0x000003ffa150b75c: movk	x15, #0x52e0
+  0.00%    0.00%    0x000003ffa150b760: cmp	w14, w15
+                    0x000003ffa150b764: b.ne	0x000003ffa150d45c  ;*return
+                                                                  ; - scala.Array$::copy@55 (line 102)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@36 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b768: ldr	w13, [x11,#12]  ;*invokevirtual sizeHint
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b76c: lsl	x5, x13, #3
+  0.00%    0.00%    0x000003ffa150b770: ldr	w2, [x5,#12]    ;*new  ; - scala.runtime.DoubleRef::create@0 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+                                                                  ; implicit exception: dispatches to 0x000003ffa150dd44
+  0.00%    0.00%    0x000003ffa150b774: cmp	w2, #0x0
+                    0x000003ffa150b778: b.le	0x000003ffa150c970  ;*invokespecial slowcopy
+                                                                  ; - scala.Array$::copy@52 (line 107)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@36 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b77c: mov	x16, x6
+  0.00%    0.00%    0x000003ffa150b780: mov	w15, w1
+  0.00%             0x000003ffa150b784: str	x3, [sp,#160]
+  0.00%             0x000003ffa150b788: mov	x14, x4
+  0.00%    0.00%    0x000003ffa150b78c: ldr	x13, [sp,#8]
+  0.00%             0x000003ffa150b790: str	w12, [sp,#152]
+  0.00%             0x000003ffa150b794: ldr	w1, [x13,#24]   ;*if_acmpne
+                                                                  ; - java.lang.Object::equals@2 (line 149)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@255 (line 60)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b798: orr	w11, wzr, #0x1
+  0.00%             0x000003ffa150b79c: cmp	w2, w11
+  0.00%             0x000003ffa150b7a0: csel	w11, w2, w11, lt
+                    0x000003ffa150b7a4: ldr	w18, [x13,#12]  ;*synchronization entry
+                                                                  ; - java.lang.Object::equals@-1 (line 149)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@255 (line 60)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b7a8: mul	w4, w18, w10    ;*invokevirtual sizeHint
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b7ac: lsl	x3, x1, #3      ;*invokespecial capacity
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@1 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b7b0: neg	w12, w4
+  0.00%             0x000003ffa150b7b4: cmp	w11, w12
+  0.00%             0x000003ffa150b7b8: csel	w12, w11, w12, gt
+  0.00%    0.00%    0x000003ffa150b7bc: cmp	w12, w2
+  0.00%    0.00%    0x000003ffa150b7c0: csel	w12, w12, w2, lt
+                    0x000003ffa150b7c4: mov	w1, wzr
+  0.00%             0x000003ffa150b7c8: cmp	w1, w2
+                    0x000003ffa150b7cc: b.cs	0x000003ffa150d18c  ;*if_icmple
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@19 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b7d0: add	x8, x5, #0x10
+  0.00%    0.00%    0x000003ffa150b7d4: ldr	d16, [x8,w1,sxtw #3]  ;*checkcast
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@10 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b7d8: ldr	d17, [x0,#16]   ;*invokespecial size
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@15 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b7dc: add	w18, w1, w4     ;*invokespecial mkArray
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b7e0: ldr	w6, [x3,#12]    ;*invokespecial size
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@15 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                                                                  ; implicit exception: dispatches to 0x000003ffa150dd20
+  0.00%    0.00%    0x000003ffa150b7e4: cmp	w18, w6
+                    0x000003ffa150b7e8: b.cs	0x000003ffa150d1c8  ;*if_icmple
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@19 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b7ec: add	x8, x3, #0x10
+  0.00%    0.00%    0x000003ffa150b7f0: ldr	d18, [x8,w18,sxtw #3]
+  0.00%    0.00%    0x000003ffa150b7f4: fmul	d16, d18, d16
+  0.00%    0.00%    0x000003ffa150b7f8: fadd	d22, d16, d17
+  0.00%    0.00%    0x000003ffa150b7fc: str	d22, [x0,#16]   ;*checkcast
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@10 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b800: add	w1, w1, #0x1    ;*invokespecial size
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@15 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b804: cmp	w1, w12
+                    0x000003ffa150b808: b.lt	0x000003ffa150b7c8  ;*aload_2
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@39 (line 65)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b80c: sub	w11, w6, w4
+  0.00%             0x000003ffa150b810: cmp	w11, w2
+  0.00%             0x000003ffa150b814: csel	w11, w11, w2, lt  ;*invokevirtual intWrapper
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@235 (line 242)
+  0.00%    0.00%    0x000003ffa150b818: sub	w12, w11, #0x3
+  0.00%             0x000003ffa150b81c: cmp	w11, w12
+                    0x000003ffa150b820: orr	w18, wzr, #0x80000000
+  0.00%             0x000003ffa150b824: csel	w18, w18, w12, lt  ;*synchronization entry
+                                                                  ; - scala.collection.immutable.Iterable$class::$init$@-1 (line 25)
+                                                                  ; - scala.collection.immutable.Range::&lt;init&gt;@24 (line 62)
+                                                                  ; - scala.collection.immutable.Range$::apply@7 (line 443)
+                                                                  ; - scala.runtime.RichInt$::until$extension0@5 (line 55)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.00%             0x000003ffa150b828: cmp	w1, w18
+                    0x000003ffa150b82c: b.ge	0x000003ffa150b8a0  ;*invokestatic $init$
+                                                                  ; - scala.collection.immutable.Range::&lt;init&gt;@28 (line 62)
+                                                                  ; - scala.collection.immutable.Range$::apply@7 (line 443)
+                                                                  ; - scala.runtime.RichInt$::until$extension0@5 (line 55)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.00%    0.00%    0x000003ffa150b830: add	x8, x5, #0x10
+  0.35%    0.22%    0x000003ffa150b834: ldr	d16, [x8,w1,sxtw #3]
+  5.36%    6.56%    0x000003ffa150b838: add	w12, w1, w4     ;*invokestatic $init$
+                                                                  ; - scala.collection.immutable.Range::&lt;init&gt;@24 (line 62)
+                                                                  ; - scala.collection.immutable.Range$::apply@7 (line 443)
+                                                                  ; - scala.runtime.RichInt$::until$extension0@5 (line 55)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.18%    0.13%    0x000003ffa150b83c: add	x8, x3, #0x10
+  0.20%    0.16%    0x000003ffa150b840: ldr	d17, [x8,w12,sxtw #3]
+  2.74%    2.64%    0x000003ffa150b844: add	x11, x5, w1, sxtw #3  ;*invokevirtual step
+                                                                  ; - scala.collection.immutable.Range::longLength@5 (line 72)
+                                                                  ; - scala.collection.immutable.Range::&lt;init&gt;@117 (line 89)
+                                                                  ; - scala.collection.immutable.Range$::apply@7 (line 443)
+                                                                  ; - scala.runtime.RichInt$::until$extension0@5 (line 55)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.18%    0.13%    0x000003ffa150b848: add	x8, x3, #0x18
+  0.19%    0.14%    0x000003ffa150b84c: ldr	d18, [x8,w12,sxtw #3]
+  4.05%    4.00%    0x000003ffa150b850: ldr	d19, [x11,#24]
+  4.04%    4.66%    0x000003ffa150b854: add	w7, w1, w4
+  0.18%    0.13%    0x000003ffa150b858: add	x12, x3, w7, sxtw #3  ;*invokespecial gap
+                                                                  ; - scala.collection.immutable.Range::isExact@1 (line 70)
+                                                                  ; - scala.collection.immutable.Range::hasStub@8 (line 71)
+                                                                  ; - scala.collection.immutable.Range::longLength@11 (line 72)
+                                                                  ; - scala.collection.immutable.Range::&lt;init&gt;@117 (line 89)
+                                                                  ; - scala.collection.immutable.Range$::apply@7 (line 443)
+                                                                  ; - scala.runtime.RichInt$::until$extension0@5 (line 55)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.04%    0.05%    0x000003ffa150b85c: ldr	d20, [x11,#32]
+  5.61%    6.57%    0x000003ffa150b860: ldr	d21, [x12,#32]
+  3.36%    2.97%    0x000003ffa150b864: fmul	d16, d17, d16
+  0.18%    0.14%    0x000003ffa150b868: fmul	d17, d18, d19
+  0.88%    0.64%    0x000003ffa150b86c: fadd	d16, d16, d22
+  0.00%    0.00%    0x000003ffa150b870: ldr	d18, [x11,#40]
+  4.20%    4.79%    0x000003ffa150b874: fmul	d19, d21, d20
+  0.04%    0.05%    0x000003ffa150b878: ldr	d20, [x12,#40]
+  3.75%    3.25%    0x000003ffa150b87c: fadd	d16, d17, d16
+  0.71%    0.54%    0x000003ffa150b880: fadd	d16, d19, d16
+  0.71%    0.54%    0x000003ffa150b884: str	d16, [x0,#16]   ;*invokevirtual until$extension0
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@244 (line 242)
+  0.18%    0.13%    0x000003ffa150b888: fmul	d17, d20, d18
+  1.06%    0.71%    0x000003ffa150b88c: fadd	d22, d17, d16   ;*invokespecial mkArray
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.71%    0.45%    0x000003ffa150b890: str	d22, [x0,#16]   ;*ifnonnull
+                                                                  ; - scala.reflect.ClassTag$class::newArray@243 (line 60)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b894: add	w1, w1, #0x4    ;*invokevirtual apply$mcDI$sp
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@2 (line 218)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@5 (line 218)
+                                                                  ; - scala.Array$::tabulate@30 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.18%    0.11%    0x000003ffa150b898: cmp	w1, w18
+                    0x000003ffa150b89c: b.lt	0x000003ffa150b830  ;*invokespecial size
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@33 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b8a0: cmp	w1, w2
+                    0x000003ffa150b8a4: b.ge	0x000003ffa150b5fc
+  0.00%    0.00%    0x000003ffa150b8a8: add	w11, w1, w4
+  0.00%    0.00%    0x000003ffa150b8ac: cmp	w1, w2
+                    0x000003ffa150b8b0: b.cs	0x000003ffa150d194
+  0.00%             0x000003ffa150b8b4: add	x8, x5, #0x10
+  0.00%    0.00%    0x000003ffa150b8b8: ldr	d16, [x8,w1,sxtw #3]
+  0.00%    0.00%    0x000003ffa150b8bc: ldr	d17, [x0,#16]
+  0.00%    0.00%    0x000003ffa150b8c0: cmp	w11, w6
+                    0x000003ffa150b8c4: b.cs	0x000003ffa150d1dc
+  0.00%    0.00%    0x000003ffa150b8c8: add	x8, x3, #0x10
+  0.00%    0.00%    0x000003ffa150b8cc: ldr	d18, [x8,w11,sxtw #3]
+  0.00%    0.00%    0x000003ffa150b8d0: fmul	d16, d18, d16
+  0.00%    0.00%    0x000003ffa150b8d4: fadd	d22, d16, d17   ;*invokestatic newArray
+                                                                  ; - java.lang.reflect.Array::newInstance@2 (line 75)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@276 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%    0.00%    0x000003ffa150b8d8: str	d22, [x0,#16]   ;*ifnonnull
+                                                                  ; - scala.reflect.ClassTag$class::newArray@243 (line 60)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b8dc: add	w1, w1, #0x1
+  0.00%    0.00%    0x000003ffa150b8e0: cmp	w1, w2
+                    0x000003ffa150b8e4: b.lt	0x000003ffa150b8a8  ;*invokestatic newArray
+                                                                  ; - java.lang.reflect.Array::newInstance@2 (line 75)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@276 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b8e8: b	0x000003ffa150b5fc
+  0.00%             0x000003ffa150b8ec: str	d22, [x11,#16]  ;*if_icmpge
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@5 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+  0.00%             0x000003ffa150b8f0: ldr	d22, [x0,#16]   ;*getfield runtimeClass1$1
+                                                                  ; - scala.reflect.ClassTag$$anon$1::runtimeClass@1 (line 152)
+                                                                  ; - scala.reflect.ClassTag$class::newArray@270 (line 61)
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@31 (line 108)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::result@1 (line 56)
+                                                                  ; - scala.Array$::tabulate@50 (line 334)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b8f4: ldr	w11, [x18,#36]  ;*invokespecial &lt;init&gt;
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply$mcDI$sp@1 (line 219)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@2 (line 218)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient$$anonfun$1::apply@5 (line 218)
+                                                                  ; - scala.Array$::tabulate@30 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b8f8: lsl	x11, x11, #3    ;*aaload
+                                                                  ; - java.lang.Integer::valueOf@21 (line 831)
+                                                                  ; - scala.runtime.BoxesRunTime::boxToInteger@1 (line 65)
+                                                                  ; - scala.Array$::tabulate@27 (line 331)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                    0x000003ffa150b8fc: str	w10, [x11,#12]  ;*invokevirtual getClass
+                                                                  ; - scala.Array$::copy@1 (line 103)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@36 (line 64)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+                                                                  ; implicit exception: dispatches to 0x000003ffa150dde0
+  0.00%    0.00%    0x000003ffa150b900: b	0x000003ffa150b638
+                    0x000003ffa150b904: mov	x4, #0x5838                	// #22584
+                                                                  ;   {oop(a &apos;java/lang/NullPointerException&apos;)}
+                    0x000003ffa150b908: movk	x4, #0xc001, lsl #16
+                    0x000003ffa150b90c: movk	x4, #0x1, lsl #32
+                    0x000003ffa150b910: ldr	x19, [sp,#48]   ;*return
+                                                                  ; - java.lang.Object::&lt;init&gt;@0 (line 37)
+                                                                  ; - scala.runtime.DoubleRef::&lt;init&gt;@1 (line 18)
+                                                                  ; - scala.runtime.DoubleRef::create@5 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@153 (line 215)
+  0.00%    0.00%    0x000003ffa150b914: mov	x10, #0x140000              	// #1310720
+                                                                  ;   {metadata(&apos;scala/collection/mutable/ArrayBuilder$ofDouble&apos;)}
+  0.00%             0x000003ffa150b918: movk	x10, #0x5738
+                    0x000003ffa150b91c: cmp	w1, w10
+  0.00%             0x000003ffa150b920: b.ne	0x000003ffa150c684
+                    0x000003ffa150b924: ldr	w10, [x3,#12]
+  0.00%             0x000003ffa150b928: ldr	w12, [x3,#16]   ;*new  ; - scala.runtime.IntRef::create@0 (line 21)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@159 (line 216)
+                    0x000003ffa150b92c: cbz	w10, 0x000003ffa150d7a0
+                    0x000003ffa150b930: cmp	w10, w12
+                    0x000003ffa150b934: b.ne	0x000003ffa150d744  ;*invokestatic newArray
+                                                                  ; - scala.reflect.ClassTag$$anon$1::newArray@2 (line 152)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::mkArray@5 (line 63)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::resize@3 (line 69)
+                                                                  ; - scala.collection.mutable.ArrayBuilder$ofRef::sizeHint@10 (line 74)
+                                                                  ; - scala.Array$::tabulate@10 (line 328)
+                                                                  ; - org.apache.spark.mllib.optimization.LogisticGradient::compute@200 (line 218)
+....................................................................................................
+ 39.09%   39.73%  <total for region 2>
+
+....[Hottest Regions]...............................................................................
+ 47.95%   47.03%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 11960 (2080 bytes) 
+ 39.09%   39.73%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 11960 (812 bytes) 
+  1.62%    1.90%          libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles (1564 bytes) 
+  1.26%    1.25%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17860 (340 bytes) 
+  0.98%    0.78%           libjvm.so  _Copy_disjoint_words (728 bytes) 
+  0.84%    0.64%        runtime stub  StubRoutines::foward_copy_longs (248 bytes) 
+  0.74%    0.76%         C2, level 4  org.apache.spark.mllib.stat.MultivariateOnlineSummarizer::add, version 18993 (232 bytes) 
+  0.62%    0.09%   [kernel.kallsyms]  __copy_to_user (344 bytes) 
+  0.60%    0.49%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 11191 (124 bytes) 
+  0.57%    0.65%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes (360 bytes) 
+  0.47%    0.61%           libjvm.so  ParallelTaskTerminator::offer_termination (172 bytes) 
+  0.44%    0.96%         C2, level 4  net.jpountz.xxhash.StreamingXXHash32JavaSafe::update, version 8073 (520 bytes) 
+  0.27%    0.40%         C2, level 4  net.jpountz.lz4.LZ4JavaSafeCompressor::compress64k, version 8014 (644 bytes) 
+  0.26%    0.66%         C2, level 4  org.apache.hadoop.util.PureJavaCrc32C::update, version 3215 (1236 bytes) 
+  0.24%    0.21%           libjvm.so  ThreadStateTransition::transition_from_native (4 bytes) 
+  0.23%    0.20%           libjvm.so  SpinPause (0 bytes) 
+  0.19%    0.18%         C2, level 4  org.apache.spark.mllib.feature.StandardScalerModel::transform, version 9603 (316 bytes) 
+  0.18%    0.18%   [kernel.kallsyms]  finish_task_switch (88 bytes) 
+  0.17%    0.17%           libjvm.so  ThreadStateTransition::transition_and_fence (64 bytes) 
+  0.16%    0.13%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17860 (416 bytes) 
+  3.12%    2.96%  <...other 31118 warm regions...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 87.04%   86.76%         C2, level 4  org.apache.spark.mllib.optimization.LogisticGradient::compute, version 11960 
+  1.63%    1.91%          libjava.so  Java_java_io_ObjectInputStream_bytesToDoubles 
+  1.43%    1.38%         C2, level 4  grsm.Benchmarks$$anonfun$1::apply, version 17860 
+  0.98%    0.78%           libjvm.so  _Copy_disjoint_words 
+  0.84%    0.64%        runtime stub  StubRoutines::foward_copy_longs 
+  0.76%    0.77%         C2, level 4  org.apache.spark.mllib.stat.MultivariateOnlineSummarizer::add, version 18993 
+  0.62%    0.09%   [kernel.kallsyms]  __copy_to_user 
+  0.60%    0.49%         C2, level 4  org.netlib.blas.Daxpy::daxpy, version 11191 
+  0.57%    0.65%          libjava.so  Java_java_io_ObjectOutputStream_doublesToBytes 
+  0.47%    0.61%           libjvm.so  ParallelTaskTerminator::offer_termination 
+  0.44%    0.96%         C2, level 4  net.jpountz.xxhash.StreamingXXHash32JavaSafe::update, version 8073 
+  0.28%    0.41%         C2, level 4  net.jpountz.lz4.LZ4JavaSafeCompressor::compress64k, version 8014 
+  0.27%    0.67%         C2, level 4  org.apache.hadoop.util.PureJavaCrc32C::update, version 3215 
+  0.26%    0.22%           libjvm.so  ThreadStateTransition::transition_from_native 
+  0.23%    0.20%           libjvm.so  SpinPause 
+  0.21%    0.20%           libjvm.so  ThreadStateTransition::transition_and_fence 
+  0.19%    0.18%         C2, level 4  org.apache.spark.mllib.feature.StandardScalerModel::transform, version 9603 
+  0.18%    0.18%   [kernel.kallsyms]  finish_task_switch 
+  0.16%    0.02%   [kernel.kallsyms]  __sched_text_end 
+  0.15%    0.41%   [kernel.kallsyms]  __do_softirq 
+  2.71%    2.45%  <...other 7748 warm methods...>
+....................................................................................................
+100.00%  100.00%  <totals>
+
+....[Distribution by Source]........................................................................
+ 91.63%   92.20%         C2, level 4
+  2.73%    2.57%           libjvm.so
+  2.21%    2.56%          libjava.so
+  2.14%    1.51%   [kernel.kallsyms]
+  0.89%    0.69%        runtime stub
+  0.26%    0.36%        libc-2.17.so
+  0.09%    0.06%    Unknown, level 0
+  0.03%    0.02%         C1, level 3
+  0.02%    0.01%    hsdis-aarch64.so
+  0.01%    0.00%         interpreter
+  0.01%    0.00%  libpthread-2.17.so
+  0.00%    0.01%           libzip.so
+  0.00%    0.00%         C1, level 1
+  0.00%    0.00%              [vdso]
+  0.00%    0.00%        libverify.so
+  0.00%    0.00%           libnio.so
+  0.00%    0.00%      perf-11964.map
+  0.00%    0.00%          ld-2.17.so
+  0.00%    0.00%    libmanagement.so
+  0.00%    0.00%           libnet.so
+  0.00%                  C1, level 2
+....................................................................................................
+100.00%  100.00%  <totals>
+
+
+
+# Run complete. Total time: 07:28:42
+
+Benchmark                   Mode  Cnt    Score    Error  Units
+Benchmarks.HiBench_LR       avgt    6  556.930 ? 19.738   s/op
+Benchmarks.HiBench_LR:?asm  avgt           NaN             ---
