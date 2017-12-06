@@ -1,2 +1,2 @@
-jmh-spark/treeAggregate/target
-jmh-spark/treeAggregate/.target
+jmh-spark/treeAggregate/target/*
+jmh-spark/treeAggregate/.target/*.jar
