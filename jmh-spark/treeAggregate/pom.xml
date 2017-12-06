@@ -15,7 +15,7 @@
   			<groupId>org.apache.spark</groupId>
   			<artifactId>spark-core_2.11</artifactId>
   			<version>2.1.0</version>
-  			<scope>provided</scope>
+  			<scope>compile</scope>
 		</dependency>
    		<dependency>
         		<groupId>org.apache.spark</groupId>
@@ -35,6 +35,39 @@
 			<artifactId>jmh-core</artifactId>
 			<version>${jmh.version}</version>
 		</dependency>
+		<!--the only use only scala 2.11.8 patch
+                <dependency>
+                        <groupId>org.json4s</groupId>
+                        <artifactId>json4s-jackson_2.11</artifactId>
+                        <version>3.5.0</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.fasterxml.jackson.module</groupId>
+                        <artifactId>jackson-module-scala_2.11</artifactId>
+                        <version>2.9.2</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.twitter</groupId>
+                        <artifactId>util-core_2.11</artifactId>
+                        <version>6.41.0</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.twitter</groupId>
+                        <artifactId>chill_2.11</artifactId>
+                        <version>0.9.2</version>
+                </dependency>
+                <dependency>
+                        <groupId>org.scalatest</groupId>
+                        <artifactId>scalatest_2.11</artifactId>
+                        <version>3.2.0-SNAP5</version>
+                        <scope>test</scope>
+                </dependency>
+                <dependency>
+                        <groupId>org.scalanlp</groupId>
+                        <artifactId>breeze_2.11</artifactId>
+                        <version>0.13.1</version>
+                </dependency>
+                -->
 	</dependencies>
 	
 	<!--JMH-->
@@ -42,7 +75,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jmh.version>1.19</jmh.version>
 		<javac.target>1.8</javac.target>
-		<!--<scala.stdLib.version>2.11.0</scala.stdLib.version>-->
+		<scala.version>2.11.8</scala.version>
 		<scala.mavenPlugin.version>3.2.2</scala.mavenPlugin.version>
 		<!-- Possible generaotrs: default, asm, reflection -->
 		<jmh.generator>default</jmh.generator>
