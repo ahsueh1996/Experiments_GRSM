@@ -1,2 +1,2 @@
-!jmh-spark/spark-folder-copy-to-root-dir/*
-
+jmh-spark/treeAggregate/target
+jmh-spark/treeAggregate/.target
