@@ -23,7 +23,7 @@ object Benchmarks {
                 //.setMaster("spark://142.150.237.146:7077")
                 val conf = new SparkConf()
                         .setAppName("JMH prof: LogisticRegressionWithLBFGS")
-                	.setMaster("spark://142.150.237.146:7077")
+                	.setMaster("spark://147.75.202.66:7077")
                       	.set("spark.network.timeout", "600s")
                         .setJars(Array("/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar"))
                 val sc = new SparkContext(conf)
