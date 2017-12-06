@@ -11,18 +11,18 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-@Warmup(iterations=2,time=1,timeUnit=TimeUnit.SECONDS)
-@Measurement(iterations=3,time=1,timeUnit=TimeUnit.SECONDS)
-@Fork(1)
-class Benchmarks {
-	
+object Benchmarks {
 	@State(Scope.Benchmark)
-	object My_State {
+	class My_State {
+		//.setMaster("local[*]")
+		//.setMaster("spark://147.75.202.66:7077")
+		//.setMaster("spark://142.150.237.146:7077")
     		val conf = new SparkConf()
 			.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-			.setMaster("spark://147.75.202.66:7077")
-			.set("spark.network.timeout", "600s")
-			.setJars(Array("/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar"))
+			.setMaster("local[*]")
+		
+			//.set("spark.network.timeout", "600s")
+			//.setJars(Array("/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar"))
     		val sc = new SparkContext(conf)
 		
 		// Path taken from HiBench functions/workload-function.sh
@@ -37,30 +37,50 @@ class Benchmarks {
     		val training = splits(0).cache()
     		val test = splits(1)
 		
+		var model = new LogisticRegressionWithLBFGS()
+		
 		@Setup(Level.Trial)
 		def doSetup() {
 			println("\n")
 			println(conf.getAll.deep.mkString("\n"))
 		}
+		
+		@TearDown(Level.Trial)
+		def doTearDown() {
+			// Compute raw scores on the test set.
+			val predictionAndLabels = s.test.map { case LabeledPoint(label, features) =>
+				val prediction = model.predict(features)
+				(prediction, label)
+			}
+			val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
+			println(s"Accuracy = $accuracy")
+			// because we stop the sc here, we should only have 1 fork
+			sc.stop()
+		}
+	}
+}
+
+@Warmup(iterations=0,time=1,timeUnit=TimeUnit.SECONDS)
+@Measurement(iterations=1,time=1,timeUnit=TimeUnit.SECONDS)
+@Fork(1)
+class Benchmarks {
+	@Benchmark
+	@Warmup(iterations = 1, batchSize = 1)
+	@Measurement(iterations = 9, batchSize = 1)
+	@BenchmarkMode(Mode.SingleShotTime)
+	def singleshot_LR(s: Benchmarks.My_State, bh: Blackhole) {
+    		// Run training algorithm to build the model
+		// btw, what if numclasses = 2?
+		s.model.setNumClasses(10).run(s.training)
+		bh.consume(s.model)
 	}
 	
 	@Benchmark
 	@BenchmarkMode(Array(Mode.AverageTime))
-	def HiBench_LR(s: My_State) {
-
+	def Multinomial_LR(s: Benchmarks.My_State, bh: Blackhole) {
     		// Run training algorithm to build the model
-    	
-		val model = new LogisticRegressionWithLBFGS()
-      				.setNumClasses(10)
-      				.run(s.training)
-
-    		// Compute raw scores on the test set.
-    		val predictionAndLabels = s.test.map { case LabeledPoint(label, features) =>
-      			val prediction = model.predict(features)
-	      		(prediction, label)
-    		}
-
-    		val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
-    		println(s"Accuracy = $accuracy")
+		// btw, what if numclasses = 2?
+		s.model.setNumClasses(10).run(s.training)
+		bh.consume(s.model)
 	}
 }
