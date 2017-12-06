@@ -151,7 +151,7 @@ do
 		jar_variant="-mMLessIf-$2"
 	fi
 	if [ "$1" = "conglomerate" ] ; then
-		jvm_options="--driver-java-options \"-XX:+UseLargePages -XX:+AggressiveOpts\""
+		jvm_options="--driver-java-options -XX:+AggressiveOpts"
 		jar_variant="-conglomerate-$2"
 	fi	
 	if [ "$1" = "info" ] ; then

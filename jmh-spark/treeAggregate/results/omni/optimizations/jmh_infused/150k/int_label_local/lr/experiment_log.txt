@@ -1,4 +1,4 @@
-Mon Dec  4 15:57:01 EST 2017
+Tue Dec  5 16:17:11 EST 2017
 [95m===============================================
 Starting experiment: /home/hibench-output/int_label_local
 ================================================[97m
@@ -8,8 +8,8 @@ end
 [95m===============================================
 Restarting Spark Master @ 142.150.237.146:7077
 ================================================[97m
-Mon Dec  4 15:57:03 EST 2017
-Mon Dec  4 15:57:55 EST 2017
+Tue Dec  5 16:17:13 EST 2017
+Tue Dec  5 16:18:18 EST 2017
 [95m===============================================
 To check the webUI to see the spark master,
   run the following: ssh -L 8080:localhost:8080 root@142.150.237.146
@@ -18,7 +18,7 @@ To check the webUI to see the spark master,
 [95m===============================================
 Preparing for LR example, input size 150000 features....
 ================================================[97m
-Mon Dec  4 15:58:06 EST 2017
+Tue Dec  5 16:18:30 EST 2017
 patching args=
 start LogisticRegressionDataPrepare bench
 Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
@@ -31,7 +31,7 @@ Output Path: hdfs://localhost:9000/HiBench/LR/Input
 Num of Examples: 10000
 Num of Features: 150000
 finish LogisticRegressionDataPrepare bench
-Mon Dec  4 15:58:30 EST 2017
+Tue Dec  5 16:18:54 EST 2017
 [95m=======================
 Current settings, abort if wrong.
 ==========================[39m
@@ -57,95 +57,101 @@ Resetting relavent configs
 Starting Spark LR example, 150000 features, trial int_label, @ local[*]...
 ================================================[97m
 [91mCHECK to make sure sparkmasters match!!!!!![97m
-Mon Dec  4 15:58:33 EST 2017
+Tue Dec  5 16:18:57 EST 2017
 # JMH version: 1.19
 # VM version: JDK 1.8.0_131, VM 25.131-b11
 # VM invoker: /opt/jdk1.8.0_131/jre/bin/java
 # VM options: -Xmx24g
-# Warmup: 1 iterations, 1 s each
+# Warmup: 2 iterations, 1 s each
 # Measurement: 3 iterations, 1 s each
 # Timeout: 10 min per iteration
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Average time, time/op
 # Benchmark: grsm.Benchmarks.HiBench_LR
 
-# Run progress: 0.00% complete, ETA 00:00:04
-# Fork: N/A, test runs in the host VM
-# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
-# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: 1 of 2
 # Warmup Iteration   1: 
 
-(spark.executor.memory,24g)
-(spark.driver.memory,24g)
-(spark.jars,file:/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.network.timeout,600s)
-(spark.default.parallelism,30)
-(spark.sql.shuffle.partitions,30)
 (spark.master,local[*])
-(spark.driver.extraClassPath,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.submit.deployMode,client)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
 Accuracy = 0.7130674692751442
-231.577 s/op
+233.679 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+219.895 s/op
 Iteration   1: 
 
-(spark.executor.memory,24g)
-(spark.driver.memory,24g)
-(spark.jars,file:/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.network.timeout,600s)
-(spark.default.parallelism,30)
-(spark.sql.shuffle.partitions,30)
 (spark.master,local[*])
-(spark.driver.extraClassPath,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.submit.deployMode,client)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
 Accuracy = 0.7130674692751442
-220.577 s/op
+217.429 s/op
 Iteration   2: 
 
-(spark.executor.memory,24g)
-(spark.driver.memory,24g)
-(spark.jars,file:/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.network.timeout,600s)
-(spark.default.parallelism,30)
-(spark.sql.shuffle.partitions,30)
 (spark.master,local[*])
-(spark.driver.extraClassPath,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.submit.deployMode,client)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
 Accuracy = 0.7130674692751442
-216.509 s/op
+214.894 s/op
 Iteration   3: 
 
-(spark.executor.memory,24g)
-(spark.driver.memory,24g)
-(spark.jars,file:/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.network.timeout,600s)
-(spark.default.parallelism,30)
-(spark.sql.shuffle.partitions,30)
 (spark.master,local[*])
-(spark.driver.extraClassPath,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/benchmarks-intLabel-local.jar)
-(spark.submit.deployMode,client)
 (spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
 Accuracy = 0.7130674692751442
-213.961 s/op
+215.829 s/op
+
+# Run progress: 50.00% complete, ETA 00:18:22
+# Fork: 2 of 2
+# Warmup Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+229.815 s/op
+# Warmup Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+216.671 s/op
+Iteration   1: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+216.466 s/op
+Iteration   2: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+216.709 s/op
+Iteration   3: 
+
+(spark.master,local[*])
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+Accuracy = 0.7130674692751442
+218.207 s/op
+
 
 Result "grsm.Benchmarks.HiBench_LR":
-  217.016 ±(99.9%) 60.878 s/op [Average]
-  (min, avg, max) = (213.961, 217.016, 220.577), stdev = 3.337
-  CI (99.9%): [156.138, 277.893] (assumes normal distribution)
+  216.589 ±(99.9%) 3.272 s/op [Average]
+  (min, avg, max) = (214.894, 216.589, 218.207), stdev = 1.167
+  CI (99.9%): [213.318, 219.861] (assumes normal distribution)
 
 
-# Run complete. Total time: 00:14:42
+# Run complete. Total time: 00:36:41
 
-Benchmark              Mode  Cnt    Score    Error  Units
-Benchmarks.HiBench_LR  avgt    3  217.016 ± 60.878   s/op
-Mon Dec  4 16:13:17 EST 2017
+Benchmark              Mode  Cnt    Score   Error  Units
+Benchmarks.HiBench_LR  avgt    6  216.589 ± 3.272   s/op
+Tue Dec  5 16:55:39 EST 2017
 [95m===============================================
 Finished Spark LR example.
 ================================================[97m
-Mon Dec  4 16:13:17 EST 2017
-Mon Dec  4 16:13:17 EST 2017
+Tue Dec  5 16:55:39 EST 2017
+Tue Dec  5 16:55:39 EST 2017
 [95m===============================================
 Done experiment.
 ================================================[97m

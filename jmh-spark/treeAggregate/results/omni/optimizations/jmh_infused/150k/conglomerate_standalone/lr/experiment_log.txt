@@ -1,0 +1,177 @@
+Tue Dec  5 15:37:03 EST 2017
+[95m===============================================
+Starting experiment: /home/hibench-output/conglomerate_standalone
+================================================[97m
+my ip:
+142.150.237.146
+end
+[95m===============================================
+Restarting Spark Master @ 142.150.237.146:7077
+================================================[97m
+Tue Dec  5 15:37:05 EST 2017
+Tue Dec  5 15:38:10 EST 2017
+[95m===============================================
+To check the webUI to see the spark master,
+  run the following: ssh -L 8080:localhost:8080 root@142.150.237.146
+  then do following: xdg-open 142.150.237.146:8080
+================================================[97m
+[95m===============================================
+Preparing for LR example, input size 150000 features....
+================================================[97m
+Tue Dec  5 15:38:22 EST 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://142.150.237.146:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 150000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 150000
+finish LogisticRegressionDataPrepare bench
+Tue Dec  5 15:38:46 EST 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=false
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=14
+SPARK_EXECUTOR_MEMORY=57g
+SPARK_DRIVER_MEMORY=8g
+SPARK_WORKER_CORES=30
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=2
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+[95m===============================================
+Starting Spark LR example, 150000 features, trial conglomerate, @ spark://142.150.237.146:7077...
+================================================[97m
+[91mCHECK to make sure sparkmasters match!!!!!![97m
+Tue Dec  5 15:38:49 EST 2017
+# JMH version: 1.19
+# VM version: JDK 1.8.0_131, VM 25.131-b11
+# VM invoker: /opt/jdk1.8.0_131/jre/bin/java
+# VM options: -Xmx8g -XX:+AggressiveOpts
+# Warmup: 2 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: grsm.Benchmarks.HiBench_LR
+
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: 1 of 2
+# Warmup Iteration   1: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+250.214 s/op
+# Warmup Iteration   2: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+229.235 s/op
+Iteration   1: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+223.329 s/op
+Iteration   2: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+227.277 s/op
+Iteration   3: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+225.340 s/op
+
+# Run progress: 50.00% complete, ETA 00:19:16
+# Fork: 2 of 2
+# Warmup Iteration   1: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+236.430 s/op
+# Warmup Iteration   2: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+225.694 s/op
+Iteration   1: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+222.740 s/op
+Iteration   2: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+231.776 s/op
+Iteration   3: 
+
+(spark.network.timeout,600s)
+(spark.app.name,JMH prof: LogisticRegressionWithLBFGS)
+(spark.jars,/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar)
+(spark.master,spark://142.150.237.146:7077)
+Accuracy = 0.7130674692751442
+227.527 s/op
+
+
+Result "grsm.Benchmarks.HiBench_LR":
+  226.331 ±(99.9%) 9.289 s/op [Average]
+  (min, avg, max) = (222.740, 226.331, 231.776), stdev = 3.312
+  CI (99.9%): [217.043, 235.620] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:38:21
+
+Benchmark              Mode  Cnt    Score   Error  Units
+Benchmarks.HiBench_LR  avgt    6  226.331 ± 9.289   s/op
+Tue Dec  5 16:17:11 EST 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Tue Dec  5 16:17:11 EST 2017
+Tue Dec  5 16:17:11 EST 2017
+[95m===============================================
+Done experiment.
+================================================[97m
