@@ -23,7 +23,7 @@ object Benchmarks {
                 //.setMaster("spark://142.150.237.146:7077")
                 val conf = new SparkConf()
                         .setAppName("JMH prof: LogisticRegressionWithLBFGS")
-                	.setMaster("spark://142.150.237.146:7077")
+                	.setMaster("local[*]")
                       	.set("spark.network.timeout", "600s")
                         .setJars(Array("/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar"))
                 val sc = new SparkContext(conf)
@@ -69,55 +69,5 @@ class Benchmarks {
                 s.model = new LogisticRegressionWithLBFGS()
                                 .setNumClasses(10)
                                 .run(s.training)
-        }
-        @Benchmark
-        @Fork(1)
-        @Warmup(iterations = 1, batchSize = 1)
-        @Measurement(iterations = 5, batchSize = 1)
-        @BenchmarkMode(Array(Mode.SingleShotTime))
-        def Binary_LR(s: Benchmarks.My_State) {
-                // Run training algorithm to build the model
-                // btw, what if numclasses = 2?
-                s.model = new LogisticRegressionWithLBFGS()
-                                .setNumClasses(2)
-                                .run(s.training)
-        }
-        @Benchmark
-        @Fork(1)
-        @Warmup(iterations = 1, batchSize = 1)       
-        @Measurement(iterations = 1, batchSize = 1)
-        @BenchmarkMode(Array(Mode.SingleShotTime))
-        def Multinomial_LR_acc(s: Benchmarks.My_State) {
-                // Run training algorithm to build the model
-                // btw, what if numclasses = 2?
-                s.model = new LogisticRegressionWithLBFGS()
-                                .setNumClasses(10)
-                                .run(s.training)
-                // Compute raw scores on the test set.
-                val predictionAndLabels = s.test.map { case LabeledPoint(label, features) =>
-                        val prediction = s.model.predict(features)
-                        (prediction, label)
-                }
-                val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
-                println(s"Accuracy = $accuracy")
-        }
-        @Benchmark
-        @Fork(1)
-        @Warmup(iterations = 0, batchSize = 1)
-        @Measurement(iterations = 1, batchSize = 1)
-        @BenchmarkMode(Array(Mode.SingleShotTime))
-        def Binary_LRi_acc(s: Benchmarks.My_State) {
-                // Run training algorithm to build the model
-                // btw, what if numclasses = 2?
-                s.model = new LogisticRegressionWithLBFGS()
-                                .setNumClasses(2)
-                                .run(s.training)
-                // Compute raw scores on the test set.
-                val predictionAndLabels = s.test.map { case LabeledPoint(label, features) =>
-                        val prediction = s.model.predict(features)
-                        (prediction, label)
-                }
-                val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
-                println(s"Accuracy = $accuracy")
         }
 }
