@@ -88,6 +88,9 @@ sed -i "s#.*spark.master.*#spark.master spark://$LOCAL_IP:7077#g" spark-defaults
 
 echo "spark.local.dir                    $WORK_DIR/hadoop_file/tmp" >> spark-defaults.conf
 
+#--------------------IMPORTANT addition -------------------------------------
+echo "spark.memory.fraction        1.0" >> spark-defaults.conf
+
 sed -i "/SPARK_EXECUTOR_CORES/aSPARK_EXECUTOR_CORES=$SPARK_EXECUTOR_CORES" spark-env.sh
 
 sed -i "/SPARK_EXECUTOR_MEMORY/aSPARK_EXECUTOR_MEMORY=$SPARK_EXECUTOR_MEMORY" spark-env.sh
