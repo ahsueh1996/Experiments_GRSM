@@ -84,7 +84,7 @@ sleep 10
 
 cd $WORK_DIR/HiBench			# Run Hibench scripts from this directory
 
-PROBLEM_FEATURES=(350000)
+PROBLEM_FEATURES=(500000, 350000, 450000, 400000)
 
 # Set data size scale to "huge"
 sed -i "s#.*hibench.scale.profile.*#hibench.scale.profile      huge#g" conf/hibench.conf
@@ -127,8 +127,8 @@ do
 		else
 			export MY_SPARK_EXECUTOR_INSTANCES=2
 			export MY_SPARK_EXECUTOR_CORES=14
-			export MY_SPARK_DRIVER_MEMORY=60g
-			export MY_SPARK_EXECUTOR_MEMORY=31g
+			export MY_SPARK_DRIVER_MEMORY=32g
+			export MY_SPARK_EXECUTOR_MEMORY=45g
 		fi
 	fi
 	if [ "$2" = "local" ] ; then
@@ -176,7 +176,7 @@ do
 	if [ "$jmh_infused" = true ] ; then
 		variable=(trial)
 	else
-		variable=(t0 t1 t2 t3 t4 t5)
+		variable=(w1 w2 t1 t2 t3 t4)
 	fi
 	##################################################
 
@@ -197,10 +197,10 @@ do
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	if [ "$jmh_infused" = true ] ; then
 		yes 'yes' | cp $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/tmp-benchmarks.jar
-	  	$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --conf "spark.driver.extraJavaOptions=-Xms32g" --master $spark_master --driver-class-path $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/benchmarks${jar_variant}.jar | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	  	$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --conf "spark.driver.extraJavaOptions=-Xms${MY_SPARK_DRIVER_MEMORY}" --master $spark_master --driver-class-path $PROJ_DIR/.target/benchmarks${jar_variant}.jar $PROJ_DIR/.target/benchmarks${jar_variant}.jar | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 		yes 'yes' | rm $PROJ_DIR/.target/tmp-benchmarks.jar
 	else
-		$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+		$WORK_DIR/spark/bin/spark-submit $jvm_options --properties-file $PROJ_DIR/myspark.conf --conf "spark.driver.extraJavaOptions=-Xms${MY_SPARK_DRIVER_MEMORY}" --class com.intel.hibench.sparkbench.ml.LogisticRegression --master $spark_master /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input | tee -a $OUTPUT_DIR/lr/experiment_log.txt
 	fi 
     date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt

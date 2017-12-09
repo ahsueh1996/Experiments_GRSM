@@ -17,19 +17,15 @@ import org.apache.spark.storage.StorageLevel
 
 object Benchmarks {
 
-        @State(Scope.Benchmark)
+        @State(Scope.Thread)
         class My_State extends {
                 //.setMaster("local[*]")
                 //.setMaster("spark://147.75.202.66:7077")
                 //.setMaster("spark://142.150.237.146:7077")
                 var conf = new SparkConf()
                        		.setAppName("JMH prof: LogisticRegressionWithLBFGS")
-				.set("spark.storage.memoryFraction","0.6")
-				.set("spark.memory.fraction","0.5")
-				.set("spark.executor.instances", "2")
                 		.setMaster("spark://142.150.237.146:7077")
                       		.set("spark.network.timeout", "600s")
-				.set("spark.shuffle.blockTransferService", "nio")
                         	.setJars(Array("/home/hsuehku1/Experiments_GRSM/jmh-spark/treeAggregate/.target/tmp-benchmarks.jar"))
                 var sc = SparkContext.getOrCreate(conf)
 
@@ -38,7 +34,7 @@ object Benchmarks {
 
                 
 		// Load training data in LIBSVM format.
-                var data: RDD[LabeledPoint] = sc.objectFile(inputPath).persist(StorageLevel.MEMORY_ONLY_SER)
+                var data: RDD[LabeledPoint] = sc.objectFile(inputPath).persist(StorageLevel.MEMORY_ONLY)
 
                 // Split data into training (60%) and test (40%).
                 var splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
@@ -51,22 +47,15 @@ object Benchmarks {
                 @Setup(Level.Invocation)
                 def doSetup() {
 			println("setting up...")
-                        println("\n")
                         println(sc.getConf.getAll.deep.mkString("\n"))
-                	
-                	sc = SparkContext.getOrCreate(conf)                
-                        
-			println("\n")
-                        println(sc.getConf.getAll.deep.mkString("\n"))
-	
-			data = sc.objectFile(inputPath).persist(StorageLevel.MEMORY_ONLY_SER)
+		
+                	data = sc.objectFile(inputPath).persist(StorageLevel.MEMORY_ONLY)
 
-	                // Split data into training (60%) and test (40%).
-           	     	splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
-                	training = splits(0).cache()
-                	test = splits(1)
+        	        splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
+               	 	training = splits(0).cache()
+               		test = splits(1)
 			
-			println("...\n")
+			println("...")
 			println(sc.getRDDStorageInfo.deep.mkString("\n"))
 			println("set up")
                 }
@@ -74,7 +63,7 @@ object Benchmarks {
                 @TearDown(Level.Invocation)
                 def doTearDown() {
 			println("tearing down...")
-                        sc.stop()
+                        //sc.stop()
 			println("toredown")
                 }
         }
@@ -87,13 +76,22 @@ class Benchmarks {
         @Measurement(iterations = 5, batchSize = 1)
         @BenchmarkMode(Array(Mode.SingleShotTime))
         def Multinomial_LR(s: Benchmarks.My_State) {
-        	println("running...")        
+		s.sc = SparkContext.getOrCreate(s.conf)
+
 		// Run training algorithm to build the model
                 var LR = new LogisticRegressionWithLBFGS()
-		println("created new lr with lbfgs")
 		LR.setNumClasses(10)
-		println("set classes")
 		s.model = LR.run(s.training)
-		println("ran")
+
+
+		// Compute raw scores on the test set.
+    		val predictionAndLabels = s.test.map { case LabeledPoint(label, features) =>
+      			val prediction = s.model.predict(features)
+	      		(prediction, label)
+    		}
+
+    		val accuracy = predictionAndLabels.filter(x => x._1 == x._2).count().toDouble / predictionAndLabels.count()
+    		println(s"Accuracy = $accuracy")
+		
         }
 }
