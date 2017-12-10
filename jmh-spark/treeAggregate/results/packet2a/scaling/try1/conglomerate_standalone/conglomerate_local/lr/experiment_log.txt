@@ -1,0 +1,1244 @@
+Sat Dec  9 20:04:12 UTC 2017
+[95m===============================================
+Starting experiment: /home/hibench-output/conglomerate_local
+================================================[97m
+my ip:
+147.75.202.226
+end
+[95m===============================================
+Restarting Spark Master @ 147.75.202.226:7077
+================================================[97m
+Sat Dec  9 20:04:14 UTC 2017
+Sat Dec  9 20:05:29 UTC 2017
+[95m===============================================
+To check the webUI to see the spark master,
+  run the following: ssh -L 8080:localhost:8080 root@147.75.202.226
+  then do following: xdg-open 147.75.202.226:8080
+================================================[97m
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 20:05:42 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 20:08:02 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 20:08:08 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 20:10:34 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, w1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 20:10:34 UTC 2017
+Sat Dec  9 20:30:55 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 20:30:55 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 20:30:58 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 20:33:26 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, w2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 20:33:26 UTC 2017
+Sat Dec  9 20:49:57 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 20:49:57 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 20:50:01 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 20:52:21 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, t1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 20:52:21 UTC 2017
+Sat Dec  9 21:05:34 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 21:05:34 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 21:05:38 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 21:08:14 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, t2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 21:08:14 UTC 2017
+Sat Dec  9 21:21:15 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 21:21:15 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 21:21:19 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 21:23:47 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, t3 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 21:23:47 UTC 2017
+Sat Dec  9 21:31:51 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 21:31:51 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 500000 features....
+================================================[97m
+Sat Dec  9 21:31:55 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 500000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 500000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 21:34:25 UTC 2017
+[95m===============================================
+Starting Spark LR example, 500000 features, t4 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 21:34:26 UTC 2017
+Sat Dec  9 21:44:36 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 21:44:36 UTC 2017
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 21:44:39 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 21:46:34 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 21:46:39 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 21:48:25 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, w1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 21:48:25 UTC 2017
+Sat Dec  9 22:01:42 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 22:01:42 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 22:01:45 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 22:03:35 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, w2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 22:03:35 UTC 2017
+Sat Dec  9 22:13:05 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 22:13:05 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 22:13:09 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 22:15:07 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, t1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 22:15:07 UTC 2017
+Sat Dec  9 22:23:29 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 22:23:29 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 22:23:33 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 22:25:34 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, t2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 22:25:34 UTC 2017
+Sat Dec  9 22:37:59 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 22:37:59 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 22:38:03 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 22:40:01 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, t3 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 22:40:01 UTC 2017
+Sat Dec  9 22:54:22 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 22:54:22 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 350000 features....
+================================================[97m
+Sat Dec  9 22:54:25 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 350000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 350000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 22:56:13 UTC 2017
+[95m===============================================
+Starting Spark LR example, 350000 features, t4 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 22:56:13 UTC 2017
+Sat Dec  9 23:07:40 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 23:07:40 UTC 2017
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sat Dec  9 23:07:43 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 23:09:51 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sat Dec  9 23:09:55 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 23:12:12 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, w1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 23:12:12 UTC 2017
+Sat Dec  9 23:22:06 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 23:22:06 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sat Dec  9 23:22:10 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 23:24:24 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, w2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 23:24:24 UTC 2017
+Sat Dec  9 23:35:02 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 23:35:02 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sat Dec  9 23:35:05 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 23:37:12 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, t1 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 23:37:12 UTC 2017
+Sat Dec  9 23:52:06 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sat Dec  9 23:52:06 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sat Dec  9 23:52:09 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sat Dec  9 23:54:21 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, t2 conglomerate, @ local[*]...
+================================================[97m
+Sat Dec  9 23:54:21 UTC 2017
+Sun Dec 10 00:00:55 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 00:00:55 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sun Dec 10 00:00:58 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 00:03:17 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, t3 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 00:03:17 UTC 2017
+Sun Dec 10 00:12:37 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 00:12:37 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 450000 features....
+================================================[97m
+Sun Dec 10 00:12:40 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 450000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 450000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 00:14:54 UTC 2017
+[95m===============================================
+Starting Spark LR example, 450000 features, t4 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 00:14:54 UTC 2017
+Sun Dec 10 00:24:12 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 00:24:12 UTC 2017
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 00:24:16 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 00:26:16 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 00:26:19 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 00:28:27 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, w1 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 00:28:27 UTC 2017
+Sun Dec 10 00:39:44 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 00:39:44 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 00:39:47 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 00:41:50 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, w2 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 00:41:50 UTC 2017
+Sun Dec 10 01:00:17 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 01:00:17 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 01:00:20 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 01:02:37 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, t1 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 01:02:37 UTC 2017
+Sun Dec 10 01:50:16 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 01:50:16 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 01:50:20 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 01:52:16 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, t2 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 01:52:16 UTC 2017
+Sun Dec 10 02:06:36 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 02:06:36 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 02:06:40 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 02:08:39 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, t3 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 02:08:39 UTC 2017
+Sun Dec 10 02:37:24 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 02:37:24 UTC 2017
+[95m=======================
+Current settings, abort if wrong.
+==========================[39m
+ARM_MACHINE=true
+YARN_CORES=92
+YARN_MEM=112640
+USE_YARN_FOR_SPARK_ON_HADOOP=false
+SPARK_EXECUTOR_CORES=15
+SPARK_EXECUTOR_MEMORY=16g
+SPARK_DRIVER_MEMORY=24g
+SPARK_WORKER_CORES=90
+SPARK_WORKER_MEMORY=122g
+SPARK_WORKER_INSTANCES=1
+SPARK_EXECUTOR_INSTANCES=6
+SPARK_DAEMON_MEMORY=2g
+SPARK_DEFAULT_PARALLELISM=30
+SPARK_SQL_SHUFFLE_PARTITIONS=30
+
+[95m===================================
+Resetting relavent configs
+======================================[97m
+Deleted /HiBench/LR
+[95m===============================================
+Preparing for LR example, input size 400000 features....
+================================================[97m
+Sun Dec 10 02:37:28 UTC 2017
+patching args=
+start LogisticRegressionDataPrepare bench
+Export env: SPARKBENCH_PROPERTIES_FILES=/CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/sparkbench.conf
+LIBJARS: 
+JAR: /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar
+args: hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+!!!!-----README-----!!!
+Submit Spark job: /CMC/kmiecseb/spark/bin/spark-submit  --properties-file /CMC/kmiecseb/HiBench/report/lr/prepare/conf/sparkbench/spark.conf --class com.intel.hibench.sparkbench.ml.LogisticRegressionDataGenerator --master spark://147.75.202.226:7077  /CMC/kmiecseb/HiBench/sparkbench/assembly/target/sparkbench-assembly-6.1-SNAPSHOT-dist.jar hdfs://localhost:9000/HiBench/LR/Input 10000 400000
+Output Path: hdfs://localhost:9000/HiBench/LR/Input
+Num of Examples: 10000
+Num of Features: 400000
+finish LogisticRegressionDataPrepare bench
+Sun Dec 10 02:39:29 UTC 2017
+[95m===============================================
+Starting Spark LR example, 400000 features, t4 conglomerate, @ local[*]...
+================================================[97m
+Sun Dec 10 02:39:29 UTC 2017
+Sun Dec 10 03:04:32 UTC 2017
+[95m===============================================
+Finished Spark LR example.
+================================================[97m
+Sun Dec 10 03:04:32 UTC 2017
+Sun Dec 10 03:04:32 UTC 2017
+[95m===============================================
+Done experiment.
+================================================[97m

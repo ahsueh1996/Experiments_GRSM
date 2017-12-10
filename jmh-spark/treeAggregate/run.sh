@@ -185,6 +185,19 @@ do
   do
     # run configs
     yes 'yes' | sh $PROJ_DIR/../setup/config.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+
+    if [ "$IS_ARM" = true ] ; then
+	# Reset and create folders:
+	hadoop fs -rmr /HiBench/LR | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	# Generate data
+	echo -e "\e[95m===============================================" |  tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo "Preparing for LR example, input size $i features...." | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	echo -e "================================================\e[97m" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	sed -i "s#.*hibench.lr.huge.features.*#hibench.lr.huge.features    $i#g" conf/workloads/ml/lr.conf
+	./bin/workloads/ml/lr/prepare/prepare.sh | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+	date | tee -a $OUTPUT_DIR/lr/experiment_log.txt
+    fi
 	
     # Run Spark-Based Benchmark, using the JMH infused jar:
     echo -e "\e[95m===============================================" | tee -a $OUTPUT_DIR/lr/experiment_log.txt
