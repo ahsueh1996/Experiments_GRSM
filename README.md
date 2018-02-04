@@ -1,7 +1,7 @@
 # Experiments_GRSM
 This project includes experiments using the following languages/code libraries:
-	+ C
-	+ Java
+  + C
+  + Java
   + Scala
   + Spark (in conjunction with Hadoop)
 We use profiling tools:
@@ -10,19 +10,7 @@ We use profiling tools:
 We use a local x86 machine (Centos6) called omni and a remote machine (Centos7) ARM machine called packet2a (from https://www.packet.net/; Type 2A Centos7) to conduct the experiments.
   
 # Method
-The first stage was understanding how to profile using the JMH library for a simple java code after understanding how to run perf on simple C programs. The set up is minimal:
- 	yum install git
-	yum install mercurial
-	yum group install "Development Tools"
-	yum install perf
-	yum install maven
-	yum install java-1.8.0-openjdk-devel
-  git clone https://github.com/ahsueh1996/Experiments_GRSM.git
-  
-For ARM, copy the aarch64 libarary to enable perfasm print outs:
-	cp ~/Experiments_GRSM/perf-jmh/mat_mul_java/hsdis-aarch64.so /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.151-1.b12.el7_4.aarch64/jre/lib/aarch64/server/.
-  
-Then just sh run.sh to collect data.
+The first stage was understanding how to run perf on simple C programs then understanding how to profile using the JMH library for a simple java program. The set up is minimal. See the Read me unter the perf-jmh folder for more.
 
 The second stage was infusing JMH with Apache Spark. The setup is more elaborate. From getting the bare metal machine, run the commands found in the set up section in succession. We assume a bear metal machine.
 
