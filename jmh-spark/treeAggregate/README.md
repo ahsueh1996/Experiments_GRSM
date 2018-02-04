@@ -21,7 +21,7 @@ I located the jar by looking at what the spark submit function built as the spar
 	
 	SPARK_JARS_DIR="${SPARK_HOME}/assembly/target/scala-$SPARK_SCALA_VERSION/jars" ln 42 from spark/bin/spark-class
 	
-# Then you can view a jar content with
+then you can view a jar content with
 		
 	jar tvf jarfile.jar | grep "the class you are looking for"
 		
